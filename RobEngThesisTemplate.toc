@@ -2,15 +2,34 @@
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Research problem}{1}{section.1.1}%
 \contentsline {section}{\numberline {1.2}Thesis objective and structure}{1}{section.1.2}%
-\contentsline {chapter}{\numberline {2}Literature Review}{2}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Industrial robotics today}{2}{section.2.1}%
+\contentsline {chapter}{\numberline {2}State of the art}{2}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Industrial robotics}{2}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Early days}{2}{subsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.1.2}Modern approach}{2}{subsection.2.1.2}%
 \contentsline {section}{\numberline {2.2}Collaborative robotics}{2}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Definitions}{2}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}Objectives and challenges}{2}{subsection.2.2.2}%
 \contentsline {section}{\numberline {2.3}High DOF system}{2}{section.2.3}%
-\contentsline {chapter}{\numberline {3}Implemented architecture}{3}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Robot}{3}{section.3.1}%
+\contentsline {subsection}{\numberline {2.3.1}System types}{2}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.2}Macro/Micro configuration}{2}{subsection.2.3.2}%
+\contentsline {chapter}{\numberline {3}Architecture implementation}{3}{chapter.3}%
+\contentsline {section}{\numberline {3.1}JointRobot class}{3}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}System Description}{3}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.2}Class Implementation}{3}{subsection.3.1.2}%
 \contentsline {section}{\numberline {3.2}Action server}{3}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Control}{3}{section.3.3}%
-\contentsline {chapter}{\numberline {4}Experiments}{4}{chapter.4}%
-\contentsline {chapter}{\numberline {5}Conclusions}{5}{chapter.5}%
-\contentsline {chapter}{\numberline {A}Extra}{6}{appendix.A}%
-\contentsline {chapter}{References}{7}{appendix*.3}%
+\contentsline {subsection}{\numberline {3.2.1}Targhet broadcasting}{3}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Reaching loop description}{3}{subsection.3.2.2}%
+\contentsline {section}{\numberline {3.3}Task Priority implementation}{3}{section.3.3}%
+\contentsline {chapter}{\numberline {4}Methodology}{4}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Reaching Loop Description}{4}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Goal broadcasting}{4}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Task Priority}{4}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Task Description}{4}{subsection.4.3.1}%
+\contentsline {subsubsection}{\numberline {4.3.1.1}Joint Limits}{4}{subsubsection.4.3.1.1}%
+\contentsline {subsubsection}{\numberline {4.3.1.2}Obstacle Avoidance}{4}{subsubsection.4.3.1.2}%
+\contentsline {subsubsection}{\numberline {4.3.1.3}End Effector Target}{4}{subsubsection.4.3.1.3}%
+\contentsline {chapter}{\numberline {5}Experiments}{5}{chapter.5}%
+\contentsline {section}{\numberline {5.1}}{5}{section.5.1}%
+\contentsline {chapter}{\numberline {6}Conclusions}{6}{chapter.6}%
+\contentsline {chapter}{\numberline {A}Extra}{7}{appendix.A}%
+\contentsline {chapter}{References}{8}{appendix*.3}%
