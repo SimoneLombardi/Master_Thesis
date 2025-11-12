@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2025.11.11)  12 NOV 2025 10:48
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2025.11.11)  12 NOV 2025 18:07
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -508,45 +508,78 @@ Package: algorithmic 2009/08/24 v0.1 Document Style `algorithmic'
 \ALC@tlm=\skip59
 \algorithmicindent=\skip60
 )
-(./RobEngThesisTemplate.aux (./Originality/originality.aux)
-(./Acknowledgement/acknowledgement.aux) (./Dedication/dedication.aux)
-(./Abstract/abstract.aux) (./Chapter1/chapter1.aux) (./Chapter2/chapter2.aux)
-(./Chapter3/chapter3.aux) (./Chapter4/chapter4.aux) (./Chapter5/chapter5.aux)
+(/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2021/10/31 v2.13 LaTeX color extensions (UK)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 227.
+LaTeX Info: Redefining \color on input line 711.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1352.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1356.
+Package xcolor Info: Model `RGB' extended on input line 1368.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1370.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1371.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1372.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1373.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1374.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1375.
+)
+(/usr/share/texmf/tex/latex/tex-gyre/tgbonum.sty
+Package: tgbonum 2009/09/27 v1.2 TeX Gyre Bonum as default roman family
+)
+(/usr/share/texlive/texmf-dist/tex/latex/makecell/makecell.sty
+Package: makecell 2009/08/03 V0.1e Managing of Tab Column Heads and Cells
+\rotheadsize=\dimen179
+\c@nlinenum=\count309
+\TeXr@lab=\toks29
+)
+LaTeX Font Info:    Trying to load font information for OT1+qbk on input line 8
+5.
+
+(/usr/share/texmf/tex/latex/tex-gyre/ot1qbk.fd
+File: ot1qbk.fd 2009/09/25 v1.2 font definition file for OT1/qbk
+) (./RobEngThesisTemplate.aux
+(./Originality/originality.aux) (./Acknowledgement/acknowledgement.aux)
+(./Dedication/dedication.aux) (./Abstract/abstract.aux)
+(./Chapter1/chapter1.aux) (./Chapter2/chapter2.aux) (./Chapter3/chapter3.aux)
+(./Chapter4/chapter4.aux) (./Chapter5/chapter5.aux)
 (./Conclusions/conclusions.aux) (./Appendix1/appendix1.aux))
 \openout1 = `RobEngThesisTemplate.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 73.
-LaTeX Font Info:    ... okay on input line 73.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 73.
-LaTeX Font Info:    ... okay on input line 73.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 73.
-LaTeX Font Info:    ... okay on input line 73.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 73.
-LaTeX Font Info:    ... okay on input line 73.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 73.
-LaTeX Font Info:    ... okay on input line 73.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 73.
-LaTeX Font Info:    ... okay on input line 73.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 73.
-LaTeX Font Info:    ... okay on input line 73.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 73.
-LaTeX Font Info:    ... okay on input line 73.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 73.
-LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 85.
+LaTeX Font Info:    ... okay on input line 85.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 85.
+LaTeX Font Info:    ... okay on input line 85.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 85.
+LaTeX Font Info:    ... okay on input line 85.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 85.
+LaTeX Font Info:    ... okay on input line 85.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 85.
+LaTeX Font Info:    ... okay on input line 85.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 85.
+LaTeX Font Info:    ... okay on input line 85.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 85.
+LaTeX Font Info:    ... okay on input line 85.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 85.
+LaTeX Font Info:    ... okay on input line 85.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 85.
+LaTeX Font Info:    ... okay on input line 85.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count309
-\scratchdimen=\dimen179
+\scratchcounter=\count310
+\scratchdimen=\dimen180
 \scratchbox=\box65
-\nofMPsegments=\count310
-\nofMParguments=\count311
-\everyMPshowfont=\toks29
-\MPscratchCnt=\count312
-\MPscratchDim=\dimen180
-\MPnumerator=\count313
-\makeMPintoPDFobject=\count314
-\everyMPtoPDFconversion=\toks30
+\nofMPsegments=\count311
+\nofMParguments=\count312
+\everyMPshowfont=\toks30
+\MPscratchCnt=\count313
+\MPscratchDim=\dimen181
+\MPnumerator=\count314
+\makeMPintoPDFobject=\count315
+\everyMPtoPDFconversion=\toks31
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
@@ -562,8 +595,8 @@ File: translations-basic-dictionary-english.trsl (english translation file `tra
 nslations-basic-dictionary')
 )
 Package translations Info: loading dictionary `translations-basic-dictionary' f
-or `english'. on input line 73.
-Package hyperref Info: Link coloring ON on input line 73.
+or `english'. on input line 85.
+Package hyperref Info: Link coloring ON on input line 85.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
@@ -574,17 +607,17 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 (/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count315
+\c@section@level=\count316
 )
-LaTeX Info: Redefining \ref on input line 73.
-LaTeX Info: Redefining \pageref on input line 73.
-LaTeX Info: Redefining \nameref on input line 73.
+LaTeX Info: Redefining \ref on input line 85.
+LaTeX Info: Redefining \pageref on input line 85.
+LaTeX Info: Redefining \nameref on input line 85.
 
 (./RobEngThesisTemplate.out) (./RobEngThesisTemplate.out)
 \@outlinefile=\write4
 \openout4 = `RobEngThesisTemplate.out'.
 
-Package backref Info: ** backref set up for natbib ** on input line 73.
+Package backref Info: ** backref set up for natbib ** on input line 85.
 Package epstopdf Info: Source file: <Figures//logo_unige.eps>
 (epstopdf)                    date: 2023-05-25 11:20:04
 (epstopdf)                    size: 29329 bytes
@@ -593,25 +626,25 @@ Package epstopdf Info: Source file: <Figures//logo_unige.eps>
 (epstopdf)                    size: 12471 bytes
 (epstopdf)             Command: <repstopdf --outfile=Figures//logo_unige-eps-co
 nverted-to.pdf Figures//logo_unige.eps>
-(epstopdf)             \includegraphics on input line 82.
+(epstopdf)             \includegraphics on input line 94.
 Package epstopdf Info: Output file is already uptodate.
 
 
 pdfTeX warning: /usr/bin/pdflatex (file ./Figures//logo_unige-eps-converted-to.
 pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
 
-<Figures//logo_unige-eps-converted-to.pdf, id=140, 191.71625pt x 163.61125pt>
+<Figures//logo_unige-eps-converted-to.pdf, id=136, 191.71625pt x 163.61125pt>
 File: Figures//logo_unige-eps-converted-to.pdf Graphic file (type pdf)
 <use Figures//logo_unige-eps-converted-to.pdf>
 Package pdftex.def Info: Figures//logo_unige-eps-converted-to.pdf  used on inpu
-t line 82.
+t line 94.
 (pdftex.def)             Requested size: 142.26378pt x 121.41493pt.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 82.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 94.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 82.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 94.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
@@ -668,6 +701,12 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 \openout2 = `Abstract/abstract.aux'.
 
  (./Abstract/abstract.tex
+Overfull \hbox (9.84871pt too wide) in paragraph at lines 12--19
+\OT1/qbk/m/n/12 this in-cred-i-ble force driv-ing in-no-va-tion, some tasks hav
+e proven
+ []
+
+
 Underfull \hbox (badness 10000) has occurred while \output is active
 []
  []
@@ -701,7 +740,7 @@ Chapter 1.
  been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.101 \include{Chapter1/chapter1}
+l.113 \include{Chapter1/chapter1}
                                   [1
 
 
@@ -715,7 +754,7 @@ Chapter 2.
  been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.102 \include{Chapter2/chapter2}
+l.114 \include{Chapter2/chapter2}
                                   [2
 
 
@@ -726,17 +765,185 @@ l.102 \include{Chapter2/chapter2}
 
  (./Chapter3/chapter3.tex
 Chapter 3.
-) [3
+<Chapter3/Figures//Real_system.jpg, id=243, 1284.8pt x 1052.93375pt>
+File: Chapter3/Figures//Real_system.jpg Graphic file (type jpg)
+<use Chapter3/Figures//Real_system.jpg>
+Package pdftex.def Info: Chapter3/Figures//Real_system.jpg  used on input line 
+21.
+(pdftex.def)             Requested size: 256.95544pt x 210.58302pt.
+<Chapter3/Figures//simplified_class_structure.png, id=244, 693.59125pt x 422.57
+875pt>
+File: Chapter3/Figures//simplified_class_structure.png Graphic file (type png)
+<use Chapter3/Figures//simplified_class_structure.png>
+Package pdftex.def Info: Chapter3/Figures//simplified_class_structure.png  used
+ on input line 32.
+(pdftex.def)             Requested size: 346.79477pt x 211.28885pt.
+[3
 
 
 
 
-]
+pdfTeX warning (ext4): destination with the same identifier (name{figure.3.1}) 
+has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.36 
+      <./Chapter3/Figures//Real_system.jpg>]
+Overfull \hbox (7.61067pt too wide) in paragraph at lines 55--56
+[][]\OT1/cmtt/m/n/12 initial_configurations_map_ []\OT1/qbk/m/n/12 and [][]\OT1
+/cmtt/m/n/12 TP_task_map_ []\OT1/qbk/m/n/12 to com-pute and store
+ []
+
+[4pdfTeX warning (ext4): destination with the same identifier (name{figure.3.2}
+) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.57 \end{enumerate}
+                     <./Chapter3/Figures//simplified_class_structure.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 61--64
+
+ []
+
+LaTeX Font Info:    Trying to load font information for OT1+qcr on input line 6
+6.
+(/usr/share/texmf/tex/latex/tex-gyre/ot1qcr.fd
+File: ot1qcr.fd 2009/09/25 v1.2 font definition file for OT1/qcr
+)
+Underfull \hbox (badness 10000) in paragraph at lines 65--109
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 65--109
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 65--109
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 65--109
+
+ []
+
+
+Overfull \hbox (3.4029pt too wide) in paragraph at lines 65--109
+[] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 65--109
+
+ []
+
+<Chapter3/Figures//Action_server_flowChart.png, id=262, 362.35374pt x 653.44125
+pt>
+File: Chapter3/Figures//Action_server_flowChart.png Graphic file (type png)
+<use Chapter3/Figures//Action_server_flowChart.png>
+Package pdftex.def Info: Chapter3/Figures//Action_server_flowChart.png  used on
+ input line 114.
+(pdftex.def)             Requested size: 181.17642pt x 326.71982pt.
+[5]
+Overfull \hbox (26.44284pt too wide) in paragraph at lines 118--122
+[]\OT1/qcr/m/n/12 void ex-e-cute(const std::shared[]ptr<MoveRobotTP> goal[]hand
+le);[]\OT1/qbk/m/n/12 , 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 125--195
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 125--195
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 125--195
+
+ []
+
+
+Overfull \hbox (8.15474pt too wide) in paragraph at lines 125--195
+\OT1/qbk/m/n/12 Secondly the set of func-tions for up-dat-ing the in-for-ma-tio
+n in [][]\OT1/cmtt/m/n/12 TP_task_map_
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 125--195
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 125--195
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 125--195
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 125--195
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 125--195
+
+ []
+
+
+Overfull \hbox (57.25891pt too wide) in paragraph at lines 125--195
+[] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 125--195
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 125--195
+
+ []
+
+[6pdfTeX warning (ext4): destination with the same identifier (name{figure.3.3}
+) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.195 \subsubsection
+                    {Reaching loop process flow} <./Chapter3/Figures//Action_se
+rver_flowChart.png>] [7]
+<Chapter3/Figures//Reaching_loop_flowChart.png, id=283, 563.10374pt x 1064.9787
+4pt>
+File: Chapter3/Figures//Reaching_loop_flowChart.png Graphic file (type png)
+<use Chapter3/Figures//Reaching_loop_flowChart.png>
+Package pdftex.def Info: Chapter3/Figures//Reaching_loop_flowChart.png  used on
+ input line 199.
+(pdftex.def)             Requested size: 225.2375pt x 425.98395pt.
+ [8]
+Overfull \hbox (3.01886pt too wide) in paragraph at lines 204--210
+[]\OT1/qcr/m/n/12 void Run-Car-te-sian-Reach-in-gLoop(std::string goal[]frame, 
+bool
+ []
+
+[9pdfTeX warning (ext4): destination with the same identifier (name{figure.3.4}
+) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.210 
+       <./Chapter3/Figures//Reaching_loop_flowChart.png>]) [10]
 \openout2 = `Chapter4/chapter4.aux'.
 
- (./Chapter4/chapter4.tex
+
+(./Chapter4/chapter4.tex
 Chapter 4.
-) [4
+) [11
 
 
 
@@ -746,7 +953,7 @@ Chapter 4.
 
  (./Chapter5/chapter5.tex
 Chapter 5.
-) [5
+) [12
 
 
 
@@ -756,7 +963,7 @@ Chapter 5.
 
  (./Conclusions/conclusions.tex
 Chapter 6.
-) [6
+) [13
 
 
 
@@ -766,7 +973,7 @@ Chapter 6.
 
  (./Appendix1/appendix1.tex
 Appendix A.
-) [7
+) [14
 
 
 
@@ -775,7 +982,7 @@ Appendix A.
 \tf@brf=\write7
 \openout7 = `RobEngThesisTemplate.brf'.
 
-) [8
+) [15
 
 
 \FN@pp@footnotehinttrue 
@@ -787,18 +994,18 @@ Appendix A.
 (./Chapter3/chapter3.aux) (./Chapter4/chapter4.aux) (./Chapter5/chapter5.aux)
 (./Conclusions/conclusions.aux) (./Appendix1/appendix1.aux))
 Package rerunfilecheck Info: File `RobEngThesisTemplate.out' has not changed.
-(rerunfilecheck)             Checksum: 2D4AB5E91CF464B058CF0C6031AC117E;5652.
+(rerunfilecheck)             Checksum: B1353B77B6E2B4CBD4BF1A7A30080073;5644.
 Package rerunfilecheck Info: File `RobEngThesisTemplate.brf' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 17138 strings out of 480171
- 328709 string characters out of 5894488
- 642249 words of memory out of 5000000
- 34676 multiletter control sequences out of 15000+600000
- 484539 words of font info for 83 fonts, out of 8000000 for 9000
+ 17904 strings out of 480171
+ 339791 string characters out of 5894488
+ 657412 words of memory out of 5000000
+ 35398 multiletter control sequences out of 15000+600000
+ 520072 words of font info for 89 fonts, out of 8000000 for 9000
  62 hyphenation exceptions out of 8191
- 125i,11n,120p,479b,881s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 125i,13n,120p,479b,929s stack positions out of 5000i,500n,10000p,200000b,80000s
 pdfTeX warning (dest): name{francesco.giovinazzo@edu.unige.it} has been refer
 enced but does not exist, replaced by a fixed one
 
@@ -817,15 +1024,18 @@ pdfTeX warning (dest): name{http://www.dibris.unige.it} has been referenced but
 pdfTeX warning (dest): name{mailto:name@unige.it} has been referenced but does 
 not exist, replaced by a fixed one
 
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/
-share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share
-/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texliv
-e/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf
--dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on RobEngThesisTemplate.pdf (17 pages, 98655 bytes).
+{/usr/share/texmf/fonts/enc/dvips/tex-gyre/q-rm-sc.enc}{/usr/share/texmf/fonts/
+enc/dvips/tex-gyre/q-rmm.enc}{/usr/share/texmf/fonts/enc/dvips/tex-gyre/q-rm.en
+c}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share
+/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/share/texmf
+/fonts/type1/public/tex-gyre/qbkb.pfb></usr/share/texmf/fonts/type1/public/tex-
+gyre/qbkr.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/qbkri.pfb></usr/sha
+re/texmf/fonts/type1/public/tex-gyre/qcrr.pfb>
+Output written on RobEngThesisTemplate.pdf (24 pages, 405377 bytes).
 PDF statistics:
- 307 PDF objects out of 1000 (max. 8388607)
- 274 compressed objects within 3 object streams
- 59 named destinations out of 1000 (max. 500000)
- 278 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 377 PDF objects out of 1000 (max. 8388607)
+ 324 compressed objects within 4 object streams
+ 75 named destinations out of 1000 (max. 500000)
+ 290 words of extra memory for PDF output out of 10000 (max. 10000000)
 
