@@ -5,30 +5,41 @@
 
 \chapter{State of the art}
 \label{chap:second}
+\graphicspath{{Chapter2/Figures/PNG/}{Chapter2/Figures/JPG/}{Chapter2/Figures/JPEG/}{Chapter2/Figures/}}
+
+In this chapter I will explore the literature present on the topic of: \textit{Obstacle avoidance} since is one of the focus of my thesis, and a key aspect of Human-Robot interaction. And also on the topic of \textit{High redundancy robot}, I want to find if someone else has done something with a structure similar to the one of the one of the \textbf{SestoSenso project}. 
+
+\section{Obstacle Avoidance}
+Obstacle avoidance is one of the most impact full challenges to overcome when it comes to \textit{Human-Robot interaction}. It requires the robot to perceive the environment in some way, and use the information to modify its behavior to accomplish a goal.
+ 
+There are two main field of \textit{obstacle avoidance} that we can recognize that are based on the type of robots we are dealing with:
+\begin{itemize}
+	\item obstacle avoidance for mobile robots.
+	\item obstacle avoidance for robotic manipulator.
+\end{itemize} 
+I explored some of the methods used for the second case, since the first is outside the scope of this thesis.
+\subsection{Camera based methods}
+As reported in \cite{VISIONBASED_OBREC}, we can divide the camera based methods in two main categories:
+\begin{itemize}
+	\item Monocular vision: use a single camera mounted on top of the robot.
+	\item Stereo vision: use two synchronized cameras.
+\end{itemize}
+% MONOCULAR CAMERA
+The basic approach of the \textit{visual servoing} with monocular camera can be represented in the following scheme:
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=5.0]{Direct-visual-servoing-scheme.jpeg}
+	\caption{Direct visual servoing scheme}
+	\label{fig:DirectVisualScheme}
+\end{figure}
+In the work of \cite{OBJREC_ARM_MONOCAM} we can see how a monocular system is used with a \textit{deep Region based Convolutional Neural Network} to recognize objects in the field of view of the robot and decide if said object is a target or not.
+This first step is than followed by a \textit{kNN} and the \textit{Fuzzy interference system} to localize 2D position of the targets, the last coordinate is found by only shifting the end-effector a few millimeters towards the x-axis. 
+Another work worth mentioning, that is also use to do \textit{obstacle avoidance} is the one done by \cite{STRAWBERRY_RECOGNITION}.
 
 
-\section{Industrial robotics}
-\subsection{Early days}
-% descrizione dei primi sistemi robotici: super veloce
-\subsection{Modern approach}
-% descrizione del mondo della robotica odierna in termini di:
-%	Controlli: tipologie di controlli
-%	Problematiche: 
 
-\section{Collaborative robotics}
+% STEREO VISION
 
-\subsection{Definitions}
-% descrizione di cosa è la robotica collaborativa e del perchè viene utilizzata
-\subsection{Objectives and challenges}
-% cosa vuole fare la robotica collaborativa. Quali sono i suoi obiettivi e come si
-% collegano alla mia tesi
+% NN IMAGE RECOGNITION
 
-\section{High DOF system}
-\subsection{System types}
-% robot umanoidi
-% robot con piattaforma
-% snake like robot
-\subsection{Macro/Micro configuration}
-% descrizione della configurazioen macro micro
-%	differenze/similitudini con il sistema che sto usando io
-%	differeze di obiettivi con la mia tesi rispetto ai macro/micro attuali
+\section{High DoF architecture}
