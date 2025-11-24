@@ -1,4 +1,4 @@
-\begin{thebibliography}{2}
+\begin{thebibliography}{10}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
 \bibitem[{Badrloo {\em et~al.\/}(2022)Badrloo, Varshosaz, Pirasteh \&
@@ -7,11 +7,55 @@
   obstacle detection methods for the safe navigation of unmanned vehicles: A
   review. {\em Remote Sensing\/}, {\bf 14}.
 
+\bibitem[{Crespi {\em et~al.\/}(2005)Crespi, Badertscher, Guignard \&
+  Ijspeert}]{crespi2005amphibot}
+{\sc Crespi, A., Badertscher, A., Guignard, A. \& Ijspeert, A.J.} (2005).
+  Amphibot i: an amphibious snake-like robot. {\em Robotics and Autonomous
+  Systems\/}, {\bf 50}, 163--175.
+
+\bibitem[{Hirose \& Yamada(2009)}]{hirose2009snake}
+{\sc Hirose, S. \& Yamada, H.} (2009). Snake-like robots [tutorial]. {\em IEEE
+  Robotics \& Automation Magazine\/}, {\bf 16}, 88--98.
+
+\bibitem[{Hutchinson {\em et~al.\/}(2002)Hutchinson, Hager \&
+  Corke}]{hutchinson2002tutorial}
+{\sc Hutchinson, S., Hager, G.D. \& Corke, P.I.} (2002). A tutorial on visual
+  servo control. {\em IEEE transactions on robotics and automation\/}, {\bf
+  12}, 651--670.
+
+\bibitem[{Le~Boudec {\em et~al.\/}(2006)Le~Boudec, Saad \&
+  Nerguizian}]{highDof_planar_robot_OBAV}
+{\sc Le~Boudec, B., Saad, M. \& Nerguizian, V.} (2006). Modeling and adaptive
+  control of redundant robots. {\em Mathematics and Computers in Simulation\/},
+  {\bf 71}, 395--403.
+
+\bibitem[{Maciejewski~AA(1985)}]{highDof_planar_robot_OBAV_2}
+{\sc Maciejewski~AA, K.C.} (1985). Obstacle avoidance for kinematically
+  redundant manipulators in dynamically varying environments. {\em The
+  International Journal of Robotics Research\/}, 109--117.
+
+\bibitem[{Muslikhin {\em et~al.\/}(2020)Muslikhin, Horng, Yang \&
+  Wang}]{OBJREC_ARM_MONOCAM}
+{\sc Muslikhin, Horng, J.R., Yang, S.Y. \& Wang, M.S.} (2020). Object
+  localization and depth estimation for eye-in-hand manipulator using mono
+  camera. {\em IEEE Access\/}, {\bf 8}, 121765--121779.
+
+\bibitem[{Smith {\em et~al.\/}(2012)Smith, Karayiannidis, Nalpantidis, Gratal,
+  Qi, Dimarogonas \& Kragic}]{DUAL_ARM_SURVEY}
+{\sc Smith, C., Karayiannidis, Y., Nalpantidis, L., Gratal, X., Qi, P.,
+  Dimarogonas, D.V. \& Kragic, D.} (2012). Dual arm manipulation—a survey.
+  {\em Robotics and Autonomous systems\/}, {\bf 60}, 1340--1353.
+
 \bibitem[{Weidemann {\em et~al.\/}(2023)Weidemann, Mandischer, van Kerkom,
   Corves, Hüsing, Kraus \& Garus}]{COLLABORATIVEROBreview2}
 {\sc Weidemann, C., Mandischer, N., van Kerkom, F., Corves, B., Hüsing, M.,
   Kraus, T. \& Garus, C.} (2023). Literature review on recent trends and
   perspectives of collaborative robotics in work 4.0. {\em Robotics\/}, {\bf
   12}.
+
+\bibitem[{Zlajpah(1997)}]{zlajpah1997control}
+{\sc Zlajpah, L.} (1997). Control of redundant robots in presence of external
+  forces. In {\em Proceedings of IEEE International Conference on Intelligent
+  Engineering Systems\/}, 95--100, IEEE.
 
 \end{thebibliography}

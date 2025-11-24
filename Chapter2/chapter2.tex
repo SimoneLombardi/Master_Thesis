@@ -34,7 +34,7 @@ The basic approach of the \textit{visual servoing} with monocular camera can be 
 \end{figure}
 In the work of \cite{OBJREC_ARM_MONOCAM} we can see how a monocular system is used with a \textit{deep Region based Convolutional Neural Network} to recognize objects in the field of view of the robot and decide if said object is a target or not.
 This first step is than followed by a \textit{kNN} and the \textit{Fuzzy interference system} to localize 2D position of the targets, the last coordinate is found by only shifting the end-effector a few millimeters towards the x-axis. 
-Another work worth mentioning, that is also use to do \textit{obstacle avoidance} is the one done by \cite{STRAWBERRY_RECOGNITION}.
+
 
 
 
@@ -43,3 +43,79 @@ Another work worth mentioning, that is also use to do \textit{obstacle avoidance
 % NN IMAGE RECOGNITION
 
 \section{High DoF architecture}
+In this section I want to explore some of the relevant high-dof architecture found in the literature.
+\subsection{Dual-arm systems}
+In recent years there has been a trend to use these dual-arm systems for HRC(Human Robot Collaboration), but also for replacing human workers without the need to redesign the work cell.
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=1.5]{SDA10_500_dualArmManipulator.jpg}
+	\caption{Dual-arm industrial robot example, SDA10}
+	\label{fig:DualArmRobot}
+\end{figure} 
+As is stated in the survey of \cite{DUAL_ARM_SURVEY} the strengths of the dual arm architecture are:
+\begin{itemize}
+	\item \textit{Similarty to operator}: useful both in the case of HRC and to substitute the human worker with minimal effort.
+	\item \textit{Flexibility and stiffness}: Combining the stiffness of closed chain manipulation, with the flexibility of a serial link.
+	\item \textit{Manipulability}: High number of DoFs allows for complex motion tasks.
+	\item \textit{Cognitive motivation}: The similar charcteristics of the kinematic chain is belived to be helpful in HRC context.
+\end{itemize} 
+In most cases for these architectures the \textit{obstacle avoidance} is computed for the \textit{navigation} if the robot has a movable base.
+Moreover the interaction with the environment is performed with the use of \textit{visual servoing}, witch was firstly discussed by \cite{hutchinson2002tutorial}, position based and \textit{hybrid} methods, combining visual and position information.
+\subsection{Snake-like robot}
+A completely different class of robot is represented by the "\textit{snake like}" robot.
+As shown in the work of \cite{hirose2009snake} and \cite{crespi2005amphibot} these types of robot are biologically inspired, and they can produce a forward motion from an undulatory one. Reproducing the movement patterns of snakes.
+\begin{figure}
+	\centering
+	\includegraphics[scale=1.5]{anphiBot_snakelike.jpg}
+	\caption{snake like robot from \cite{crespi2005amphibot}}
+	\label{fig:snakeLikeRobot}
+\end{figure} 
+The potential of these robot that are currently being explored are for navigation in tight spaces, to be applied to endoscopes for examples. In addition the interest lies in the flexibility of a "\textit{snake like}" body, since it could be used to move, climb and grasp if needed.
+\\
+\noindent
+\subsection{Planar robot}
+For more industrial application, I reviewed the work of \cite{highDof_planar_robot_OBAV} and \cite{highDof_planar_robot_OBAV_2}. These work take into consideration high-dof planar manipulator, and they also propose two approaches to do \textit{Obstacle avoidance} with their respective architecture.
+In the case of  \cite{highDof_planar_robot_OBAV} the paper uses the \textit{ANAT} robot, presented in the figure below.
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.45]{ANAT-robot-arm.jpeg}
+	\caption{ANAT robot arm}
+	\label{fig:AnatRobot}
+\end{figure}
+\noindent
+This is a 7Dof robot, comprised of 1 \textit{prismatic} joint to control the $z$ cordinate, followed by 3 parallel \textit{revolute} joints and a 3 Dof \textit{wrist}. \\
+\noindent
+The proposed control algorithm is based on the work of \cite{zlajpah1997control} for the computation of the generalized inverse of the jacobian matrix. In addition, the obstacles are modeled as hyper planes to reduce computational costs and the control law is applied to the joints in order.
+In this paper the proposed method is applied at the \textit{Dynamic} level, the objective function for the \textit{Obstacle avoidance} is computed as follows:
+\begin{equation}
+	V_1(q)=
+	\sum_{i=1}^{m}\sum_{j=2}^{n}
+	\frac{\alpha_{ij}}{
+		-(\frac{x_j - x_{ci}}{r_i + r_{si}})^2
+		-(\frac{y_j - y_{ci}}{r_i + r_{si}})^2
+		-(\frac{z_j}{h_i + h_{si}})^2
+		+1 \;
+		\vphantom{\Bigl( \frac{A}{B} \Bigr)}
+	}
+	\label{equat:Obstacle Avoidance ANAT robot}
+\end{equation}
+where:
+\begin{itemize}
+	\item \textit{m},\textit{n}: respectively the number of obstacles, and the number of points placed on the robot.
+	\item $\alpha_{ij}$ : weight of the constraint for joint \textit{i} from obstacle \textit{j}
+	\item $(x_j,y_j,z_j)$ : coordinates of joint \textit{j} in the \textit{base frame}
+	\item $(x_{ci},y_{ci},r_i,h_i)$ : coordinates of cylinder \textit{i} in the \textit{base frame}
+	\item $(r_{si},h_{si})$ : safety distances in \textit{radius} and  \textit{height} from cylinder \textit{j}
+\end{itemize}
+The approach generates a \textit{repulsive force} that becomes stronger as the robot approaches an obstacle.
+While \textit{potential-field techniques} are a standard choice for \textit{dynamic obstacle-avoidance control}, I could not adopt them in this work because the robots' \textit{dynamic controllers} were locked behind the manufacturer's proprietary software, preventing access to the required control layer.\\
+\noindent
+In the work of \cite{highDof_planar_robot_OBAV_2} instead, the proposed approach is purely \textit{Kinematic}. Based on a purely planar robot of $5$ Dofs, controlled by $5$ parallel \textit{revolute} joints.
+
+
+
+
+
+
+
+
