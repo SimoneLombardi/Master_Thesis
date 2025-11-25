@@ -3,29 +3,32 @@
 \contentsline {section}{\numberline {1.1}Research problem and objective}{2}{section.1.1}%
 \contentsline {section}{\numberline {1.2}Thesis structure}{2}{section.1.2}%
 \contentsline {chapter}{\numberline {2}State of the art}{3}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Obstacle Avoidance}{3}{section.2.1}%
+\contentsline {section}{\numberline {2.1}Environment perception and awareness}{3}{section.2.1}%
 \contentsline {subsection}{\numberline {2.1.1}Camera based methods}{3}{subsection.2.1.1}%
-\contentsline {section}{\numberline {2.2}High DoF architecture}{4}{section.2.2}%
-\contentsline {subsection}{\numberline {2.2.1}Dual-arm systems}{4}{subsection.2.2.1}%
-\contentsline {subsection}{\numberline {2.2.2}Snake-like robot}{5}{subsection.2.2.2}%
-\contentsline {subsection}{\numberline {2.2.3}Planar robot}{6}{subsection.2.2.3}%
-\contentsline {chapter}{\numberline {3}Architecture implementation}{8}{chapter.3}%
-\contentsline {section}{\numberline {3.1}System Description}{8}{section.3.1}%
-\contentsline {section}{\numberline {3.2}JointRobotTP Class Implementation}{9}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}Action server}{10}{subsection.3.2.1}%
-\contentsline {subsubsection}{\numberline {3.2.1.1}Action Server process flow}{11}{subsubsection.3.2.1.1}%
-\contentsline {subsection}{\numberline {3.2.2}Task Priority implementation}{11}{subsection.3.2.2}%
-\contentsline {subsubsection}{\numberline {3.2.2.1}Reaching loop process flow}{13}{subsubsection.3.2.2.1}%
-\contentsline {chapter}{\numberline {4}Methodology}{16}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Reaching Loop Description}{16}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Goal broadcasting}{16}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Task Priority}{16}{section.4.3}%
-\contentsline {subsection}{\numberline {4.3.1}Task Description}{16}{subsection.4.3.1}%
-\contentsline {subsubsection}{\numberline {4.3.1.1}Joint Limits}{16}{subsubsection.4.3.1.1}%
-\contentsline {subsubsection}{\numberline {4.3.1.2}Obstacle Avoidance}{16}{subsubsection.4.3.1.2}%
-\contentsline {subsubsection}{\numberline {4.3.1.3}End Effector Target}{16}{subsubsection.4.3.1.3}%
-\contentsline {chapter}{\numberline {5}Experiments}{17}{chapter.5}%
-\contentsline {section}{\numberline {5.1}}{17}{section.5.1}%
-\contentsline {chapter}{\numberline {6}Conclusions}{18}{chapter.6}%
-\contentsline {chapter}{\numberline {A}Extra}{19}{appendix.A}%
-\contentsline {chapter}{References}{21}{appendix*.3}%
+\contentsline {subsection}{\numberline {2.1.2}Sensor based methods}{5}{subsection.2.1.2}%
+\contentsline {section}{\numberline {2.2}Obstacle avoidance}{6}{section.2.2}%
+\contentsline {section}{\numberline {2.3}High DoF architecture}{6}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Dual-arm systems}{6}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.2}Snake-like robot}{7}{subsection.2.3.2}%
+\contentsline {subsection}{\numberline {2.3.3}Planar robot}{7}{subsection.2.3.3}%
+\contentsline {subsection}{\numberline {2.3.4}Macro Micro configuration}{9}{subsection.2.3.4}%
+\contentsline {chapter}{\numberline {3}Architecture implementation}{13}{chapter.3}%
+\contentsline {section}{\numberline {3.1}System Description}{13}{section.3.1}%
+\contentsline {section}{\numberline {3.2}JointRobotTP Class Implementation}{14}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Action server}{15}{subsection.3.2.1}%
+\contentsline {subsubsection}{\numberline {3.2.1.1}Action Server process flow}{16}{subsubsection.3.2.1.1}%
+\contentsline {subsection}{\numberline {3.2.2}Task Priority implementation}{16}{subsection.3.2.2}%
+\contentsline {subsubsection}{\numberline {3.2.2.1}Reaching loop process flow}{18}{subsubsection.3.2.2.1}%
+\contentsline {chapter}{\numberline {4}Methodology}{21}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Reaching Loop Description}{21}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Goal broadcasting}{21}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Task Priority}{21}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Task Description}{21}{subsection.4.3.1}%
+\contentsline {subsubsection}{\numberline {4.3.1.1}Joint Limits}{21}{subsubsection.4.3.1.1}%
+\contentsline {subsubsection}{\numberline {4.3.1.2}Obstacle Avoidance}{21}{subsubsection.4.3.1.2}%
+\contentsline {subsubsection}{\numberline {4.3.1.3}End Effector Target}{21}{subsubsection.4.3.1.3}%
+\contentsline {chapter}{\numberline {5}Experiments}{22}{chapter.5}%
+\contentsline {section}{\numberline {5.1}}{22}{section.5.1}%
+\contentsline {chapter}{\numberline {6}Conclusions}{23}{chapter.6}%
+\contentsline {chapter}{\numberline {A}Extra}{24}{appendix.A}%
+\contentsline {chapter}{References}{26}{appendix*.3}%

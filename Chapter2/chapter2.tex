@@ -2,22 +2,17 @@
 %2345678901234567890123456789012345678901234567890123456789012345678901234567890
 %        1         2         3         4         5         6         7         8
 % THESIS CHAPTER
-
 \chapter{State of the art}
 \label{chap:second}
 \graphicspath{{Chapter2/Figures/PNG/}{Chapter2/Figures/JPG/}{Chapter2/Figures/JPEG/}{Chapter2/Figures/}}
 
-In this chapter I will explore the literature present on the topic of: \textit{Obstacle avoidance} since is one of the focus of my thesis, and a key aspect of Human-Robot interaction. And also on the topic of \textit{High redundancy robot}, I want to find if someone else has done something with a structure similar to the one of the one of the \textbf{SestoSenso project}. 
+In this chapter I will explore the literature present on the topics of: \textit{obstacle perception} and \textit{avoidance} since is one of the focus of my thesis, and a key aspect of Human-Robot interaction.\\
+\noindent
+And also on the topic of \textit{High redundancy robot}, to explore possible way to deal with a structure  link the one of:\textbf{SestoSenso project}. 
 
-\section{Obstacle Avoidance}
-Obstacle avoidance is one of the most impact full challenges to overcome when it comes to \textit{Human-Robot interaction}. It requires the robot to perceive the environment in some way, and use the information to modify its behavior to accomplish a goal.
- 
-There are two main field of \textit{obstacle avoidance} that we can recognize that are based on the type of robots we are dealing with:
-\begin{itemize}
-	\item obstacle avoidance for mobile robots.
-	\item obstacle avoidance for robotic manipulator.
-\end{itemize} 
-I explored some of the methods used for the second case, since the first is outside the scope of this thesis.
+\section{Environment perception and awareness}
+Environment perception is one of the biggest different when we move from the classical use of robotic systems in the industry, to a more modern framework geared towards HRI.
+
 \subsection{Camera based methods}
 As reported in \cite{VISIONBASED_OBREC}, we can divide the camera based methods in two main categories:
 \begin{itemize}
@@ -30,17 +25,51 @@ The basic approach of the \textit{visual servoing} with monocular camera can be 
 	\centering
 	\includegraphics[scale=5.0]{Direct-visual-servoing-scheme.jpeg}
 	\caption{Direct visual servoing scheme}
-	\label{fig:DirectVisualScheme}
+	\label{fig:DirectVisualSchema}
 \end{figure}
 In the work of \cite{OBJREC_ARM_MONOCAM} we can see how a monocular system is used with a \textit{deep Region based Convolutional Neural Network} to recognize objects in the field of view of the robot and decide if said object is a target or not.
 This first step is than followed by a \textit{kNN} and the \textit{Fuzzy interference system} to localize 2D position of the targets, the last coordinate is found by only shifting the end-effector a few millimeters towards the x-axis. 
 
-
-
-
 % STEREO VISION
+Following and improving the capabilities of a singular camera system there is the use of: stereo vision.
+In the work of \cite{huh2008stereo} we can see how a stereo vision based system is used to perform obstacle recognition on a autonomous driving vehicle.
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.4]{stereoVision_schema.png}
+	\caption{Vision coordinate sistem}
+	\label{fig:StereoVisionSchema}
+\end{figure}
+Stereo vision works by combining the information of the two cameras, that are placed in a known position to extract information of the third dimension of objects in the images.
+The image based methods in general appear to have some key characteristics that make them impractical for effective \textit{obstacle perception} in an environment such as the one of the \textbf{SestoSenso project}.
+\begin{itemize}
+	\item \textbf{Privacy}: since the robot could work in close proximity with humans the problem of privacy of the workers has been taken into consideration.
+	\item \textbf{Field of view}: The camera does not allow for $360°$ of perception around the robot.
+	\item \textbf{Environment independence}: Camera are susceptible to change in the environment lighting, and need to be re-calibrated if the robot changes location.
+	\item \textbf{Computational cost}: The computational cost of image recognition for dynamic environment is generally high, which increases the requirements of the systems.
+\end{itemize}
 
-% NN IMAGE RECOGNITION
+\subsection{Sensor based methods}
+In the work of \cite{zauner2025workspace} three different type of spatial perception sensor are evaluated to create point cloud of a robot's workspace. To perform safe navigation and avoid collisions.
+the sensor used are:
+\begin{itemize}
+	\item \textbf{Time Of Flight}: \textit{Kinect V2} and \textit{Omron OS32C Lidar}
+	\item \textbf{Active Stereoscopy}: \textit{Intel RealSense D435}
+\end{itemize}
+The two time of flight sensor work with a infrared light and a laser respectively and the measure the distance from an object by timing the time delta at the reception of the light impulse.
+The Intel sensor instead is based on the \textit{stereo vision} principle, but it uses simpler cameras aided by a infrared projector that imposes a grid of points onto the surfaces.
+\\
+\noindent
+The sensors are mounted on the \textit{end effector} of the manipulator and panned over the workspace to record a sample of the environment, the resulting pointcloud is than processed to reduce the number of points and to extract feature of the environment.
+\\
+Aside from the quality of the sensor itself, the resulting disparities between them is the amount of processing to be done on the point cloud to extract features of the environment. 
+But they are viable to overcome the problems found with camera based methods, mentioned in the previous section.
+
+\section{Obstacle avoidance}
+Sensing the environment, especially in the case of HRC, is fundamental to do \textit{obstacle avoidance}.
+In the case of a manipulator arm we have to also include the $z$ axis, since we are operating in 3d space.
+Looking at the work of \cite{zhang2003obstacle} we can see how we can compute a safe trajectory for a \textit{SIR-1} robot manipulator using cubic polynomials for a path with intermediate points.
+
+%%%% CONTINUE
 
 \section{High DoF architecture}
 In this section I want to explore some of the relevant high-dof architecture found in the literature.
@@ -109,13 +138,46 @@ where:
 \end{itemize}
 The approach generates a \textit{repulsive force} that becomes stronger as the robot approaches an obstacle.
 While \textit{potential-field techniques} are a standard choice for \textit{dynamic obstacle-avoidance control}, I could not adopt them in this work because the robots' \textit{dynamic controllers} were locked behind the manufacturer's proprietary software, preventing access to the required control layer.\\
+
+
+\subsection{Macro Micro configuration}
+The last interesting configuration I want to talk about is referred in the literature as \textit{Macro-Micro Robot}. Firstly proposed by \cite{sharon1984enhancement}, the objectives of the proposed architecture were to resolve the opposing problems of \textit{speed} and \textit{tracking precision} and also to correct the errors in \textit{end point measurement}, given by bending in the links and errors in the measurement errors in the encoders.\\
+
+The uses and capabilities of this configuration are presented in the work of \cite{MacroMicro_sampling}, following is a photo of the robot they used.
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.45]{macro_micro_example.png}
+	\caption{Macro-Micro robot}
+	\label{fig:MacroMicroRobot}
+\end{figure}
+The robot is composed of a $6$ Dof \textit{Macro} manipulator and a $3$ Dof \textit{Micro}. The robot is equipped to perform polishing tasks on complex surfaces. \\
 \noindent
-In the work of \cite{highDof_planar_robot_OBAV_2} instead, the proposed approach is purely \textit{Kinematic}. Based on a purely planar robot of $5$ Dofs, controlled by $5$ parallel \textit{revolute} joints.
-
-
-
-
-
-
+The paper focus is to prove the effectivenss of a \textit{sampling based} motion assignment(MA) strategy with multi performance optimization. Since the robot has a total of $9$ degree of freedom there is space for optimization in the robot movement.
+%The cost function to be minimized is expressed here:
+%\begin{equation}
+%	f_c(q) = \sum_{i=1}^{l}(w_i \cdot RPI_{c,i}(q))
+%	\label{equat:MacroMicro_minimz_fnc} 
+%\end{equation}
+The configuration optimization function is to be minimized for each sampling point of the chosen trajectory, and for each point the performance index and constraint ($RPI_{c,i}(q)$) must be computed. 
+Classic \textit{gradient based} methods can easly stop at local minima since the function is not convex, the proposed MA aims to optimize the movement of macro and micro manipulator, avoiding the costly and error-prone computation.
+The system on witch I worked on this thesis is of the same general structure, but the two robot are considered as a whole. Also in my work I am not computing any offline trajectory as in the case of this paper.\\
+\noindent
+Another application of the \textit{Macro-Micro} configuration is in the field of medical robotics, in the work of \cite{MacroMicro_surical}. In this paper the proposed architecture is composed of a \textit{KUKA LBR IIWA} robotic arm with $7$ Dof, and a \textit{Micro-IGES} surgical robotic instrument with $7$ Dof($2$ Dof are composed of the jaws of the instrument).
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.45]{MacroMicro_surgical.png}
+	\caption{Macro-Micro surgical robot}
+	\label{fig:MacroMicroSurgicalRobot}
+\end{figure}
+\noindent
+In this paper the objective was to demonstrate that the overall performance of the system can be improved by defining preoperatively the best initial configuration of the surgical instrument in terms of \textit{roll}, \textit{pitch} and \textit{yaw} with respect to the macro serial-link manipulator to achive maximum accuracy in performing specified tasks.
+The paper highlights how the macro micro manipulator configuration allows for completion of multiple-objective tasks, such as:
+\begin{itemize}
+	\item \textit{Guarantee Remote Center of Motion}: The RCM(which for surgical application is usually the incision site) has to remain stationary.
+	\item \textit{Desired path tracking}
+	\item \textit{Assembly errors compensation}
+\end{itemize} 
+The method used in this paper starts with a \textit{Genetic algorithm} used to generate possible configuration, that are than evaluated through \textit{Hierarchical Quadratic Programming}.
+The solution of the procedure finds the best intial configuration based on a fitness function and resiliance to errors.
 
 
