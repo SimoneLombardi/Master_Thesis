@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2025.11.11)  25 NOV 2025 17:36
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2025.11.11)  27 NOV 2025 11:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -535,8 +535,56 @@ Package: makecell 2009/08/03 V0.1e Managing of Tab Column Heads and Cells
 \c@nlinenum=\count309
 \TeXr@lab=\toks29
 )
+(/usr/share/texlive/texmf-dist/tex/latex/leftindex/leftindex.sty
+(/usr/share/texlive/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
+Package: xparse 2022-01-12 L3 Experimental document command parser
+)
+(/usr/share/texlive/texmf-dist/tex/latex/mathtools/mathtools.sty
+Package: mathtools 2021/02/02 v1.28 mathematical typesetting tools
+
+(/usr/share/texlive/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count310
+\calc@Bcount=\count311
+\calc@Adimen=\dimen180
+\calc@Bdimen=\dimen181
+\calc@Askip=\skip61
+\calc@Bskip=\skip62
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count312
+\calc@Cskip=\skip63
+)
+(/usr/share/texlive/texmf-dist/tex/latex/mathtools/mhsetup.sty
+Package: mhsetup 2021/03/18 v1.4 programming setup (MH)
+)
+\g_MT_multlinerow_int=\count313
+\l_MT_multwidth_dim=\dimen182
+\origjot=\skip64
+\l_MT_shortvdotswithinadjustabove_dim=\dimen183
+\l_MT_shortvdotswithinadjustbelow_dim=\dimen184
+\l_MT_above_intertext_sep=\dimen185
+\l_MT_below_intertext_sep=\dimen186
+\l_MT_above_shortintertext_sep=\dimen187
+\l_MT_below_shortintertext_sep=\dimen188
+\xmathstrut@box=\box65
+\xmathstrut@dim=\dimen189
+)
+Package: leftindex 2020/08/25 v0.1beta 
+\l__leftindex_phantom_height_dim=\dimen190
+\l__leftindex_slanting_phantom_with_subscript_box=\box66
+\l__leftindex_slanting_phantom_with_subscript_dim=\dimen191
+\l__leftindex_slanting_phantom_with_subscript_without_indentation_box=\box67
+\l__leftindex_slanting_phantom_with_subscript_without_indentation_dim=\dimen192
+
+\l__leftindex_indentation_of_slanting_phantom_subscript=\dimen193
+\l__leftindex_superscript_temp_box=\box68
+\l__leftindex_width_of_superscript_dim=\dimen194
+\l__leftindex_subscript_temp_box=\box69
+\l__leftindex_width_of_subscript_dim=\dimen195
+)
 LaTeX Font Info:    Trying to load font information for OT1+qbk on input line 8
-5.
+6.
 
 (/usr/share/texmf/tex/latex/tex-gyre/ot1qbk.fd
 File: ot1qbk.fd 2009/09/25 v1.2 font definition file for OT1/qbk
@@ -548,37 +596,37 @@ File: ot1qbk.fd 2009/09/25 v1.2 font definition file for OT1/qbk
 (./Conclusions/conclusions.aux) (./Appendix1/appendix1.aux))
 \openout1 = `RobEngThesisTemplate.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 85.
-LaTeX Font Info:    ... okay on input line 85.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 85.
-LaTeX Font Info:    ... okay on input line 85.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 85.
-LaTeX Font Info:    ... okay on input line 85.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 85.
-LaTeX Font Info:    ... okay on input line 85.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 85.
-LaTeX Font Info:    ... okay on input line 85.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 85.
-LaTeX Font Info:    ... okay on input line 85.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 85.
-LaTeX Font Info:    ... okay on input line 85.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 85.
-LaTeX Font Info:    ... okay on input line 85.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 85.
-LaTeX Font Info:    ... okay on input line 85.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 86.
+LaTeX Font Info:    ... okay on input line 86.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 86.
+LaTeX Font Info:    ... okay on input line 86.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 86.
+LaTeX Font Info:    ... okay on input line 86.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 86.
+LaTeX Font Info:    ... okay on input line 86.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 86.
+LaTeX Font Info:    ... okay on input line 86.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 86.
+LaTeX Font Info:    ... okay on input line 86.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 86.
+LaTeX Font Info:    ... okay on input line 86.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 86.
+LaTeX Font Info:    ... okay on input line 86.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 86.
+LaTeX Font Info:    ... okay on input line 86.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count310
-\scratchdimen=\dimen180
-\scratchbox=\box65
-\nofMPsegments=\count311
-\nofMParguments=\count312
+\scratchcounter=\count314
+\scratchdimen=\dimen196
+\scratchbox=\box70
+\nofMPsegments=\count315
+\nofMParguments=\count316
 \everyMPshowfont=\toks30
-\MPscratchCnt=\count313
-\MPscratchDim=\dimen181
-\MPnumerator=\count314
-\makeMPintoPDFobject=\count315
+\MPscratchCnt=\count317
+\MPscratchDim=\dimen197
+\MPnumerator=\count318
+\makeMPintoPDFobject=\count319
 \everyMPtoPDFconversion=\toks31
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -595,8 +643,8 @@ File: translations-basic-dictionary-english.trsl (english translation file `tra
 nslations-basic-dictionary')
 )
 Package translations Info: loading dictionary `translations-basic-dictionary' f
-or `english'. on input line 85.
-Package hyperref Info: Link coloring ON on input line 85.
+or `english'. on input line 86.
+Package hyperref Info: Link coloring ON on input line 86.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
@@ -607,17 +655,17 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 (/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count316
+\c@section@level=\count320
 )
-LaTeX Info: Redefining \ref on input line 85.
-LaTeX Info: Redefining \pageref on input line 85.
-LaTeX Info: Redefining \nameref on input line 85.
+LaTeX Info: Redefining \ref on input line 86.
+LaTeX Info: Redefining \pageref on input line 86.
+LaTeX Info: Redefining \nameref on input line 86.
 
 (./RobEngThesisTemplate.out) (./RobEngThesisTemplate.out)
 \@outlinefile=\write4
 \openout4 = `RobEngThesisTemplate.out'.
 
-Package backref Info: ** backref set up for natbib ** on input line 85.
+Package backref Info: ** backref set up for natbib ** on input line 86.
 Package epstopdf Info: Source file: <Figures//logo_unige.eps>
 (epstopdf)                    date: 2023-05-25 11:20:04
 (epstopdf)                    size: 29329 bytes
@@ -626,7 +674,7 @@ Package epstopdf Info: Source file: <Figures//logo_unige.eps>
 (epstopdf)                    size: 12471 bytes
 (epstopdf)             Command: <repstopdf --outfile=Figures//logo_unige-eps-co
 nverted-to.pdf Figures//logo_unige.eps>
-(epstopdf)             \includegraphics on input line 94.
+(epstopdf)             \includegraphics on input line 95.
 Package epstopdf Info: Output file is already uptodate.
 
 
@@ -637,14 +685,14 @@ pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
 File: Figures//logo_unige-eps-converted-to.pdf Graphic file (type pdf)
 <use Figures//logo_unige-eps-converted-to.pdf>
 Package pdftex.def Info: Figures//logo_unige-eps-converted-to.pdf  used on inpu
-t line 94.
+t line 95.
 (pdftex.def)             Requested size: 142.26378pt x 121.41493pt.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 94.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 95.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 94.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 95.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
@@ -753,19 +801,19 @@ l.21
 s been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.113 \include{Chapter1/chapter1}
+l.114 \include{Chapter1/chapter1}
                                   [2]
 \openout2 = `Chapter2/chapter2.aux'.
 
  (./Chapter2/chapter2.tex
 Chapter 2.
-<Chapter2/Figures//Direct-visual-servoing-scheme.jpeg, id=272, 69.81282pt x 31.
+<Chapter2/Figures//Direct-visual-servoing-scheme.jpeg, id=274, 69.81282pt x 31.
 0761pt>
 File: Chapter2/Figures//Direct-visual-servoing-scheme.jpeg Graphic file (type j
 pg)
 <use Chapter2/Figures//Direct-visual-servoing-scheme.jpeg>
 Package pdftex.def Info: Chapter2/Figures//Direct-visual-servoing-scheme.jpeg  
-used on input line 26.
+used on input line 27.
 (pdftex.def)             Requested size: 349.06319pt x 155.38002pt.
 [3
 
@@ -773,134 +821,145 @@ used on input line 26.
 
 
 ]
-<Chapter2/Figures//stereoVision_schema.png, id=282, 865.2325pt x 331.2375pt>
+<Chapter2/Figures//stereoVision_schema.png, id=284, 865.2325pt x 331.2375pt>
 File: Chapter2/Figures//stereoVision_schema.png Graphic file (type png)
 <use Chapter2/Figures//stereoVision_schema.png>
 Package pdftex.def Info: Chapter2/Figures//stereoVision_schema.png  used on inp
-ut line 38.
+ut line 40.
 (pdftex.def)             Requested size: 346.08687pt x 132.49265pt.
  [4pdfTeX warning (ext4): destination with the same identifier (name{figure.2.1
 }) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.44 \begin{itemize}
-                    pdfTeX warning (ext4): destination with the same identifier
- (name{figure.2.2}) has been already used, duplicate ignored
+l.45 
+     pdfTeX warning (ext4): destination with the same identifier (name{figure.2
+.2}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.44 \begin{itemize}
-                     <./Chapter2/Figures//Direct-visual-servoing-scheme.jpeg> <
-./Chapter2/Figures//stereoVision_schema.png>]
+l.45 
+      <./Chapter2/Figures//Direct-visual-servoing-scheme.jpeg> <./Chapter2/Figu
+res//stereoVision_schema.png>]
+Overfull \hbox (9.99403pt too wide) in paragraph at lines 51--52
+\OT1/qbk/m/n/12 im-ple-men-ta-tion that is task-specific, which means that ev-e
+ry change
+ []
 
-LaTeX Warning: Command \textdegree invalid in math mode on input line 46.
-
-
-LaTeX Warning: Command \textdegree invalid in math mode on input line 46.
-
-Missing character: There is no ° in font cmr12!
 [5]
-<Chapter2/Figures//SDA10_500_dualArmManipulator.jpg, id=302, 120.45pt x 120.45p
+<Chapter2/Figures//obav_scheme.png, id=310, 686.565pt x 630.355pt>
+File: Chapter2/Figures//obav_scheme.png Graphic file (type png)
+<use Chapter2/Figures//obav_scheme.png>
+Package pdftex.def Info: Chapter2/Figures//obav_scheme.png  used on input line 
+89.
+(pdftex.def)             Requested size: 240.30135pt x 220.62755pt.
+ [6] [7pdfTeX warning (ext4): destination with the same identifier (name{figure
+.2.3}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.101 \begin{equation}
+                       <./Chapter2/Figures//obav_scheme.png>]
+<Chapter2/Figures//SDA10_500_dualArmManipulator.jpg, id=335, 120.45pt x 120.45p
 t>
 File: Chapter2/Figures//SDA10_500_dualArmManipulator.jpg Graphic file (type jpg
 )
 <use Chapter2/Figures//SDA10_500_dualArmManipulator.jpg>
 Package pdftex.def Info: Chapter2/Figures//SDA10_500_dualArmManipulator.jpg  us
-ed on input line 80.
+ed on input line 125.
 (pdftex.def)             Requested size: 180.67453pt x 180.67453pt.
- [6pdfTeX warning (ext4): destination with the same identifier (name{figure.2.3
-}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.88 	\item \textit
-                   {Manipulability}: High number of DoFs allows for complex ...
- <./Chapter2/Figures//SDA10_500_dualArmManipulator.jpg>]
-<Chapter2/Figures//anphiBot_snakelike.jpg, id=319, 79.7379pt x 59.7432pt>
+ [8]
+<Chapter2/Figures//anphiBot_snakelike.jpg, id=356, 79.7379pt x 59.7432pt>
 File: Chapter2/Figures//anphiBot_snakelike.jpg Graphic file (type jpg)
 <use Chapter2/Figures//anphiBot_snakelike.jpg>
 Package pdftex.def Info: Chapter2/Figures//anphiBot_snakelike.jpg  used on inpu
-t line 98.
+t line 143.
 (pdftex.def)             Requested size: 119.60655pt x 89.61453pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 94--105
+ [9pdfTeX warning (ext4): destination with the same identifier (name{figure.2.4
+}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.147 T
+       he potential of these robot that are currently being explored are for...
+ <./Chapter2/Figures//SDA10_500_dualArmManipulator.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 147--150
 
  []
 
-<Chapter2/Figures//ANAT-robot-arm.jpeg, id=328, 853.1875pt x 383.4325pt>
+<Chapter2/Figures//ANAT-robot-arm.jpeg, id=373, 853.1875pt x 383.4325pt>
 File: Chapter2/Figures//ANAT-robot-arm.jpeg Graphic file (type jpg)
 <use Chapter2/Figures//ANAT-robot-arm.jpeg>
 Package pdftex.def Info: Chapter2/Figures//ANAT-robot-arm.jpeg  used on input l
-ine 110.
+ine 155.
 (pdftex.def)             Requested size: 383.93083pt x 172.54303pt.
-[7pdfTeX warning (ext4): destination with the same identifier (name{figure.2.4}
-) has been already used, duplicate ignored
+[10pdfTeX warning (ext4): destination with the same identifier (name{figure.2.5
+}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.113 \end{figure}
-                   <./Chapter2/Figures//anphiBot_snakelike.jpg>]
-Overfull \hbox (3.74194pt too wide) in paragraph at lines 139--141
+l.164 \begin{equation}
+                      pdfTeX warning (ext4): destination with the same identifi
+er (name{figure.2.6}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.164 \begin{equation}
+                       <./Chapter2/Figures//anphiBot_snakelike.jpg> <./Chapter2
+/Figures//ANAT-robot-arm.jpeg>]
+Overfull \hbox (3.74194pt too wide) in paragraph at lines 184--186
 \OT1/qbk/m/n/12 stan-dard choice for \OT1/qbk/m/it/12 dy-namic obstacle-avoidan
 ce con-trol\OT1/qbk/m/n/12 , I could not adopt
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 139--141
+Underfull \hbox (badness 10000) in paragraph at lines 184--186
 
  []
 
-[8pdfTeX warning (ext4): destination with the same identifier (name{figure.2.5}
-) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.141 
-       <./Chapter2/Figures//ANAT-robot-arm.jpeg>]
-Underfull \hbox (badness 10000) in paragraph at lines 144--145
+
+Underfull \hbox (badness 10000) in paragraph at lines 189--190
 
  []
 
-<Chapter2/Figures//macro_micro_example.png, id=356, 618.31pt x 608.2725pt>
+<Chapter2/Figures//macro_micro_example.png, id=387, 618.31pt x 608.2725pt>
 File: Chapter2/Figures//macro_micro_example.png Graphic file (type png)
 <use Chapter2/Figures//macro_micro_example.png>
 Package pdftex.def Info: Chapter2/Figures//macro_micro_example.png  used on inp
-ut line 149.
+ut line 194.
 (pdftex.def)             Requested size: 278.23692pt x 273.7201pt.
-[9]
-<Chapter2/Figures//MacroMicro_surgical.png, id=365, 561.09625pt x 578.16pt>
+[11]
+<Chapter2/Figures//MacroMicro_surgical.png, id=398, 561.09625pt x 578.16pt>
 File: Chapter2/Figures//MacroMicro_surgical.png Graphic file (type png)
 <use Chapter2/Figures//MacroMicro_surgical.png>
 Package pdftex.def Info: Chapter2/Figures//MacroMicro_surgical.png  used on inp
-ut line 168.
+ut line 213.
 (pdftex.def)             Requested size: 252.49098pt x 260.16959pt.
- [10pdfTeX warning (ext4): destination with the same identifier (name{figure.2.
-6}) has been already used, duplicate ignored
+ [12pdfTeX warning (ext4): destination with the same identifier (name{figure.2.
+7}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.171 \end{figure}
-                   <./Chapter2/Figures//macro_micro_example.png>]) [11pdfTeX wa
-rning (ext4): destination with the same identifier (name{figure.2.7}) has been 
-already used, duplicate ignored
+l.216 \end{figure}
+                   <./Chapter2/Figures//macro_micro_example.png>] [13pdfTeX war
+ning (ext4): destination with the same identifier (name{figure.2.8}) has been a
+lready used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.114 \include{Chapter2/chapter2}
-                                  <./Chapter2/Figures//MacroMicro_surgical.png>
-] [12]
+l.227 
+       <./Chapter2/Figures//MacroMicro_surgical.png>]) [14]
 \openout2 = `Chapter3/chapter3.aux'.
 
- (./Chapter3/chapter3.tex
+
+(./Chapter3/chapter3.tex
 Chapter 3.
-<Chapter3/Figures//Real_system.jpg, id=382, 1284.8pt x 1052.93375pt>
+<Chapter3/Figures//Real_system.jpg, id=415, 1284.8pt x 1052.93375pt>
 File: Chapter3/Figures//Real_system.jpg Graphic file (type jpg)
 <use Chapter3/Figures//Real_system.jpg>
 Package pdftex.def Info: Chapter3/Figures//Real_system.jpg  used on input line 
 21.
 (pdftex.def)             Requested size: 256.95544pt x 210.58302pt.
-<Chapter3/Figures//simplified_class_structure.png, id=383, 693.59125pt x 422.57
+<Chapter3/Figures//simplified_class_structure.png, id=416, 693.59125pt x 422.57
 875pt>
 File: Chapter3/Figures//simplified_class_structure.png Graphic file (type png)
 <use Chapter3/Figures//simplified_class_structure.png>
 Package pdftex.def Info: Chapter3/Figures//simplified_class_structure.png  used
  on input line 32.
 (pdftex.def)             Requested size: 346.79477pt x 211.28885pt.
-[13
+[15
 
 
 
@@ -916,7 +975,7 @@ Overfull \hbox (7.61067pt too wide) in paragraph at lines 55--56
 /cmtt/m/n/12 TP_task_map_ []\OT1/qbk/m/n/12 to com-pute and store
  []
 
-[14pdfTeX warning (ext4): destination with the same identifier (name{figure.3.2
+[16pdfTeX warning (ext4): destination with the same identifier (name{figure.3.2
 }) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
@@ -960,14 +1019,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 65--109
 
  []
 
-<Chapter3/Figures//Action_server_flowChart.png, id=399, 362.35374pt x 653.44125
+<Chapter3/Figures//Action_server_flowChart.png, id=433, 362.35374pt x 653.44125
 pt>
 File: Chapter3/Figures//Action_server_flowChart.png Graphic file (type png)
 <use Chapter3/Figures//Action_server_flowChart.png>
 Package pdftex.def Info: Chapter3/Figures//Action_server_flowChart.png  used on
  input line 114.
 (pdftex.def)             Requested size: 181.17642pt x 326.71982pt.
-[15]
+[17]
 Overfull \hbox (26.44284pt too wide) in paragraph at lines 118--122
 []\OT1/qcr/m/n/12 void ex-e-cute(const std::shared[]ptr<MoveRobotTP> goal[]hand
 le);[]\OT1/qbk/m/n/12 , 
@@ -1034,48 +1093,48 @@ Underfull \hbox (badness 10000) in paragraph at lines 125--195
 
  []
 
-[16pdfTeX warning (ext4): destination with the same identifier (name{figure.3.3
+[18pdfTeX warning (ext4): destination with the same identifier (name{figure.3.3
 }) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.195 \subsubsection
                     {Reaching loop process flow} <./Chapter3/Figures//Action_se
-rver_flowChart.png>] [17]
-<Chapter3/Figures//Reaching_loop_flowChart.png, id=419, 563.10374pt x 1064.9787
+rver_flowChart.png>] [19]
+<Chapter3/Figures//Reaching_loop_flowChart.png, id=453, 563.10374pt x 1064.9787
 4pt>
 File: Chapter3/Figures//Reaching_loop_flowChart.png Graphic file (type png)
 <use Chapter3/Figures//Reaching_loop_flowChart.png>
 Package pdftex.def Info: Chapter3/Figures//Reaching_loop_flowChart.png  used on
  input line 199.
 (pdftex.def)             Requested size: 225.2375pt x 425.98395pt.
- [18]
+ [20]
 Overfull \hbox (3.01886pt too wide) in paragraph at lines 204--210
 []\OT1/qcr/m/n/12 void Run-Car-te-sian-Reach-in-gLoop(std::string goal[]frame, 
 bool
  []
 
-[19pdfTeX warning (ext4): destination with the same identifier (name{figure.3.4
+[21pdfTeX warning (ext4): destination with the same identifier (name{figure.3.4
 }) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.210 
-       <./Chapter3/Figures//Reaching_loop_flowChart.png>]) [20]
+       <./Chapter3/Figures//Reaching_loop_flowChart.png>]) [22]
 \openout2 = `Chapter4/chapter4.aux'.
 
 
 (./Chapter4/chapter4.tex
 Chapter 4.
-) [21
+[23
 
 
 
 
-]
+]) [24]
 \openout2 = `Chapter5/chapter5.aux'.
 
  (./Chapter5/chapter5.tex
 Chapter 5.
-) [22
+) [25
 
 
 
@@ -1085,7 +1144,7 @@ Chapter 5.
 
  (./Conclusions/conclusions.tex
 Chapter 6.
-) [23
+) [26
 
 
 
@@ -1095,7 +1154,7 @@ Chapter 6.
 
  (./Appendix1/appendix1.tex
 Appendix A.
-) [24
+) [27
 
 
 
@@ -1104,30 +1163,36 @@ Appendix A.
 \tf@brf=\write7
 \openout7 = `RobEngThesisTemplate.brf'.
 
- [25
+ [28
 
 
 \FN@pp@footnotehinttrue 
 
 
-]) [26] (./RobEngThesisTemplate.aux (./Originality/originality.aux)
+] [29]) [30] (./RobEngThesisTemplate.aux (./Originality/originality.aux)
 (./Acknowledgement/acknowledgement.aux) (./Dedication/dedication.aux)
 (./Abstract/abstract.aux) (./Chapter1/chapter1.aux) (./Chapter2/chapter2.aux)
 (./Chapter3/chapter3.aux) (./Chapter4/chapter4.aux) (./Chapter5/chapter5.aux)
 (./Conclusions/conclusions.aux) (./Appendix1/appendix1.aux))
 Package rerunfilecheck Info: File `RobEngThesisTemplate.out' has not changed.
-(rerunfilecheck)             Checksum: BF9767BC0D6799205C41F2C8D9240C4D;5809.
-Package rerunfilecheck Info: File `RobEngThesisTemplate.brf' has not changed.
-(rerunfilecheck)             Checksum: 95E7E54CD500F37B8D05E69B562E7BDF;1122.
+(rerunfilecheck)             Checksum: C204917E38BF18E100F511F7A44D76D9;6010.
+
+
+Package rerunfilecheck Warning: File `RobEngThesisTemplate.brf' has changed.
+(rerunfilecheck)                Rerun to get bibliographical references right.
+
+Package rerunfilecheck Info: Checksums for `RobEngThesisTemplate.brf':
+(rerunfilecheck)             Before: CC5B1F4D1B4DCFFD23520082DBBA0ED8;1473
+(rerunfilecheck)             After:  20AEC764721F518C52A770669C4DD9F5;1473.
  ) 
 Here is how much of TeX's memory you used:
- 18121 strings out of 480171
- 345689 string characters out of 5894488
- 658766 words of memory out of 5000000
- 35568 multiletter control sequences out of 15000+600000
- 520448 words of font info for 90 fonts, out of 8000000 for 9000
+ 18891 strings out of 480171
+ 361369 string characters out of 5894488
+ 673773 words of memory out of 5000000
+ 36299 multiletter control sequences out of 15000+600000
+ 533120 words of font info for 94 fonts, out of 8000000 for 9000
  62 hyphenation exceptions out of 8191
- 125i,13n,120p,613b,929s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 125i,15n,120p,613b,935s stack positions out of 5000i,500n,10000p,200000b,80000s
 pdfTeX warning (dest): name{francesco.giovinazzo@edu.unige.it} has been refer
 enced but does not exist, replaced by a fixed one
 
@@ -1149,21 +1214,28 @@ not exist, replaced by a fixed one
 {/usr/share/texmf/fonts/enc/dvips/tex-gyre/q-rm-sc.enc}{/usr/share/texmf/fonts/
 enc/dvips/tex-gyre/q-rmm.enc}{/usr/share/texmf/fonts/enc/dvips/tex-gyre/q-ts1.e
 nc}{/usr/share/texmf/fonts/enc/dvips/tex-gyre/q-rm.enc}</usr/share/texlive/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cms
-y10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb
-></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr
-/share/texmf/fonts/type1/public/tex-gyre/qbkb.pfb></usr/share/texmf/fonts/type1
-/public/tex-gyre/qbkr.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/qbkri.p
-fb></usr/share/texmf/fonts/type1/public/tex-gyre/qcrr.pfb>
-Output written on RobEngThesisTemplate.pdf (35 pages, 1682681 bytes).
+f-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmmib10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
+extra/cmmib8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pf
+b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/
+share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/
+texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/share/texlive/texmf-dist/f
+onts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fo
+nts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf/fonts/type1/publ
+ic/tex-gyre/qbkb.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/qbkr.pfb></u
+sr/share/texmf/fonts/type1/public/tex-gyre/qbkri.pfb></usr/share/texmf/fonts/ty
+pe1/public/tex-gyre/qcrr.pfb>
+Output written on RobEngThesisTemplate.pdf (39 pages, 1809779 bytes).
 PDF statistics:
- 568 PDF objects out of 1000 (max. 8388607)
- 480 compressed objects within 5 object streams
- 109 named destinations out of 1000 (max. 500000)
- 325 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 665 PDF objects out of 1000 (max. 8388607)
+ 556 compressed objects within 6 object streams
+ 129 named destinations out of 1000 (max. 500000)
+ 330 words of extra memory for PDF output out of 10000 (max. 10000000)
 

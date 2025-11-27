@@ -5,16 +5,67 @@
 
 \chapter{Methodology}
 \label{chap:fourth}
-
-\section{Reaching Loop Description}
+\graphicspath{{Chapter4/Figures/PNG/}{Chapter4/Figures/JPG/}{Chapter4/Figures/JPEG/}{Chapter4/Figures/}}
+in this chapter I will describe in detail the mathematical computation performed by the control algorithm I developed. 
 
 \section{Goal broadcasting}
+The architecture works in a \textit{position reaching} framework, a goal position for the \textit{end effector} is sent to the robot and the algorithm tries to reach said position, with constraint given by other tasks.
+The goal is sent using the \textit{action server} build in the \textit{JointRobotTP} class, in the form of two vectors:
+\begin{align}
+	\vec{r} = \begin{pmatrix}
+			x \\
+			y \\
+			z
+	\end{pmatrix}
+	\hspace{8pt} \text{;} \hspace{8pt}
+	\vec{\rho} = \begin{pmatrix}
+		\phi \\
+		\theta \\
+		\psi
+	\end{pmatrix}
+\end{align}
 
+The first represent the desired translation, and the desired rotation as \textit{roll, pitch, yaw} angles.
+The projection frames of this vector to define the goal position and orientation could be either the \textit{end effector} frame, or, the \textit{kuka base} frame. This was done for experimental purposes, for easly sequencing different goals, or to repeat reaching tasks to a specific position in the environment.
+
+For the orientation of the goal, $\vec{\rho}$ is used to compose the rotation matrix that is than projected on the desired frame:
+\begin{align}
+	\vec{R}_{goal} &= \vec{R}_{z}(\psi) \cdot \vec{R}_{y}(\theta) \cdot \vec{R}_{x}(\phi) \\[4pt]
+	\langle\textit{kuka\_base}\rangle: \leftindex^{kb}{\vec{R}}_{goal} &= \vec{I} \cdot \vec{R}_{goal} \\
+	\langle\textit{end\_effector}\rangle: \leftindex^{ee}{\vec{R}}_{goal} &= \vec{R}_{ee}^{kb} \cdot \vec{R}_{goal}
+\end{align}
+In the first case the projection matrix is the identity since $\langle\textit{kuka\_base}\rangle \equiv \langle\textit{world}\rangle$.
+Same process is done for the translation vector:
+\begin{align}
+	\langle\textit{kuka\_base}\rangle: \leftindex^{kb}{\vec{r}}_{goal} &= \vec{0} + \vec{r}_{goal}\\
+	\langle\textit{end\_effector}\rangle: \leftindex^{ee}{\vec{r}}_{goal} &= \vec{r}_{ee}^{kb} + \vec{r}_{goal}
+\end{align}
+Than the rotation matrix and the translation vector are use to publish the $\langle\textit{goal}\rangle$ in rviz.
 \section{Task Priority}
-\subsection{Task Description}
+Continuing the discussion from \ref{equat:TaskPrioritiClassic_generalSolution}, the classic task priority algorithm as explained in \cite{simetti2016novel} lacks the ability to smoothly activate and deactivate \textit{inequality} task when the robot is far from the activation region.
+The approach that I implemented is based on the definition of a new \textit{regularized pseudo-inversion operator} that integrates the \textit{activation function} as a weight matrix to modulate the intensity of the action taken for a specific task.
+The operator is defined as:
+\begin{equation}
+	\vec{X}^{\#,\vec{A},\vec{Q}} \triangleq (\vec{X}^T\vec{A}\vec{X} + \eta(\vec{I}-\vec{Q})^T(\vec{I}-\vec{Q}) + \vec{V}^T\vec{P}\vec{V})^{\#} \vec{X}^T\vec{A}\vec{A}
+	\label{equat:RegPseudoInverse_operator}
+\end{equation}
+where the matrix $\vec{V}$ is the right orthonormal matrix of the SVD decomposition for     $\vec{X}^T\vec{A}\vec{X}+\eta(\vec{I}-\vec{Q})^T(\vec{I}-\vec{Q})$.
+The compact expression of the algorithm becomes, for the \textit{k-th} priority level:
+\begin{equation}
+	\begin{aligned}
+		\vec{W}_k &= \vec{J}_k\vec{Q}_{k-1}(\vec{J}_k\vec{Q}_{k-1})^{\#,\vec{A}_k,\vec{Q}_{k-1}} \\
+		\vec{Q}_k &= \vec{Q}_{k-1}(\vec{I}-(\vec{J}_k\vec{Q}_{k-1})^{\#,\vec{A}_k,\vec{I}}\vec{J}_k\vec{Q}_{k-1}) \\
+		\vec{\rho}_k &= \vec{\rho}_{k-1} + \vec{Q}_{k-1}(\vec{J}_k\vec{Q}_{k-1})^{\#,\vec{A}_k,\vec{I}}\vec{W}_k(\vec{\dot{x}}-\vec{J}_k\vec{\rho}_{k-1})
+	\end{aligned}
+\end{equation}
 
-\subsubsection{Joint Limits}
+
+\subsection{Task Description}
+\subsubsection{Minimum altitude}
 
 \subsubsection{Obstacle Avoidance}
+% single point
+
+% set based task
 
 \subsubsection{End Effector Target}

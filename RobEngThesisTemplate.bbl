@@ -1,4 +1,4 @@
-\begin{thebibliography}{16}
+\begin{thebibliography}{21}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
 \bibitem[{Badrloo {\em et~al.\/}(2022)Badrloo, Varshosaz, Pirasteh \&
@@ -29,6 +29,12 @@
   obstacle detection system in vehicles. {\em Optics and Lasers in
   engineering\/}, {\bf 46}, 168--178.
 
+\bibitem[{Hussmann {\em et~al.\/}(2008)Hussmann, Ringbeck \&
+  Hagebeuker}]{hussmann2008performance}
+{\sc Hussmann, S., Ringbeck, T. \& Hagebeuker, B.} (2008). A performance review
+  of 3d tof vision systems in comparison to stereo vision systems. {\em Stereo
+  vision\/}, {\bf 372}.
+
 \bibitem[{Hutchinson {\em et~al.\/}(2002)Hutchinson, Hager \&
   Corke}]{hutchinson2002tutorial}
 {\sc Hutchinson, S., Hager, G.D. \& Corke, P.I.} (2002). A tutorial on visual
@@ -41,6 +47,11 @@
   control of redundant robots. {\em Mathematics and Computers in Simulation\/},
   {\bf 71}, 395--403.
 
+\bibitem[{Maciejewski \& Klein(1985)}]{maciejewski1985obstacle}
+{\sc Maciejewski, A.A. \& Klein, C.A.} (1985). Obstacle avoidance for
+  kinematically redundant manipulators in dynamically varying environments.
+  {\em The international journal of robotics research\/}, {\bf 4}, 109--117.
+
 \bibitem[{Maciejewski~AA(1985)}]{highDof_planar_robot_OBAV_2}
 {\sc Maciejewski~AA, K.C.} (1985). Obstacle avoidance for kinematically
   redundant manipulators in dynamically varying environments. {\em The
@@ -52,10 +63,25 @@
   localization and depth estimation for eye-in-hand manipulator using mono
   camera. {\em IEEE Access\/}, {\bf 8}, 121765--121779.
 
+\bibitem[{Panasiuk(2025)}]{s25206402}
+{\sc Panasiuk, J.} (2025). Controlling an industrial robot using stereo 3d
+  vision systems with ai elements. {\em Sensors\/}, {\bf 25}.
+
 \bibitem[{Sharon \& Hardt(1984)}]{sharon1984enhancement}
 {\sc Sharon, A. \& Hardt, D.} (1984). Enhancement of robot accuracy using
   endpoint feedback and a macro-micro manipulator system. In {\em 1984 American
   control conference\/}, 1836--1845, IEEE.
+
+\bibitem[{Simetti \& Casalino(2016)}]{simetti2016novel}
+{\sc Simetti, E. \& Casalino, G.} (2016). A novel practical technique to
+  integrate inequality control objectives and task transitions in priority
+  based control. {\em Journal of Intelligent \& Robotic Systems\/}, {\bf 84},
+  877--902.
+
+\bibitem[{Slotine \& Siciliano(1991)}]{slotine1991general}
+{\sc Slotine, S.B. \& Siciliano, B.} (1991). A general framework for managing
+  multiple tasks in highly redundant robotic systems. In {\em proceeding of 5th
+  International Conference on Advanced Robotics\/}, vol.~2, 1211--1216.
 
 \bibitem[{Smith {\em et~al.\/}(2012)Smith, Karayiannidis, Nalpantidis, Gratal,
   Qi, Dimarogonas \& Kragic}]{DUAL_ARM_SURVEY}

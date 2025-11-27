@@ -6,21 +6,22 @@
 \label{chap:second}
 \graphicspath{{Chapter2/Figures/PNG/}{Chapter2/Figures/JPG/}{Chapter2/Figures/JPEG/}{Chapter2/Figures/}}
 
-In this chapter I will explore the literature present on the topics of: \textit{obstacle perception} and \textit{avoidance} since is one of the focus of my thesis, and a key aspect of Human-Robot interaction.\\
-\noindent
-And also on the topic of \textit{High redundancy robot}, to explore possible way to deal with a structure  link the one of:\textbf{SestoSenso project}. 
+In this chapter I will explore the literature on the topics of: \textit{ambient perception} to expore different sensing approaches to control manipulators in a dynamic environment. I will than focus my attention on the uses of this sensory information in the task of \textit{obstacle avoidance}
+\noindent 
+During my state of the art research it was apparent a lack of literature on the specific architecture developed in the \textit{SestoSenso project}. For this reason the last part of this chapter has focused more broadly on \textit{high dof architecure}, to explore how long open kinematic chain system are treated, and in which areas are used.
 
 \section{Environment perception and awareness}
-Environment perception is one of the biggest different when we move from the classical use of robotic systems in the industry, to a more modern framework geared towards HRI.
+Environment perception is one of the biggest difference when we move from the classical use of robotic systems in industry, to a more modern framework geared towards HRI.
+In this section I reported two of the main method for extracting ambient morphology information from various types of sensors, and explained their strength and weaknesses.
 
-\subsection{Camera based methods}
-As reported in \cite{VISIONBASED_OBREC}, we can divide the camera based methods in two main categories:
+\subsection{Image recognition based methods}
+As reported in \cite{VISIONBASED_OBREC}, we can divide vision based methods in two main categories:
 \begin{itemize}
 	\item Monocular vision: use a single camera mounted on top of the robot.
 	\item Stereo vision: use two synchronized cameras.
 \end{itemize}
 % MONOCULAR CAMERA
-The basic approach of the \textit{visual servoing} with monocular camera can be represented in the following scheme:
+The basic approach of the \textit{visual servoing} with monocular camera can be represented in the following schema:
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=5.0]{Direct-visual-servoing-scheme.jpeg}
@@ -28,10 +29,11 @@ The basic approach of the \textit{visual servoing} with monocular camera can be 
 	\label{fig:DirectVisualSchema}
 \end{figure}
 In the work of \cite{OBJREC_ARM_MONOCAM} we can see how a monocular system is used with a \textit{deep Region based Convolutional Neural Network} to recognize objects in the field of view of the robot and decide if said object is a target or not.
-This first step is than followed by a \textit{kNN} and the \textit{Fuzzy interference system} to localize 2D position of the targets, the last coordinate is found by only shifting the end-effector a few millimeters towards the x-axis. 
+This first step is than followed by a \textit{kNN} and the \textit{Fuzzy interference system} to localize 2D position of the targets, the last coordinate is found by only shifting the end-effector a few millimeters towards the x-axis.
 
 % STEREO VISION
 Following and improving the capabilities of a singular camera system there is the use of: stereo vision.
+Stereo vision works by combining the information of the two cameras, that are placed in a known position to extract information of the third dimension of objects in the images.
 In the work of \cite{huh2008stereo} we can see how a stereo vision based system is used to perform obstacle recognition on a autonomous driving vehicle.
 \begin{figure}[H]
 	\centering
@@ -39,16 +41,21 @@ In the work of \cite{huh2008stereo} we can see how a stereo vision based system 
 	\caption{Vision coordinate sistem}
 	\label{fig:StereoVisionSchema}
 \end{figure}
-Stereo vision works by combining the information of the two cameras, that are placed in a known position to extract information of the third dimension of objects in the images.
 The image based methods in general appear to have some key characteristics that make them impractical for effective \textit{obstacle perception} in an environment such as the one of the \textbf{SestoSenso project}.
+
+With the advent of AI in recent years the use and potential of \textit{image recognition} and with it all the vision based systems has greately increased.
+But they still have a series of weaknesses that have a large impact when it comes to develop viable systems for industrial application.
+In the work of \cite{s25206402} a control system using a 3d stereo camera and the YOLO AI algorithm for image recognition, those limitation are evident:
 \begin{itemize}
-	\item \textbf{Privacy}: since the robot could work in close proximity with humans the problem of privacy of the workers has been taken into consideration.
-	\item \textbf{Field of view}: The camera does not allow for $360°$ of perception around the robot.
-	\item \textbf{Environment independence}: Camera are susceptible to change in the environment lighting, and need to be re-calibrated if the robot changes location.
-	\item \textbf{Computational cost}: The computational cost of image recognition for dynamic environment is generally high, which increases the requirements of the systems.
+	\item \textbf{Hardware and software}: The cost of the system parts is not paltry, form the camera to the AI software.
+	\item \textbf{Integration and configuration}: The camera apparatus has an implementation that is task-specific, which means that every change in the environment requires a complete re-configuration of the system.
+	\item \textbf{Computational cost}: The image analysis is performed on a separated computer to manage the burden of the computation.
+	\item \textbf{Field of view}: The camera visualize only the work area, which is not adequate for a HRI situation.
+	\item \textbf{Environment interference}: The use of 2D and 3D image information, require to have a strict control on the occlusion and disturbances in the environment, from lighting to airborne dust. This level of control is not possible in a industrial context. 
+	\item \textbf{Privacy}: One problem not addressed by the paper is the privacy of people working around or with the robot, that is not mantained with the use of a camera.
 \end{itemize}
 
-\subsection{Sensor based methods}
+\subsection{Point-cloud discretization based methods}
 In the work of \cite{zauner2025workspace} three different type of spatial perception sensor are evaluated to create point cloud of a robot's workspace. To perform safe navigation and avoid collisions.
 the sensor used are:
 \begin{itemize}
@@ -61,15 +68,53 @@ The Intel sensor instead is based on the \textit{stereo vision} principle, but i
 \noindent
 The sensors are mounted on the \textit{end effector} of the manipulator and panned over the workspace to record a sample of the environment, the resulting pointcloud is than processed to reduce the number of points and to extract feature of the environment.
 \\
-Aside from the quality of the sensor itself, the resulting disparities between them is the amount of processing to be done on the point cloud to extract features of the environment. 
-But they are viable to overcome the problems found with camera based methods, mentioned in the previous section.
+\noindent
+In the paper the extracted feature are used to simplify the 3D representation of the obstacle, and to perform collision-checks they confronted a series of different algorithms. In the case of my thesis I stopped after the filtering to reduce the number of points, than the point cloud is directly used to represent the robot and obstacle in the simulation.
+\\
+As stated in \cite{hussmann2008performance} the main drawback of \textit{ToF} sensors is the lower resolution capabilities in comparison to \textit{stereo vision} techniques. The paper highlight that even with this performance deficit the \textit{ToF} were viable to be used in automotive application even for safety tasks.
 
-\section{Obstacle avoidance}
-Sensing the environment, especially in the case of HRC, is fundamental to do \textit{obstacle avoidance}.
+
+\section{Obstacle avoidance in HRC}
+For \textit{Human--Robot Collaboration} applications, the robot must operate under a \textit{multi-objective} control strategy, where the system handles a \textit{goal-driven task} defining the role of the robot, and one or more other task that go from safety to optimization tasks.  
+Within collaborative scenarios, the safety layer must be treated with \textbf{higher priority}, temporarily overriding the main objective whenever a hazardous situation is detected, to guarantee human and system protection in real time.  
+In this thesis, the prioritized secondary objective ensuring safe collaboration is \textit{obstacle avoidance}, which monitors the robot surroundings and generates motion corrections when the robot is to close to the obstacle.
+
 In the case of a manipulator arm we have to also include the $z$ axis, since we are operating in 3d space.
 Looking at the work of \cite{zhang2003obstacle} we can see how we can compute a safe trajectory for a \textit{SIR-1} robot manipulator using cubic polynomials for a path with intermediate points.
+In this paper is interesting the introduction of the concept:\textit{link} collision avoidance. By controlling the \textit{link} closest point to the obstacle and using the analytical formulation of the \textit{Inverse Kinematics} and the \textit{obstacle shape} it is possible to define \textit{joint variables} constraints to ensure a collision free navigation.\\
+\noindent
+In the work of: \cite{maciejewski1985obstacle} instead the proposed approach considers the closest point of the hole robot to the obstacle, than it apply a velocity vector to said point that is directly opposite to the distance vector $(P_{ob}-P_{rb})$.  
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.35]{obav_scheme.png}
+	\caption{Obstacle avoidance schema}
+	\label{fig:OBAVSchema}
+\end{figure}
+To ensure that the \textit{obstacle avoidance} desired velocity does not impact the tracking of the \textit{end effector velocity} the joint space velocity are searched in the null-space of the solution to the first problem. This approach allows to leverage the redundancy of the manipulator.
+The proposed algorithm is than applied to a planar robot with parallel \textit{revolute} joints, as shown in the image. And also to a 3D redundant manipulator operating through the window of an automobile door.
 
-%%%% CONTINUE
+\subsection{Redundancy control}
+From the discussion of the previous section it is clear that to correctly perform obstacle avoidance the control architecture has to deal with multiple objectives. This objective need to be \textit{task oriented} to allow for portability between different system configuration.
+The classic framework for this type of control was developed by \cite{slotine1991general} and extended by \cite{simetti2016novel} to include the activation and deactivation of task without discontinuities.
+The general idea is to have a \textit{hierarchy of tasks}, defined to be \textit{objective specific} and not connected to the particular structure of the robot.
+Given a generic objective function defined in the task space:
+\begin{equation}
+	\vec{\dot{x}}_i = \vec{J}_i(q) \cdot \vec{\dot{q}}
+\end{equation}
+\begin{itemize}
+	\item $\vec{\dot{q}} \in \mathbb{R}^{(n\times1)}$: joint displacement vector.
+	\item $\vec{\dot{x}}_i \in \mathbb{R}^{(m_i\times 1)}$: task velocity vector, or \textit{reference rate}.
+	\item $\vec{J}_i(q) \in \mathbb{R}^{(m_i\times n)}$: task jacobian matrix.
+\end{itemize}
+Given that the solution of the highest priority task is:\\ $\vec{\dot{q}}_1 = \vec{J}^{\#}_1\vec{\dot{x}}_1 + (\vec{I} - \vec{J}^{\#}_1\vec{J}_{1})\vec{\dot{z}}, \forall \vec{\dot{z}}$ the second part of the solution is the projector on the \textit{null space} of $\vec{J}_{1}$, the solution to the lower priority task are searched in that space.
+Yielding the general solution:
+\begin{equation}
+	\vec{\dot{q}}_i = \vec{\dot{q}}_{i-1} + \vec{J}_{i}(\vec{I} - \vec{J}^{\#}_i\vec{J}_{i})(\vec{\dot{x}}_i - \vec{J}_{i}\vec{\dot{q}}_{i-1})
+	\label{equat:TaskPrioritiClassic_generalSolution}
+\end{equation}
+In the paper is demonstrated that the solution of a lower priority task does not modify the higher one, but it is \textit{attempted} in the null space.
+
+
 
 \section{High DoF architecture}
 In this section I want to explore some of the relevant high-dof architecture found in the literature.
@@ -93,7 +138,7 @@ Moreover the interaction with the environment is performed with the use of \text
 \subsection{Snake-like robot}
 A completely different class of robot is represented by the "\textit{snake like}" robot.
 As shown in the work of \cite{hirose2009snake} and \cite{crespi2005amphibot} these types of robot are biologically inspired, and they can produce a forward motion from an undulatory one. Reproducing the movement patterns of snakes.
-\begin{figure}
+\begin{figure}[H]
 	\centering
 	\includegraphics[scale=1.5]{anphiBot_snakelike.jpg}
 	\caption{snake like robot from \cite{crespi2005amphibot}}
