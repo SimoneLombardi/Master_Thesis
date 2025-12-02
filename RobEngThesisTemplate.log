@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2025.11.11)  28 NOV 2025 17:44
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2025.11.11)  2 DEC 2025 17:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -841,7 +841,7 @@ l.116 \include{Chapter1/chapter1}
 
  (./Chapter2/chapter2.tex
 Chapter 2.
-<Chapter2/Figures//Direct-visual-servoing-scheme.jpeg, id=291, 69.81282pt x 31.
+<Chapter2/Figures//Direct-visual-servoing-scheme.jpeg, id=293, 69.81282pt x 31.
 0761pt>
 File: Chapter2/Figures//Direct-visual-servoing-scheme.jpeg Graphic file (type j
 pg)
@@ -855,7 +855,7 @@ used on input line 27.
 
 
 ]
-<Chapter2/Figures//stereoVision_schema.png, id=301, 865.2325pt x 331.2375pt>
+<Chapter2/Figures//stereoVision_schema.png, id=303, 865.2325pt x 331.2375pt>
 File: Chapter2/Figures//stereoVision_schema.png Graphic file (type png)
 <use Chapter2/Figures//stereoVision_schema.png>
 Package pdftex.def Info: Chapter2/Figures//stereoVision_schema.png  used on inp
@@ -868,14 +868,14 @@ ry change
  []
 
 [5 <./Chapter2/Figures//stereoVision_schema.png>] [6]
-<Chapter2/Figures//obav_scheme.png, id=333, 686.565pt x 630.355pt>
+<Chapter2/Figures//obav_scheme.png, id=335, 686.565pt x 630.355pt>
 File: Chapter2/Figures//obav_scheme.png Graphic file (type png)
 <use Chapter2/Figures//obav_scheme.png>
 Package pdftex.def Info: Chapter2/Figures//obav_scheme.png  used on input line 
 89.
 (pdftex.def)             Requested size: 240.30135pt x 220.62755pt.
  [7 <./Chapter2/Figures//obav_scheme.png>]
-<Chapter2/Figures//SDA10_500_dualArmManipulator.jpg, id=350, 120.45pt x 120.45p
+<Chapter2/Figures//SDA10_500_dualArmManipulator.jpg, id=352, 120.45pt x 120.45p
 t>
 File: Chapter2/Figures//SDA10_500_dualArmManipulator.jpg Graphic file (type jpg
 )
@@ -884,7 +884,7 @@ Package pdftex.def Info: Chapter2/Figures//SDA10_500_dualArmManipulator.jpg  us
 ed on input line 125.
 (pdftex.def)             Requested size: 180.67453pt x 180.67453pt.
  [8]
-<Chapter2/Figures//anphiBot_snakelike.jpg, id=373, 79.7379pt x 59.7432pt>
+<Chapter2/Figures//anphiBot_snakelike.jpg, id=375, 79.7379pt x 59.7432pt>
 File: Chapter2/Figures//anphiBot_snakelike.jpg Graphic file (type jpg)
 <use Chapter2/Figures//anphiBot_snakelike.jpg>
 Package pdftex.def Info: Chapter2/Figures//anphiBot_snakelike.jpg  used on inpu
@@ -895,7 +895,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 147--150
 
  []
 
-<Chapter2/Figures//ANAT-robot-arm.jpeg, id=390, 853.1875pt x 383.4325pt>
+<Chapter2/Figures//ANAT-robot-arm.jpeg, id=392, 853.1875pt x 383.4325pt>
 File: Chapter2/Figures//ANAT-robot-arm.jpeg Graphic file (type jpg)
 <use Chapter2/Figures//ANAT-robot-arm.jpeg>
 Package pdftex.def Info: Chapter2/Figures//ANAT-robot-arm.jpeg  used on input l
@@ -917,13 +917,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 189--190
 
  []
 
-<Chapter2/Figures//macro_micro_example.png, id=413, 618.31pt x 608.2725pt>
+<Chapter2/Figures//macro_micro_example.png, id=415, 618.31pt x 608.2725pt>
 File: Chapter2/Figures//macro_micro_example.png Graphic file (type png)
 <use Chapter2/Figures//macro_micro_example.png>
 Package pdftex.def Info: Chapter2/Figures//macro_micro_example.png  used on inp
 ut line 194.
 (pdftex.def)             Requested size: 278.23692pt x 273.7201pt.
-<Chapter2/Figures//MacroMicro_surgical.png, id=416, 561.09625pt x 578.16pt>
+<Chapter2/Figures//MacroMicro_surgical.png, id=418, 561.09625pt x 578.16pt>
 File: Chapter2/Figures//MacroMicro_surgical.png Graphic file (type png)
 <use Chapter2/Figures//MacroMicro_surgical.png>
 Package pdftex.def Info: Chapter2/Figures//MacroMicro_surgical.png  used on inp
@@ -935,7 +935,7 @@ roMicro_surgical.png>]) [14]
 
  (./Chapter3/chapter3.tex
 Chapter 3.
-<Chapter3/Figures//Real_system.jpg, id=434, 1284.8pt x 1052.93375pt>
+<Chapter3/Figures//Real_system.jpg, id=436, 1284.8pt x 1052.93375pt>
 File: Chapter3/Figures//Real_system.jpg Graphic file (type jpg)
 <use Chapter3/Figures//Real_system.jpg>
 Package pdftex.def Info: Chapter3/Figures//Real_system.jpg  used on input line 
@@ -951,7 +951,7 @@ File: ot1qcr.fd 2009/09/25 v1.2 font definition file for OT1/qcr
 
 
  <./Chapter3/Figures//Real_system.jpg>]
-<Chapter3/Figures//simplified_class_structure.png, id=440, 693.59125pt x 422.57
+<Chapter3/Figures//simplified_class_structure.png, id=442, 693.59125pt x 422.57
 875pt>
 File: Chapter3/Figures//simplified_class_structure.png Graphic file (type png)
 <use Chapter3/Figures//simplified_class_structure.png>
@@ -991,7 +991,7 @@ Overfull \hbox (2.13057pt too wide) in paragraph at lines 136--139
 ssed in chap.[][]4[][] 
  []
 
-<Chapter3/Figures//JointControlLoopDiagram.png, id=457, 783.92876pt x 793.96625
+<Chapter3/Figures//JointControlLoopDiagram.png, id=459, 783.92876pt x 793.96625
 pt>
 File: Chapter3/Figures//JointControlLoopDiagram.png Graphic file (type png)
 <use Chapter3/Figures//JointControlLoopDiagram.png>
@@ -999,7 +999,7 @@ Package pdftex.def Info: Chapter3/Figures//JointControlLoopDiagram.png  used on
  input line 148.
 (pdftex.def)             Requested size: 313.56595pt x 317.58087pt.
 [18] [19 <./Chapter3/Figures//JointControlLoopDiagram.png>]
-<Chapter3/Figures//Action_server_flowChart.png, id=467, 382.42876pt x 653.44125
+<Chapter3/Figures//Action_server_flowChart.png, id=469, 382.42876pt x 653.44125
 pt>
 File: Chapter3/Figures//Action_server_flowChart.png Graphic file (type png)
 <use Chapter3/Figures//Action_server_flowChart.png>
@@ -1017,7 +1017,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 169--196
  []
 
 [20 <./Chapter3/Figures//Action_server_flowChart.png>]
-<Chapter3/Figures//Reaching_loop_flowChart.png, id=474, 563.10374pt x 1064.9787
+<Chapter3/Figures//Reaching_loop_flowChart.png, id=476, 563.10374pt x 1064.9787
 4pt>
 File: Chapter3/Figures//Reaching_loop_flowChart.png Graphic file (type png)
 <use Chapter3/Figures//Reaching_loop_flowChart.png>
@@ -1035,51 +1035,86 @@ Chapter 4.
 
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 66--71
+Underfull \hbox (badness 10000) in paragraph at lines 67--72
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 66--71
+Underfull \hbox (badness 10000) in paragraph at lines 67--72
 
  []
 
 [25]
-Underfull \hbox (badness 10000) in paragraph at lines 86--90
+Underfull \hbox (badness 10000) in paragraph at lines 87--91
 
  []
 
-<Chapter4/Figures//DecreasingActFcn.jpg, id=512, 1927.2pt x 991.705pt>
+<Chapter4/Figures//DecreasingActFcn.jpg, id=514, 1927.2pt x 991.705pt>
 File: Chapter4/Figures//DecreasingActFcn.jpg Graphic file (type jpg)
 <use Chapter4/Figures//DecreasingActFcn.jpg>
 Package pdftex.def Info: Chapter4/Figures//DecreasingActFcn.jpg  used on input 
-line 103.
+line 104.
 (pdftex.def)             Requested size: 202.15909pt x 104.0186pt.
-<Chapter4/Figures//DecreasingActFcn_realValues.jpg, id=513, 1927.2pt x 991.705p
+<Chapter4/Figures//DecreasingActFcn_realValues.jpg, id=515, 1927.2pt x 991.705p
 t>
 File: Chapter4/Figures//DecreasingActFcn_realValues.jpg Graphic file (type jpg)
 
 <use Chapter4/Figures//DecreasingActFcn_realValues.jpg>
 Package pdftex.def Info: Chapter4/Figures//DecreasingActFcn_realValues.jpg  use
-d on input line 109.
+d on input line 110.
 (pdftex.def)             Requested size: 202.15909pt x 104.0186pt.
 [26 <./Chapter4/Figures//DecreasingActFcn.jpg> <./Chapter4/Figures//DecreasingA
 ctFcn_realValues.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 117--122
+Underfull \hbox (badness 10000) in paragraph at lines 118--123
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 117--122
+Underfull \hbox (badness 10000) in paragraph at lines 118--123
 
  []
 
-) [27]
+
+Underfull \hbox (badness 10000) in paragraph at lines 125--129
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 133--134
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 151--155
+
+ []
+
+[27]
+<Chapter4/Figures//DecreasingActFcn_realValues_obav.jpg, id=536, 1856.9375pt x 
+964.60374pt>
+File: Chapter4/Figures//DecreasingActFcn_realValues_obav.jpg Graphic file (type
+ jpg)
+<use Chapter4/Figures//DecreasingActFcn_realValues_obav.jpg>
+Package pdftex.def Info: Chapter4/Figures//DecreasingActFcn_realValues_obav.jpg
+  used on input line 164.
+(pdftex.def)             Requested size: 371.38092pt x 192.91733pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 157--167
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 191--196
+
+ []
+
+[28 <./Chapter4/Figures//DecreasingActFcn_realValues_obav.jpg>]) [29]
 \openout2 = `Chapter5/chapter5.aux'.
 
- (./Chapter5/chapter5.tex
+
+(./Chapter5/chapter5.tex
 Chapter 5.
-) [28
+) [30
 
 
 
@@ -1089,7 +1124,7 @@ Chapter 5.
 
  (./Conclusions/conclusions.tex
 Chapter 6.
-) [29
+) [31
 
 
 
@@ -1099,7 +1134,7 @@ Chapter 6.
 
  (./Appendix1/appendix1.tex
 Appendix A.
-) [30
+) [32
 
 
 
@@ -1108,27 +1143,27 @@ Appendix A.
 \tf@brf=\write7
 \openout7 = `RobEngThesisTemplate.brf'.
 
- [31
+ [33
 
 
 \FN@pp@footnotehinttrue 
 
 
-] [32]) [33] (./RobEngThesisTemplate.aux (./Originality/originality.aux)
+] [34]) [35] (./RobEngThesisTemplate.aux (./Originality/originality.aux)
 (./Acknowledgement/acknowledgement.aux) (./Dedication/dedication.aux)
 (./Abstract/abstract.aux) (./Chapter1/chapter1.aux) (./Chapter2/chapter2.aux)
 (./Chapter3/chapter3.aux) (./Chapter4/chapter4.aux) (./Chapter5/chapter5.aux)
 (./Conclusions/conclusions.aux) (./Appendix1/appendix1.aux))
 Package rerunfilecheck Info: File `RobEngThesisTemplate.out' has not changed.
-(rerunfilecheck)             Checksum: 87DED0DA6F1A3400B76D330E63ED35DA;6527.
+(rerunfilecheck)             Checksum: EDBD9C61F21558A9DB4EFD3C399D252C;6527.
 Package rerunfilecheck Info: File `RobEngThesisTemplate.brf' has not changed.
-(rerunfilecheck)             Checksum: F1C86919AB4B3F1193DCFE05063BB66B;1523.
+(rerunfilecheck)             Checksum: 4A09D466525853363EC881EE87885301;1597.
  ) 
 Here is how much of TeX's memory you used:
- 20308 strings out of 480171
- 390109 string characters out of 5894488
- 698071 words of memory out of 5000000
- 37691 multiletter control sequences out of 15000+600000
+ 20331 strings out of 480171
+ 390798 string characters out of 5894488
+ 698201 words of memory out of 5000000
+ 37700 multiletter control sequences out of 15000+600000
  536075 words of font info for 94 fonts, out of 8000000 for 9000
  62 hyphenation exceptions out of 8191
  125i,15n,131p,694b,923s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1170,10 +1205,10 @@ ist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf/fonts/type
 1/public/tex-gyre/qbkb.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/qbkr.p
 fb></usr/share/texmf/fonts/type1/public/tex-gyre/qbkri.pfb></usr/share/texmf/fo
 nts/type1/public/tex-gyre/qcrr.pfb>
-Output written on RobEngThesisTemplate.pdf (42 pages, 2059019 bytes).
+Output written on RobEngThesisTemplate.pdf (44 pages, 2170553 bytes).
 PDF statistics:
- 699 PDF objects out of 1000 (max. 8388607)
- 583 compressed objects within 6 object streams
- 139 named destinations out of 1000 (max. 500000)
- 369 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 731 PDF objects out of 1000 (max. 8388607)
+ 611 compressed objects within 7 object streams
+ 152 named destinations out of 1000 (max. 500000)
+ 374 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -62,6 +62,7 @@ The compact expression of the algorithm becomes, for the \textit{k-th} priority 
 
 \subsection{Task Description}
 In this section I will describe the mathematical formulation of the task I implemented in my control loop. To simplify the notation all the matrices, if not stated otherwise, are projected on the $\langle\textit{kuka\_base}\rangle$ reference frame.
+
 \subsubsection{End Effector minimum altitude}
 This task is used to keep the end effector away from the floor.\\
 \\ \\
@@ -123,16 +124,111 @@ using $z_min = 0,30$\textit{m} as my lower limit and $\delta = 0,1$\textit{m}, a
 	\leftindex^{kb}{\vec{J}}_{6/kb} ; \leftindex^{ub}{\vec{J}}_{12/ub}
 \end{equation}
 \\
-The complete trasformation for computing the Jacobian of the unified structure projected in the frame base is:
+The complete trasformation for computing the Jacobian of the unified structure projected in the kuka base frame is:
 \\
 \begin{equation}
-	content...
+	content ...
 \end{equation}
 
+I decided to build the jacobian colum by colum since it was necessary for the obstacle avoidance task and it allowed for a more clear and concise code. So for computing the colum relative to the $i-th$ link I used the equation:\\
+\begin{equation}
+	\leftindex^{kb}{\vec{J}}_{i/kb} = 
+	\begin{pmatrix}
+		\leftindex^{kb}{\vec{J}}_{i/kb}^{L} \\[4pt]
+		\leftindex^{kb}{\vec{J}}_{i/kb}^{A}
+	\end{pmatrix} =
+	\begin{pmatrix}
+		\vec{R}^{kb}_i \cdot \textit{ax}_i \times (r^{kb}_n - r^{kb}_i) \\[8pt]
+		\vec{R}^{kb}_i \cdot \textit{ax}_i
+	\end{pmatrix}
+	\label{equat:AnalyticJacobianFormula}
+\end{equation}
+\\
+\noindent
+where $\textit{ax}_i$ is the axes of rotation for joint i expressed in the joint frame, which I retrieved from the \codetxt{darkgray}{urdf} description of the two robots. 
 
 \subsubsection{Obstacle Avoidance}
+For the \textit{Obstacle Avoidance} task I used the approach proposed in \cite{maciejewski1985obstacle} keeping a single point task were that point is the point at minimum distance from the obstacle in the robot body.
 % single point
+\\ \noindent \textbf{Task reference}:\\
+\noindent As a task reference I used the opposite of the vector connecting the \textit{minimum distance} robot point to the \textit{obstacle point}. \\
+\begin{equation}
+	d = (P_o - P_r)\hspace{0.5cm};\hspace{0.5cm}\dot{\vec{\bar{r}}} = -d
+\end{equation}
+In chap.\ref{chap:fifth} I will experiment with both the vector as is, and with a zeroed out $z$ component. To understand how the proposed approach behaves in the 3d and 2d case. \\
+\noindent \textbf{Activation function}: \\
+The activation function is a $3\times 3$ matrix, and the values are computed in the same fashion as the \textit{minimum altitude} task.
+This time the minimum distance is lowered to $10$cm while $\delta = 50$cm, this was to enforce a very smooth activation of the task. The resulting profile is as follows:\\
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.2]{DecreasingActFcn_realValues_obav.jpg}
+	\caption{Activation for Obstacle avoidance}
+	\label{fig:DecreasingActFcn_realValues_obav}
+\end{figure}
+\noindent \textbf{Task Jacobian}:\\
+For the task jacobian I used the same analytical approach as in the \textit{minimum altitude} task, adding a rigid body to take into consideration the position of the \textit{minimum distance point} on the body of the robot.
+Taken the complete jacobian of the $12$Dof structure I pre-multiplied for the rigid body jacobian, which is computed as:
+\begin{equation}
+	\leftindex^{kb}{\vec{J}}_{mdp/kb} = 
+	\begin{pmatrix}
+		\leftindex^{kb}{\vec{J}}_{mdp/kb}^{L} \\[4pt]
+		\leftindex^{kb}{\vec{J}}_{mdp/kb}^{A}
+	\end{pmatrix} =
+	\begin{pmatrix}
+		\vec{I}_{3\times 3} & [r_{mdp/i}\times]^T \\[4pt]
+		\vec{0}_{3\times 3} & \vec{I}_{3\times 3}
+	\end{pmatrix} \cdot
+	\begin{pmatrix}
+		\leftindex^{kb}{\vec{J}}_{i/kb}^{L} \\[4pt]
+		\leftindex^{kb}{\vec{J}}_{i/kb}^{A}
+	\end{pmatrix} 
+\end{equation}\\
+\textit{mdp}:\textit{minimum distance point}, and \textit{i}: link that contains the \textit{mdp}
 
 % set based task
 
 \subsubsection{End Effector Target}
+This is the \textit{goal-driven task} in my simulation of the working environment.
+\\ \\
+\noindent \textbf{Task reference}:\\
+In this case the task reference is the \textit{cartesian error} between the \textit{tool} frame and the \textit{end-effector} frame.
+Computed in the simulation using the \textit{transformation buffer}, starting from names of the \textit{end effector} and \textit{tool} frame the translation error:
+\begin{equation}
+	err_{goal/tool}^{L} = \leftindex^{kb}{(P_g - P_t)}
+\end{equation}
+all projected in the end effector frame. For the angular error I use the quaternion expression of the two rotation matrices:
+\begin{equation}
+	\vec{R}_{goal}^{kb} = \rho_{goal} \hspace{0,25cm};\hspace{0,25cm} \vec{R}_{tool}^{kb} = \rho_{tool}
+\end{equation}
+I than compute the error using the quaternions that gives:
+\begin{equation}
+	\rho_{err} = \rho_{goal}^{-1} \cdot \rho_{tool}
+\end{equation}
+lastly this I took the vector part of this quaternion to multiply to the rotation $\vec{R}_{tool}^{kb}$:
+\begin{equation}
+	\rho_{err} = 
+	\begin{pmatrix}
+		x_e \\
+		y_e \\
+		z_e \\
+		w_e
+	\end{pmatrix} =
+	\begin{pmatrix}
+		\vec{v}_e \\
+		w_e
+	\end{pmatrix}
+	\hspace{0,25cm};\hspace{0,25cm}
+	\vec{v}_e = \vec{u}\sin\left(\frac{\theta}{2}\right)
+\end{equation}
+and $\vec{v}_e$ is proportional to the angle error, for small angle. The vector I used as \textit{angular part} of the cartesian error is:	
+\begin{equation}
+	err_{goal/tool}^{A} = - \vec{R}_{tool}^{kb} \vec{v}_e
+\end{equation}
+
+\noindent \textbf{Activation function}: \\
+Since this in an \textit{equality task} it has to be always active. And given the dimension of its \textit{reference rate}: $\dot{\bar{x}} \in \mathbb{R}^{6\times 1}$ the activation function is a identity matrix.
+\begin{equation}
+	\vec{A} = \vec{I} \in \mathbb{R}^{6\times 6}
+\end{equation}
+\noindent \textbf{Task Jacobian}:\\
+The task jacobian is the \textit{complete geometric jacobian} for the \textit{end effector}, computed as shown in \ref{equat:AnalyticJacobianFormula}.
