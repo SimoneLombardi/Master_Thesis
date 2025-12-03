@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2025.11.11)  2 DEC 2025 17:25
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2025.11.11)  3 DEC 2025 17:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -822,26 +822,38 @@ LaTeX Font Info:    Trying to load font information for TS1+qbk on input line 1
 4.
 (/usr/share/texmf/tex/latex/tex-gyre/ts1qbk.fd
 File: ts1qbk.fd 2009/09/25 v1.2 font definition file for TS1/qbk
-)pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
- been already used, duplicate ignored
+)
+Underfull \hbox (badness 10000) in paragraph at lines 17--18
+
+ []
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
+been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.21 
-      [1
+l.22 T
+      he main objective of the project was to enable sensor-based control an...
+[1
 
 
 
-])pdfTeX warning (ext4): destination with the same identifier (name{page.2}) ha
-s been already used, duplicate ignored
+]
+Overfull \hbox (2.50731pt too wide) in paragraph at lines 33--35
+\OT1/qbk/m/n/12 sep-a-rately, due to tech-ni-cal com-pli-ca-tion in the con-tro
+l of the real robots,
+ []
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has 
+been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.116 \include{Chapter1/chapter1}
-                                  [2]
+l.42 
+      [2]) [3]
 \openout2 = `Chapter2/chapter2.aux'.
 
  (./Chapter2/chapter2.tex
 Chapter 2.
-<Chapter2/Figures//Direct-visual-servoing-scheme.jpeg, id=293, 69.81282pt x 31.
+<Chapter2/Figures//Direct-visual-servoing-scheme.jpeg, id=294, 69.81282pt x 31.
 0761pt>
 File: Chapter2/Figures//Direct-visual-servoing-scheme.jpeg Graphic file (type j
 pg)
@@ -849,187 +861,123 @@ pg)
 Package pdftex.def Info: Chapter2/Figures//Direct-visual-servoing-scheme.jpeg  
 used on input line 27.
 (pdftex.def)             Requested size: 349.06319pt x 155.38002pt.
-[3
+[4
 
 
 
 
 ]
-<Chapter2/Figures//stereoVision_schema.png, id=303, 865.2325pt x 331.2375pt>
+<Chapter2/Figures//stereoVision_schema.png, id=305, 865.2325pt x 331.2375pt>
 File: Chapter2/Figures//stereoVision_schema.png Graphic file (type png)
 <use Chapter2/Figures//stereoVision_schema.png>
 Package pdftex.def Info: Chapter2/Figures//stereoVision_schema.png  used on inp
 ut line 40.
 (pdftex.def)             Requested size: 346.08687pt x 132.49265pt.
- [4 <./Chapter2/Figures//Direct-visual-servoing-scheme.jpeg>]
-Overfull \hbox (9.99403pt too wide) in paragraph at lines 51--52
-\OT1/qbk/m/n/12 im-ple-men-ta-tion that is task-specific, which means that ev-e
-ry change
+ [5 <./Chapter2/Figures//Direct-visual-servoing-scheme.jpeg>]
+Overfull \hbox (5.5541pt too wide) in paragraph at lines 51--52
+\OT1/qbk/m/n/12 im-ple-men-ta-tion that is task and en-vi-ron-ment spe-cific, w
+hich means
  []
 
-[5 <./Chapter2/Figures//stereoVision_schema.png>] [6]
-<Chapter2/Figures//obav_scheme.png, id=335, 686.565pt x 630.355pt>
+[6 <./Chapter2/Figures//stereoVision_schema.png>]
+<Chapter2/Figures//workspace_sensor.png, id=324, 454.69875pt x 382.42876pt>
+File: Chapter2/Figures//workspace_sensor.png Graphic file (type png)
+<use Chapter2/Figures//workspace_sensor.png>
+Package pdftex.def Info: Chapter2/Figures//workspace_sensor.png  used on input 
+line 73.
+(pdftex.def)             Requested size: 202.15909pt x 170.03145pt.
+<Chapter2/Figures//sensorKinectV2.png, id=325, 454.69875pt x 382.42876pt>
+File: Chapter2/Figures//sensorKinectV2.png Graphic file (type png)
+<use Chapter2/Figures//sensorKinectV2.png>
+Package pdftex.def Info: Chapter2/Figures//sensorKinectV2.png  used on input li
+ne 79.
+(pdftex.def)             Requested size: 202.15909pt x 170.03145pt.
+<Chapter2/Figures//sensorOmronLidar.png, id=326, 447.6725pt x 275.0275pt>
+File: Chapter2/Figures//sensorOmronLidar.png Graphic file (type png)
+<use Chapter2/Figures//sensorOmronLidar.png>
+Package pdftex.def Info: Chapter2/Figures//sensorOmronLidar.png  used on input 
+line 87.
+(pdftex.def)             Requested size: 202.15909pt x 124.19766pt.
+<Chapter2/Figures//sensotIntelRealSense.png, id=327, 475.7775pt x 284.06125pt>
+File: Chapter2/Figures//sensotIntelRealSense.png Graphic file (type png)
+<use Chapter2/Figures//sensotIntelRealSense.png>
+Package pdftex.def Info: Chapter2/Figures//sensotIntelRealSense.png  used on in
+put line 93.
+(pdftex.def)             Requested size: 202.15909pt x 120.70058pt.
+ [7 <./Chapter2/Figures//workspace_sensor.png> <./Chapter2/Figures//sensorKinec
+tV2.png>]
+<Chapter2/Figures//obav_scheme.png, id=342, 686.565pt x 630.355pt>
 File: Chapter2/Figures//obav_scheme.png Graphic file (type png)
 <use Chapter2/Figures//obav_scheme.png>
 Package pdftex.def Info: Chapter2/Figures//obav_scheme.png  used on input line 
-89.
+116.
 (pdftex.def)             Requested size: 240.30135pt x 220.62755pt.
- [7 <./Chapter2/Figures//obav_scheme.png>]
-<Chapter2/Figures//SDA10_500_dualArmManipulator.jpg, id=352, 120.45pt x 120.45p
+ [8 <./Chapter2/Figures//sensorOmronLidar.png> <./Chapter2/Figures//sensotIntel
+RealSense.png>]
+[9 <./Chapter2/Figures//obav_scheme.png>]
+<Chapter2/Figures//SDA10_500_dualArmManipulator.jpg, id=368, 120.45pt x 120.45p
 t>
 File: Chapter2/Figures//SDA10_500_dualArmManipulator.jpg Graphic file (type jpg
 )
 <use Chapter2/Figures//SDA10_500_dualArmManipulator.jpg>
 Package pdftex.def Info: Chapter2/Figures//SDA10_500_dualArmManipulator.jpg  us
-ed on input line 125.
+ed on input line 152.
 (pdftex.def)             Requested size: 180.67453pt x 180.67453pt.
- [8]
-<Chapter2/Figures//anphiBot_snakelike.jpg, id=375, 79.7379pt x 59.7432pt>
+ [10]
+<Chapter2/Figures//anphiBot_snakelike.jpg, id=391, 79.7379pt x 59.7432pt>
 File: Chapter2/Figures//anphiBot_snakelike.jpg Graphic file (type jpg)
 <use Chapter2/Figures//anphiBot_snakelike.jpg>
 Package pdftex.def Info: Chapter2/Figures//anphiBot_snakelike.jpg  used on inpu
-t line 143.
+t line 170.
 (pdftex.def)             Requested size: 119.60655pt x 89.61453pt.
- [9 <./Chapter2/Figures//SDA10_500_dualArmManipulator.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 147--150
+ [11 <./Chapter2/Figures//SDA10_500_dualArmManipulator.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 174--177
 
  []
 
-<Chapter2/Figures//ANAT-robot-arm.jpeg, id=392, 853.1875pt x 383.4325pt>
+<Chapter2/Figures//ANAT-robot-arm.jpeg, id=410, 853.1875pt x 383.4325pt>
 File: Chapter2/Figures//ANAT-robot-arm.jpeg Graphic file (type jpg)
 <use Chapter2/Figures//ANAT-robot-arm.jpeg>
 Package pdftex.def Info: Chapter2/Figures//ANAT-robot-arm.jpeg  used on input l
-ine 155.
+ine 182.
 (pdftex.def)             Requested size: 383.93083pt x 172.54303pt.
-[10 <./Chapter2/Figures//anphiBot_snakelike.jpg>]
-Overfull \hbox (3.74194pt too wide) in paragraph at lines 184--186
+[12 <./Chapter2/Figures//anphiBot_snakelike.jpg> <./Chapter2/Figures//ANAT-robo
+t-arm.jpeg>]
+Overfull \hbox (3.74194pt too wide) in paragraph at lines 211--213
 \OT1/qbk/m/n/12 stan-dard choice for \OT1/qbk/m/it/12 dy-namic obstacle-avoidan
 ce con-trol\OT1/qbk/m/n/12 , I could not adopt
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 184--186
+Underfull \hbox (badness 10000) in paragraph at lines 211--213
 
  []
 
-[11 <./Chapter2/Figures//ANAT-robot-arm.jpeg>]
-Underfull \hbox (badness 10000) in paragraph at lines 189--190
+
+Underfull \hbox (badness 10000) in paragraph at lines 216--217
 
  []
 
-<Chapter2/Figures//macro_micro_example.png, id=415, 618.31pt x 608.2725pt>
+<Chapter2/Figures//macro_micro_example.png, id=423, 618.31pt x 608.2725pt>
 File: Chapter2/Figures//macro_micro_example.png Graphic file (type png)
 <use Chapter2/Figures//macro_micro_example.png>
 Package pdftex.def Info: Chapter2/Figures//macro_micro_example.png  used on inp
-ut line 194.
+ut line 221.
 (pdftex.def)             Requested size: 278.23692pt x 273.7201pt.
-<Chapter2/Figures//MacroMicro_surgical.png, id=418, 561.09625pt x 578.16pt>
+[13]
+<Chapter2/Figures//MacroMicro_surgical.png, id=434, 561.09625pt x 578.16pt>
 File: Chapter2/Figures//MacroMicro_surgical.png Graphic file (type png)
 <use Chapter2/Figures//MacroMicro_surgical.png>
 Package pdftex.def Info: Chapter2/Figures//MacroMicro_surgical.png  used on inp
-ut line 213.
+ut line 240.
 (pdftex.def)             Requested size: 252.49098pt x 260.16959pt.
-[12 <./Chapter2/Figures//macro_micro_example.png>] [13 <./Chapter2/Figures//Mac
-roMicro_surgical.png>]) [14]
+ [14 <./Chapter2/Figures//macro_micro_example.png>] [15 <./Chapter2/Figures//Ma
+croMicro_surgical.png>]) [16]
 \openout2 = `Chapter3/chapter3.aux'.
 
  (./Chapter3/chapter3.tex
 Chapter 3.
-<Chapter3/Figures//Real_system.jpg, id=436, 1284.8pt x 1052.93375pt>
-File: Chapter3/Figures//Real_system.jpg Graphic file (type jpg)
-<use Chapter3/Figures//Real_system.jpg>
-Package pdftex.def Info: Chapter3/Figures//Real_system.jpg  used on input line 
-21.
-(pdftex.def)             Requested size: 256.95544pt x 210.58302pt.
-LaTeX Font Info:    Trying to load font information for OT1+qcr on input line 2
-6.
-(/usr/share/texmf/tex/latex/tex-gyre/ot1qcr.fd
-File: ot1qcr.fd 2009/09/25 v1.2 font definition file for OT1/qcr
-) [15
-
-
-
-
- <./Chapter3/Figures//Real_system.jpg>]
-<Chapter3/Figures//simplified_class_structure.png, id=442, 693.59125pt x 422.57
-875pt>
-File: Chapter3/Figures//simplified_class_structure.png Graphic file (type png)
-<use Chapter3/Figures//simplified_class_structure.png>
-Package pdftex.def Info: Chapter3/Figures//simplified_class_structure.png  used
- on input line 48.
-(pdftex.def)             Requested size: 346.79477pt x 211.28885pt.
-
-Overfull \hbox (1.85463pt too wide) in paragraph at lines 38--51
-\OT1/qbk/m/n/12 The trans-for-ma-tion buffer con-tain the kine-matic chain of t
-he two robots,
- []
-
-[16 <./Chapter3/Figures//simplified_class_structure.png>]
-Overfull \hbox (5.84167pt too wide) in paragraph at lines 104--104
-[]|[]| 
- []
-
-
-Overfull \hbox (25.82161pt too wide) in paragraph at lines 104--104
-[]|[]| 
- []
-
-
-Overfull \hbox (21.59766pt too wide) in paragraph at lines 104--104
-[]|[]| 
- []
-
-[17]
-Overfull \hbox (12.76263pt too wide) in paragraph at lines 118--134
-\OT1/qbk/m/n/12 ces and put ev-ery-thing in a map([]\OT1/qcr/m/n/12 map<string,
- tp[]task>[] []TP[]task[]map[][][];[]\OT1/qbk/m/n/12 ). 
- []
-
-
-Overfull \hbox (2.13057pt too wide) in paragraph at lines 136--139
-\OT1/qbk/m/n/12 The spe-cific com-pu-ta-tion needed of each task will be dis-cu
-ssed in chap.[][]4[][] 
- []
-
-<Chapter3/Figures//JointControlLoopDiagram.png, id=459, 783.92876pt x 793.96625
-pt>
-File: Chapter3/Figures//JointControlLoopDiagram.png Graphic file (type png)
-<use Chapter3/Figures//JointControlLoopDiagram.png>
-Package pdftex.def Info: Chapter3/Figures//JointControlLoopDiagram.png  used on
- input line 148.
-(pdftex.def)             Requested size: 313.56595pt x 317.58087pt.
-[18] [19 <./Chapter3/Figures//JointControlLoopDiagram.png>]
-<Chapter3/Figures//Action_server_flowChart.png, id=469, 382.42876pt x 653.44125
-pt>
-File: Chapter3/Figures//Action_server_flowChart.png Graphic file (type png)
-<use Chapter3/Figures//Action_server_flowChart.png>
-Package pdftex.def Info: Chapter3/Figures//Action_server_flowChart.png  used on
- input line 160.
-(pdftex.def)             Requested size: 191.2139pt x 326.71982pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 169--196
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 169--196
-
- []
-
-[20 <./Chapter3/Figures//Action_server_flowChart.png>]
-<Chapter3/Figures//Reaching_loop_flowChart.png, id=476, 563.10374pt x 1064.9787
-4pt>
-File: Chapter3/Figures//Reaching_loop_flowChart.png Graphic file (type png)
-<use Chapter3/Figures//Reaching_loop_flowChart.png>
-Package pdftex.def Info: Chapter3/Figures//Reaching_loop_flowChart.png  used on
- input line 202.
-(pdftex.def)             Requested size: 225.2375pt x 425.98395pt.
- [21] [22 <./Chapter3/Figures//Reaching_loop_flowChart.png>]) [23]
-\openout2 = `Chapter4/chapter4.aux'.
-
- (./Chapter4/chapter4.tex
-Chapter 4.
-[24
+[17
 
 
 
@@ -1044,27 +992,32 @@ Underfull \hbox (badness 10000) in paragraph at lines 67--72
 
  []
 
-[25]
+[18]
 Underfull \hbox (badness 10000) in paragraph at lines 87--91
 
  []
 
-<Chapter4/Figures//DecreasingActFcn.jpg, id=514, 1927.2pt x 991.705pt>
-File: Chapter4/Figures//DecreasingActFcn.jpg Graphic file (type jpg)
-<use Chapter4/Figures//DecreasingActFcn.jpg>
-Package pdftex.def Info: Chapter4/Figures//DecreasingActFcn.jpg  used on input 
+<Chapter3/Figures//DecreasingActFcn.jpg, id=476, 1927.2pt x 991.705pt>
+File: Chapter3/Figures//DecreasingActFcn.jpg Graphic file (type jpg)
+<use Chapter3/Figures//DecreasingActFcn.jpg>
+Package pdftex.def Info: Chapter3/Figures//DecreasingActFcn.jpg  used on input 
 line 104.
 (pdftex.def)             Requested size: 202.15909pt x 104.0186pt.
-<Chapter4/Figures//DecreasingActFcn_realValues.jpg, id=515, 1927.2pt x 991.705p
+<Chapter3/Figures//DecreasingActFcn_realValues.jpg, id=477, 1927.2pt x 991.705p
 t>
-File: Chapter4/Figures//DecreasingActFcn_realValues.jpg Graphic file (type jpg)
+File: Chapter3/Figures//DecreasingActFcn_realValues.jpg Graphic file (type jpg)
 
-<use Chapter4/Figures//DecreasingActFcn_realValues.jpg>
-Package pdftex.def Info: Chapter4/Figures//DecreasingActFcn_realValues.jpg  use
+<use Chapter3/Figures//DecreasingActFcn_realValues.jpg>
+Package pdftex.def Info: Chapter3/Figures//DecreasingActFcn_realValues.jpg  use
 d on input line 110.
 (pdftex.def)             Requested size: 202.15909pt x 104.0186pt.
-[26 <./Chapter4/Figures//DecreasingActFcn.jpg> <./Chapter4/Figures//DecreasingA
+[19 <./Chapter3/Figures//DecreasingActFcn.jpg> <./Chapter3/Figures//DecreasingA
 ctFcn_realValues.jpg>]
+LaTeX Font Info:    Trying to load font information for OT1+qcr on input line 1
+22.
+ (/usr/share/texmf/tex/latex/tex-gyre/ot1qcr.fd
+File: ot1qcr.fd 2009/09/25 v1.2 font definition file for OT1/qcr
+)
 Underfull \hbox (badness 10000) in paragraph at lines 118--123
 
  []
@@ -1089,13 +1042,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 151--155
 
  []
 
-[27]
-<Chapter4/Figures//DecreasingActFcn_realValues_obav.jpg, id=536, 1856.9375pt x 
+[20]
+<Chapter3/Figures//DecreasingActFcn_realValues_obav.jpg, id=499, 1856.9375pt x 
 964.60374pt>
-File: Chapter4/Figures//DecreasingActFcn_realValues_obav.jpg Graphic file (type
+File: Chapter3/Figures//DecreasingActFcn_realValues_obav.jpg Graphic file (type
  jpg)
-<use Chapter4/Figures//DecreasingActFcn_realValues_obav.jpg>
-Package pdftex.def Info: Chapter4/Figures//DecreasingActFcn_realValues_obav.jpg
+<use Chapter3/Figures//DecreasingActFcn_realValues_obav.jpg>
+Package pdftex.def Info: Chapter3/Figures//DecreasingActFcn_realValues_obav.jpg
   used on input line 164.
 (pdftex.def)             Requested size: 371.38092pt x 192.91733pt.
 
@@ -1108,13 +1061,103 @@ Underfull \hbox (badness 10000) in paragraph at lines 191--196
 
  []
 
-[28 <./Chapter4/Figures//DecreasingActFcn_realValues_obav.jpg>]) [29]
+[21 <./Chapter3/Figures//DecreasingActFcn_realValues_obav.jpg>]) [22]
+\openout2 = `Chapter4/chapter4.aux'.
+
+
+(./Chapter4/chapter4.tex
+Chapter 4.
+<Chapter4/Figures//Real_system.jpg, id=518, 1284.8pt x 1052.93375pt>
+File: Chapter4/Figures//Real_system.jpg Graphic file (type jpg)
+<use Chapter4/Figures//Real_system.jpg>
+Package pdftex.def Info: Chapter4/Figures//Real_system.jpg  used on input line 
+21.
+(pdftex.def)             Requested size: 256.95544pt x 210.58302pt.
+[23
+
+
+
+
+ <./Chapter4/Figures//Real_system.jpg>]
+<Chapter4/Figures//simplified_class_structure.png, id=523, 693.59125pt x 422.57
+875pt>
+File: Chapter4/Figures//simplified_class_structure.png Graphic file (type png)
+<use Chapter4/Figures//simplified_class_structure.png>
+Package pdftex.def Info: Chapter4/Figures//simplified_class_structure.png  used
+ on input line 48.
+(pdftex.def)             Requested size: 346.79477pt x 211.28885pt.
+
+Overfull \hbox (1.85463pt too wide) in paragraph at lines 38--51
+\OT1/qbk/m/n/12 The trans-for-ma-tion buffer con-tain the kine-matic chain of t
+he two robots,
+ []
+
+[24 <./Chapter4/Figures//simplified_class_structure.png>]
+Overfull \hbox (5.84167pt too wide) in paragraph at lines 104--104
+[]|[]| 
+ []
+
+
+Overfull \hbox (25.82161pt too wide) in paragraph at lines 104--104
+[]|[]| 
+ []
+
+
+Overfull \hbox (21.59766pt too wide) in paragraph at lines 104--104
+[]|[]| 
+ []
+
+[25]
+Overfull \hbox (12.76263pt too wide) in paragraph at lines 118--134
+\OT1/qbk/m/n/12 ces and put ev-ery-thing in a map([]\OT1/qcr/m/n/12 map<string,
+ tp[]task>[] []TP[]task[]map[][][];[]\OT1/qbk/m/n/12 ). 
+ []
+
+
+Overfull \hbox (2.13057pt too wide) in paragraph at lines 136--139
+\OT1/qbk/m/n/12 The spe-cific com-pu-ta-tion needed of each task will be dis-cu
+ssed in chap.[][]4[][] 
+ []
+
+<Chapter4/Figures//JointControlLoopDiagram.png, id=538, 783.92876pt x 793.96625
+pt>
+File: Chapter4/Figures//JointControlLoopDiagram.png Graphic file (type png)
+<use Chapter4/Figures//JointControlLoopDiagram.png>
+Package pdftex.def Info: Chapter4/Figures//JointControlLoopDiagram.png  used on
+ input line 148.
+(pdftex.def)             Requested size: 313.56595pt x 317.58087pt.
+[26] [27 <./Chapter4/Figures//JointControlLoopDiagram.png>]
+<Chapter4/Figures//Action_server_flowChart.png, id=548, 382.42876pt x 653.44125
+pt>
+File: Chapter4/Figures//Action_server_flowChart.png Graphic file (type png)
+<use Chapter4/Figures//Action_server_flowChart.png>
+Package pdftex.def Info: Chapter4/Figures//Action_server_flowChart.png  used on
+ input line 160.
+(pdftex.def)             Requested size: 191.2139pt x 326.71982pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 169--196
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 169--196
+
+ []
+
+[28 <./Chapter4/Figures//Action_server_flowChart.png>]
+<Chapter4/Figures//Reaching_loop_flowChart.png, id=556, 563.10374pt x 1064.9787
+4pt>
+File: Chapter4/Figures//Reaching_loop_flowChart.png Graphic file (type png)
+<use Chapter4/Figures//Reaching_loop_flowChart.png>
+Package pdftex.def Info: Chapter4/Figures//Reaching_loop_flowChart.png  used on
+ input line 202.
+(pdftex.def)             Requested size: 225.2375pt x 425.98395pt.
+ [29] [30 <./Chapter4/Figures//Reaching_loop_flowChart.png>]) [31]
 \openout2 = `Chapter5/chapter5.aux'.
 
-
-(./Chapter5/chapter5.tex
+ (./Chapter5/chapter5.tex
 Chapter 5.
-) [30
+) [32
 
 
 
@@ -1124,7 +1167,7 @@ Chapter 5.
 
  (./Conclusions/conclusions.tex
 Chapter 6.
-) [31
+) [33
 
 
 
@@ -1134,7 +1177,7 @@ Chapter 6.
 
  (./Appendix1/appendix1.tex
 Appendix A.
-) [32
+) [34
 
 
 
@@ -1143,27 +1186,27 @@ Appendix A.
 \tf@brf=\write7
 \openout7 = `RobEngThesisTemplate.brf'.
 
- [33
+ [35
 
 
 \FN@pp@footnotehinttrue 
 
 
-] [34]) [35] (./RobEngThesisTemplate.aux (./Originality/originality.aux)
+] [36]) [37] (./RobEngThesisTemplate.aux (./Originality/originality.aux)
 (./Acknowledgement/acknowledgement.aux) (./Dedication/dedication.aux)
 (./Abstract/abstract.aux) (./Chapter1/chapter1.aux) (./Chapter2/chapter2.aux)
 (./Chapter3/chapter3.aux) (./Chapter4/chapter4.aux) (./Chapter5/chapter5.aux)
 (./Conclusions/conclusions.aux) (./Appendix1/appendix1.aux))
 Package rerunfilecheck Info: File `RobEngThesisTemplate.out' has not changed.
-(rerunfilecheck)             Checksum: EDBD9C61F21558A9DB4EFD3C399D252C;6527.
+(rerunfilecheck)             Checksum: 30760A20C4574A6D8ED29B1E67DD4B8B;6671.
 Package rerunfilecheck Info: File `RobEngThesisTemplate.brf' has not changed.
-(rerunfilecheck)             Checksum: 4A09D466525853363EC881EE87885301;1597.
+(rerunfilecheck)             Checksum: A73BE5DD206AADEE479DC64D58540733;1547.
  ) 
 Here is how much of TeX's memory you used:
- 20331 strings out of 480171
- 390798 string characters out of 5894488
- 698201 words of memory out of 5000000
- 37700 multiletter control sequences out of 15000+600000
+ 20375 strings out of 480171
+ 392302 string characters out of 5894488
+ 698630 words of memory out of 5000000
+ 37736 multiletter control sequences out of 15000+600000
  536075 words of font info for 94 fonts, out of 8000000 for 9000
  62 hyphenation exceptions out of 8191
  125i,15n,131p,694b,923s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1205,10 +1248,10 @@ ist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf/fonts/type
 1/public/tex-gyre/qbkb.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/qbkr.p
 fb></usr/share/texmf/fonts/type1/public/tex-gyre/qbkri.pfb></usr/share/texmf/fo
 nts/type1/public/tex-gyre/qcrr.pfb>
-Output written on RobEngThesisTemplate.pdf (44 pages, 2170553 bytes).
+Output written on RobEngThesisTemplate.pdf (46 pages, 2727214 bytes).
 PDF statistics:
- 731 PDF objects out of 1000 (max. 8388607)
- 611 compressed objects within 7 object streams
- 152 named destinations out of 1000 (max. 500000)
- 374 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 747 PDF objects out of 1000 (max. 8388607)
+ 617 compressed objects within 7 object streams
+ 156 named destinations out of 1000 (max. 500000)
+ 394 words of extra memory for PDF output out of 10000 (max. 10000000)
 

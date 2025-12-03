@@ -6,9 +6,9 @@
 \label{chap:second}
 \graphicspath{{Chapter2/Figures/PNG/}{Chapter2/Figures/JPG/}{Chapter2/Figures/JPEG/}{Chapter2/Figures/}}
 
-In this chapter I will explore the literature on the topics of: \textit{ambient perception} to expore different sensing approaches to control manipulators in a dynamic environment. I will than focus my attention on the uses of this sensory information in the task of \textit{obstacle avoidance}
+In this chapter I will explore the literature on the topics of: \textit{ambient perception} to expore different sensing approaches to control manipulators in a dynamic environment. I will than focus my attention on the uses of this sensory information in the task of \textit{obstacle avoidance}.
 \noindent 
-During my state of the art research it was apparent a lack of literature on the specific architecture developed in the \textit{SestoSenso project}. For this reason the last part of this chapter has focused more broadly on \textit{high dof architecure}, to explore how long open kinematic chain system are treated, and in which areas are used.
+During my state of the art research it was apparent a lack of literature on the specific architecture developed in the \textit{SestoSenso project}. For this reason the last part of this chapter has focused more broadly on \textit{high dof architecure}, to explore how long open kinematic chain system are treated, and in which areas they are used.
 
 \section{Environment perception and awareness}
 Environment perception is one of the biggest difference when we move from the classical use of robotic systems in industry, to a more modern framework geared towards HRI.
@@ -48,7 +48,7 @@ But they still have a series of weaknesses that have a large impact when it come
 In the work of \cite{s25206402} a control system using a 3d stereo camera and the YOLO AI algorithm for image recognition, those limitation are evident:
 \begin{itemize}
 	\item \textbf{Hardware and software}: The cost of the system parts is not paltry, form the camera to the AI software.
-	\item \textbf{Integration and configuration}: The camera apparatus has an implementation that is task-specific, which means that every change in the environment requires a complete re-configuration of the system.
+	\item \textbf{Integration and configuration}: The camera apparatus has an implementation that is task and environment specific, which means that every change requires a complete re-configuration of the system.
 	\item \textbf{Computational cost}: The image analysis is performed on a separated computer to manage the burden of the computation.
 	\item \textbf{Field of view}: The camera visualize only the work area, which is not adequate for a HRI situation.
 	\item \textbf{Environment interference}: The use of 2D and 3D image information, require to have a strict control on the occlusion and disturbances in the environment, from lighting to airborne dust. This level of control is not possible in a industrial context. 
@@ -67,7 +67,34 @@ The Intel sensor instead is based on the \textit{stereo vision} principle, but i
 \\
 \noindent
 The sensors are mounted on the \textit{end effector} of the manipulator and panned over the workspace to record a sample of the environment, the resulting pointcloud is than processed to reduce the number of points and to extract feature of the environment.
-\\
+\begin{figure}[H]
+	\centering
+	\begin{subfigure}{0.49\textwidth}
+		\includegraphics[width=\linewidth]{workspace_sensor.png}
+		\caption{Workspace}
+		\label{fig:workspace_sensor}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}{0.49\textwidth}
+		\includegraphics[width=\linewidth]{sensorKinectV2.png}
+		\caption{PC from Kinect V2}
+		\label{fig:sensorKinectV2}
+	\end{subfigure}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\begin{subfigure}{0.49\textwidth}
+		\includegraphics[width=\linewidth]{sensorOmronLidar.png}
+		\caption{PC from Omron lidar}
+		\label{fig:sensorOmronLidar}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}{0.49\textwidth}
+		\includegraphics[width=\linewidth]{sensotIntelRealSense.png}
+		\caption{PC from Intel RealSense}
+		\label{fig:sensotIntelRealSense}
+	\end{subfigure}
+\end{figure}
 \noindent
 In the paper the extracted feature are used to simplify the 3D representation of the obstacle, and to perform collision-checks they confronted a series of different algorithms. In the case of my thesis I stopped after the filtering to reduce the number of points, than the point cloud is directly used to represent the robot and obstacle in the simulation.
 \\

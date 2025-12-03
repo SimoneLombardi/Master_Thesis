@@ -1,22 +1,22 @@
 \babel@toc {english}{}\relax 
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Direct visual servoing scheme\relax }}{4}{figure.caption.3}%
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Vision coordinate sistem\relax }}{5}{figure.caption.4}%
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Obstacle avoidance schema\relax }}{7}{figure.caption.5}%
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Dual-arm industrial robot example, SDA10\relax }}{9}{figure.caption.6}%
-\contentsline {figure}{\numberline {2.5}{\ignorespaces snake like robot from \cite {crespi2005amphibot}\relax }}{10}{figure.caption.7}%
-\contentsline {figure}{\numberline {2.6}{\ignorespaces ANAT robot arm\relax }}{11}{figure.caption.8}%
-\contentsline {figure}{\numberline {2.7}{\ignorespaces Macro-Micro robot\relax }}{12}{figure.caption.9}%
-\contentsline {figure}{\numberline {2.8}{\ignorespaces Macro-Micro surgical robot\relax }}{13}{figure.caption.10}%
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Direct visual servoing scheme\relax }}{5}{figure.caption.3}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Vision coordinate sistem\relax }}{6}{figure.caption.4}%
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Obstacle avoidance schema\relax }}{9}{figure.caption.7}%
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Dual-arm industrial robot example, SDA10\relax }}{11}{figure.caption.8}%
+\contentsline {figure}{\numberline {2.7}{\ignorespaces snake like robot from \cite {crespi2005amphibot}\relax }}{12}{figure.caption.9}%
+\contentsline {figure}{\numberline {2.8}{\ignorespaces ANAT robot arm\relax }}{12}{figure.caption.10}%
+\contentsline {figure}{\numberline {2.9}{\ignorespaces Macro-Micro robot\relax }}{14}{figure.caption.11}%
+\contentsline {figure}{\numberline {2.10}{\ignorespaces Macro-Micro surgical robot\relax }}{15}{figure.caption.12}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces photo of the real system, inside the workcell\relax }}{15}{figure.caption.11}%
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Simplified structure of the class JointRobotTP\relax }}{16}{figure.caption.12}%
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Joint reaching control loop\relax }}{19}{figure.caption.13}%
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Action server flow chart\relax }}{20}{figure.caption.14}%
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Reaching loop flow chart\relax }}{22}{figure.caption.15}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Activation for Obstacle avoidance\relax }}{21}{figure.caption.14}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Activation for Obstacle avoidance\relax }}{28}{figure.caption.17}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces photo of the real system, inside the workcell\relax }}{23}{figure.caption.15}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Simplified structure of the class JointRobotTP\relax }}{24}{figure.caption.16}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Joint reaching control loop\relax }}{27}{figure.caption.17}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Action server flow chart\relax }}{28}{figure.caption.18}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Reaching loop flow chart\relax }}{30}{figure.caption.19}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

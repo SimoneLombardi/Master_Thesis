@@ -1,0 +1,34 @@
+fare switch cap 4 con 3 (parte teorica prima della pratica) \\\\ FATTO
+modifica titolo cap 5 (simulation env and experiments) \\\\ FATTO
+
+estensione intro 
+1 riprendere un poco i paper principali
+2 dire qualcosa di più su sesto senso, MOTIVAZIONI DI sesto senso: applicazioni per robot alto payload più flessibili
+3 per obiettivo tesi: esplorare le capacità di un controllo reattivo e sensorizzato per un robot industriale ad alto payload
+	parlare di "collaborate" (scholar grella)
+	
+differenza tra sensorizzazione a larga area, e camera based
+
+aggiungere immagini per la parte di sensoristica
+
+aggiungere qualcosa su SDF, sined distance function 
+(aggiungere qualcosa su collaborate quì)
+
+obav 
+(aggiungi immagine dal paper ostacolo 3d)
+fissarsi meglio sulle differenze reacive control e planned based control
+
+
+per stato arte fare un riassunto completo di un paper molto importante per una parte specifica
+
+aggiungere che il nostro approccio essendo tutto cinematico permette di evitare completamente il problema dinamico che per i problemi dei robot industriali è sbatti (industrie bldracche)
+
+spostare la roba del goal broad casting nel task di reaching
+
+mettere nella intro una descrizione del controllo cinematico di come funziona e del perchè è bene.
+
+//// possibile aggiunta-> mettere un limite sul giunto 1 del robot per simulare la camera
+
+mettere task in ordine di importanze per il funzionamento del tutto
+
+((( possibile domanda simetti: TASK REFERENCE REACHING DEVE CONSIDERARE ANCHE LA VELOCITÀ DELL'OGGETTO ))) --> da valutare per il ppt.

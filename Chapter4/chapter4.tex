@@ -3,232 +3,212 @@
 %        1         2         3         4         5         6         7         8
 % THESIS CHAPTER
 
-\chapter{Methodology}
+\chapter{Architecture implementation}
 \label{chap:fourth}
 \graphicspath{{Chapter4/Figures/PNG/}{Chapter4/Figures/JPG/}{Chapter4/Figures/JPEG/}{Chapter4/Figures/}}
-in this chapter I will describe in detail the mathematical computation performed by the control algorithm I developed. 
-
-\section{Goal broadcasting}
-The architecture works in a \textit{position reaching} framework, a goal position for the \textit{end effector} is sent to the robot and the algorithm tries to reach said position, with constraint given by other tasks.
-The goal is sent using the \textit{action server} build in the \textit{JointRobotTP} class, in the form of two vectors:
-\begin{align}
-	\vec{r} = \begin{pmatrix}
-			x \\
-			y \\
-			z
-	\end{pmatrix}
-	\hspace{8pt} \text{;} \hspace{8pt}
-	\vec{\rho} = \begin{pmatrix}
-		\phi \\
-		\theta \\
-		\psi
-	\end{pmatrix}
-\end{align}
-
-The first represent the desired translation, and the desired rotation as \textit{roll, pitch, yaw} angles.
-The projection frames of this vector to define the goal position and orientation could be either the \textit{end effector} frame, or, the \textit{kuka base} frame. This was done for experimental purposes, for easly sequencing different goals, or to repeat reaching tasks to a specific position in the environment.
-
-For the orientation of the goal, $\vec{\rho}$ is used to compose the rotation matrix that is than projected on the desired frame:
-\begin{align}
-	\vec{R}_{goal} &= \vec{R}_{z}(\psi) \cdot \vec{R}_{y}(\theta) \cdot \vec{R}_{x}(\phi) \\[4pt]
-	\langle\textit{kuka\_base}\rangle: \leftindex^{kb}{\vec{R}}_{goal} &= \vec{I} \cdot \vec{R}_{goal} \\
-	\langle\textit{end\_effector}\rangle: \leftindex^{ee}{\vec{R}}_{goal} &= \vec{R}_{ee}^{kb} \cdot \vec{R}_{goal}
-\end{align}
-In the first case the projection matrix is the identity since $\langle\textit{kuka\_base}\rangle \equiv \langle\textit{world}\rangle$.
-Same process is done for the translation vector:
-\begin{align}
-	\langle\textit{kuka\_base}\rangle: \leftindex^{kb}{\vec{r}}_{goal} &= \vec{0} + \vec{r}_{goal}\\
-	\langle\textit{end\_effector}\rangle: \leftindex^{ee}{\vec{r}}_{goal} &= \vec{r}_{ee}^{kb} + \vec{r}_{goal}
-\end{align}
-Than the rotation matrix and the translation vector are use to publish the $\langle\textit{goal}\rangle$ in rviz.
-\section{Task Priority}
-Continuing the discussion from \ref{equat:TaskPrioritiClassic_generalSolution}, the classic task priority algorithm as explained in \cite{simetti2016novel} lacks the ability to smoothly activate and deactivate \textit{inequality} task when the robot is far from the activation region.
-The approach that I implemented is based on the definition of a new \textit{regularized pseudo-inversion operator} that integrates the \textit{activation function} as a weight matrix to modulate the intensity of the action taken for a specific task.
-The operator is defined as:
-\begin{equation}
-	\vec{X}^{\#,\vec{A},\vec{Q}} \triangleq (\vec{X}^T\vec{A}\vec{X} + \eta(\vec{I}-\vec{Q})^T(\vec{I}-\vec{Q}) + \vec{V}^T\vec{P}\vec{V})^{\#} \vec{X}^T\vec{A}\vec{A}
-	\label{equat:RegPseudoInverse_operator}
-\end{equation}
-where the matrix $\vec{V}$ is the right orthonormal matrix of the SVD decomposition for     $\vec{X}^T\vec{A}\vec{X}+\eta(\vec{I}-\vec{Q})^T(\vec{I}-\vec{Q})$.
-The compact expression of the algorithm becomes, for the \textit{k-th} priority level:
-\begin{equation}
-	\begin{aligned}
-		\vec{W}_k &= \vec{J}_k\vec{Q}_{k-1}(\vec{J}_k\vec{Q}_{k-1})^{\#,\vec{A}_k,\vec{Q}_{k-1}} \\
-		\vec{Q}_k &= \vec{Q}_{k-1}(\vec{I}-(\vec{J}_k\vec{Q}_{k-1})^{\#,\vec{A}_k,\vec{I}}\vec{J}_k\vec{Q}_{k-1}) \\
-		\vec{\rho}_k &= \vec{\rho}_{k-1} + \vec{Q}_{k-1}(\vec{J}_k\vec{Q}_{k-1})^{\#,\vec{A}_k,\vec{I}}\vec{W}_k(\vec{\dot{x}}-\vec{J}_k\vec{\rho}_{k-1})
-	\end{aligned}
-\end{equation}
 
 
-\subsection{Task Description}
-In this section I will describe the mathematical formulation of the task I implemented in my control loop. To simplify the notation all the matrices, if not stated otherwise, are projected on the $\langle\textit{kuka\_base}\rangle$ reference frame.
+\section{System Description}
+% descrivere come si presenta il sistema, le scelte fatte e le 
+% challenge relative alla mia tesi
+%To implement a unified architecture i started from a series of specification discussed also with my supervisors, and taking inspiration from the previous work of the team.
+%Since the data structure for the \textbf{Kuka} and for the \textbf{UR10e}, comprised of the necessary part for the simulation the idea was to incorporate those part in my work and expand the existing methods to create an unified architecture.
 
-\subsubsection{End Effector minimum altitude}
-This task is used to keep the end effector away from the floor.\\
-\\ \\
-\textbf{Task reference}:\\
-\noindent 
-The reference rate for this task is computed using the $z$ coordinate of the traslation from the $\langle\textit{kuka\_base}\rangle$ frame to $\langle\textit{end\_effector}\rangle$. 
-\begin{equation}
-	\textit{Reference rate: } \dot{\bar{x}}_z = \lambda \cdot (\vec{\bar{x}} + \delta - \vec{z}_{ee}^{kb})
-\end{equation}
-The complete vector has all zero exept on the $z$ coordinate.
-\begin{equation}
-	\textit{Reference rate: } \vec{\dot{\bar{x}}} = [0, 0, \dot{\bar{x}}_z, 0, 0, 0]^T
-\end{equation}
-\\
-\noindent The \textit{Reference rate} is considered as the \textit{desired shape} of the derivative of the variable I want to control.
-To be more precise:
-\begin{itemize}
-	\item if $x > \bar{x}$ then $\dot{x} < 0$
-	\item if $x < \bar{x}$ then $\dot{x} > 0$
-	\item if $x = \bar{x}$ then $\dot{x} = 0$
-\end{itemize}
-In the case of the \textit{Minimual altitude task} the variable I want to control is the $z$ of the \textit{end effector} of the robot, and to impose a minimum altitude $z_{min}$. Finally the $\delta$ keeps count of the activation region, meaning that the task will be smoothly activated starting from $z_{min} + \delta$ to $z_{min}$.
-\\ \\
-\noindent \textbf{Activation function}: \\
-\noindent To avoid the abrupt activation of the task that could lead to chattering around the treshold, and more importantly to avoid the over constraining of the system we also add a smooth \textit{activation function}.
-
-\begin{equation}
-	a = 
-	\begin{cases}
-		1 &  x < x_{min} \\[5pt]
-		\frac{1}{2}[(\cos(\pi\frac{x-x_{min}}{\delta})+1)] & x\in[x_{min},x_{min}+\delta] \\[5pt]
-		0 &  x > x_{min} + \delta
-	\end{cases}
-\end{equation}
+The robotic system I worked with was composed of two articulated industrial robot, namely a \textbf{Kuka KR150} from \textit{Kuka} and a \textbf{UR10e} form \textit{Universal Robot}.
 
 \begin{figure}[H]
 	\centering
-	\begin{subfigure}{0.49\textwidth}
-		\includegraphics[width=\linewidth]{DecreasingActFcn.jpg}
-		\caption{Generic function}
-		\label{fig:DecreasingActFcn}
-	\end{subfigure}
-	\hfill
-	\begin{subfigure}{0.49\textwidth}
-		\includegraphics[width=\linewidth]{DecreasingActFcn_realValues.jpg}
-		\caption{With realistic values}
-		\label{fig:DecreasingActFcn_rv}
-	\end{subfigure}
+	\includegraphics[scale=0.2]{Real_system.jpg}
+	\caption{photo of the real system, inside the workcell}
+	\label{fig:RealSystem}
 \end{figure}
-In this case I used a $(6 \times 6)$ zero matrix as my activation function, than I inserted the value in the third position of the major diagonal, ending up with:
-\begin{equation}
-	\vec{A}_{min alt} = \textit{diag} (0, 0, a_z, 0, 0, 0)
-\end{equation}
-using $z_min = 0,30$\textit{m} as my lower limit and $\delta = 0,1$\textit{m}, and the function is tuned to yield $y \in [0,1]$.
-\\ \\
-\noindent \textbf{Task Jacobian}\\
-\noindent For this task the jacobian matrix is equivalent to the geometric jacobian, computed up to the \textit{end effector} frame. Since the available methods of the classes \codetxt{darkgray}{KukaRobot} and \codetxt{darkgray}{UR10eRobot} compute the jacobians matrices in their respective base frames. Enumeratin the links of the whole robot as $lk_i=1 ... 12$\\
-\begin{equation}
-	\leftindex^{kb}{\vec{J}}_{6/kb} ; \leftindex^{ub}{\vec{J}}_{12/ub}
-\end{equation}
-\\
-The complete trasformation for computing the Jacobian of the unified structure projected in the kuka base frame is:
-\\
-\begin{equation}
-	content ...
-\end{equation}
+\noindent
+The simulation part I used to develop my architecture was composed of the classes: \codetxt{darkgray}{KukaRobot} and \codetxt{darkgray}{UR10eRobot}
+. These two classes themselves inherits from the class: \codetxt{darkgray}{RobotInterface}.\\
+All of the code was developed usinc \codetxt{darkgray}{c++} language, and the library \codetxt{darkgray}{Eigen} to handle matrices.
 
-I decided to build the jacobian colum by colum since it was necessary for the obstacle avoidance task and it allowed for a more clear and concise code. So for computing the colum relative to the $i-th$ link I used the equation:\\
-\begin{equation}
-	\leftindex^{kb}{\vec{J}}_{i/kb} = 
-	\begin{pmatrix}
-		\leftindex^{kb}{\vec{J}}_{i/kb}^{L} \\[4pt]
-		\leftindex^{kb}{\vec{J}}_{i/kb}^{A}
-	\end{pmatrix} =
-	\begin{pmatrix}
-		\vec{R}^{kb}_i \cdot \textit{ax}_i \times (r^{kb}_n - r^{kb}_i) \\[8pt]
-		\vec{R}^{kb}_i \cdot \textit{ax}_i
-	\end{pmatrix}
-	\label{equat:AnalyticJacobianFormula}
-\end{equation}
+
+% robot classes schema
+The parent class contains the information for:
+\begin{itemize}
+	\item \textit{Transformation} using a \codetxt{darkgray}{tf2\_ros::Buffer} and \\ \codetxt{darkgray}{tf2\_ros::TransformListener}.
+	\item \textit{Robot state}, stored as a vector of joint variables $q$ and velocities $\dot{q}$ \codetxt{darkgray}{Eigen::VectorXd}.
+	\item \textit{Inverse kinematics} using \codetxt{darkgray}{KDL::Tree} and \codetxt{darkgray}{Chain}, a data structure to recursively compute the jacobians of the robots. Starting from the \codetxt{darkgray}{urdf} description of the robots.
+\end{itemize}
+\noindent
+The transformation buffer contain the kinematic chain of the two robots, as \codetxt{darkgray}{geometry\_msgs::msg::TransformStamped}. These transformation are periodically updated trough a topic, published by the \textit{robot state publisher}.
+The \codetxt{darkgray}{tf2\_ros::Buffer} also allows to retrive specific frame to frame trasformation, using the frames id.
+Than using \codetxt{darkgray}{KDL} the inverse kinematics can be computed on demand during the movement of the robot.
 \\
 \noindent
-where $\textit{ax}_i$ is the axes of rotation for joint i expressed in the joint frame, which I retrieved from the \codetxt{darkgray}{urdf} description of the two robots. 
+My work was the development of the class: \codetxt{darkgray}{JointRobotTP} that takes these two classes and combines them in an unified architecture.
+%% insert figure of the scheme
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.5]{simplified_class_structure.png}
+\caption{Simplified structure of the class JointRobotTP}
+\label{fig:JointRobotTP simplified}
+\end{figure}
+\noindent
+The main goals I wanted to pursue were the following:
 
-\subsubsection{Obstacle Avoidance}
-For the \textit{Obstacle Avoidance} task I used the approach proposed in \cite{maciejewski1985obstacle} keeping a single point task were that point is the point at minimum distance from the obstacle in the robot body.
-% single point
-\\ \noindent \textbf{Task reference}:\\
-\noindent As a task reference I used the opposite of the vector connecting the \textit{minimum distance} robot point to the \textit{obstacle point}. \\
-\begin{equation}
-	d = (P_o - P_r)\hspace{0.5cm};\hspace{0.5cm}\dot{\vec{\bar{r}}} = -d
-\end{equation}
-In chap.\ref{chap:fifth} I will experiment with both the vector as is, and with a zeroed out $z$ component. To understand how the proposed approach behaves in the 3d and 2d case. \\
-\noindent \textbf{Activation function}: \\
-The activation function is a $3\times 3$ matrix, and the values are computed in the same fashion as the \textit{minimum altitude} task.
-This time the minimum distance is lowered to $10$cm while $\delta = 50$cm, this was to enforce a very smooth activation of the task. The resulting profile is as follows:\\
+\begin{enumerate}
+	\item Have an efficient way to send commands to the unified robot.
+	\item Use a data structure that allows for easy addition and removal of tasks from the hierarchy.
+	\item Keep a degree of separation between the robot information and the control algorithm.
+	\label{enum:StructuralObjective}
+\end{enumerate}
+
+In the following section I will describe more in detail the structure of the \textit{JointRobotTP} class.
+
+
+\section{JointRobotTP Class Implementation}
+% definire le parti della classe fare uno schema dei componenti
+The unified robot class implementation main \textit{methods} and \textit{data structure} are:
+%\begin{itemize}
+%	\item \textbf{Initialization}
+%					-- > initialize
+%					-- > prxtask call back
+%	\item \textbf{Data structure}
+%					-- > init configuration
+%					-- > prox task points
+%					-- > TP_ task map
+%	\item \textbf{Task update methods}
+%					-- > description of the logic
+%	\item \textbf{Action Server}
+%                   -- > execute
+%%	\item \textbf{Movement methods}
+%					-- > Reach initial configuration
+%					-- > Run Cartesian Reaching Loop
+%\end{itemize}
+
+\noindent\makebox[\textwidth]{
+	\begin{tabular}{p{3cm}c}
+		\multirow{3}{*}{\textbf{Class setup}} & \codetxt{olive}{Initialize}\codetxt{darkgray}{([Args..]);} \\
+												& \codetxt{olive}{insertInitConfigMap}\codetxt{darkgray}{();} \\
+												& \codetxt{olive}{insertFuncPointerVtc}\codetxt{darkgray}{();} \\ [4pt]
+		\hline \\[-10pt]
+		\multirow{3}{*}{\textbf{Data structure}}  & \codetxt{darkgray}{map<string, VectorXd>} \codetxt{cyan}{initial\_configurations\_map\_}\codetxt{darkgray}{;} \\
+													& \codetxt{darkgray}{vector<ProximityTask>} \codetxt{cyan}{proximity\_task\_points\_}\codetxt{darkgray}{;}\\
+													& \codetxt{darkgray}{map<string, tp\_task>} \codetxt{cyan}{TP\_task\_map\_}\codetxt{darkgray}{;} \\ [4pt]
+		\hline \\[-10pt]
+		\multirow{3}{*}{\textbf{Task state update}}     & \codetxt{olive}{Update\_TRR\_<task name>}\codetxt{darkgray}{();} \\
+													& \codetxt{olive}{Update\_AFunc\_<task name>}\codetxt{darkgray}{();} \\
+													& \codetxt{olive}{Update\_TskJac\_<task name>}\codetxt{darkgray}{();} \\[4pt]
+		\hline \\[-10pt]
+		\multirow{1}{*}{\textbf{Action server}}     & \codetxt{olive}{execute}\codetxt{darkgray}{([Args..]);} \\[4pt]
+		\hline \\[-10pt]
+		\multirow{2}{*}{\textbf{Robot movement}}  & \codetxt{olive}{ReachInitialConfiguration}\codetxt{darkgray}{([Args..]);} \\
+												  & \codetxt{olive}{RunCartesianReachingLoop}\codetxt{darkgray}{([Args..]);} \\
+	\end{tabular}
+}
+
+\subsection{Class setup}
+These methods are created to instantiate the class object once the executable is started.\\
+\noindent
+Specifically the method \codetxt{olive}{Initialize}\codetxt{darkgray}{()} is tasked with the creation of the nodes for the robots classes and all the other part of the communication structure. It takes as arguments three node pointers that are used to instantiate one object of the class \codetxt{darkgray}{KukaRobot}, \codetxt{darkgray}{UR10eRobot} and \codetxt{darkgray}{JointRobotTP}. 
+\\
+\noindent
+It creates a subscriber to the \codetxt{darkgray}{proximity\_task} topic and the action server for the robot movent. Lastly the other two initialization methods are called, the first \codetxt{olive}{insertInitConfigMap}\codetxt{darkgray}{()} inserts all the initial configuration vector in the corresponding data strucuture ( \codetxt{darkgray}{map<string, VectorXd>} \codetxt{cyan}{initial\_configurations\_map\_}\codetxt{darkgray}{;} ), and the second is used to create three function pointers vector that are used to call all the \textit{task state update methods} during the movement of the robot.
+\\
+\noindent
+This structure was chosen to have a more manageable code and to accomplish the second objective \ref{enum:StructuralObjective} I set for the architecture.
+
+\subsection{Data structure}
+For the control algorithm I had to define three different matrices for each task I created. I decided to implement a \codetxt{blue}{struct} to store the matrices and put everything in a map(\codetxt{darkgray}{map<string, tp\_task>} \codetxt{cyan}{TP\_task\_map\_}\codetxt{darkgray}{;}).
+\\
+\noindent
+The \codetxt{blue}{struct} \codetxt{cyan}{tp\_task} is defined as follows:
+\\[4pt]
+\noindent\makebox[\textwidth]{
+	\begin{tabular}{c}
+		\codetxt{darkgray}{Eigen::MatrixXd} \codetxt{cyan}{RefRate}\codetxt{darkgray}{;}\\
+		\codetxt{darkgray}{Eigen::MatrixXd} \codetxt{cyan}{ActMatrix}\codetxt{darkgray}{;}\\
+		\codetxt{darkgray}{Eigen::MatrixXd} \codetxt{cyan}{TskJacobian}\codetxt{darkgray}{;}\\
+	\end{tabular}
+}
+\\[4pt]
+\noindent
+This definition uses dynamically sized matrices that are useful in the case of the \textbf{task priority} control since the dimension of each matrix can change from task to task(maintaining a certain relation within each task $\textit{RefRate}\in \mathbb{R}^{(m\times1)} ; \textit{ActMatrix} \in \mathbb{R}^{(m\times m)} ; \textit{TskJacobian} \in \mathbb{R}^{(m\times n)}$).
+The use of \codetxt{darkgray}{std::map} also allows to reference to each task trough a \codetxt{blue}{string} witch is a very flexible and efficient approach(search complexity $O(\log n)$, with n the element number in the map).
+
+\subsection{Task state update}
+Just to explain the logic in my implementation, for each task defined for a particular objective in the control algorithm I developed three different methods used to cyclically update the information contained in \codetxt{darkgray}{map<string, tp\_task>} \codetxt{cyan}{TP\_task\_map\_}\codetxt{darkgray}{;}. \\
+Than the pointers to these methods are inserted in a vector, and this vector is used to call all the function in a loop. This is functional since I can remove a task from the update cycle just by commenting three rows, and I have a clear idea of which task I am updating in a very concise way. \\
+The specific computation needed of each task will be discussed in chap.\ref{chap:fourth}
+\section{Action server}
+% definisco l'interfaccia di MoveRobot e descrivo il processo di pubblicazione del GOAL
+The main part of the action server is the method \codetxt{olive}{execute}\codetxt{darkgray}{([Args..]);} aside from the communication related methods needed to create the channel in the \textit{ROS2} framework. This method takes as argument the a shared pointer to the \codetxt{cyan}{goal\_handle} of the current active goal.
+\\
+\noindent
+The methods handles the reception of the goals and the publication of the \textit{goal frame}, projected in the correct \textit{reference frame}. Than it uses the information in the \textit{goal message} to select the desired intial configuration that is reached using \codetxt{olive}{ReachInitialConfiguration}\codetxt{darkgray}{([Args..]);} selecting a vecotr from \\ \codetxt{darkgray}{map<string, VectorXd>} \codetxt{cyan}{initial\_configurations\_map\_}\codetxt{darkgray}{;} and sent to the \textit{Kuka} and \textit{UR10e}, the initial vector has $12$ elements, that are splitted and set to their respective robot.
+A simple control loop is than used to control the joint:
 \begin{figure}[H]
 	\centering
-	\includegraphics[scale=0.2]{DecreasingActFcn_realValues_obav.jpg}
-	\caption{Activation for Obstacle avoidance}
-	\label{fig:DecreasingActFcn_realValues_obav}
+	\includegraphics[scale=0.4]{JointControlLoopDiagram.png}
+	\caption{Joint reaching control loop}
+	\label{fig:JointControlLoop_flowchart}
 \end{figure}
-\noindent \textbf{Task Jacobian}:\\
-For the task jacobian I used the same analytical approach as in the \textit{minimum altitude} task, adding a rigid body to take into consideration the position of the \textit{minimum distance point} on the body of the robot.
-Taken the complete jacobian of the $12$Dof structure I pre-multiplied for the rigid body jacobian, which is computed as:
-\begin{equation}
-	\leftindex^{kb}{\vec{J}}_{mdp/kb} = 
-	\begin{pmatrix}
-		\leftindex^{kb}{\vec{J}}_{mdp/kb}^{L} \\[4pt]
-		\leftindex^{kb}{\vec{J}}_{mdp/kb}^{A}
-	\end{pmatrix} =
-	\begin{pmatrix}
-		\vec{I}_{3\times 3} & [r_{mdp/i}\times]^T \\[4pt]
-		\vec{0}_{3\times 3} & \vec{I}_{3\times 3}
-	\end{pmatrix} \cdot
-	\begin{pmatrix}
-		\leftindex^{kb}{\vec{J}}_{i/kb}^{L} \\[4pt]
-		\leftindex^{kb}{\vec{J}}_{i/kb}^{A}
-	\end{pmatrix} 
-\end{equation}\\
-\textit{mdp}:\textit{minimum distance point}, and \textit{i}: link that contains the \textit{mdp}
+\noindent
+the loop drives each joint towards the desired configuration. The integration of this part in my architecture was done improve repeatability, to have the possibility to impose a common starting position in different experiments.
 
-% set based task
+\subsection{Action Server process flow}
+The core functionalities of the \codetxt{olive}{execute}\codetxt{darkgray}{();} method are here represented in a flow-chart to highlight better the loop inner workings:
 
-\subsubsection{End Effector Target}
-This is the \textit{goal-driven task} in my simulation of the working environment.
-\\ \\
-\noindent \textbf{Task reference}:\\
-In this case the task reference is the \textit{cartesian error} between the \textit{tool} frame and the \textit{end-effector} frame.
-Computed in the simulation using the \textit{transformation buffer}, starting from names of the \textit{end effector} and \textit{tool} frame the translation error:
-\begin{equation}
-	err_{goal/tool}^{L} = \leftindex^{kb}{(P_g - P_t)}
-\end{equation}
-all projected in the end effector frame. For the angular error I use the quaternion expression of the two rotation matrices:
-\begin{equation}
-	\vec{R}_{goal}^{kb} = \rho_{goal} \hspace{0,25cm};\hspace{0,25cm} \vec{R}_{tool}^{kb} = \rho_{tool}
-\end{equation}
-I than compute the error using the quaternions that gives:
-\begin{equation}
-	\rho_{err} = \rho_{goal}^{-1} \cdot \rho_{tool}
-\end{equation}
-lastly this I took the vector part of this quaternion to multiply to the rotation $\vec{R}_{tool}^{kb}$:
-\begin{equation}
-	\rho_{err} = 
-	\begin{pmatrix}
-		x_e \\
-		y_e \\
-		z_e \\
-		w_e
-	\end{pmatrix} =
-	\begin{pmatrix}
-		\vec{v}_e \\
-		w_e
-	\end{pmatrix}
-	\hspace{0,25cm};\hspace{0,25cm}
-	\vec{v}_e = \vec{u}\sin\left(\frac{\theta}{2}\right)
-\end{equation}
-and $\vec{v}_e$ is proportional to the angle error, for small angle. The vector I used as \textit{angular part} of the cartesian error is:	
-\begin{equation}
-	err_{goal/tool}^{A} = - \vec{R}_{tool}^{kb} \vec{v}_e
-\end{equation}
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.5]{Action_server_flowChart.png}
+	\caption{Action server flow chart}
+	\label{fig:ActionServer_flowchart}
+\end{figure}
 
-\noindent \textbf{Activation function}: \\
-Since this in an \textit{equality task} it has to be always active. And given the dimension of its \textit{reference rate}: $\dot{\bar{x}} \in \mathbb{R}^{6\times 1}$ the activation function is a identity matrix.
-\begin{equation}
-	\vec{A} = \vec{I} \in \mathbb{R}^{6\times 6}
-\end{equation}
-\noindent \textbf{Task Jacobian}:\\
-The task jacobian is the \textit{complete geometric jacobian} for the \textit{end effector}, computed as shown in \ref{equat:AnalyticJacobianFormula}.
+
+
+\section{Control alorithm implementation}
+% TP computation class description
+The structure of the control algorithm was derived from the form of the \textit{task state} data structure, I wanted to have in the control loop a very clear way to identify which tasks I was activating. And to \textit{passively} impose the priority without needing to use a flag.
+\\
+With this in mind I created a class called: \codetxt{darkgray}{TPComputation}, of witch I could instantiate an object for each iteration of the reaching loop, the class data would be the \textit{null space} of the \textit{task jacobian} computed at the previous step, $Q_{k-1}$, and the resulting \textit{joint velocity} vector, $\rho_{k-1}$. These data would be extracted from the class as needed to send the command to the robot.\\
+\\
+\noindent\makebox[\textwidth]{
+	\begin{tabular}{p{4cm}c}
+		\multirow{2}{*}{\textbf{Instance handling}} & \codetxt{olive}{init\_TPComputation} \codetxt{darkgray}{([Args...]);}   \\
+													& \codetxt{olive}{kill\_TPComputation} \codetxt{darkgray}{();}   \\[4pt]
+													\hline \\[-10pt]
+		\multirow{1}{*}{\textbf{Step computation}} &  \codetxt{olive}{computeTP\_step} \codetxt{darkgray}{([Args...]);} \\[4pt]
+													\hline \\[-10pt]
+		\multirow{2}{*}{\textbf{Matrix inversion}} &  \codetxt{olive}{REG\_Pinv\_operator} \codetxt{darkgray}{([Args...]);} \\
+													&  \codetxt{olive}{REG\_Pinv} \codetxt{darkgray}{([Args...]);} \\[4pt]
+													\hline \\[-10pt]
+		\multirow{2}{*}{\textbf{Data extraction}} &  \codetxt{olive}{getTP\_ydot} \codetxt{darkgray}{();} \\ 
+													&  \codetxt{olive}{getTP\_Q} \codetxt{darkgray}{();} \\
+	\end{tabular}
+}
+\\
+\\
+\noindent
+To initialize the class object the method \\ \codetxt{olive}{init\_TPComputation} \codetxt{darkgray}{([Args...]);} takes as arguments the number of \textit{Dof} of the structure, used to initialize the dimension of the internal matrices and some parameter that are used in the pseudo-inversion of the \textit{augmented jacobian}.
+Since I wanted to be sure that no information remained after any cycle, I also added the method \\ \codetxt{olive}{kill\_TPComputation} \codetxt{darkgray}{();} that \textit{clears} the internal variables after use.
+\\
+\noindent
+The step computation of the \textit{task priority inverse kinematics} is performed using the \codetxt{olive}{computeTP\_step} \codetxt{darkgray}{([Args...]);} method. The arguments taken by the function are the matrices of the desired task, stored in \codetxt{darkgray}{map<string, tp\_task>} \codetxt{cyan}{TP\_task\_map\_}\codetxt{darkgray}{;}.
+\\ Internally the computation is than performed using also:\\ \codetxt{olive}{REG\_Pinv\_operator} \codetxt{darkgray}{([Args...]);} and \codetxt{olive}{REG\_Pinv} \codetxt{darkgray}{([Args...]);} but I will better discuss the technique used in chap. \ref{chap:fourth}. Lastly after all the desired steps have been computed, the resulting \textit{joint velocity vector} is extracted using: \codetxt{olive}{getTP\_ydot} \codetxt{darkgray}{();}.
+
+\subsection{Reaching loop process flow}
+To better show the intended and actual use of the \codetxt{darkgray}{TPComputation} class to control the robot, I added the flow-chart for the \codetxt{olive}{RunCartesianReachingLoop}\codetxt{darkgray}{([Args..]);} method. 
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.4]{Reaching_loop_flowChart.png}
+	\caption{Reaching loop flow chart}
+	\label{fig:ReachingLoop_flowchart}
+\end{figure}
+
+\noindent
+To briefly describe the loop, after the instantiation of the \codetxt{darkgray}{TPComputation} object the loop starts.  In the \textit{Update step}, all the function that are relative to a \textit{task} are called, starting with the \textit{Reference Rate}, \textit{Activation function} and lastly \textit{Task Jacobian}.
+The second part, the \textit{Stop condition} is checked. If the control is positive the loop is immediately stopped, and the result is sent to the action server client.
+if the opposite is true, the \textit{tp\_controller} is initialized, with the \textit{Dof} of the system and the variables for the pseudo-inverse computation. Than each "\textit{step}" of the algorithm is performed, finishing with a "\textit{null}" task, composed of two Identity matrix for \textit{Activation function} and \textit{Task Jacobian}, and with a zero vector for \textit{Reference Rate}.
+The loop is repeated until the stop condition is met or stopped after a time limit, in this case the goal is considered not reached.
+
+
+
