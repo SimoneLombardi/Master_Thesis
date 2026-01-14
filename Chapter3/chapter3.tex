@@ -8,39 +8,7 @@
 \graphicspath{{Chapter3/Figures/PNG/}{Chapter3/Figures/JPG/}{Chapter3/Figures/}}
 in this chapter I will describe in detail the mathematical computation performed by the control algorithm I developed. 
 
-\section{Goal broadcasting}
-The architecture works in a \textit{position reaching} framework, a goal position for the \textit{end effector} is sent to the robot and the algorithm tries to reach said position, with constraint given by other tasks.
-The goal is sent using the \textit{action server} build in the \textit{JointRobotTP} class, in the form of two vectors:
-\begin{align}
-	\vec{r} = \begin{pmatrix}
-			x \\
-			y \\
-			z
-	\end{pmatrix}
-	\hspace{8pt} \text{;} \hspace{8pt}
-	\vec{\rho} = \begin{pmatrix}
-		\phi \\
-		\theta \\
-		\psi
-	\end{pmatrix}
-\end{align}
 
-The first represent the desired translation, and the desired rotation as \textit{roll, pitch, yaw} angles.
-The projection frames of this vector to define the goal position and orientation could be either the \textit{end effector} frame, or, the \textit{kuka base} frame. This was done for experimental purposes, for easly sequencing different goals, or to repeat reaching tasks to a specific position in the environment.
-
-For the orientation of the goal, $\vec{\rho}$ is used to compose the rotation matrix that is than projected on the desired frame:
-\begin{align}
-	\vec{R}_{goal} &= \vec{R}_{z}(\psi) \cdot \vec{R}_{y}(\theta) \cdot \vec{R}_{x}(\phi) \\[4pt]
-	\langle\textit{kuka\_base}\rangle: \leftindex^{kb}{\vec{R}}_{goal} &= \vec{I} \cdot \vec{R}_{goal} \\
-	\langle\textit{end\_effector}\rangle: \leftindex^{ee}{\vec{R}}_{goal} &= \vec{R}_{ee}^{kb} \cdot \vec{R}_{goal}
-\end{align}
-In the first case the projection matrix is the identity since $\langle\textit{kuka\_base}\rangle \equiv \langle\textit{world}\rangle$.
-Same process is done for the translation vector:
-\begin{align}
-	\langle\textit{kuka\_base}\rangle: \leftindex^{kb}{\vec{r}}_{goal} &= \vec{0} + \vec{r}_{goal}\\
-	\langle\textit{end\_effector}\rangle: \leftindex^{ee}{\vec{r}}_{goal} &= \vec{r}_{ee}^{kb} + \vec{r}_{goal}
-\end{align}
-Than the rotation matrix and the translation vector are use to publish the $\langle\textit{goal}\rangle$ in rviz.
 \section{Task Priority}
 Continuing the discussion from \ref{equat:TaskPrioritiClassic_generalSolution}, the classic task priority algorithm as explained in \cite{simetti2016novel} lacks the ability to smoothly activate and deactivate \textit{inequality} task when the robot is far from the activation region.
 The approach that I implemented is based on the definition of a new \textit{regularized pseudo-inversion operator} that integrates the \textit{activation function} as a weight matrix to modulate the intensity of the action taken for a specific task.
@@ -63,7 +31,7 @@ The compact expression of the algorithm becomes, for the \textit{k-th} priority 
 \subsection{Task Description}
 In this section I will describe the mathematical formulation of the task I implemented in my control loop. To simplify the notation all the matrices, if not stated otherwise, are projected on the $\langle\textit{kuka\_base}\rangle$ reference frame.
 
-\subsubsection{End Effector minimum altitude}
+\subsection{End Effector minimum altitude}
 This task is used to keep the end effector away from the floor.\\
 \\ \\
 \textbf{Task reference}:\\
@@ -147,7 +115,7 @@ I decided to build the jacobian colum by colum since it was necessary for the ob
 \noindent
 where $\textit{ax}_i$ is the axes of rotation for joint i expressed in the joint frame, which I retrieved from the \codetxt{darkgray}{urdf} description of the two robots. 
 
-\subsubsection{Obstacle Avoidance}
+\subsection{Obstacle Avoidance}
 For the \textit{Obstacle Avoidance} task I used the approach proposed in \cite{maciejewski1985obstacle} keeping a single point task were that point is the point at minimum distance from the obstacle in the robot body.
 % single point
 \\ \noindent \textbf{Task reference}:\\
@@ -187,7 +155,7 @@ Taken the complete jacobian of the $12$Dof structure I pre-multiplied for the ri
 
 % set based task
 
-\subsubsection{End Effector Target}
+\subsection{End Effector Target}
 This is the \textit{goal-driven task} in my simulation of the working environment.
 \\ \\
 \noindent \textbf{Task reference}:\\
@@ -232,3 +200,36 @@ Since this in an \textit{equality task} it has to be always active. And given th
 \end{equation}
 \noindent \textbf{Task Jacobian}:\\
 The task jacobian is the \textit{complete geometric jacobian} for the \textit{end effector}, computed as shown in \ref{equat:AnalyticJacobianFormula}.
+
+\subsubsection{Goal broadcasting}
+As the \textit{end effector} target for the \textit{reaching} task I perform a series of transformation from the initial message that is sent trough the \textit{Action server} as two vectors:
+\begin{align}
+	\vec{r} = \begin{pmatrix}
+		x \\
+		y \\
+		z
+	\end{pmatrix}
+	\hspace{8pt} \text{;} \hspace{8pt}
+	\vec{\rho} = \begin{pmatrix}
+		\phi \\
+		\theta \\
+		\psi
+	\end{pmatrix}
+\end{align}
+
+The first represent the desired translation, and the desired rotation as \textit{roll, pitch, yaw} angles.
+The projection frames of this vector to define the goal position and orientation could be either the \textit{end effector} frame, or, the \textit{kuka base} frame. This was done for experimental purposes, for easly sequencing different goals, or to repeat reaching tasks to a specific position in the environment.
+
+For the orientation of the goal, $\vec{\rho}$ is used to compose the rotation matrix that is than projected on the desired frame:
+\begin{align}
+	\vec{R}_{goal} &= \vec{R}_{z}(\psi) \cdot \vec{R}_{y}(\theta) \cdot \vec{R}_{x}(\phi) \\[4pt]
+	\langle\textit{kuka\_base}\rangle: \leftindex^{kb}{\vec{R}}_{goal} &= \vec{I} \cdot \vec{R}_{goal} \\
+	\langle\textit{end\_effector}\rangle: \leftindex^{ee}{\vec{R}}_{goal} &= \vec{R}_{ee}^{kb} \cdot \vec{R}_{goal}
+\end{align}
+In the first case the projection matrix is the identity since $\langle\textit{kuka\_base}\rangle \equiv \langle\textit{world}\rangle$.
+Same process is done for the translation vector:
+\begin{align}
+	\langle\textit{kuka\_base}\rangle: \leftindex^{kb}{\vec{r}}_{goal} &= \vec{0} + \vec{r}_{goal}\\
+	\langle\textit{end\_effector}\rangle: \leftindex^{ee}{\vec{r}}_{goal} &= \vec{r}_{ee}^{kb} + \vec{r}_{goal}
+\end{align}
+Than the rotation matrix and the translation vector are use to publish the $\langle\textit{goal}\rangle$ in rviz.

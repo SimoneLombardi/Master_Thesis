@@ -6,9 +6,163 @@
 \label{chap:second}
 \graphicspath{{Chapter2/Figures/PNG/}{Chapter2/Figures/JPG/}{Chapter2/Figures/JPEG/}{Chapter2/Figures/}}
 
-In this chapter I will explore the literature on the topics of: \textit{ambient perception} to expore different sensing approaches to control manipulators in a dynamic environment. I will than focus my attention on the uses of this sensory information in the task of \textit{obstacle avoidance}.
+In this chapter, I illustrate the results of the \textit{state-of-the-art} research conducted for my thesis. The main topic of the review is \textit{hyper-redundant robotic systems}, and the chapter is subdivided into three parts.
+\noindent
+The first section provides a general overview of how these types of systems are used in industry and discusses the challenges they face with respect to control, modeling, and interaction with the environment.
+\noindent
+The second and third sections focus on the specific robotic system I worked with during my thesis.\\
 \noindent 
-During my state of the art research it was apparent a lack of literature on the specific architecture developed in the \textit{SestoSenso project}. For this reason the last part of this chapter has focused more broadly on \textit{high dof architecure}, to explore how long open kinematic chain system are treated, and in which areas they are used.
+In particular, I will describe how environmental perception is generally performed highlighting the drawbacks, and than explain the chosen approach implemented by the \textbf{Sestosenso project}. I then illustrate the obstacle-avoidance strategy in relation to the main goal of the system, which is to introduce a novel method that enables high-payload industrial robots to safely collaborate with human agents, effectively exploiting the redundancy of the system.
+
+\section{Hyper-redundant manipulators}
+Looking at the work of \cite{liu2022review_hypMan1} and \cite{pistone2024modelling_hypMan2} is clear that \textit{hyper-redundant manipulator} are currently used in dangerous and thigh spaces, or in the medical field for surgery and as endoscopes.
+Given these operational requirements the most common \textit{mechanical design} follows the \textit{snake-like} design.
+A good example of these two application are the \textit{Super Dragon} a snake-like, tendon actuated robot used in the decommissioning of the Fukushima Daiichi Nuclear Power Plants.
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.8]{SuperDragon.png}
+	\caption{Super Dragon robot arm, from \cite{Super_Dragon}}
+	\label{fig:Super_Dragon}
+\end{figure} 
+And the \textit{CardioArm}, used for minimally invasive cardiac surgery.
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.8]{cardio_arm.jpg}
+	\caption{CardioArm robot, from \cite{ota2009highly_cardioArm}}
+	\label{fig:CardioArm}
+\end{figure} 
+
+\noindent
+From the two reviews is evident that the tendon-driven actuation is favorable for these types of application, it gives the ability to miniaturize the arm and make it as light as possible. While the motors and control equipment can remain outside of the operational space. Witch is an additional advantage in case of hazardous environments, keeping the driving apparatus outside of the danger zone reducing the number of faults.
+Other drive methods discussed in the paper are:
+\begin{itemize}
+	\item Gas drive
+	\item Artificial muscle
+	\item Motor Direct drive
+\end{itemize}
+The other drive mode lack the necessary strength for most industrial application.\\
+\noindent
+In the paper analyzed in the reviews the control strategy applied to the \textit{hyper-redundant} manipulators are akin to the methods used for \textit{soft robots}. The numerical methods are bound to have the robot reach odd isomerism, invalidating the solution. Using a \textit{damped least square} or \textit{SVD} to invert the jacobian matrix of the manipulator can alleviate this problem, with the cost of a decreased accuracy of the solution.
+Some of the proposed kinematic control methods are:
+\begin{itemize}
+	\item \textit{Backbone curve} methods
+	\item \textit{NN based} methods
+\end{itemize}
+\noindent
+The first one defines a \textit{backbone curve} witch is usually the spine or the center-line of the robot, this is a continuous curve that describes the important macroscopic geometric features of the \textit{hyper-redundant} robot. This curve is than discretized, accordigly with the number of links of the robot, and it is given a set of reference frame. The \textit{inverse-kinematic} problem, becomes the task of finding the \textit{back-bone} curve that satisfies the constraints, and than having the robot reach said configuration. \\
+\noindent
+In more recent years more solution use \textit{Neural Networks} to resolve the \textit{inverse-kinematics} problem, ranging from the use of a \textit{DNN} with $6$ hidden layers to solve the \textit{IK} problem for an underwater manipulator, to an adaptive search space genetic algorithm.
+
+
+
+\section{High DoF architecture}
+In this section I want to explore some of the relevant high-dof architecture found in the literature.
+\subsection{Dual-arm systems}
+In recent years there has been a trend to use these dual-arm systems for HRC(Human Robot Collaboration), but also for replacing human workers without the need to redesign the work cell.
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=1.5]{SDA10_500_dualArmManipulator.jpg}
+	\caption{Dual-arm industrial robot example, SDA10}
+	\label{fig:DualArmRobot}
+\end{figure} 
+As is stated in the survey of \cite{DUAL_ARM_SURVEY} the strengths of the dual arm architecture are:
+\begin{itemize}
+	\item \textit{Similarty to operator}: useful both in the case of HRC and to substitute the human worker with minimal effort.
+	\item \textit{Flexibility and stiffness}: Combining the stiffness of closed chain manipulation, with the flexibility of a serial link.
+	\item \textit{Manipulability}: High number of DoFs allows for complex motion tasks.
+	\item \textit{Cognitive motivation}: The similar charcteristics of the kinematic chain is belived to be helpful in HRC context.
+\end{itemize} 
+In most cases for these architectures the \textit{obstacle avoidance} is computed for the \textit{navigation} if the robot has a movable base.
+Moreover the interaction with the environment is performed with the use of \textit{visual servoing}, witch was firstly discussed by \cite{hutchinson2002tutorial}, position based and \textit{hybrid} methods, combining visual and position information.
+\subsection{Snake-like robot}
+A completely different class of robot is represented by the "\textit{snake like}" robot.
+As shown in the work of \cite{hirose2009snake} and \cite{crespi2005amphibot} these types of robot are biologically inspired, and they can produce a forward motion from an undulatory one. Reproducing the movement patterns of snakes.
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=1.5]{anphiBot_snakelike.jpg}
+	\caption{snake like robot from \cite{crespi2005amphibot}}
+	\label{fig:snakeLikeRobot}
+\end{figure} 
+The potential of these robot that are currently being explored are for navigation in tight spaces, to be applied to endoscopes for examples. In addition the interest lies in the flexibility of a "\textit{snake like}" body, since it could be used to move, climb and grasp if needed.
+\\
+\noindent
+\subsection{Planar robot}
+For more industrial application, I reviewed the work of \cite{highDof_planar_robot_OBAV} and \cite{highDof_planar_robot_OBAV_2}. These work take into consideration high-dof planar manipulator, and they also propose two approaches to do \textit{Obstacle avoidance} with their respective architecture.
+In the case of  \cite{highDof_planar_robot_OBAV} the paper uses the \textit{ANAT} robot, presented in the figure below.
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.45]{ANAT-robot-arm.jpeg}
+	\caption{ANAT robot arm}
+	\label{fig:AnatRobot}
+\end{figure}
+\noindent
+This is a 7Dof robot, comprised of 1 \textit{prismatic} joint to control the $z$ cordinate, followed by 3 parallel \textit{revolute} joints and a 3 Dof \textit{wrist}. \\
+\noindent
+The proposed control algorithm is based on the work of \cite{zlajpah1997control} for the computation of the generalized inverse of the jacobian matrix. In addition, the obstacles are modeled as hyper planes to reduce computational costs and the control law is applied to the joints in order.
+In this paper the proposed method is applied at the \textit{Dynamic} level, the objective function for the \textit{Obstacle avoidance} is computed as follows:
+\begin{equation}
+	V_1(q)=
+	\sum_{i=1}^{m}\sum_{j=2}^{n}
+	\frac{\alpha_{ij}}{
+		-(\frac{x_j - x_{ci}}{r_i + r_{si}})^2
+		-(\frac{y_j - y_{ci}}{r_i + r_{si}})^2
+		-(\frac{z_j}{h_i + h_{si}})^2
+		+1 \;
+		\vphantom{\Bigl( \frac{A}{B} \Bigr)}
+	}
+	\label{equat:Obstacle Avoidance ANAT robot}
+\end{equation}
+where:
+\begin{itemize}
+	\item \textit{m},\textit{n}: respectively the number of obstacles, and the number of points placed on the robot.
+	\item $\alpha_{ij}$ : weight of the constraint for joint \textit{i} from obstacle \textit{j}
+	\item $(x_j,y_j,z_j)$ : coordinates of joint \textit{j} in the \textit{base frame}
+	\item $(x_{ci},y_{ci},r_i,h_i)$ : coordinates of cylinder \textit{i} in the \textit{base frame}
+	\item $(r_{si},h_{si})$ : safety distances in \textit{radius} and  \textit{height} from cylinder \textit{j}
+\end{itemize}
+The approach generates a \textit{repulsive force} that becomes stronger as the robot approaches an obstacle.
+While \textit{potential-field techniques} are a standard choice for \textit{dynamic obstacle-avoidance control}, I could not adopt them in this work because the robots' \textit{dynamic controllers} were locked behind the manufacturer's proprietary software, preventing access to the required control layer.\\
+
+
+\subsection{Macro Micro configuration}
+The last interesting configuration I want to talk about is referred in the literature as \textit{Macro-Micro Robot}. Firstly proposed by \cite{sharon1984enhancement}, the objectives of the proposed architecture were to resolve the opposing problems of \textit{speed} and \textit{tracking precision} and also to correct the errors in \textit{end point measurement}, given by bending in the links and errors in the measurement errors in the encoders.\\
+
+The uses and capabilities of this configuration are presented in the work of \cite{MacroMicro_sampling}, following is a photo of the robot they used.
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.45]{macro_micro_example.png}
+	\caption{Macro-Micro robot}
+	\label{fig:MacroMicroRobot}
+\end{figure}
+The robot is composed of a $6$ Dof \textit{Macro} manipulator and a $3$ Dof \textit{Micro}. The robot is equipped to perform polishing tasks on complex surfaces. \\
+\noindent
+The paper focus is to prove the effectivenss of a \textit{sampling based} motion assignment(MA) strategy with multi performance optimization. Since the robot has a total of $9$ degree of freedom there is space for optimization in the robot movement.
+%The cost function to be minimized is expressed here:
+%\begin{equation}
+%	f_c(q) = \sum_{i=1}^{l}(w_i \cdot RPI_{c,i}(q))
+%	\label{equat:MacroMicro_minimz_fnc} 
+%\end{equation}
+The configuration optimization function is to be minimized for each sampling point of the chosen trajectory, and for each point the performance index and constraint ($RPI_{c,i}(q)$) must be computed. 
+Classic \textit{gradient based} methods can easly stop at local minima since the function is not convex, the proposed MA aims to optimize the movement of macro and micro manipulator, avoiding the costly and error-prone computation.
+The system on witch I worked on this thesis is of the same general structure, but the two robot are considered as a whole. Also in my work I am not computing any offline trajectory as in the case of this paper.\\
+\noindent
+Another application of the \textit{Macro-Micro} configuration is in the field of medical robotics, in the work of \cite{MacroMicro_surical}. In this paper the proposed architecture is composed of a \textit{KUKA LBR IIWA} robotic arm with $7$ Dof, and a \textit{Micro-IGES} surgical robotic instrument with $7$ Dof($2$ Dof are composed of the jaws of the instrument).
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.45]{MacroMicro_surgical.png}
+	\caption{Macro-Micro surgical robot}
+	\label{fig:MacroMicroSurgicalRobot}
+\end{figure}
+\noindent
+In this paper the objective was to demonstrate that the overall performance of the system can be improved by defining preoperatively the best initial configuration of the surgical instrument in terms of \textit{roll}, \textit{pitch} and \textit{yaw} with respect to the macro serial-link manipulator to achive maximum accuracy in performing specified tasks.
+The paper highlights how the macro micro manipulator configuration allows for completion of multiple-objective tasks, such as:
+\begin{itemize}
+	\item \textit{Guarantee Remote Center of Motion}: The RCM(which for surgical application is usually the incision site) has to remain stationary.
+	\item \textit{Desired path tracking}
+	\item \textit{Assembly errors compensation}
+\end{itemize} 
+The method used in this paper starts with a \textit{Genetic algorithm} used to generate possible configuration, that are than evaluated through \textit{Hierarchical Quadratic Programming}.
+The solution of the procedure finds the best intial configuration based on a fitness function and resiliance to errors.
 
 \section{Environment perception and awareness}
 Environment perception is one of the biggest difference when we move from the classical use of robotic systems in industry, to a more modern framework geared towards HRI.
@@ -143,113 +297,6 @@ In the paper is demonstrated that the solution of a lower priority task does not
 
 
 
-\section{High DoF architecture}
-In this section I want to explore some of the relevant high-dof architecture found in the literature.
-\subsection{Dual-arm systems}
-In recent years there has been a trend to use these dual-arm systems for HRC(Human Robot Collaboration), but also for replacing human workers without the need to redesign the work cell.
-\begin{figure}[H]
-	\centering
-	\includegraphics[scale=1.5]{SDA10_500_dualArmManipulator.jpg}
-	\caption{Dual-arm industrial robot example, SDA10}
-	\label{fig:DualArmRobot}
-\end{figure} 
-As is stated in the survey of \cite{DUAL_ARM_SURVEY} the strengths of the dual arm architecture are:
-\begin{itemize}
-	\item \textit{Similarty to operator}: useful both in the case of HRC and to substitute the human worker with minimal effort.
-	\item \textit{Flexibility and stiffness}: Combining the stiffness of closed chain manipulation, with the flexibility of a serial link.
-	\item \textit{Manipulability}: High number of DoFs allows for complex motion tasks.
-	\item \textit{Cognitive motivation}: The similar charcteristics of the kinematic chain is belived to be helpful in HRC context.
-\end{itemize} 
-In most cases for these architectures the \textit{obstacle avoidance} is computed for the \textit{navigation} if the robot has a movable base.
-Moreover the interaction with the environment is performed with the use of \textit{visual servoing}, witch was firstly discussed by \cite{hutchinson2002tutorial}, position based and \textit{hybrid} methods, combining visual and position information.
-\subsection{Snake-like robot}
-A completely different class of robot is represented by the "\textit{snake like}" robot.
-As shown in the work of \cite{hirose2009snake} and \cite{crespi2005amphibot} these types of robot are biologically inspired, and they can produce a forward motion from an undulatory one. Reproducing the movement patterns of snakes.
-\begin{figure}[H]
-	\centering
-	\includegraphics[scale=1.5]{anphiBot_snakelike.jpg}
-	\caption{snake like robot from \cite{crespi2005amphibot}}
-	\label{fig:snakeLikeRobot}
-\end{figure} 
-The potential of these robot that are currently being explored are for navigation in tight spaces, to be applied to endoscopes for examples. In addition the interest lies in the flexibility of a "\textit{snake like}" body, since it could be used to move, climb and grasp if needed.
-\\
-\noindent
-\subsection{Planar robot}
-For more industrial application, I reviewed the work of \cite{highDof_planar_robot_OBAV} and \cite{highDof_planar_robot_OBAV_2}. These work take into consideration high-dof planar manipulator, and they also propose two approaches to do \textit{Obstacle avoidance} with their respective architecture.
-In the case of  \cite{highDof_planar_robot_OBAV} the paper uses the \textit{ANAT} robot, presented in the figure below.
-\begin{figure}[H]
-	\centering
-	\includegraphics[scale=0.45]{ANAT-robot-arm.jpeg}
-	\caption{ANAT robot arm}
-	\label{fig:AnatRobot}
-\end{figure}
-\noindent
-This is a 7Dof robot, comprised of 1 \textit{prismatic} joint to control the $z$ cordinate, followed by 3 parallel \textit{revolute} joints and a 3 Dof \textit{wrist}. \\
-\noindent
-The proposed control algorithm is based on the work of \cite{zlajpah1997control} for the computation of the generalized inverse of the jacobian matrix. In addition, the obstacles are modeled as hyper planes to reduce computational costs and the control law is applied to the joints in order.
-In this paper the proposed method is applied at the \textit{Dynamic} level, the objective function for the \textit{Obstacle avoidance} is computed as follows:
-\begin{equation}
-	V_1(q)=
-	\sum_{i=1}^{m}\sum_{j=2}^{n}
-	\frac{\alpha_{ij}}{
-		-(\frac{x_j - x_{ci}}{r_i + r_{si}})^2
-		-(\frac{y_j - y_{ci}}{r_i + r_{si}})^2
-		-(\frac{z_j}{h_i + h_{si}})^2
-		+1 \;
-		\vphantom{\Bigl( \frac{A}{B} \Bigr)}
-	}
-	\label{equat:Obstacle Avoidance ANAT robot}
-\end{equation}
-where:
-\begin{itemize}
-	\item \textit{m},\textit{n}: respectively the number of obstacles, and the number of points placed on the robot.
-	\item $\alpha_{ij}$ : weight of the constraint for joint \textit{i} from obstacle \textit{j}
-	\item $(x_j,y_j,z_j)$ : coordinates of joint \textit{j} in the \textit{base frame}
-	\item $(x_{ci},y_{ci},r_i,h_i)$ : coordinates of cylinder \textit{i} in the \textit{base frame}
-	\item $(r_{si},h_{si})$ : safety distances in \textit{radius} and  \textit{height} from cylinder \textit{j}
-\end{itemize}
-The approach generates a \textit{repulsive force} that becomes stronger as the robot approaches an obstacle.
-While \textit{potential-field techniques} are a standard choice for \textit{dynamic obstacle-avoidance control}, I could not adopt them in this work because the robots' \textit{dynamic controllers} were locked behind the manufacturer's proprietary software, preventing access to the required control layer.\\
 
-
-\subsection{Macro Micro configuration}
-The last interesting configuration I want to talk about is referred in the literature as \textit{Macro-Micro Robot}. Firstly proposed by \cite{sharon1984enhancement}, the objectives of the proposed architecture were to resolve the opposing problems of \textit{speed} and \textit{tracking precision} and also to correct the errors in \textit{end point measurement}, given by bending in the links and errors in the measurement errors in the encoders.\\
-
-The uses and capabilities of this configuration are presented in the work of \cite{MacroMicro_sampling}, following is a photo of the robot they used.
-\begin{figure}[H]
-	\centering
-	\includegraphics[scale=0.45]{macro_micro_example.png}
-	\caption{Macro-Micro robot}
-	\label{fig:MacroMicroRobot}
-\end{figure}
-The robot is composed of a $6$ Dof \textit{Macro} manipulator and a $3$ Dof \textit{Micro}. The robot is equipped to perform polishing tasks on complex surfaces. \\
-\noindent
-The paper focus is to prove the effectivenss of a \textit{sampling based} motion assignment(MA) strategy with multi performance optimization. Since the robot has a total of $9$ degree of freedom there is space for optimization in the robot movement.
-%The cost function to be minimized is expressed here:
-%\begin{equation}
-%	f_c(q) = \sum_{i=1}^{l}(w_i \cdot RPI_{c,i}(q))
-%	\label{equat:MacroMicro_minimz_fnc} 
-%\end{equation}
-The configuration optimization function is to be minimized for each sampling point of the chosen trajectory, and for each point the performance index and constraint ($RPI_{c,i}(q)$) must be computed. 
-Classic \textit{gradient based} methods can easly stop at local minima since the function is not convex, the proposed MA aims to optimize the movement of macro and micro manipulator, avoiding the costly and error-prone computation.
-The system on witch I worked on this thesis is of the same general structure, but the two robot are considered as a whole. Also in my work I am not computing any offline trajectory as in the case of this paper.\\
-\noindent
-Another application of the \textit{Macro-Micro} configuration is in the field of medical robotics, in the work of \cite{MacroMicro_surical}. In this paper the proposed architecture is composed of a \textit{KUKA LBR IIWA} robotic arm with $7$ Dof, and a \textit{Micro-IGES} surgical robotic instrument with $7$ Dof($2$ Dof are composed of the jaws of the instrument).
-\begin{figure}[H]
-	\centering
-	\includegraphics[scale=0.45]{MacroMicro_surgical.png}
-	\caption{Macro-Micro surgical robot}
-	\label{fig:MacroMicroSurgicalRobot}
-\end{figure}
-\noindent
-In this paper the objective was to demonstrate that the overall performance of the system can be improved by defining preoperatively the best initial configuration of the surgical instrument in terms of \textit{roll}, \textit{pitch} and \textit{yaw} with respect to the macro serial-link manipulator to achive maximum accuracy in performing specified tasks.
-The paper highlights how the macro micro manipulator configuration allows for completion of multiple-objective tasks, such as:
-\begin{itemize}
-	\item \textit{Guarantee Remote Center of Motion}: The RCM(which for surgical application is usually the incision site) has to remain stationary.
-	\item \textit{Desired path tracking}
-	\item \textit{Assembly errors compensation}
-\end{itemize} 
-The method used in this paper starts with a \textit{Genetic algorithm} used to generate possible configuration, that are than evaluated through \textit{Hierarchical Quadratic Programming}.
-The solution of the procedure finds the best intial configuration based on a fitness function and resiliance to errors.
 
 

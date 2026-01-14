@@ -1,4 +1,4 @@
-\begin{thebibliography}{21}
+\begin{thebibliography}{24}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
 \bibitem[{Badrloo {\em et~al.\/}(2022)Badrloo, Varshosaz, Pirasteh \&
@@ -19,6 +19,11 @@
   surgical robotic instrument mounting in a macro–micro manipulator setup for
   improving task execution. {\em IEEE Transactions on Robotics\/}, {\bf 38},
   1--17.
+
+\bibitem[{Endo {\em et~al.\/}(2019)Endo, Horigome \& Takata}]{Super_Dragon}
+{\sc Endo, G., Horigome, A. \& Takata, A.} (2019). Super dragon: A
+  10-m-long-coupled tendon-driven articulated manipulator. {\em IEEE Robotics
+  and Automation Letters\/}, {\bf 4}, 934--941.
 
 \bibitem[{Hirose \& Yamada(2009)}]{hirose2009snake}
 {\sc Hirose, S. \& Yamada, H.} (2009). Snake-like robots [tutorial]. {\em IEEE
@@ -47,6 +52,13 @@
   control of redundant robots. {\em Mathematics and Computers in Simulation\/},
   {\bf 71}, 395--403.
 
+\bibitem[{Liu {\em et~al.\/}(2022)Liu, Zhang, Li, Guo, Li \&
+  Luo}]{liu2022review_hypMan1}
+{\sc Liu, J., Zhang, A., Li, E., Guo, R., Li, S. \& Luo, M.} (2022). A review
+  on the environment perception and control technologies for the hyperredundant
+  manipulators in limited space. {\em Journal of Sensors\/}, {\bf 2022},
+  7659012.
+
 \bibitem[{Maciejewski \& Klein(1985)}]{maciejewski1985obstacle}
 {\sc Maciejewski, A.A. \& Klein, C.A.} (1985). Obstacle avoidance for
   kinematically redundant manipulators in dynamically varying environments.
@@ -63,9 +75,23 @@
   localization and depth estimation for eye-in-hand manipulator using mono
   camera. {\em IEEE Access\/}, {\bf 8}, 121765--121779.
 
+\bibitem[{Ota {\em et~al.\/}(2009)Ota, Degani, Schwartzman, Zubiate, McGarvey,
+  Choset \& Zenati}]{ota2009highly_cardioArm}
+{\sc Ota, T., Degani, A., Schwartzman, D., Zubiate, B., McGarvey, J., Choset,
+  H. \& Zenati, M.A.} (2009). A highly articulated robotic surgical system for
+  minimally invasive surgery. {\em The Annals of thoracic surgery\/}, {\bf 87},
+  1253--1256.
+
 \bibitem[{Panasiuk(2025)}]{s25206402}
 {\sc Panasiuk, J.} (2025). Controlling an industrial robot using stereo 3d
   vision systems with ai elements. {\em Sensors\/}, {\bf 25}.
+
+\bibitem[{Pistone {\em et~al.\/}(2024)Pistone, Ludovico, Dal~Verme, Leggieri,
+  Canali \& Caldwell}]{pistone2024modelling_hypMan2}
+{\sc Pistone, A., Ludovico, D., Dal~Verme, L.D.M.C., Leggieri, S., Canali, C.
+  \& Caldwell, D.G.} (2024). Modelling and control of manipulators for
+  inspection and maintenance in challenging environments: A literature review.
+  {\em Annual Reviews in Control\/}, {\bf 57}, 100949.
 
 \bibitem[{Sharon \& Hardt(1984)}]{sharon1984enhancement}
 {\sc Sharon, A. \& Hardt, D.} (1984). Enhancement of robot accuracy using
@@ -88,13 +114,6 @@
 {\sc Smith, C., Karayiannidis, Y., Nalpantidis, L., Gratal, X., Qi, P.,
   Dimarogonas, D.V. \& Kragic, D.} (2012). Dual arm manipulation—a survey.
   {\em Robotics and Autonomous systems\/}, {\bf 60}, 1340--1353.
-
-\bibitem[{Weidemann {\em et~al.\/}(2023)Weidemann, Mandischer, van Kerkom,
-  Corves, Hüsing, Kraus \& Garus}]{COLLABORATIVEROBreview2}
-{\sc Weidemann, C., Mandischer, N., van Kerkom, F., Corves, B., Hüsing, M.,
-  Kraus, T. \& Garus, C.} (2023). Literature review on recent trends and
-  perspectives of collaborative robotics in work 4.0. {\em Robotics\/}, {\bf
-  12}.
 
 \bibitem[{Zauner {\em et~al.\/}(2025)Zauner, Dib, Gattringer \&
   Mueller}]{zauner2025workspace}
