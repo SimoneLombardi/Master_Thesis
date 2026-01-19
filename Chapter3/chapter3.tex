@@ -6,7 +6,6 @@
 \chapter{Methodology}
 \label{chap:third}
 \graphicspath{{Chapter3/Figures/PNG/}{Chapter3/Figures/JPG/}{Chapter3/Figures/}}
-in this chapter I will describe in detail the mathematical computation performed by the control algorithm I developed. 
 
 
 \section{Task Priority}
@@ -31,32 +30,21 @@ The compact expression of the algorithm becomes, for the \textit{k-th} priority 
 \subsection{Task Description}
 In this section I will describe the mathematical formulation of the task I implemented in my control loop. To simplify the notation all the matrices, if not stated otherwise, are projected on the $\langle\textit{kuka\_base}\rangle$ reference frame.
 
-\subsection{End Effector minimum altitude}
-This task is used to keep the end effector away from the floor.\\
-\\ \\
-\textbf{Task reference}:\\
-\noindent 
-The reference rate for this task is computed using the $z$ coordinate of the traslation from the $\langle\textit{kuka\_base}\rangle$ frame to $\langle\textit{end\_effector}\rangle$. 
-\begin{equation}
-	\textit{Reference rate: } \dot{\bar{x}}_z = \lambda \cdot (\vec{\bar{x}} + \delta - \vec{z}_{ee}^{kb})
-\end{equation}
-The complete vector has all zero exept on the $z$ coordinate.
-\begin{equation}
-	\textit{Reference rate: } \vec{\dot{\bar{x}}} = [0, 0, \dot{\bar{x}}_z, 0, 0, 0]^T
-\end{equation}
-\\
-\noindent The \textit{Reference rate} is considered as the \textit{desired shape} of the derivative of the variable I want to control.
-To be more precise:
-\begin{itemize}
-	\item if $x > \bar{x}$ then $\dot{x} < 0$
-	\item if $x < \bar{x}$ then $\dot{x} > 0$
-	\item if $x = \bar{x}$ then $\dot{x} = 0$
-\end{itemize}
-In the case of the \textit{Minimual altitude task} the variable I want to control is the $z$ of the \textit{end effector} of the robot, and to impose a minimum altitude $z_{min}$. Finally the $\delta$ keeps count of the activation region, meaning that the task will be smoothly activated starting from $z_{min} + \delta$ to $z_{min}$.
-\\ \\
-\noindent \textbf{Activation function}: \\
-\noindent To avoid the abrupt activation of the task that could lead to chattering around the treshold, and more importantly to avoid the over constraining of the system we also add a smooth \textit{activation function}.
 
+\subsection{Obstacle Avoidance}
+For the \textit{Obstacle Avoidance} task I used the approach proposed in \cite{maciejewski1985obstacle}, after computing the point of the robot body at \textit{minimum sitance} from the obstacle, I used said point to apply a  desired velocity in the direction directly opposite to the distance vector.
+% single point
+\\ \noindent \textbf{Task reference}:\\
+\noindent The \textit{distance} vector and the \textit{point} are retrieved in a topic, and are already projected in the $\langle\textit{kuka\_base}\rangle$ reference frame.\\
+\begin{equation}
+	d = (P_o - P_r)\hspace{0.5cm};\hspace{0.5cm}\dot{\vec{\bar{r}}} = -d
+\end{equation}
+\noindent
+Since in the original paper the \textit{planar} and \textit{spatial} case are treated separatley, in chap.\ref{chap:fifth} I will experiment with both the vector as is, and with a zeroed out $z$ component. To understand how the proposed approach behaves in the two cases. \\
+
+\noindent \textbf{Activation function}: \\
+Since this is a \textit{inequality} task, we want to avoid overconstraining the system. To do so I employed a smooth activation function, whose value change from $0$ to $1$ as the distance from the obstacle gets closer to the threshold.
+The the activation value is computed as follows:\\
 \begin{equation}
 	a = 
 	\begin{cases}
@@ -65,40 +53,29 @@ In the case of the \textit{Minimual altitude task} the variable I want to contro
 		0 &  x > x_{min} + \delta
 	\end{cases}
 \end{equation}
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.2]{DecreasingActFcn.jpg}
+	\caption{Generic activation function}
+	\label{fig:DecreasingActFcn}
+\end{figure}
+\noindent
+For the \textit{obstacle avoidance} task the activation function is a diagonal $3\times 3$ matrix, that has a different activation value for each component of the \textit{distance} vector.
+\noindent
+Here is an example of an activation profile for the \textit{obstacle avoidance} task, the \textit{saturation} distance si set to $10$cm, while the transition region has lenght $\delta = 50$cm.\\ 
 
 \begin{figure}[H]
 	\centering
-	\begin{subfigure}{0.49\textwidth}
-		\includegraphics[width=\linewidth]{DecreasingActFcn.jpg}
-		\caption{Generic function}
-		\label{fig:DecreasingActFcn}
-	\end{subfigure}
-	\hfill
-	\begin{subfigure}{0.49\textwidth}
-		\includegraphics[width=\linewidth]{DecreasingActFcn_realValues.jpg}
-		\caption{With realistic values}
-		\label{fig:DecreasingActFcn_rv}
-	\end{subfigure}
+	\includegraphics[scale=0.2]{DecreasingActFcn_realValues_obav.jpg}
+	\caption{Activation for Obstacle avoidance}
+	\label{fig:DecreasingActFcn_realValues_obav}
 \end{figure}
-In this case I used a $(6 \times 6)$ zero matrix as my activation function, than I inserted the value in the third position of the major diagonal, ending up with:
-\begin{equation}
-	\vec{A}_{min alt} = \textit{diag} (0, 0, a_z, 0, 0, 0)
-\end{equation}
-using $z_min = 0,30$\textit{m} as my lower limit and $\delta = 0,1$\textit{m}, and the function is tuned to yield $y \in [0,1]$.
-\\ \\
-\noindent \textbf{Task Jacobian}\\
-\noindent For this task the jacobian matrix is equivalent to the geometric jacobian, computed up to the \textit{end effector} frame. Since the available methods of the classes \codetxt{darkgray}{KukaRobot} and \codetxt{darkgray}{UR10eRobot} compute the jacobians matrices in their respective base frames. Enumeratin the links of the whole robot as $lk_i=1 ... 12$\\
-\begin{equation}
-	\leftindex^{kb}{\vec{J}}_{6/kb} ; \leftindex^{ub}{\vec{J}}_{12/ub}
-\end{equation}
-\\
-The complete trasformation for computing the Jacobian of the unified structure projected in the kuka base frame is:
-\\
-\begin{equation}
-	content ...
-\end{equation}
+It is clear that as the \textit{distance} goes to $0$ the activation values increases, saturating at $1$ for \textit{distances} lower than $10$cm.
 
-I decided to build the jacobian colum by colum since it was necessary for the obstacle avoidance task and it allowed for a more clear and concise code. So for computing the colum relative to the $i-th$ link I used the equation:\\
+\noindent \textbf{Task Jacobian}:\\
+For this task, different \textit{jacobian} matrices must be computed depending on the link on which the \textit{minimum distance point} is located. To handle this efficiently, the jacobians are constructed \textit{colum} by \textit{colum}, resulting in a more compact and readable implementation. I used the same method throughout my thesis.\\
+\noindent 
+In particular, the colum relative to the $i-th$ link is computed as:\\
 \begin{equation}
 	\leftindex^{kb}{\vec{J}}_{i/kb} = 
 	\begin{pmatrix}
@@ -114,27 +91,7 @@ I decided to build the jacobian colum by colum since it was necessary for the ob
 \\
 \noindent
 where $\textit{ax}_i$ is the axes of rotation for joint i expressed in the joint frame, which I retrieved from the \codetxt{darkgray}{urdf} description of the two robots. 
-
-\subsection{Obstacle Avoidance}
-For the \textit{Obstacle Avoidance} task I used the approach proposed in \cite{maciejewski1985obstacle} keeping a single point task were that point is the point at minimum distance from the obstacle in the robot body.
-% single point
-\\ \noindent \textbf{Task reference}:\\
-\noindent As a task reference I used the opposite of the vector connecting the \textit{minimum distance} robot point to the \textit{obstacle point}. \\
-\begin{equation}
-	d = (P_o - P_r)\hspace{0.5cm};\hspace{0.5cm}\dot{\vec{\bar{r}}} = -d
-\end{equation}
-In chap.\ref{chap:fifth} I will experiment with both the vector as is, and with a zeroed out $z$ component. To understand how the proposed approach behaves in the 3d and 2d case. \\
-\noindent \textbf{Activation function}: \\
-The activation function is a $3\times 3$ matrix, and the values are computed in the same fashion as the \textit{minimum altitude} task.
-This time the minimum distance is lowered to $10$cm while $\delta = 50$cm, this was to enforce a very smooth activation of the task. The resulting profile is as follows:\\
-\begin{figure}[H]
-	\centering
-	\includegraphics[scale=0.2]{DecreasingActFcn_realValues_obav.jpg}
-	\caption{Activation for Obstacle avoidance}
-	\label{fig:DecreasingActFcn_realValues_obav}
-\end{figure}
-\noindent \textbf{Task Jacobian}:\\
-For the task jacobian I used the same analytical approach as in the \textit{minimum altitude} task, adding a rigid body to take into consideration the position of the \textit{minimum distance point} on the body of the robot.
+\noindent
 Taken the complete jacobian of the $12$Dof structure I pre-multiplied for the rigid body jacobian, which is computed as:
 \begin{equation}
 	\leftindex^{kb}{\vec{J}}_{mdp/kb} = 
@@ -233,3 +190,46 @@ Same process is done for the translation vector:
 	\langle\textit{end\_effector}\rangle: \leftindex^{ee}{\vec{r}}_{goal} &= \vec{r}_{ee}^{kb} + \vec{r}_{goal}
 \end{align}
 Than the rotation matrix and the translation vector are use to publish the $\langle\textit{goal}\rangle$ in rviz.
+
+\subsection{Joint limits}
+
+\subsection{End Effector minimum altitude}
+This task is used to keep the end effector away from the floor. I implemented this task to check the correctness of the \textit{task priority} algorithm, to have a more predictable task with which I could better asses the expected behavior of the system.\\
+\\ \\
+\textbf{Task reference}:\\
+\noindent 
+The reference rate for this task is computed using the $z$ coordinate of the traslation from the $\langle\textit{kuka\_base}\rangle$ frame to $\langle\textit{end\_effector}\rangle$. 
+\begin{equation}
+	\textit{Reference rate: } \dot{\bar{x}}_z = \lambda \cdot (\vec{\bar{x}} + \delta - \vec{z}_{ee}^{kb})
+\end{equation}
+The complete vector has all zero exept on the $z$ coordinate.
+\begin{equation}
+	\textit{Reference rate: } \vec{\dot{\bar{x}}} = [0, 0, \dot{\bar{x}}_z, 0, 0, 0]^T
+\end{equation}
+\\
+\noindent The \textit{Reference rate} is considered as the \textit{desired shape} of the derivative of the variable I want to control.
+To be more precise:
+\begin{itemize}
+	\item if $x > \bar{x}$ then $\dot{x} < 0$
+	\item if $x < \bar{x}$ then $\dot{x} > 0$
+	\item if $x = \bar{x}$ then $\dot{x} = 0$
+\end{itemize}
+In the case of the \textit{Minimual altitude task} the variable I want to control is the $z$ of the \textit{end effector} of the robot, and to impose a minimum altitude $z_{min}$. Finally the $\delta$ keeps count of the activation region, meaning that the task will be smoothly activated starting from $z_{min} + \delta$ to $z_{min}$.
+\\ \\
+\noindent \textbf{Activation function}: \\
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.2]{DecreasingActFcn_realValues.jpg}
+	\caption{With realistic values}
+	\label{fig:DecreasingActFcn_rv}
+\end{figure}
+In this case I used a $(6 \times 6)$ zero matrix as my activation function, than I inserted the value in the third position of the major diagonal, ending up with:
+\begin{equation}
+	\vec{A}_{min alt} = \textit{diag} (0, 0, a_z, 0, 0, 0)
+\end{equation}
+using $z_min = 0,30$\textit{m} as my lower limit and $\delta = 0,1$\textit{m}, and the function is tuned to yield $y \in [0,1]$.
+\\ \\
+\noindent \textbf{Task Jacobian}:\\
+The task jacobian is equal to the third row of the \textit{geometric jacobian} of the robot, to compute it I used the same method described in \ref*{equat:AnalyticJacobianFormula} with no rigid body trasformation.
+

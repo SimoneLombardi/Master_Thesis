@@ -1,0 +1,83 @@
+\subsection{End Effector minimum altitude}
+This task is used to keep the end effector away from the floor. I implemented this task more to check the correctness of the \textit{}\\
+\\ \\
+\textbf{Task reference}:\\
+\noindent 
+The reference rate for this task is computed using the $z$ coordinate of the traslation from the $\langle\textit{kuka\_base}\rangle$ frame to $\langle\textit{end\_effector}\rangle$. 
+\begin{equation}
+	\textit{Reference rate: } \dot{\bar{x}}_z = \lambda \cdot (\vec{\bar{x}} + \delta - \vec{z}_{ee}^{kb})
+\end{equation}
+The complete vector has all zero exept on the $z$ coordinate.
+\begin{equation}
+	\textit{Reference rate: } \vec{\dot{\bar{x}}} = [0, 0, \dot{\bar{x}}_z, 0, 0, 0]^T
+\end{equation}
+\\
+\noindent The \textit{Reference rate} is considered as the \textit{desired shape} of the derivative of the variable I want to control.
+To be more precise:
+\begin{itemize}
+	\item if $x > \bar{x}$ then $\dot{x} < 0$
+	\item if $x < \bar{x}$ then $\dot{x} > 0$
+	\item if $x = \bar{x}$ then $\dot{x} = 0$
+\end{itemize}
+In the case of the \textit{Minimual altitude task} the variable I want to control is the $z$ of the \textit{end effector} of the robot, and to impose a minimum altitude $z_{min}$. Finally the $\delta$ keeps count of the activation region, meaning that the task will be smoothly activated starting from $z_{min} + \delta$ to $z_{min}$.
+\\ \\
+\noindent \textbf{Activation function}: \\
+\noindent To avoid the abrupt activation of the task that could lead to chattering around the treshold, and more importantly to avoid the over constraining of the system we also add a smooth \textit{activation function}.
+
+\begin{equation}
+	a = 
+	\begin{cases}
+		1 &  x < x_{min} \\[5pt]
+		\frac{1}{2}[(\cos(\pi\frac{x-x_{min}}{\delta})+1)] & x\in[x_{min},x_{min}+\delta] \\[5pt]
+		0 &  x > x_{min} + \delta
+	\end{cases}
+\end{equation}
+
+\begin{figure}[H]
+	\centering
+	\begin{subfigure}{0.49\textwidth}
+		\includegraphics[width=\linewidth]{DecreasingActFcn.jpg}
+		\caption{Generic function}
+		\label{fig:DecreasingActFcn}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}{0.49\textwidth}
+		\includegraphics[width=\linewidth]{DecreasingActFcn_realValues.jpg}
+		\caption{With realistic values}
+		\label{fig:DecreasingActFcn_rv}
+	\end{subfigure}
+\end{figure}
+In this case I used a $(6 \times 6)$ zero matrix as my activation function, than I inserted the value in the third position of the major diagonal, ending up with:
+\begin{equation}
+	\vec{A}_{min alt} = \textit{diag} (0, 0, a_z, 0, 0, 0)
+\end{equation}
+using $z_min = 0,30$\textit{m} as my lower limit and $\delta = 0,1$\textit{m}, and the function is tuned to yield $y \in [0,1]$.
+\\ \\
+\noindent \textbf{Task Jacobian}\\
+\noindent For this task the jacobian matrix is equivalent to the geometric jacobian, computed up to the \textit{end effector} frame. Since the available methods of the classes \codetxt{darkgray}{KukaRobot} and \codetxt{darkgray}{UR10eRobot} compute the jacobians matrices in their respective base frames. Enumeratin the links of the whole robot as $lk_i=1 ... 12$\\
+\begin{equation}
+	\leftindex^{kb}{\vec{J}}_{6/kb} ; \leftindex^{ub}{\vec{J}}_{12/ub}
+\end{equation}
+\\
+The complete trasformation for computing the Jacobian of the unified structure projected in the kuka base frame is:
+\\
+\begin{equation}
+	content ...
+\end{equation}
+
+I decided to build the jacobian colum by colum since it was necessary for the obstacle avoidance task and it allowed for a more clear and concise code. So for computing the colum relative to the $i-th$ link I used the equation:\\
+\begin{equation}
+	\leftindex^{kb}{\vec{J}}_{i/kb} = 
+	\begin{pmatrix}
+		\leftindex^{kb}{\vec{J}}_{i/kb}^{L} \\[4pt]
+		\leftindex^{kb}{\vec{J}}_{i/kb}^{A}
+	\end{pmatrix} =
+	\begin{pmatrix}
+		\vec{R}^{kb}_i \cdot \textit{ax}_i \times (r^{kb}_n - r^{kb}_i) \\[8pt]
+		\vec{R}^{kb}_i \cdot \textit{ax}_i
+	\end{pmatrix}
+	\label{equat:AnalyticJacobianFormula}
+\end{equation}
+\\
+\noindent
+where $\textit{ax}_i$ is the axes of rotation for joint i expressed in the joint frame, which I retrieved from the \codetxt{darkgray}{urdf} description of the two robots. 
