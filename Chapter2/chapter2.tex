@@ -16,7 +16,7 @@ In particular, I will describe how environmental perception is generally perform
 
 \section{Hyper-redundant manipulators}
 Looking at the work of \cite{liu2022review_hypMan1} and \cite{pistone2024modelling_hypMan2} is clear that \textit{hyper-redundant manipulator} are currently used in dangerous and thigh spaces, or in the medical field for surgery and as endoscopes.
-Given these operational requirements the most common \textit{mechanical design} follows the \textit{snake-like} design.
+Given these operational requirements the most common \textit{mechanical design} follows the \textit{snake-like} formulation.
 A good example of these two application are the \textit{Super Dragon} a snake-like, tendon actuated robot used in the decommissioning of the Fukushima Daiichi Nuclear Power Plants.
 \begin{figure}[H]
 	\centering
@@ -40,7 +40,7 @@ Other drive methods discussed in the paper are:
 	\item Artificial muscle
 	\item Motor Direct drive
 \end{itemize}
-The other drive mode lack the necessary strength for most industrial application.\\
+These types of drive method are used mostly for their miniaturization capabilities but lack the necessary strength for most industrial application.\\
 \noindent
 In the paper analyzed in the reviews the control strategy applied to the \textit{hyper-redundant} manipulators are akin to the methods used for \textit{soft robots}. The numerical methods are bound to have the robot reach odd isomerism, invalidating the solution. Using a \textit{damped least square} or \textit{SVD} to invert the jacobian matrix of the manipulator can alleviate this problem, with the cost of a decreased accuracy of the solution.
 Some of the proposed kinematic control methods are:
@@ -56,7 +56,7 @@ In more recent years more solution use \textit{Neural Networks} to resolve the \
 
 
 \section{High DoF architecture}
-In this section I want to explore some of the relevant high-dof architecture found in the literature.
+In this section I want to explore some of the other relevant high-dof architecture found in the literature.
 \subsection{Dual-arm systems}
 In recent years there has been a trend to use these dual-arm systems for HRC(Human Robot Collaboration), but also for replacing human workers without the need to redesign the work cell.
 \begin{figure}[H]
@@ -74,18 +74,18 @@ As is stated in the survey of \cite{DUAL_ARM_SURVEY} the strengths of the dual a
 \end{itemize} 
 In most cases for these architectures the \textit{obstacle avoidance} is computed for the \textit{navigation} if the robot has a movable base.
 Moreover the interaction with the environment is performed with the use of \textit{visual servoing}, witch was firstly discussed by \cite{hutchinson2002tutorial}, position based and \textit{hybrid} methods, combining visual and position information.
-\subsection{Snake-like robot}
-A completely different class of robot is represented by the "\textit{snake like}" robot.
-As shown in the work of \cite{hirose2009snake} and \cite{crespi2005amphibot} these types of robot are biologically inspired, and they can produce a forward motion from an undulatory one. Reproducing the movement patterns of snakes.
-\begin{figure}[H]
-	\centering
-	\includegraphics[scale=1.5]{anphiBot_snakelike.jpg}
-	\caption{snake like robot from \cite{crespi2005amphibot}}
-	\label{fig:snakeLikeRobot}
-\end{figure} 
-The potential of these robot that are currently being explored are for navigation in tight spaces, to be applied to endoscopes for examples. In addition the interest lies in the flexibility of a "\textit{snake like}" body, since it could be used to move, climb and grasp if needed.
-\\
-\noindent
+
+%\subsection{Snake-like robot}
+%A completely different class of robot is represented by the "\textit{snake like}" robot.
+%As shown in the work of \cite{hirose2009snake} and \cite{crespi2005amphibot} these types of %robot are biologically inspired, and they can produce a forward motion from an undulatory one. %Reproducing the movement patterns of snakes.
+%\begin{figure}[H]
+%	\centering
+%	\includegraphics[scale=1.5]{anphiBot_snakelike.jpg}
+%	\caption{snake like robot from \cite{crespi2005amphibot}}
+%	\label{fig:snakeLikeRobot}
+%\end{figure} 
+%The potential of these robot that are currently being explored are for navigation in tight spaces, to be applied to endoscopes for examples. In addition the interest lies in the flexibility of a "\textit{snake like}" body, since it could be used to move, climb and grasp if needed.
+
 \subsection{Planar robot}
 For more industrial application, I reviewed the work of \cite{highDof_planar_robot_OBAV} and \cite{highDof_planar_robot_OBAV_2}. These work take into consideration high-dof planar manipulator, and they also propose two approaches to do \textit{Obstacle avoidance} with their respective architecture.
 In the case of  \cite{highDof_planar_robot_OBAV} the paper uses the \textit{ANAT} robot, presented in the figure below.
@@ -295,8 +295,26 @@ Yielding the general solution:
 \end{equation}
 In the paper is demonstrated that the solution of a lower priority task does not modify the higher one, but it is \textit{attempted} in the null space.
 
-
-
-
+\section{Reactive control}
+When it comes to \textit{obstacle avoidance} the general approach present in the literature falls under the framework of the \textit{sense plan act} architecture. 
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.8]{sense_plan_act.png}
+	\caption{Sense Plan Act schema}
+	\label{fig:SPA_schema}
+\end{figure}
+After creating a representation of the environment the robot perform an optimization to find the most suitable path to reach the desired position.
+As shown in \cite{ata2007optimal}, the optimization problem for \textit{Obstacle avoidance} and \textit{path planning} in general is bound to the number of \textit{DoF} of the system, and the complexity increases with it.
+In the review some \textit{Genetic Algorithm} approaches are cited as promising, but they may sometimes have problem converging to an optimal solution due to the \textit{deceptive problem}, where the algotrithm converges to a local minima due to a misleading evaluation of the parameters, and \textit{premature convergence} problems. \\
+And this leads to time inconsistency, and poor resilience to dynamic environment.
+To be able to perform in a changing environment the architecture used in \textit{Sesto senso} is based on a \textit{sense act} control framework.   
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.8]{sense_act.png}
+	\caption{Sense Act schema}
+	\label{fig:SA_schema}
+\end{figure}
+Since the \textit{plan} step is bound to introduce \textit{delay} in the control loop, it is not suitable for an \textit{HRI} application that requires the robot to act and potentially avoid dangerous contacts with a human agent.
+By leveraging the \textit{sensing architecture} discussed in \cite{10802341} and the \textit{prioritized control hierarchy} it is possible to deploy a safe control framework for \textit{high payload HRI}.
 
 

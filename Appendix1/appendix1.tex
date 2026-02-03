@@ -6,4 +6,24 @@
 \chapter{Extra}
 \label{chap:appendixA}
 
-Write here...
+\section{JointRobotTP class definition}
+\noindent\makebox[\textwidth]{
+	\begin{tabular}{p{3cm}c}
+		\multirow{3}{*}{\textbf{Class setup}} & \codetxt{olive}{Initialize}\codetxt{darkgray}{([Args..]);} \\
+		& \codetxt{olive}{insertInitConfigMap}\codetxt{darkgray}{();} \\
+		& \codetxt{olive}{insertFuncPointerVtc}\codetxt{darkgray}{();} \\ [4pt]
+		\hline \\[-10pt]
+		\multirow{3}{*}{\textbf{Data structure}}  & \codetxt{darkgray}{map<string, VectorXd>} \codetxt{cyan}{initial\_configurations\_map\_}\codetxt{darkgray}{;} \\
+		& \codetxt{darkgray}{vector<ProximityTask>} \codetxt{cyan}{proximity\_task\_points\_}\codetxt{darkgray}{;}\\
+		& \codetxt{darkgray}{map<string, tp\_task>} \codetxt{cyan}{TP\_task\_map\_}\codetxt{darkgray}{;} \\ [4pt]
+		\hline \\[-10pt]
+		\multirow{3}{*}{\textbf{Task state update}}     & \codetxt{olive}{Update\_TRR\_<task name>}\codetxt{darkgray}{();} \\
+		& \codetxt{olive}{Update\_AFunc\_<task name>}\codetxt{darkgray}{();} \\
+		& \codetxt{olive}{Update\_TskJac\_<task name>}\codetxt{darkgray}{();} \\[4pt]
+		\hline \\[-10pt]
+		\multirow{1}{*}{\textbf{Action server}}     & \codetxt{olive}{execute}\codetxt{darkgray}{([Args..]);} \\[4pt]
+		\hline \\[-10pt]
+		\multirow{2}{*}{\textbf{Robot movement}}  & \codetxt{olive}{ReachInitialConfiguration}\codetxt{darkgray}{([Args..]);} \\
+		& \codetxt{olive}{RunCartesianReachingLoop}\codetxt{darkgray}{([Args..]);} \\
+	\end{tabular}
+}

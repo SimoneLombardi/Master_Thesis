@@ -35,15 +35,22 @@ In this section I will describe the mathematical formulation of the task I imple
 For the \textit{Obstacle Avoidance} task I used the approach proposed in \cite{maciejewski1985obstacle}, after computing the point of the robot body at \textit{minimum sitance} from the obstacle, I used said point to apply a  desired velocity in the direction directly opposite to the distance vector.
 % single point
 \\ \noindent \textbf{Task reference}:\\
+\noindent The \textit{Reference rate} is considered as the \textit{desired shape} of the derivative of the variable I want to control.
+To be more precise:
+\begin{itemize}
+	\item if $x > \bar{x}$ then $\dot{x} < 0$
+	\item if $x < \bar{x}$ then $\dot{x} > 0$
+	\item if $x = \bar{x}$ then $\dot{x} = 0$
+\end{itemize}
+In the case of the \textit{obstacle avoidance} task, the variable I want to control is the \textit{minimum distance} of the robot body from the environment.
 \noindent The \textit{distance} vector and the \textit{point} are retrieved in a topic, and are already projected in the $\langle\textit{kuka\_base}\rangle$ reference frame.\\
 \begin{equation}
 	d = (P_o - P_r)\hspace{0.5cm};\hspace{0.5cm}\dot{\vec{\bar{r}}} = -d
 \end{equation}
-\noindent
-Since in the original paper the \textit{planar} and \textit{spatial} case are treated separatley, in chap.\ref{chap:fifth} I will experiment with both the vector as is, and with a zeroed out $z$ component. To understand how the proposed approach behaves in the two cases. \\
+Since in the original paper the \textit{planar} and \textit{spatial} case are treated separatley, in chap.\ref{chap:fifth} I will experiment with both the vector as is, and without the $z$ component. To understand how the proposed approach behaves in the two cases. \\
 
 \noindent \textbf{Activation function}: \\
-Since this is a \textit{inequality} task, we want to avoid overconstraining the system. To do so I employed a smooth activation function, whose value change from $0$ to $1$ as the distance from the obstacle gets closer to the threshold.
+Since this is a \textit{inequality} task, we want to avoid over constraining the system. To do so I employed a smooth activation function, whose value change from $0$ to $1$ as the distance from the obstacle gets closer to the threshold.
 The the activation value is computed as follows:\\
 \begin{equation}
 	a = 
@@ -192,6 +199,35 @@ Same process is done for the translation vector:
 Than the rotation matrix and the translation vector are use to publish the $\langle\textit{goal}\rangle$ in rviz.
 
 \subsection{Joint limits}
+This task is used to mantain the joint variables inside the \textit{mechanical limits} of the two robots, the values of those limits were retrived by the respective data sheets.\\
+\textbf{Task reference}:\\
+\noindent Since the joint limit task has a range of acceptable value I want to maintain each variable inside this range.
+The reference rate is computed as:\\
+\begin{equation}
+	\dot{\bar{q}}_{th} =  
+	\begin{cases}
+		\lambda \cdot (\lvert \overline{jl}_{th} - q_{th}  \rvert + \delta) &  q_{th} <= \overline{jl}_{th} \\[5pt]
+		-\lambda \cdot (\lvert \overline{jl}_{th} - q_{th}  \rvert - \delta) &  q_{th} > \overline{jl}_{th} 
+	\end{cases}
+\end{equation}
+Where:
+\begin{itemize}
+	\item $\overline{jl}_{th}$ is the average value of the upper and lower joint limit, for the $th$ joint
+	\item $q_{th}$ is the position of the $th$ joint
+\end{itemize}
+
+\noindent \textbf{Activation function}:\\
+To compute the activation function, I summed the resulting value of a decreasing and increasing \textit{bell shaped function}, using respectively the lower and upper joint limits as the extreme.\\
+\noindent The resulting function has the following general shape:
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.3]{jl_activation_fcn.png}
+	\caption{joint limits activation function, generic values}
+	\label{fig:jl_act_fnc}
+\end{figure}
+
+\noindent \textbf{Task reference}:\\
+Lastly the task jacobian is an \textit{identity} $\mathbb{R}^{12\times 12}$ matrix, since I can independently control each joint variable.
 
 \subsection{End Effector minimum altitude}
 This task is used to keep the end effector away from the floor. I implemented this task to check the correctness of the \textit{task priority} algorithm, to have a more predictable task with which I could better asses the expected behavior of the system.\\
@@ -207,13 +243,6 @@ The complete vector has all zero exept on the $z$ coordinate.
 	\textit{Reference rate: } \vec{\dot{\bar{x}}} = [0, 0, \dot{\bar{x}}_z, 0, 0, 0]^T
 \end{equation}
 \\
-\noindent The \textit{Reference rate} is considered as the \textit{desired shape} of the derivative of the variable I want to control.
-To be more precise:
-\begin{itemize}
-	\item if $x > \bar{x}$ then $\dot{x} < 0$
-	\item if $x < \bar{x}$ then $\dot{x} > 0$
-	\item if $x = \bar{x}$ then $\dot{x} = 0$
-\end{itemize}
 In the case of the \textit{Minimual altitude task} the variable I want to control is the $z$ of the \textit{end effector} of the robot, and to impose a minimum altitude $z_{min}$. Finally the $\delta$ keeps count of the activation region, meaning that the task will be smoothly activated starting from $z_{min} + \delta$ to $z_{min}$.
 \\ \\
 \noindent \textbf{Activation function}: \\

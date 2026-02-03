@@ -22,35 +22,68 @@ The robotic system I worked with was composed of two articulated industrial robo
 	\caption{photo of the real system, inside the workcell}
 	\label{fig:RealSystem}
 \end{figure}
-\noindent
-The simulation part I used to develop my architecture was composed of the classes: \codetxt{darkgray}{KukaRobot} and \codetxt{darkgray}{UR10eRobot}
-. These two classes themselves inherits from the class: \codetxt{darkgray}{RobotInterface}.\\
-All of the code was developed usinc \codetxt{darkgray}{c++} language, and the library \codetxt{darkgray}{Eigen} to handle matrices.
+\noindent The \textit{UR10e} was mounted on the flange of the \textit{Kuka KR150}, and It holds the sensory apparatus of the system, mounted via purposfully 3d printed sleeves that can incorporate the pressure and proximity sensor in a small footprint and easly removable manner.
+\begin{figure}[H]
+	\centering
+	\begin{subfigure}{0.65\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{sensor_sleeve.png}
+		\caption{Ur10e sensorized sleeve}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}{0.3\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{tof.png}
+		\caption{Time of Flight sensor}
+		\vspace{0.5em} % vertical spacing
+		\includegraphics[width=\linewidth]{pressure_sensor.png}
+		\caption{Pressure sensor board}
+	\end{subfigure}
+	
+	\label{fig:sensorized_array}
+\end{figure}
+\noindent As shown in the picture the \textit{time of flight sensor} ar contained in strips that wrap around the links body, this allows the robot to have $360°$ around each sensorized link. The pressure sensor instead are placed in the black section in between each \textit{ToF} strip. \\
+\noindent In the photo it is possible to see a single sensor board, each array of sensor has: forty-eight boards and each sleeve has two array of sensor.  
 
-
-% robot classes schema
-The parent class contains the information for:
+\section{Cinematic simulation}
+As stated in \ref{chap:first} I used a cinematic simulation to test my work. The main component are described in the following image:
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.3]{simulation_node_diagram.png}
+	\caption{Cinematic simulation diagram}
+	\label{fig:simulation_nodes_diag}
+\end{figure}
+In the images most of the nodes related to visualization of the robot motion are omitted, but the core functionalities are present.
 \begin{itemize}
-	\item \textit{Transformation} using a \codetxt{darkgray}{tf2\_ros::Buffer} and \\ \codetxt{darkgray}{tf2\_ros::TransformListener}.
-	\item \textit{Robot state}, stored as a vector of joint variables $q$ and velocities $\dot{q}$ \codetxt{darkgray}{Eigen::VectorXd}.
-	\item \textit{Inverse kinematics} using \codetxt{darkgray}{KDL::Tree} and \codetxt{darkgray}{Chain}, a data structure to recursively compute the jacobians of the robots. Starting from the \codetxt{darkgray}{urdf} description of the robots.
+	\item \textbf{State broadcasting}: the nodes in blue are responsible for the publication of the \textit{joint states} of the two robots.
+	\item \textbf{Environment handling}: the nodes in yellow handle the publication of the environment pointcloud, and the computation of the minimum distances for the robot links.
+	\item \textbf{Control}: the nodes in red contains the control loop, and are responsible for publishing the forward kinematics. 
+\end{itemize}
+\noindent In the end all is visualized by Rviz.
+For the \textit{Ur10e} it is available a docker cinematic simulator, \textit{ursim polyscope} developed directly by by \textit{Universal robots}, and for the \textit{Kuka} a simulator was developed starting from the \textit{urdf} representation of the robot and the readly available \textit{ros2} pkgs such as \textit{robot\_state\_broadcaster}.\\
+\noindent The \textit{control} nodes contains the logic of the action server I developed for this thesis.
+
+\section{Unified Robot Architecture: JointRobotTP Class}
+In this section Im going to explain the implementation of the \textit{unified robot architecture} that is mainly contained in the previously mentioned node: \textit{joint\_robot\_tp\_node}.\\
+\noindent All the code was developed in the \codetxt{darkgray}{c++} language, for performance and the matrix computation is done using the library \codetxt{darkgray}{Eigen}.\\
+\noindent Here is a simplified diagram of the main class developed to handle the control of the robotic system:\\
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.5]{simplified_class_structure.png}
+	\caption{Simplified structure of the class JointRobotTP}
+	\label{fig:JointRobotTP simplified}
+\end{figure}
+\noindent As shown in \ref{fig:simulation_nodes_diag} there are three control nodes, the two nodes for the robots are members of the  \codetxt{darkgray}{JointRobotTP} class.
+They were developed during the \textit{Sesto senso project} and contain the data structure for the following application:
+\begin{itemize}
+	\item \textit{Transformation} listening and broadcasting, using the \textit{tf2\_ros} pkg.
+	\item \textit{Inverse kinematics} using using the \textit{KDL} pkg to recursively compute the jacobians of the robots. Starting from the \codetxt{darkgray}{urdf} description of the robots.
 \end{itemize}
 \noindent
 The transformation buffer contain the kinematic chain of the two robots, as \codetxt{darkgray}{geometry\_msgs::msg::TransformStamped}. These transformation are periodically updated trough a topic, published by the \textit{robot state publisher}.
-The \codetxt{darkgray}{tf2\_ros::Buffer} also allows to retrive specific frame to frame trasformation, using the frames id.
-Than using \codetxt{darkgray}{KDL} the inverse kinematics can be computed on demand during the movement of the robot.
-\\
-\noindent
-My work was the development of the class: \codetxt{darkgray}{JointRobotTP} that takes these two classes and combines them in an unified architecture.
-%% insert figure of the scheme
-\begin{figure}[H]
-\centering
-\includegraphics[scale=0.5]{simplified_class_structure.png}
-\caption{Simplified structure of the class JointRobotTP}
-\label{fig:JointRobotTP simplified}
-\end{figure}
-\noindent
-The main goals I wanted to pursue were the following:
+The \textit{tf2\_ros} also allows to retrive specific frame to frame trasformation, using the frames id, defined in the \codetxt{darkgray}{urdf} files.\\
+
+\noindent The main goals I wanted to pursue during development were the following:
 
 \begin{enumerate}
 	\item Have an efficient way to send commands to the unified robot.
@@ -62,7 +95,7 @@ The main goals I wanted to pursue were the following:
 In the following section I will describe more in detail the structure of the \textit{JointRobotTP} class.
 
 
-\section{JointRobotTP Class Implementation}
+
 % definire le parti della classe fare uno schema dei componenti
 The unified robot class implementation main \textit{methods} and \textit{data structure} are:
 %\begin{itemize}
@@ -82,28 +115,12 @@ The unified robot class implementation main \textit{methods} and \textit{data st
 %					-- > Run Cartesian Reaching Loop
 %\end{itemize}
 
-\noindent\makebox[\textwidth]{
-	\begin{tabular}{p{3cm}c}
-		\multirow{3}{*}{\textbf{Class setup}} & \codetxt{olive}{Initialize}\codetxt{darkgray}{([Args..]);} \\
-												& \codetxt{olive}{insertInitConfigMap}\codetxt{darkgray}{();} \\
-												& \codetxt{olive}{insertFuncPointerVtc}\codetxt{darkgray}{();} \\ [4pt]
-		\hline \\[-10pt]
-		\multirow{3}{*}{\textbf{Data structure}}  & \codetxt{darkgray}{map<string, VectorXd>} \codetxt{cyan}{initial\_configurations\_map\_}\codetxt{darkgray}{;} \\
-													& \codetxt{darkgray}{vector<ProximityTask>} \codetxt{cyan}{proximity\_task\_points\_}\codetxt{darkgray}{;}\\
-													& \codetxt{darkgray}{map<string, tp\_task>} \codetxt{cyan}{TP\_task\_map\_}\codetxt{darkgray}{;} \\ [4pt]
-		\hline \\[-10pt]
-		\multirow{3}{*}{\textbf{Task state update}}     & \codetxt{olive}{Update\_TRR\_<task name>}\codetxt{darkgray}{();} \\
-													& \codetxt{olive}{Update\_AFunc\_<task name>}\codetxt{darkgray}{();} \\
-													& \codetxt{olive}{Update\_TskJac\_<task name>}\codetxt{darkgray}{();} \\[4pt]
-		\hline \\[-10pt]
-		\multirow{1}{*}{\textbf{Action server}}     & \codetxt{olive}{execute}\codetxt{darkgray}{([Args..]);} \\[4pt]
-		\hline \\[-10pt]
-		\multirow{2}{*}{\textbf{Robot movement}}  & \codetxt{olive}{ReachInitialConfiguration}\codetxt{darkgray}{([Args..]);} \\
-												  & \codetxt{olive}{RunCartesianReachingLoop}\codetxt{darkgray}{([Args..]);} \\
-	\end{tabular}
-}
+
 
 \subsection{Class setup}
+The \textit{Initialize} method is called once to instantiate all the members of the class object, data structure, publishers, subscriber and the action server.
+
+
 These methods are created to instantiate the class object once the executable is started.\\
 \noindent
 Specifically the method \codetxt{olive}{Initialize}\codetxt{darkgray}{()} is tasked with the creation of the nodes for the robots classes and all the other part of the communication structure. It takes as arguments three node pointers that are used to instantiate one object of the class \codetxt{darkgray}{KukaRobot}, \codetxt{darkgray}{UR10eRobot} and \codetxt{darkgray}{JointRobotTP}. 

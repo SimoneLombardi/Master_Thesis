@@ -4,25 +4,28 @@
 \contentsline {figure}{\numberline {2.1}{\ignorespaces Super Dragon robot arm, from \cite {Super_Dragon}\relax }}{5}{figure.caption.3}%
 \contentsline {figure}{\numberline {2.2}{\ignorespaces CardioArm robot, from \cite {ota2009highly_cardioArm}\relax }}{5}{figure.caption.4}%
 \contentsline {figure}{\numberline {2.3}{\ignorespaces Dual-arm industrial robot example, SDA10\relax }}{7}{figure.caption.5}%
-\contentsline {figure}{\numberline {2.4}{\ignorespaces snake like robot from \cite {crespi2005amphibot}\relax }}{8}{figure.caption.6}%
-\contentsline {figure}{\numberline {2.5}{\ignorespaces ANAT robot arm\relax }}{9}{figure.caption.7}%
-\contentsline {figure}{\numberline {2.6}{\ignorespaces Macro-Micro robot\relax }}{10}{figure.caption.8}%
-\contentsline {figure}{\numberline {2.7}{\ignorespaces Macro-Micro surgical robot\relax }}{11}{figure.caption.9}%
-\contentsline {figure}{\numberline {2.8}{\ignorespaces Direct visual servoing scheme\relax }}{13}{figure.caption.10}%
-\contentsline {figure}{\numberline {2.9}{\ignorespaces Vision coordinate sistem\relax }}{13}{figure.caption.11}%
-\contentsline {figure}{\numberline {2.12}{\ignorespaces Obstacle avoidance schema\relax }}{17}{figure.caption.14}%
+\contentsline {figure}{\numberline {2.4}{\ignorespaces ANAT robot arm\relax }}{8}{figure.caption.6}%
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Macro-Micro robot\relax }}{10}{figure.caption.7}%
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Macro-Micro surgical robot\relax }}{11}{figure.caption.8}%
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Direct visual servoing scheme\relax }}{12}{figure.caption.9}%
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Vision coordinate sistem\relax }}{13}{figure.caption.10}%
+\contentsline {figure}{\numberline {2.11}{\ignorespaces Obstacle avoidance schema\relax }}{17}{figure.caption.13}%
+\contentsline {figure}{\numberline {2.12}{\ignorespaces Sense Plan Act schema\relax }}{18}{figure.caption.14}%
+\contentsline {figure}{\numberline {2.13}{\ignorespaces Sense Act schema\relax }}{19}{figure.caption.15}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Generic activation function\relax }}{21}{figure.caption.15}%
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Activation for Obstacle avoidance\relax }}{21}{figure.caption.16}%
-\contentsline {figure}{\numberline {3.3}{\ignorespaces With realistic values\relax }}{25}{figure.caption.17}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Generic activation function\relax }}{22}{figure.caption.16}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Activation for Obstacle avoidance\relax }}{22}{figure.caption.17}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces joint limits activation function, generic values\relax }}{26}{figure.caption.18}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces With realistic values\relax }}{27}{figure.caption.19}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces photo of the real system, inside the workcell\relax }}{26}{figure.caption.18}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Simplified structure of the class JointRobotTP\relax }}{27}{figure.caption.19}%
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Joint reaching control loop\relax }}{30}{figure.caption.20}%
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Action server flow chart\relax }}{31}{figure.caption.21}%
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Reaching loop flow chart\relax }}{33}{figure.caption.22}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces photo of the real system, inside the workcell\relax }}{28}{figure.caption.20}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Cinematic simulation diagram\relax }}{30}{figure.caption.22}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Simplified structure of the class JointRobotTP\relax }}{31}{figure.caption.23}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Joint reaching control loop\relax }}{34}{figure.caption.24}%
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Action server flow chart\relax }}{35}{figure.caption.25}%
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Reaching loop flow chart\relax }}{37}{figure.caption.26}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Cylinder obstacle rendering\relax }}{35}{figure.caption.23}%
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Multi obstacle configuration\relax }}{36}{figure.caption.24}%
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Cylinder obstacle rendering\relax }}{39}{figure.caption.27}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Multi obstacle configuration\relax }}{40}{figure.caption.28}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }

@@ -1,17 +1,22 @@
 \begin{thebibliography}{24}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
+\bibitem[{Ata(2007)}]{ata2007optimal}
+{\sc Ata, A.A.} (2007). Optimal trajectory planning of manipulators: a review.
+  {\em Journal of Engineering Science and technology\/}, {\bf 2}, 32--54.
+
 \bibitem[{Badrloo {\em et~al.\/}(2022)Badrloo, Varshosaz, Pirasteh \&
   Li}]{VISIONBASED_OBREC}
 {\sc Badrloo, S., Varshosaz, M., Pirasteh, S. \& Li, J.} (2022). Image-based
   obstacle detection methods for the safe navigation of unmanned vehicles: A
   review. {\em Remote Sensing\/}, {\bf 14}.
 
-\bibitem[{Crespi {\em et~al.\/}(2005)Crespi, Badertscher, Guignard \&
-  Ijspeert}]{crespi2005amphibot}
-{\sc Crespi, A., Badertscher, A., Guignard, A. \& Ijspeert, A.J.} (2005).
-  Amphibot i: an amphibious snake-like robot. {\em Robotics and Autonomous
-  Systems\/}, {\bf 50}, 163--175.
+\bibitem[{Caroleo {\em et~al.\/}(2024)Caroleo, Giovinazzo, Albini, Grella,
+  Cannata \& Maiolino}]{10802341}
+{\sc Caroleo, G., Giovinazzo, F., Albini, A., Grella, F., Cannata, G. \&
+  Maiolino, P.} (2024). A proxy-tactile reactive control for robots moving in
+  clutter. In {\em 2024 IEEE/RSJ International Conference on Intelligent Robots
+  and Systems (IROS)\/}, 733--739.
 
 \bibitem[{Cursi {\em et~al.\/}(2022)Cursi, Bai, Yeatman \&
   Kormushev}]{MacroMicro_surical}
@@ -24,10 +29,6 @@
 {\sc Endo, G., Horigome, A. \& Takata, A.} (2019). Super dragon: A
   10-m-long-coupled tendon-driven articulated manipulator. {\em IEEE Robotics
   and Automation Letters\/}, {\bf 4}, 934--941.
-
-\bibitem[{Hirose \& Yamada(2009)}]{hirose2009snake}
-{\sc Hirose, S. \& Yamada, H.} (2009). Snake-like robots [tutorial]. {\em IEEE
-  Robotics \& Automation Magazine\/}, {\bf 16}, 88--98.
 
 \bibitem[{Huh {\em et~al.\/}(2008)Huh, Park, Hwang \& Hong}]{huh2008stereo}
 {\sc Huh, K., Park, J., Hwang, J. \& Hong, D.} (2008). A stereo vision-based
