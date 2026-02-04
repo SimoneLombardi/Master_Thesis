@@ -119,47 +119,54 @@ The unified robot class implementation main \textit{methods} and \textit{data st
 
 \subsection{Class setup}
 The \textit{Initialize} method is called once to instantiate all the members of the class object, data structure, publishers, subscriber and the action server.
-
-
-These methods are created to instantiate the class object once the executable is started.\\
-\noindent
-Specifically the method \codetxt{olive}{Initialize}\codetxt{darkgray}{()} is tasked with the creation of the nodes for the robots classes and all the other part of the communication structure. It takes as arguments three node pointers that are used to instantiate one object of the class \codetxt{darkgray}{KukaRobot}, \codetxt{darkgray}{UR10eRobot} and \codetxt{darkgray}{JointRobotTP}. 
-\\
-\noindent
-It creates a subscriber to the \codetxt{darkgray}{proximity\_task} topic and the action server for the robot movent. Lastly the other two initialization methods are called, the first \codetxt{olive}{insertInitConfigMap}\codetxt{darkgray}{()} inserts all the initial configuration vector in the corresponding data strucuture ( \codetxt{darkgray}{map<string, VectorXd>} \codetxt{cyan}{initial\_configurations\_map\_}\codetxt{darkgray}{;} ), and the second is used to create three function pointers vector that are used to call all the \textit{task state update methods} during the movement of the robot.
-\\
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.5]{initialize_diagram.png}
+	\caption{activity diagram of the \codetxt{olive}{initialize} method}
+	\label{fig:initialize_diagram}
+\end{figure}
+\noindent In the first step, the the robots nodes \textit{kuka\_robot\_node} and \textit{ur10\_robot\_node} are created and initialized with their class-specific method, used for interface configuration and internal state initialization.\\
+\noindent Next the communication interfaces are created, the \textit{proximity task} subscriber used to recive data from the \textit{Environment handling} stak \ref{fig:simulation_nodes_diag}. And the \textit{Action server}, used to send \textit{goals} in \textit{position} and \textit{orientation} to the unified robot. \\
+\noindent For the last step, the method handles the initialization of a series of variables and data structures used later in the node.
+\begin{itemize}
+	\item \textbf{Parameters}: all the gains, threshold and other run-time variable are created as \textit{ros2 parameters}.
+	\item \textbf{Initial joint configuration}: stored as a \codetxt{darkgray}{std::map} the method populate a list of vectors containing potential initial configuration.
+	\item \textbf{Task update function}: the method stores the pointers to the update of the active \textit{tasks}.
+\end{itemize}
 \noindent
 This structure was chosen to have a more manageable code and to accomplish the second objective \ref{enum:StructuralObjective} I set for the architecture.
 
-\subsection{Data structure}
-For the control algorithm I had to define three different matrices for each task I created. I decided to implement a \codetxt{blue}{struct} to store the matrices and put everything in a map(\codetxt{darkgray}{map<string, tp\_task>} \codetxt{cyan}{TP\_task\_map\_}\codetxt{darkgray}{;}).
+\subsection{Task state update}
+Just to explain the logic in my implementation, for each task defined for a particular objective in the control algorithm I developed three different methods used to cyclically update the information contained in the \textit{task data structure}. \\
+Than the pointers to these methods are inserted in a vector, and this vector is used to call all the function in a loop. This is functional since I can remove a task from the update cycle just by commenting three rows, and I have a clear idea of which task I am updating in a very concise way.
+
+\subsection{Task data structure}
+For the control algorithm I had to define three different matrices for each task I created. I decided to implement a \textit{stuct} to store the matrices and put everything in a map(\codetxt{darkgray}{map<string, tp\_task>} \codetxt{cyan}{TP\_task\_map\_}\codetxt{darkgray}{;}).
 \\
 \noindent
-The \codetxt{blue}{struct} \codetxt{cyan}{tp\_task} is defined as follows:
-\\[4pt]
+Saind \textit{struct} is defined as follows:
+\\[6pt]
 \noindent\makebox[\textwidth]{
-	\begin{tabular}{c}
-		\codetxt{darkgray}{Eigen::MatrixXd} \codetxt{cyan}{RefRate}\codetxt{darkgray}{;}\\
-		\codetxt{darkgray}{Eigen::MatrixXd} \codetxt{cyan}{ActMatrix}\codetxt{darkgray}{;}\\
-		\codetxt{darkgray}{Eigen::MatrixXd} \codetxt{cyan}{TskJacobian}\codetxt{darkgray}{;}\\
+	\begin{tabular}{l}
+		\codetxt{darkgray}{Eigen::MatrixXd} \codetxt{cyan}{RefRate}\codetxt{darkgray}{;}\\[4pt]
+		\codetxt{darkgray}{Eigen::MatrixXd} \codetxt{cyan}{ActMatrix}\codetxt{darkgray}{;}\\[4pt]
+		\codetxt{darkgray}{Eigen::MatrixXd} \codetxt{cyan}{TskJacobian}\codetxt{darkgray}{;}
 	\end{tabular}
 }
-\\[4pt]
-\noindent
-This definition uses dynamically sized matrices that are useful in the case of the \textbf{task priority} control since the dimension of each matrix can change from task to task(maintaining a certain relation within each task $\textit{RefRate}\in \mathbb{R}^{(m\times1)} ; \textit{ActMatrix} \in \mathbb{R}^{(m\times m)} ; \textit{TskJacobian} \in \mathbb{R}^{(m\times n)}$).
-The use of \codetxt{darkgray}{std::map} also allows to reference to each task trough a \codetxt{blue}{string} witch is a very flexible and efficient approach(search complexity $O(\log n)$, with n the element number in the map).
+\noindent This definition uses dynamically sized matrices that are useful in the case of the \textbf{task priority} control since the dimension of each matrix can change from task to task, maintaining a certain relation within each task:
+\begin{itemize}
+	\item $\textit{RefRate}\in \mathbb{R}^{(m\times1)}$
+	\item $\textit{ActMatrix} \in \mathbb{R}^{(m\times m)}$
+	\item $\textit{TskJacobian} \in \mathbb{R}^{(m\times n)}$
+\end{itemize}
+\noindent The use of \codetxt{darkgray}{std::map} also allows to reference to each task trough a \textit{string} witch is a very flexible and efficient approach(search complexity $O(\log n)$, with n the element number in the map).
 
-\subsection{Task state update}
-Just to explain the logic in my implementation, for each task defined for a particular objective in the control algorithm I developed three different methods used to cyclically update the information contained in \codetxt{darkgray}{map<string, tp\_task>} \codetxt{cyan}{TP\_task\_map\_}\codetxt{darkgray}{;}. \\
-Than the pointers to these methods are inserted in a vector, and this vector is used to call all the function in a loop. This is functional since I can remove a task from the update cycle just by commenting three rows, and I have a clear idea of which task I am updating in a very concise way. \\
-The specific computation needed of each task will be discussed in chap.\ref{chap:fourth}
-\section{Action server}
-% definisco l'interfaccia di MoveRobot e descrivo il processo di pubblicazione del GOAL
-The main part of the action server is the method \codetxt{olive}{execute}\codetxt{darkgray}{([Args..]);} aside from the communication related methods needed to create the channel in the \textit{ROS2} framework. This method takes as argument the a shared pointer to the \codetxt{cyan}{goal\_handle} of the current active goal.
-\\
-\noindent
-The methods handles the reception of the goals and the publication of the \textit{goal frame}, projected in the correct \textit{reference frame}. Than it uses the information in the \textit{goal message} to select the desired intial configuration that is reached using \codetxt{olive}{ReachInitialConfiguration}\codetxt{darkgray}{([Args..]);} selecting a vecotr from \\ \codetxt{darkgray}{map<string, VectorXd>} \codetxt{cyan}{initial\_configurations\_map\_}\codetxt{darkgray}{;} and sent to the \textit{Kuka} and \textit{UR10e}, the initial vector has $12$ elements, that are splitted and set to their respective robot.
-A simple control loop is than used to control the joint:
+
+\section{Unified Robot Architecture: Action server}
+The action server in the \textit{ros2} framework is composed of various methods, used for the \textit{acceptance}, \textit{rejection}, and \textit{abortion} of goals sent to the server. The main body of the server instead is located in two methods called: \codetxt{olive}{execute}, and \codetxt{olive}{RunCartesianReachingLoop}.
+
+\subsection{execute method}
+This method is executed in a separate thread, created after the goal has been accepted. Firstly from the \textit{goal\_handle} message the \textit{initial joint confiuration code} is retrived and a simple control loop is than used to control the joint:
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.4]{JointControlLoopDiagram.png}
@@ -167,10 +174,9 @@ A simple control loop is than used to control the joint:
 	\label{fig:JointControlLoop_flowchart}
 \end{figure}
 \noindent
-the loop drives each joint towards the desired configuration. The integration of this part in my architecture was done improve repeatability, to have the possibility to impose a common starting position in different experiments.
-
-\subsection{Action Server process flow}
-The core functionalities of the \codetxt{olive}{execute}\codetxt{darkgray}{();} method are here represented in a flow-chart to highlight better the loop inner workings:
+the loop drives each joint towards the desired configuration. The integration of this part in my architecture was done improve repeatability, to have the possibility to impose a common starting position in different experiments.\\
+\noindent The second procedure is the projection of the \textit{requested goal} in the correct \textit{reference frame}, and after that said goal is broadcasted in Rviz using a publisher.
+\noindent The core functionalities of the \codetxt{olive}{execute}\codetxt{darkgray}{();} method are here represented in a flow-chart to highlight better the loop inner workings:
 
 \begin{figure}[H]
 	\centering
@@ -181,28 +187,11 @@ The core functionalities of the \codetxt{olive}{execute}\codetxt{darkgray}{();} 
 
 
 
-\section{Control alorithm implementation}
+\section{Unified Robot Architecture: Control alorithm}
 % TP computation class description
-The structure of the control algorithm was derived from the form of the \textit{task state} data structure, I wanted to have in the control loop a very clear way to identify which tasks I was activating. And to \textit{passively} impose the priority without needing to use a flag.
+The structure of the control algorithm was adapted to the \textit{task state} data structure, I wanted to have in the control loop a very clear way to identify which tasks I was activating. And to \textit{passively} impose the priority without needing to use a flag.
 \\
 With this in mind I created a class called: \codetxt{darkgray}{TPComputation}, of witch I could instantiate an object for each iteration of the reaching loop, the class data would be the \textit{null space} of the \textit{task jacobian} computed at the previous step, $Q_{k-1}$, and the resulting \textit{joint velocity} vector, $\rho_{k-1}$. These data would be extracted from the class as needed to send the command to the robot.\\
-\\
-\noindent\makebox[\textwidth]{
-	\begin{tabular}{p{4cm}c}
-		\multirow{2}{*}{\textbf{Instance handling}} & \codetxt{olive}{init\_TPComputation} \codetxt{darkgray}{([Args...]);}   \\
-													& \codetxt{olive}{kill\_TPComputation} \codetxt{darkgray}{();}   \\[4pt]
-													\hline \\[-10pt]
-		\multirow{1}{*}{\textbf{Step computation}} &  \codetxt{olive}{computeTP\_step} \codetxt{darkgray}{([Args...]);} \\[4pt]
-													\hline \\[-10pt]
-		\multirow{2}{*}{\textbf{Matrix inversion}} &  \codetxt{olive}{REG\_Pinv\_operator} \codetxt{darkgray}{([Args...]);} \\
-													&  \codetxt{olive}{REG\_Pinv} \codetxt{darkgray}{([Args...]);} \\[4pt]
-													\hline \\[-10pt]
-		\multirow{2}{*}{\textbf{Data extraction}} &  \codetxt{olive}{getTP\_ydot} \codetxt{darkgray}{();} \\ 
-													&  \codetxt{olive}{getTP\_Q} \codetxt{darkgray}{();} \\
-	\end{tabular}
-}
-\\
-\\
 \noindent
 To initialize the class object the method \\ \codetxt{olive}{init\_TPComputation} \codetxt{darkgray}{([Args...]);} takes as arguments the number of \textit{Dof} of the structure, used to initialize the dimension of the internal matrices and some parameter that are used in the pseudo-inversion of the \textit{augmented jacobian}.
 Since I wanted to be sure that no information remained after any cycle, I also added the method \\ \codetxt{olive}{kill\_TPComputation} \codetxt{darkgray}{();} that \textit{clears} the internal variables after use.

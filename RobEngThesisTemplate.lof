@@ -21,11 +21,12 @@
 \contentsline {figure}{\numberline {4.1}{\ignorespaces photo of the real system, inside the workcell\relax }}{28}{figure.caption.20}%
 \contentsline {figure}{\numberline {4.3}{\ignorespaces Cinematic simulation diagram\relax }}{30}{figure.caption.22}%
 \contentsline {figure}{\numberline {4.4}{\ignorespaces Simplified structure of the class JointRobotTP\relax }}{31}{figure.caption.23}%
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Joint reaching control loop\relax }}{34}{figure.caption.24}%
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Action server flow chart\relax }}{35}{figure.caption.25}%
-\contentsline {figure}{\numberline {4.7}{\ignorespaces Reaching loop flow chart\relax }}{37}{figure.caption.26}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces activity diagram of the {\fontfamily {qcr}\selectfont \leavevmode {\color {olive}initialize}} method\relax }}{32}{figure.caption.24}%
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Joint reaching control loop\relax }}{35}{figure.caption.25}%
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Action server flow chart\relax }}{36}{figure.caption.26}%
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Reaching loop flow chart\relax }}{38}{figure.caption.27}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Cylinder obstacle rendering\relax }}{39}{figure.caption.27}%
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Multi obstacle configuration\relax }}{40}{figure.caption.28}%
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Cylinder obstacle rendering\relax }}{40}{figure.caption.28}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Multi obstacle configuration\relax }}{41}{figure.caption.29}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }

@@ -27,15 +27,16 @@
 \contentsline {section}{\numberline {4.2}Cinematic simulation}{29}{section.4.2}%
 \contentsline {section}{\numberline {4.3}Unified Robot Architecture: JointRobotTP Class}{30}{section.4.3}%
 \contentsline {subsection}{\numberline {4.3.1}Class setup}{32}{subsection.4.3.1}%
-\contentsline {subsection}{\numberline {4.3.2}Data structure}{32}{subsection.4.3.2}%
-\contentsline {subsection}{\numberline {4.3.3}Task state update}{33}{subsection.4.3.3}%
-\contentsline {section}{\numberline {4.4}Action server}{33}{section.4.4}%
-\contentsline {subsection}{\numberline {4.4.1}Action Server process flow}{34}{subsection.4.4.1}%
-\contentsline {section}{\numberline {4.5}Control alorithm implementation}{35}{section.4.5}%
-\contentsline {subsection}{\numberline {4.5.1}Reaching loop process flow}{36}{subsection.4.5.1}%
-\contentsline {chapter}{\numberline {5}Simulation environment and experiments}{39}{chapter.5}%
-\contentsline {subsection}{\numberline {5.0.1}Velocity gain tuning}{40}{subsection.5.0.1}%
-\contentsline {chapter}{\numberline {6}Conclusions}{44}{chapter.6}%
-\contentsline {chapter}{\numberline {A}Extra}{45}{appendix.A}%
-\contentsline {section}{\numberline {A.1}JointRobotTP class definition}{45}{section.A.1}%
-\contentsline {chapter}{References}{48}{appendix*.34}%
+\contentsline {subsection}{\numberline {4.3.2}Task state update}{33}{subsection.4.3.2}%
+\contentsline {subsection}{\numberline {4.3.3}Task data structure}{33}{subsection.4.3.3}%
+\contentsline {section}{\numberline {4.4}Unified Robot Architecture: Action server}{34}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}execute method}{34}{subsection.4.4.1}%
+\contentsline {section}{\numberline {4.5}Unified Robot Architecture: Control alorithm}{36}{section.4.5}%
+\contentsline {subsection}{\numberline {4.5.1}Reaching loop process flow}{37}{subsection.4.5.1}%
+\contentsline {chapter}{\numberline {5}Simulation environment and experiments}{40}{chapter.5}%
+\contentsline {subsection}{\numberline {5.0.1}Velocity gain tuning}{41}{subsection.5.0.1}%
+\contentsline {chapter}{\numberline {6}Conclusions}{45}{chapter.6}%
+\contentsline {chapter}{\numberline {A}Extra}{46}{appendix.A}%
+\contentsline {section}{\numberline {A.1}JointRobotTP class definition}{46}{section.A.1}%
+\contentsline {section}{\numberline {A.2}TPComputation class definition}{47}{section.A.2}%
+\contentsline {chapter}{References}{50}{appendix*.35}%

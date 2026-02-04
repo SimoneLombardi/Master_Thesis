@@ -27,3 +27,20 @@
 		& \codetxt{olive}{RunCartesianReachingLoop}\codetxt{darkgray}{([Args..]);} \\
 	\end{tabular}
 }
+
+
+\section{TPComputation class definition}
+\noindent\makebox[\textwidth]{
+	\begin{tabular}{p{4cm}c}
+		\multirow{2}{*}{\textbf{Instance handling}} & \codetxt{olive}{init\_TPComputation} \codetxt{darkgray}{([Args...]);}   \\
+		& \codetxt{olive}{kill\_TPComputation} \codetxt{darkgray}{();}   \\[4pt]
+		\hline \\[-10pt]
+		\multirow{1}{*}{\textbf{Step computation}} &  \codetxt{olive}{computeTP\_step} \codetxt{darkgray}{([Args...]);} \\[4pt]
+		\hline \\[-10pt]
+		\multirow{2}{*}{\textbf{Matrix inversion}} &  \codetxt{olive}{REG\_Pinv\_operator} \codetxt{darkgray}{([Args...]);} \\
+		&  \codetxt{olive}{REG\_Pinv} \codetxt{darkgray}{([Args...]);} \\[4pt]
+		\hline \\[-10pt]
+		\multirow{2}{*}{\textbf{Data extraction}} &  \codetxt{olive}{getTP\_ydot} \codetxt{darkgray}{();} \\ 
+		&  \codetxt{olive}{getTP\_Q} \codetxt{darkgray}{();} \\
+	\end{tabular}
+}
