@@ -35,8 +35,8 @@
 \contentsline {subsection}{\numberline {4.5.1}Reaching loop process flow}{37}{subsection.4.5.1}%
 \contentsline {chapter}{\numberline {5}Simulation environment and experiments}{40}{chapter.5}%
 \contentsline {subsection}{\numberline {5.0.1}Velocity gain tuning}{41}{subsection.5.0.1}%
-\contentsline {chapter}{\numberline {6}Conclusions}{45}{chapter.6}%
-\contentsline {chapter}{\numberline {A}Extra}{46}{appendix.A}%
-\contentsline {section}{\numberline {A.1}JointRobotTP class definition}{46}{section.A.1}%
-\contentsline {section}{\numberline {A.2}TPComputation class definition}{47}{section.A.2}%
-\contentsline {chapter}{References}{50}{appendix*.35}%
+\contentsline {chapter}{\numberline {6}Conclusions}{43}{chapter.6}%
+\contentsline {chapter}{\numberline {A}Extra}{44}{appendix.A}%
+\contentsline {section}{\numberline {A.1}JointRobotTP class definition}{44}{section.A.1}%
+\contentsline {section}{\numberline {A.2}TPComputation class definition}{45}{section.A.2}%
+\contentsline {chapter}{References}{48}{appendix*.32}%

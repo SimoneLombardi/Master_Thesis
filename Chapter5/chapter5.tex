@@ -10,59 +10,49 @@
 The simulation environment uses \textit{rviz} for visualizing the movement of the robot. The obstacle used is in the form of a cylinder.
 \begin{figure}[H]
 	\centering
-	\includegraphics[scale=0.5]{cylinder.jpg}
-	\caption{Cylinder obstacle rendering}
-	\label{fig:cylinderImage}
+	\begin{subfigure}{0.49\textwidth}
+		\includegraphics[width=\linewidth]{single_obstacle.png}
+		\caption{Cylinder obstacle rendering}
+		\label{fig:cylinderImage}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}{0.49\textwidth}
+		\includegraphics[width=\linewidth]{single_obstacle_topview.png}
+		\caption{Cylinder obstacle top view}
+	\end{subfigure}
 \end{figure}
 The obstacles are used singularly or in a gate configuration, but the generated \textit{minimum distance} task is always one. Since in the real scenario the sensor output is a single \textit{point cloud} for the whole environment, this approach more closely resembles the real world application.
 \begin{figure}[H]
 	\centering
-	\includegraphics[scale=0.5]{cylinder_multi.jpg}
+	\includegraphics[scale=0.25]{multi_obstacle.png}
 	\caption{Multi obstacle configuration}
 	\label{fig:cylinderMultiImage}
 \end{figure}
-The relative position and orientation of the obstacles will be discussed in relation to each experiment.
+\noindent The relative position and orientation of the obstacles will be discussed in relation to each experiment.
+Lastly I used the \textit{chassis point cloud} to evaluate the motion in an environment similar to the one of \textit{Sesto senso}.
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.25]{chassis_obstacle.png}
+	\caption{Chassis pointcloud}
+	\label{fig:chassisImage}
+\end{figure}
 
 \subsection{Velocity gain tuning}
 The first problem I addressed was the \textit{tuning} of the gain that were used to regulate the velocity command sent to the robot.
 This experiment is done with a reaching task starting from the same intial configuration, and without considering the obstacle and the \textit{obstacle avoidance} task.
-\begin{figure}[H]
-	\centering
-	\begin{subfigure}{0.49\textwidth}
-		\includegraphics[width=\linewidth]{ReachingTask_gainTuning.png}
-		\caption{Reaching task}
-		\label{fig:simReachingTask}
-	\end{subfigure}
-	\hfill
-	\begin{subfigure}{0.49\textwidth}
-		\includegraphics[width=\linewidth]{Reaching2D_gainTuning.jpg}
-		\caption{Reandering 2D of the reaching task}
-		\label{fig:reaching2D}
-	\end{subfigure}
-\end{figure}
+
+
 The first four trial the values of the gain were equal for the \textit{Kuka} and \textit{Ur10e}, plotting the behavior of the \textit{norm} the result obtained are:
-\begin{figure}[H]
-	\centering
-	\hspace*{-1.2cm}
-	\includegraphics[scale=0.25]{GainTuning_sameGain.jpg}
-	\label{fig:GainTuning_sameGain}
-\end{figure}
+
+
 The movement in the first two cases was fast but very uneven, this was corrected with the third and fourth experiment but the execution time was getting too long.
 To evaluate which one of the two robot was responsible for the jerky motion I plotted the graph of the norm of the \textit{velocity command} vector $\dot{q}$.
 Analyzing also the commands for the \textit{Kuka} joints and for the \textit{Ur10e} joints separately, I could have an idea of the influence of the two robots on the motion of the whole chain.
-\begin{figure}[H]
-	\centering
-	\hspace*{-1.2cm}
-	\includegraphics[scale=0.25]{GainTuning_velCommand.jpg}
-	\label{fig:GainTuning_velCommand}
-\end{figure}
+
+
 It is clear how the major contributor to the motion in general is the \textit{Kuka}, and it is also the main contributor to the uneven movement I observed in the experiments. With this information I than tried a series of experiments with a fixed gain for the \textit{Ur10e} to $kp = 0,5$ and testing gain values for the \textit{Kuka} to see if I could get rid of the unevenness but improving the convergence speed.
-\begin{figure}[H]
-	\centering
-	\hspace*{-1.2cm}
-	\includegraphics[scale=0.25]{GainTuning_compGain.jpg}
-	\label{fig:GainTuning_compGain}
-\end{figure}
+
+
 From this series of test is possible to see how with the \textit{Kuka} gain to $0,05$ and $0,01$ there was a improvement in the convergence time, maintaining the smoothness of the motion. And in the last graph we can see how the execution time is almost cut in half. 
 \begin{table}[H]
 	\centering
