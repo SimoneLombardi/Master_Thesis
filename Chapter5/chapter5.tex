@@ -38,36 +38,31 @@ Lastly I used the \textit{chassis point cloud} to evaluate the motion in an envi
 \end{figure}
 
 \subsection{Velocity gain tuning}
-The first problem I addressed was the \textit{tuning} of the gain that were used to regulate the velocity command sent to the robot.
-This experiment is done with a reaching task starting from the same intial configuration, and without considering the obstacle and the \textit{obstacle avoidance} task.
+This tests were aimed to evaluate the effect of different \textit{velocity gain} for the \textit{Kuka} and \textit{Ur10e}. The test was performed with only the \textit{End effector target} task active, the following graphs show the \textit{norm} of the \textit{cartesian error} in time during the experiments.\\
 
 
-The first four trial the values of the gain were equal for the \textit{Kuka} and \textit{Ur10e}, plotting the behavior of the \textit{norm} the result obtained are:
+% -> execution time
 
+% -> position error in time
+% -> DIFFERENCE in solution after changing the gain value
+\subsection{Obstacle avoidance test}
+% -> correct avoidance of the obstacle 
+% -> link distance from ob in time
 
-The movement in the first two cases was fast but very uneven, this was corrected with the third and fourth experiment but the execution time was getting too long.
-To evaluate which one of the two robot was responsible for the jerky motion I plotted the graph of the norm of the \textit{velocity command} vector $\dot{q}$.
-Analyzing also the commands for the \textit{Kuka} joints and for the \textit{Ur10e} joints separately, I could have an idea of the influence of the two robots on the motion of the whole chain.
+\subsection{Single obstacle}
+% activation delta effects
+% -> point cloud flickering --> implemented solution
 
+% tg behind 2D 3d
 
-It is clear how the major contributor to the motion in general is the \textit{Kuka}, and it is also the main contributor to the uneven movement I observed in the experiments. With this information I than tried a series of experiments with a fixed gain for the \textit{Ur10e} to $kp = 0,5$ and testing gain values for the \textit{Kuka} to see if I could get rid of the unevenness but improving the convergence speed.
+% consecutive targhet
 
+\subsection{Multiple obstacles}
+% snake movement
 
-From this series of test is possible to see how with the \textit{Kuka} gain to $0,05$ and $0,01$ there was a improvement in the convergence time, maintaining the smoothness of the motion. And in the last graph we can see how the execution time is almost cut in half. 
-\begin{table}[H]
-	\centering
-	\begin{tabular}{c c c c c c}	
-									\hline \\[-10pt]
-									& & \multicolumn{4}{c}{\textbf{Kuka arm}} \\
-									&\textit{Gain} & $0,5$ & $0,2$ & $0,05$ & $0,01$ \\
-\multirow{4}{*}{\textbf{Ur10e arm}}	&$0,5$         & $0,39$& $0,88$& $2,82$ & $10,96$\\
-									& $0,2$        &   ...    & $0,75$&   ...     & ...\\
-									& $0,05$       &   ...    &  ...     & $3,63$ & ...\\
-									& $0,01$       &   ...    &  ...     &   ...     & $18,66$ \\[4pt]
-									\hline 	
-	\end{tabular}
-	\caption{Execution time in relation to gain values}
-	\label{tab:GainTuningTab}
-\end{table}
+\subsection{Chassis test}
+% test 1 2 
+
+% test 3 (uc1 type movement)
 
 

@@ -38,9 +38,9 @@ For the \textit{Obstacle Avoidance} task I used the approach proposed in \cite{m
 \noindent The \textit{Reference rate} is considered as the \textit{desired shape} of the derivative of the variable I want to control.
 To be more precise:
 \begin{itemize}
-	\item if $x > \bar{x}$ then $\dot{x} < 0$
-	\item if $x < \bar{x}$ then $\dot{x} > 0$
-	\item if $x = \bar{x}$ then $\dot{x} = 0$
+	\item if $x > \bar{x}$ then $\dot{\bar{x}} < 0$
+	\item if $x < \bar{x}$ then $\dot{\bar{x}} > 0$
+	\item if $x = \bar{x}$ then $\dot{\bar{x}} = 0$
 \end{itemize}
 In the case of the \textit{obstacle avoidance} task, the variable I want to control is the \textit{minimum distance} of the robot body from the environment.
 \noindent The \textit{distance} vector and the \textit{point} are retrieved in a topic, and are already projected in the $\langle\textit{kuka\_base}\rangle$ reference frame.\\
@@ -60,9 +60,11 @@ The the activation value is computed as follows:\\
 		0 &  x > x_{min} + \delta
 	\end{cases}
 \end{equation}
+
 \begin{figure}[H]
 	\centering
-	\includegraphics[scale=0.2]{DecreasingActFcn.jpg}
+	\hspace*{-1.25cm}
+	\includegraphics[scale=0.25]{ActFcn.jpg}
 	\caption{Generic activation function}
 	\label{fig:DecreasingActFcn}
 \end{figure}
@@ -73,12 +75,12 @@ Here is an example of an activation profile for the \textit{obstacle avoidance} 
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[scale=0.2]{DecreasingActFcn_realValues_obav.jpg}
+	\hspace*{-1.5cm}
+	\includegraphics[scale=0.25]{DecreasingActFcn_realValues_good.jpg}
 	\caption{Activation for Obstacle avoidance}
 	\label{fig:DecreasingActFcn_realValues_obav}
 \end{figure}
-It is clear that as the \textit{distance} goes to $0$ the activation values increases, saturating at $1$ for \textit{distances} lower than $10$cm.
-
+\noindent It is clear that as the \textit{distance} goes to $0$ the activation values increases, saturating at $1$ for \textit{distances} lower than $10$cm.\\
 \noindent \textbf{Task Jacobian}:\\
 For this task, different \textit{jacobian} matrices must be computed depending on the link on which the \textit{minimum distance point} is located. To handle this efficiently, the jacobians are constructed \textit{colum} by \textit{colum}, resulting in a more compact and readable implementation. I used the same method throughout my thesis.\\
 \noindent 
@@ -221,11 +223,12 @@ To compute the activation function, I summed the resulting value of a decreasing
 \noindent The resulting function has the following general shape:
 \begin{figure}[H]
 	\centering
-	\includegraphics[scale=0.3]{jl_activation_fcn.png}
+	\hspace*{-3.3cm}
+	\includegraphics[scale=0.3]{jl_activation_good.jpg}
 	\caption{joint limits activation function, generic values}
 	\label{fig:jl_act_fnc}
 \end{figure}
-
+\noindent In the real task the value range for the $\dot{\bar{x}}$ is given from the \textit{joint limits values} of each joint.\\
 \noindent \textbf{Task reference}:\\
 Lastly the task jacobian is an \textit{identity} $\mathbb{R}^{12\times 12}$ matrix, since I can independently control each joint variable.
 
@@ -249,7 +252,8 @@ In the case of the \textit{Minimual altitude task} the variable I want to contro
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[scale=0.2]{DecreasingActFcn_realValues.jpg}
+	\hspace*{-3.35cm}
+	\includegraphics[scale=0.3]{DecreasingActFcn_realValues_good_minalt.jpg}
 	\caption{With realistic values}
 	\label{fig:DecreasingActFcn_rv}
 \end{figure}
