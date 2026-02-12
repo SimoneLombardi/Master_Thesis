@@ -63,8 +63,8 @@ The the activation value is computed as follows:\\
 
 \begin{figure}[H]
 	\centering
-	\hspace*{-1.25cm}
-	\includegraphics[scale=0.25]{ActFcn.jpg}
+	\hspace*{-2.5cm}
+	\includegraphics[scale=0.28]{ActFcn.jpg}
 	\caption{Generic activation function}
 	\label{fig:DecreasingActFcn}
 \end{figure}
@@ -75,8 +75,8 @@ Here is an example of an activation profile for the \textit{obstacle avoidance} 
 
 \begin{figure}[H]
 	\centering
-	\hspace*{-1.5cm}
-	\includegraphics[scale=0.25]{DecreasingActFcn_realValues_good.jpg}
+	\hspace*{-1.8cm}
+	\includegraphics[scale=0.28]{DecreasingActFcn_realValues_good.jpg}
 	\caption{Activation for Obstacle avoidance}
 	\label{fig:DecreasingActFcn_realValues_obav}
 \end{figure}
@@ -223,12 +223,12 @@ To compute the activation function, I summed the resulting value of a decreasing
 \noindent The resulting function has the following general shape:
 \begin{figure}[H]
 	\centering
-	\hspace*{-3.3cm}
-	\includegraphics[scale=0.3]{jl_activation_good.jpg}
+	\hspace*{-1.8cm}
+	\includegraphics[scale=0.28]{jl_activation_good.jpg}
 	\caption{joint limits activation function, generic values}
 	\label{fig:jl_act_fnc}
 \end{figure}
-\noindent In the real task the value range for the $\dot{\bar{x}}$ is given from the \textit{joint limits values} of each joint.\\
+\noindent In the real task the value range for the $\dot{\bar{x}}$ is given from the \textit{joint limits values} of each joint, and the $0$ is given by the \textit{average value} of the range.\\
 \noindent \textbf{Task reference}:\\
 Lastly the task jacobian is an \textit{identity} $\mathbb{R}^{12\times 12}$ matrix, since I can independently control each joint variable.
 
@@ -252,7 +252,7 @@ In the case of the \textit{Minimual altitude task} the variable I want to contro
 
 \begin{figure}[H]
 	\centering
-	\hspace*{-3.35cm}
+	\hspace*{-2.35cm}
 	\includegraphics[scale=0.3]{DecreasingActFcn_realValues_good_minalt.jpg}
 	\caption{With realistic values}
 	\label{fig:DecreasingActFcn_rv}

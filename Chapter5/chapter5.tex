@@ -11,30 +11,44 @@ The simulation environment uses \textit{rviz} for visualizing the movement of th
 \begin{figure}[H]
 	\centering
 	\begin{subfigure}{0.49\textwidth}
-		\includegraphics[width=\linewidth]{single_obstacle.png}
+		\includegraphics[width=\linewidth]{single_obstacle_isom.png}
 		\caption{Cylinder obstacle rendering}
 		\label{fig:cylinderImage}
 	\end{subfigure}
 	\hfill
 	\begin{subfigure}{0.49\textwidth}
-		\includegraphics[width=\linewidth]{single_obstacle_topview.png}
+		\includegraphics[width=\linewidth]{single_obstacle_top.png}
 		\caption{Cylinder obstacle top view}
 	\end{subfigure}
 \end{figure}
 The obstacles are used singularly or in a gate configuration, but the generated \textit{minimum distance} task is always one. Since in the real scenario the sensor output is a single \textit{point cloud} for the whole environment, this approach more closely resembles the real world application.
 \begin{figure}[H]
 	\centering
-	\includegraphics[scale=0.25]{multi_obstacle.png}
-	\caption{Multi obstacle configuration}
-	\label{fig:cylinderMultiImage}
+	\begin{subfigure}{0.49\textwidth}
+		\includegraphics[width=\linewidth]{multi_obstacle_isom.png}
+		\caption{Multi cylinder obstacle rendering}
+		\label{fig:multiClinderImage}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}{0.49\textwidth}
+		\includegraphics[width=\linewidth]{multi_obstacle_top.png}
+		\caption{Multi cylinder obstacle top view}
+	\end{subfigure}
 \end{figure}
 \noindent The relative position and orientation of the obstacles will be discussed in relation to each experiment.
 Lastly I used the \textit{chassis point cloud} to evaluate the motion in an environment similar to the one of \textit{Sesto senso}.
 \begin{figure}[H]
 	\centering
-	\includegraphics[scale=0.25]{chassis_obstacle.png}
-	\caption{Chassis pointcloud}
-	\label{fig:chassisImage}
+	\begin{subfigure}{\textwidth}
+		\includegraphics[width=\linewidth]{chassis_obstacle_isom.png}
+	\end{subfigure}
+	\begin{subfigure}{0.49\textwidth}
+		\includegraphics[width=\linewidth]{chassis_obstacle_top.png}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}{0.49\textwidth}
+		\includegraphics[width=\linewidth]{chassis_obstacle_side.png}
+	\end{subfigure}
 \end{figure}
 
 \subsection{Velocity gain tuning}
