@@ -52,29 +52,159 @@ Lastly I used the \textit{chassis point cloud} to evaluate the motion in an envi
 \end{figure}
 
 \subsection{Velocity gain tuning}
-This tests were aimed to evaluate the effect of different \textit{velocity gain} for the \textit{Kuka} and \textit{Ur10e}. The test was performed with only the \textit{End effector target} task active, the following graphs show the \textit{norm} of the \textit{cartesian error} in time during the experiments.\\
+This tests were aimed to evaluate the effect of different \textit{velocity gain} for the \textit{Kuka} and \textit{Ur10e}. The test was performed with only the \textit{End effector target} task active, the following graphs show the \textit{norm} of the \textit{cartesian error} in time during the experiments, separated in position and orientation.\\
+\noindent The experiment was a simple \textit{reachin objective}, starting from a common initial position and a fixed target.
 
-
-% -> execution time
+\begin{figure}[H]
+	\centering
+	\hspace*{-2.3cm}
+	\includegraphics[scale=0.28]{gain_tuning_exp.jpg}
+	\label{fig:gain_tuning_exp_graph}
+\end{figure}
+\noindent As expected greater \textit{gain} values correspond to a faster exeution. where the best performer in terms of execution time is the pair: $gain = 0,5$ for the \textit{Kuka} and $gain = 0,5$ \textit{Ur10e}.\\
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|c|}
+		\hline
+		\textit{Gain Pair: Kuka, Ur10e}	& \textit{Execution time (Sec)} \\
+		\hline
+		$0.01, 0.5$	& $17.36$\\
+		$0.05, 0.5$	& $16.7$\\
+		$0.5, 0.5$	& $15.46$\\
+		$0.5, 0.1$	& $31.4$\\
+		$0.5, 0.05$	& $77.34$\\
+		\hline
+	\end{tabular}
+\end{table}
+\noindent Looking at the graph is clear how a greater gain value on the \textit{Kuka} results in a bigger initial velocity that can and possible overshoot of the target. In addition I noticed that comparing the norm of the \textit{position} and \textit{orientation} error emerges that the \textit{Kuka} is more responsible for the position of the end-effector than its orientation and vice-versa.
+\begin{figure}[H]
+	\centering
+	\hspace*{-2.3cm}
+	\includegraphics[scale=0.28]{robot_effects_graph.jpg}
+	\label{fig:robot_effects_graph}
+\end{figure}
+\noindent In these graph we have on the left the comparison between the profile of the \textit{position error norm} and the \textit{velocity command norm} for the Kuka arm, and on the right the \textit{orientation error norm} with the Ur10 \textit{velocity command norm}.//
+\noindent The last thing I noticed was the \textit{final configuration} difference in the five experiments, of which I report two examples from the first and last experiment.
+\begin{figure}[H]
+	\centering
+	\begin{subfigure}{\textwidth}
+		\includegraphics[width=\linewidth]{init_pose_jl.png}
+		\caption{Initial configuration}
+	\end{subfigure}
+	\begin{subfigure}{0.49\textwidth}
+		\includegraphics[width=\linewidth]{final_pose_001_05.png}
+		\caption{Final configuration, pair: $0.01, 0.5$}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}{0.49\textwidth}
+		\includegraphics[width=\linewidth]{final_pose_05_005.png}
+		\caption{Final configuration, pair: $0.5, 0.05$}
+	\end{subfigure}
+\end{figure}
+\noindent Of which is also interesting to see the \textit{joint variable profile} for the two experiments:
+\begin{figure}[H]
+	\centering
+	\begin{subfigure}{\textwidth}
+		\includegraphics[width=\linewidth]{jvcompar_001_05.jpg}
+		\caption{joint variable profile, pair: $0.01, 0.5$}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}{\textwidth}
+		\includegraphics[width=\linewidth]{jvcompar_05_005.jpg}
+		\caption{joint variable profile, pair: $0.5, 0.05$}
+	\end{subfigure}
+\end{figure}
+\noindent It is clear that in the second case the \textit{Ur10e} is almost static, which is not desirable, since we want to exploit the kinematic chain in its entirety. For this reason for the other tests the chosen gain pair was: $0.05, 0.5$, keeping in mind to maintain a gain ratio, $\frac{UR10e_{gain}}{KUKA_{gain}} >> 1$.
 
 % -> position error in time
 % -> DIFFERENCE in solution after changing the gain value
 \subsection{Obstacle avoidance test}
 % -> correct avoidance of the obstacle 
 % -> link distance from ob in time
+\noindent To test the efficacy of the \textit{obstacle avoidance} task I made two types of test, the first removing the \textit{reaching} task and moving the obstacle using the interactive marker with Rviz. Plotting the \textit{minimum distance link} and the relative \textit{activation function}.
 
-\subsection{Single obstacle}
+%% FIGURE
+
+Secondly I tried after removing the check for the \textit{stop condition} in the control loop to evaluate the ability of the robot to mantain the end-effector position and orientation fixed, while moving the obstacle around the robot. The robot must use its redundancy to mantain the links away from the obstacle.
+
+%% FIGURE
+
+\subsubsection{Single obstacle}
 % activation delta effects
 % -> point cloud flickering --> implemented solution
+\noindent The first test I did with both the \textit{reaching} and \textit{obstacle avoidance} task, was to set a viable $\delta$ value for the \textit{obstacle avoidance}. The $\delta$ value is relative to the activation function of the task, \ref{fig:DecreasingActFcn_realValues_obav}, and is the \textit{lenght} of the transition region of the task.
+\noindent In this experiment the obstace was positioned at:
+\begin{equation}
+	\vec{r} = \begin{bmatrix}
+		3.0 & 0.0 & 0.05 
+	\end{bmatrix}
+	\text{ ; } 
+	\vec{\rho} = \begin{bmatrix}
+		0.0 & 0.0 & 0.0
+	\end{bmatrix}
+\end{equation}
+\noindent The traslation vector $r$, and \textit{RPY} vector $\rho$ are both with respect to the $\langle\textit{kuka\_base}\rangle$ frame. And the \textit{goal} of all the test conducted in this tranche was:
+\begin{equation}
+	\vec{r} = \begin{bmatrix}
+		3.0 & 0.3 & 0.1 
+	\end{bmatrix}
+	\text{ ; }
+	\vec{\rho} = \begin{bmatrix}
+		0.0 & 0.0 & 0.0
+	\end{bmatrix}
+\end{equation}
+\noindent with respect to $\langle\textit{kuka\_base}\rangle$.
+\begin{figure}[H]
+	\centering
+	\begin{subfigure}{0.49\textwidth}
+		\includegraphics[width=\linewidth]{sing_obst_sing_tg_taskImage.png}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}{0.49\textwidth}
+		\includegraphics[width=\linewidth]{ob_sing_tg_sing_schema.jpg}
+	\end{subfigure}
+	\label{fig:sing_obst_sing_targ_fig}
+\end{figure}
+
+%% FIGURE
+\begin{figure}[H]
+	\centering
+	\hspace*{-2.8cm}
+	\includegraphics[scale=0.3]{activation_min_dist_plot.jpg}
+	\caption{task activation profile, with respect to \textit{min dist} value}
+	\label{fig:activation_min_dist_plot}
+\end{figure}
+
+\noindent During this tranche of test, it was clear that in some cases the robot could remain stuck in some local minima, where the \textit{obstacle avoidance} desired velocity has some "chattering" due to the way the minimum distance link is chosen.\\
+
+\begin{figure}[H]
+	\centering
+	\hspace*{-2.8cm}
+	\includegraphics[scale=0.3]{activation_min_dist_position_plot.jpg}
+	\caption{Position error norm}
+	\label{fig:activation_min_dist_position_plot}
+\end{figure}
+
+\noindent Adding the \textit{position error norm} in the plot with $\delta = 0.5$ is clear how the chattering is blocking the end effector in place, with high speed jerky movements.\\
+\noindent To resolve this I implemented an \textit{hysteresis}, after a link is selected as the minimum distance link, to change the link again the distance has to be lower of the original link distance and the difference has to be greater of a certain threshold. 
+\noindent The result is evident I the following graph:
+\begin{figure}[H]
+	\centering
+	\hspace*{-2.8cm}
+	\includegraphics[scale=0.3]{activation_min_dist_position_plot_hyst.jpg}
+	\caption{Hysteresis effect on chattering}
+	\label{fig:activation_min_dist_position_plot_hyst}
+\end{figure}
+ 
 
 % tg behind 2D 3d
 
 % consecutive targhet
 
-\subsection{Multiple obstacles}
+\subsubsection{Multiple obstacles}
 % snake movement
 
-\subsection{Chassis test}
+\subsubsection{Chassis test}
 % test 1 2 
 
 % test 3 (uc1 type movement)

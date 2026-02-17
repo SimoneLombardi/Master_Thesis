@@ -14,17 +14,20 @@
 \contentsline {figure}{\numberline {2.13}{\ignorespaces Sense Act schema\relax }}{19}{figure.caption.15}%
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {3.1}{\ignorespaces Generic activation function\relax }}{22}{figure.caption.16}%
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Activation for Obstacle avoidance\relax }}{23}{figure.caption.17}%
-\contentsline {figure}{\numberline {3.3}{\ignorespaces joint limits activation function, generic values\relax }}{27}{figure.caption.18}%
-\contentsline {figure}{\numberline {3.4}{\ignorespaces With realistic values\relax }}{28}{figure.caption.19}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Activation for Obstacle avoidance\relax }}{22}{figure.caption.17}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces joint limits activation function, generic values\relax }}{26}{figure.caption.18}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces With realistic values\relax }}{27}{figure.caption.19}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces photo of the real system, inside the workcell\relax }}{30}{figure.caption.20}%
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Cinematic simulation diagram\relax }}{32}{figure.caption.22}%
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Simplified structure of the class JointRobotTP\relax }}{33}{figure.caption.23}%
-\contentsline {figure}{\numberline {4.5}{\ignorespaces activity diagram of the {\fontfamily {qcr}\selectfont \leavevmode {\color {olive}initialize}} method\relax }}{34}{figure.caption.24}%
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Joint reaching control loop\relax }}{37}{figure.caption.25}%
-\contentsline {figure}{\numberline {4.7}{\ignorespaces Action server flow chart\relax }}{38}{figure.caption.26}%
-\contentsline {figure}{\numberline {4.8}{\ignorespaces Reaching loop flow chart\relax }}{40}{figure.caption.27}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces photo of the real system, inside the workcell\relax }}{29}{figure.caption.20}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Cinematic simulation diagram\relax }}{31}{figure.caption.22}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Simplified structure of the class JointRobotTP\relax }}{32}{figure.caption.23}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces activity diagram of the {\fontfamily {qcr}\selectfont \leavevmode {\color {olive}initialize}} method\relax }}{33}{figure.caption.24}%
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Joint reaching control loop\relax }}{36}{figure.caption.25}%
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Action server flow chart\relax }}{37}{figure.caption.26}%
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Reaching loop flow chart\relax }}{39}{figure.caption.27}%
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.7}{\ignorespaces task activation profile, with respect to \textit {min dist} value\relax }}{48}{figure.caption.37}%
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Position error norm\relax }}{49}{figure.caption.38}%
+\contentsline {figure}{\numberline {5.9}{\ignorespaces Hysteresis effect on chattering\relax }}{50}{figure.caption.39}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
