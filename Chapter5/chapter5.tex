@@ -121,13 +121,21 @@ This tests were aimed to evaluate the effect of different \textit{velocity gain}
 \subsection{Obstacle avoidance test}
 % -> correct avoidance of the obstacle 
 % -> link distance from ob in time
-\noindent To test the efficacy of the \textit{obstacle avoidance} task I made two types of test, the first removing the \textit{reaching} task and moving the obstacle using the interactive marker with Rviz. Plotting the \textit{minimum distance link} and the relative \textit{activation function}.
+\noindent To test the correctness of the \textit{obstacle avoidance} task I removed the \textit{reaching} task and moved the obstacle using the interactive marker in Rviz, to see the reaction of the robot. Here are the result, showing the \textit{minimum distance link} and the relative \textit{activation function}.
 
 %% FIGURE
+\begin{figure}[H]
+	\centering
+	\hspace*{-2.5cm}
+	\includegraphics[scale=0.22]{obav_norm_noReach_test.jpg}
+	\caption{task activation profile, with respect to \textit{min dist} value}
+	\label{fig:activation_min_dist_plot_noReach}
+\end{figure}
 
-Secondly I tried after removing the check for the \textit{stop condition} in the control loop to evaluate the ability of the robot to mantain the end-effector position and orientation fixed, while moving the obstacle around the robot. The robot must use its redundancy to mantain the links away from the obstacle.
+\noindent The \textit{Min Dist} is the norm of the minimum distance vector between the robot point cloud and the obstacle point cloud. It is clear from the graph the when the \textit{Min Dist} drops below the \textit{task transition} line, the obstacle avoidance task is activated and consequently the distance increases.\\
+\noindent Since there is no other task besides the \textit{obstacle avoidance} after the task is deactivated the robot stops abruptly hence the \textit{jagged} nature of the plot. In the bottom plot each link \textit{minimum distance} is displayed, aside for the \textit{kuka base} and \textit{kuka link one}, since the first is a static link and the second has very limited motion capabilities and is considered to be outside the normal work environment, to remove some computational burden the proximity task for these two links are not computed. This approach is maintained in all the following tests.
 
-%% FIGURE
+
 
 \subsubsection{Single obstacle}
 % activation delta effects
@@ -146,7 +154,7 @@ Secondly I tried after removing the check for the \textit{stop condition} in the
 \noindent The traslation vector $r$, and \textit{RPY} vector $\rho$ are both with respect to the $\langle\textit{kuka\_base}\rangle$ frame. And the \textit{goal} of all the test conducted in this tranche was:
 \begin{equation}
 	\vec{r} = \begin{bmatrix}
-		3.0 & 0.3 & 0.1 
+		3.0 & 0.3 & 1.0 
 	\end{bmatrix}
 	\text{ ; }
 	\vec{\rho} = \begin{bmatrix}
@@ -170,7 +178,7 @@ Secondly I tried after removing the check for the \textit{stop condition} in the
 \begin{figure}[H]
 	\centering
 	\hspace*{-2.8cm}
-	\includegraphics[scale=0.3]{activation_min_dist_plot.jpg}
+	\includegraphics[scale=0.22]{activation_min_dist_plot.jpg}
 	\caption{task activation profile, with respect to \textit{min dist} value}
 	\label{fig:activation_min_dist_plot}
 \end{figure}
@@ -195,11 +203,57 @@ Secondly I tried after removing the check for the \textit{stop condition} in the
 	\caption{Hysteresis effect on chattering}
 	\label{fig:activation_min_dist_position_plot_hyst}
 \end{figure}
- 
 
+\noindent After finding an adequate $\delta$ value, I went on to test the robot in a sequential target scenario, I wanted the robot to wrap around the cylindrical obstacle. The experiment was done with the \textit{obstacle avoidance} task in planar mode, meanig that the \textit{desired velocity} used to avoid the obstacle lived in the \textit{xy} plane. The \textit{obstacle} and \textit{initial configuration} are the same of the previous test.
+\noindent Here is a schema of the experiment:
 % tg behind 2D 3d
+\begin{figure}[H]
+	\centering
+	\hspace*{-2.8cm}
+	\includegraphics[scale=0.3]{ob_sing_tg_multi_schema.jpg}
+	\caption{Schema for multi target test}
+	\label{fig:ob_sing_tg_multi_schema}
+\end{figure}
+\noindent The command sent to the end effector starting from the initial position: 
+\begin{equation}
+	\vec{r} = \begin{bmatrix}
+		2.03 & 0.291 & 0.404
+	\end{bmatrix}
+\end{equation}
+\noindent take the end effector to the first target with position and orientation, with respect to the base frame:
+\begin{equation}
+	\vec{r} = \begin{bmatrix}
+		3.0 & 0.3 & 1.0 
+	\end{bmatrix}
+	\text{ ; }
+	\vec{\rho} = \begin{bmatrix}
+		0.0 & 0.0 & 0.0
+	\end{bmatrix}
+\end{equation}
+\noindent the second target has a translation of $|0.4|$ in the \textit{x} and \textit{y} direction.\\
+\noindent Since there have been some inconsistencies during testing I decided to repeat the test three times. Here are the results:
+\begin{figure}[H]
+	\centering
+	\hspace*{-3.3cm}
+	\includegraphics[scale=0.23]{sing_ob_multi_tg_normal_result.jpg}
+	\label{fig:ob_sing_tg_multi_results}
+\end{figure}
+\noindent The graphs show on the left side for each attempt the value of the \textit{activation function} for the obstacle avoidance, and on the right side the value of the norm of the \textit{cartesian error} for the end effector. The \textit{obstacle avoidance} is performed in 2 dimension for this test, meaning the robot attempts to avoid the obstacle with movement in the $xy$ plane.\\
+\noindent In the first two attempts is clear how on the second target the robot find itself in a \textit{local minima} and is not able to exit. The line \textit{reaching trsh} shows the value of the cartesian error norm that is considered to have a successful test, the value $trsh = 0.03$.\\
+\noindent For the third attempt I decided to increase the $x$ translation of the second target from $0.4$ to $0.6$, and the robot is able to clear the steps but the problem is present again in the third step. \\
 
-% consecutive targhet
+%% DA LEVARE PROBABILMENTE
+\noindent Plotting the \textit{desired velocities} for the obstacle avoidance and for the reaching task in the time interval where the robot is stuck in the local minima we can see a possible reason why the robot stopped moving:
+\begin{figure}[H]
+	\centering
+	\hspace*{-2.8cm}
+	\includegraphics[scale=0.22]{sing_ob_multi_tg_normal_ref_comparison.jpg}
+	\caption{Comparison of the desired velocities for the \textit{obstacle avoidance} and \textit{reaching} task.}
+	\label{fig:sing_ob_multi_tg_normal_ref_comparison}
+\end{figure}
+\noindent I plotted the \textit{2D} reference rate vector for the two tasks as a point all centered in $O = (0,0)$. The time interval for the first two attempts is set from about $15$sec to the end of the attempt, and for the third one from $41$sec. We can se how in those time stamp the desired velocities are telling the robot to move in opposite direction.
+%% DA LEVARE PROBABILMENTE
+
 
 \subsubsection{Multiple obstacles}
 % snake movement

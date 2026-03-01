@@ -27,6 +27,7 @@ The compact expression of the algorithm becomes, for the \textit{k-th} priority 
 \end{equation}
 
 
+
 \subsection{Task Description}
 In this section I will describe the mathematical formulation of the task I implemented in my control loop. To simplify the notation all the matrices, if not stated otherwise, are projected on the $\langle\textit{kuka\_base}\rangle$ reference frame.
 
@@ -47,6 +48,10 @@ In the case of the \textit{obstacle avoidance} task, the variable I want to cont
 \begin{equation}
 	d = (P_o - P_r)\hspace{0.5cm};\hspace{0.5cm}\dot{\vec{\bar{r}}} = -d
 \end{equation}
+\begin{itemize}
+	\item $P_o$ and $P_r$: point pair for \textit{Obstacle} and \textit{Robot}, that have the minimum distance from each other.
+	\item $d$: minimum distance vector.
+\end{itemize}
 Since in the original paper the \textit{planar} and \textit{spatial} case are treated separatley, in chap.\ref{chap:fifth} I will experiment with both the vector as is, and without the $z$ component. To understand how the proposed approach behaves in the two cases. \\
 
 \noindent \textbf{Activation function}: \\
@@ -60,6 +65,12 @@ The the activation value is computed as follows:\\
 		0 &  x > x_{min} + \delta
 	\end{cases}
 \end{equation}
+
+\begin{itemize}
+	\item $x$ : State variable I want to control.
+	\item $x_{min}$: Lowest possible value I want the variable $x$ to have.
+	\item $\delta$: Interval length in which my \textit{activation value} should go from $0$ to $1$ or vice versa. 
+\end{itemize}
 
 \begin{figure}[H]
 	\centering

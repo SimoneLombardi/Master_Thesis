@@ -5,27 +5,25 @@
 
 \chapter{Introduction}
 \label{chap:first}
+The first robotics system employed in a factory settings make their appearance in the sixties. A robot was able to perform repetitive task, quickly and precisely and could work in dangerous environments. They were although dangerous themselves and for this, even today most robot on the factory floor are kept strictly separated from the human workers, trough the use of safety cages that are used as \textit{kill-switch}. Meaning that if the work cell is not closed and free the robot will not resume any operations.\\
+\noindent With the recent advent of industry "3.0" and "4.0" following the progress in computational capabilities of modern systems, robots were able to perform much more complex tasks, also becoming able to perceive and analyze the natural environment. 
 
-Robotic systems from their first introduction in the manufacturing field we relegated to work separated from the human workers. This was because the main use for robots was to perform, highly repetitive tasks, very fast or to work in dangerous environment. This removed the need to have interaction between human and robots.
-With the advent of industry "3.0" and "4.0" the focus shifted from that to have the robots collaborate with humans to increase efficiency, and to remove some burden from the human worker, especially for physically demanding tasks.
+The focus shifted to have robotic and human agent "cooperating" for a common objective, with the robot taking up the burden of the human worker, especially for physically demanding tasks.\\
 
-The concept of Human Robot Interaction (HRI) appears in the literature and can be divided in two broad categories, each with their respective challenges.
+cd 
+This is the concept of Human Robot Interaction (HRI) that appears in the literature in two broad categories, each with their respective challenges.
 \begin{itemize}
 	\item \textbf{Physical Interaction}: interaction that require or could have some form of contacts with the robotic system.
 	\item \textbf{Social Interaction}: interaction that aims to exchange information, or perform conversation of some kind.
 \end{itemize}
-In the context of this thesis, and more broadly in industrial applications, the focus is primarily on physical interaction. Collaborative robots operating alongside human workers must function in dynamic environments, where the human agent does not follow predefined trajectories. \\
+\noindent For industrial application and for the aims of this thesis we will be talking about the first category. My thesis was defined alongside the \textbf{SestoSenso Project} which proposes a framework for Human-Robot Collaboration in which coexistence of a human and a robot in the same environment is given, and also controlled physical contact is not only possible but expected.\\
+\noindent The robot is expected to be able to percive the environment of the work station, and be able to follow the assigned task without endangering the human, or obstructing the workflow.
 
+\noindent The main objective of the project was to enable sensor-based control and human-robot collaboration with an industrial high-payload, high-Dof manipulator, that is normally used only in closed-off environment.
 
-My thesis was defined alongside the \textbf{SestoSenso Project} which proposes a framework for Human-Robot Collaboration in which controlled physical contact is not only possible but expected. Within this framework, the robot and the human operator jointly manipulate or work on the same object, requiring the robotic system to adapt continuously to the human’s actions.
+\noindent  To support this type of architecture, the robotic platform is equipped with proximity sensors that allow it to perceive changes in its surroundings and react autonomously and in real time. In addition, several robot links are covered with a sensorized tactile skin, enabling the system to detect and interpret physical contact with the environment or with the human collaborator.
 
-The main objective of the project was to enable sensor-based control and human-robot collaboration with an industrial high-payload manipulator, that is normally used only in closed-off environment.
-
-To support this type of architecture, the robotic platform is equipped with proximity sensors that allow it to perceive changes in its surroundings and react autonomously and in real time. In addition, several robot links are covered with a sensorized tactile skin, enabling the system to detect and interpret physical contact with the environment or with the human collaborator.
-
-A key strength and novelty of the SestoSenso robotic setup lies in its multi-stage structure. The complete system features 12 degrees of freedom, created by combining two manipulators: a high-payload industrial arm from KUKA as the first stage, and a lightweight, highly compliant arm from Universal Robots as the second stage. This configuration allows the robot to leverage the strengths of both manipulators, power from the KUKA arm, and flexibility and precision from the UR arm, making it well suited for collaborative tasks.
-
-
+\noindent  A key strength and novelty of the SestoSenso robotic setup lies in its multi-stage structure. The complete system features 12 degrees of freedom, created by combining two manipulators: a high-payload industrial arm from KUKA as the first stage, and a lightweight, highly compliant arm from Universal Robots as the second stage. This configuration allows the robot to leverage the strengths of both manipulators, power from the KUKA arm, and flexibility and precision from the UR arm, making it well suited for collaborative tasks.
 
 
 \section{Research problem and objective}
