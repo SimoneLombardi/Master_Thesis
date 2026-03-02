@@ -31,6 +31,9 @@
 \contentsline {figure}{\numberline {5.9}{\ignorespaces Position error norm\relax }}{51}{figure.caption.39}%
 \contentsline {figure}{\numberline {5.10}{\ignorespaces Hysteresis effect on chattering\relax }}{52}{figure.caption.40}%
 \contentsline {figure}{\numberline {5.11}{\ignorespaces Schema for multi target test\relax }}{53}{figure.caption.41}%
-\contentsline {figure}{\numberline {5.12}{\ignorespaces Comparison of the desired velocities for the \textit {obstacle avoidance} and \textit {reaching} task.\relax }}{55}{figure.caption.43}%
+\contentsline {figure}{\numberline {5.12}{\ignorespaces Schema for multi target, multi obstacle test\relax }}{57}{figure.caption.46}%
+\contentsline {figure}{\numberline {5.13}{\ignorespaces Single link \textit {snake test} performance\relax }}{58}{figure.caption.47}%
+\contentsline {figure}{\numberline {5.14}{\ignorespaces Multi link \textit {snake test} performance, $9$ links\relax }}{59}{figure.caption.48}%
+\contentsline {figure}{\numberline {5.15}{\ignorespaces Multi link \textit {snake test} performance, $9$ links, with extra final target\relax }}{60}{figure.caption.49}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }

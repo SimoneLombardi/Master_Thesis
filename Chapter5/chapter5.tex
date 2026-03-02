@@ -234,8 +234,8 @@ This tests were aimed to evaluate the effect of different \textit{velocity gain}
 \noindent Since there have been some inconsistencies during testing I decided to repeat the test three times. Here are the results:
 \begin{figure}[H]
 	\centering
-	\hspace*{-3.3cm}
-	\includegraphics[scale=0.23]{sing_ob_multi_tg_normal_result.jpg}
+	\hspace*{-2.0cm}
+	\includegraphics[scale=0.28]{sing_ob_multi_tg_normal_result.jpg}
 	\label{fig:ob_sing_tg_multi_results}
 \end{figure}
 \noindent The graphs show on the left side for each attempt the value of the \textit{activation function} for the obstacle avoidance, and on the right side the value of the norm of the \textit{cartesian error} for the end effector. The \textit{obstacle avoidance} is performed in 2 dimension for this test, meaning the robot attempts to avoid the obstacle with movement in the $xy$ plane.\\
@@ -243,20 +243,120 @@ This tests were aimed to evaluate the effect of different \textit{velocity gain}
 \noindent For the third attempt I decided to increase the $x$ translation of the second target from $0.4$ to $0.6$, and the robot is able to clear the steps but the problem is present again in the third step. \\
 
 %% DA LEVARE PROBABILMENTE
-\noindent Plotting the \textit{desired velocities} for the obstacle avoidance and for the reaching task in the time interval where the robot is stuck in the local minima we can see a possible reason why the robot stopped moving:
+%\noindent Plotting the \textit{desired velocities} for the obstacle avoidance and for the reaching task in the time interval where the robot is stuck in the local minima we can see a possible reason why the robot stopped moving:
+%\begin{figure}[H]
+%	\centering
+%	\hspace*{-2.8cm}
+%	\includegraphics[scale=0.22]{sing_ob_multi_tg_normal_ref_comparison.jpg}
+%	\caption{Comparison of the desired velocities for the \textit{obstacle avoidance} and \textit{reaching} task.}
+%	\label{fig:sing_ob_multi_tg_normal_ref_comparison}
+%\end{figure}
+%\noindent I plotted the \textit{2D} reference rate vector for the two tasks as a point all centered in $O = (0,0)$. The time interval for the first two attempts is set from about $15$sec to the end of the attempt, and for the third one from $41$sec. We can se how in those time stamp the desired velocities are telling the robot to move in opposite direction.
+%% DA LEVARE PROBABILMENTE
+
+\noindent To resolve this problem I decided to add in the obstacle avoidance task, multiple links. Referencing the definition of the \textit{obstacle avoidance} task in  \ref{chap:third} the multi-link version is defined by staking the tasks in a single matrix.\\
+\noindent The reference rate is a column vector composed of $n$ part, where $n$ is the number of links considered in the task.
+\begin{equation}
+	\vec{\dot{\bar{x}}}_{multi\_link} = 
+	\begin{bmatrix}
+		\vec{\dot{\bar{x}}}_{1} & \vec{\dot{\bar{x}}}_{2} & ... & \vec{\dot{\bar{x}}}_{n}
+	\end{bmatrix}^T
+	\hfill
+	\in
+	\hfill
+	\mathbb{R}^{1\times (n*task\_dim)}
+\end{equation}
+\noindent The dimension of each reference rate vector is dependent on the selected dimension for the \textit{obstacle avoidance} task, either $task\_dim = 2$ or $task\_dim = 3$.
+\noindent For the \textit{activation function} we have a square matrix of size $n*task\_dim$.
+\begin{equation}
+	\vec{A}_{multi\_link} = 
+	\begin{bmatrix}
+		\vec{A}_{1} & \vec{0} &  \vec{0} \\ 
+		 		\vec{0}	& ... &  		\vec{0}	  \\
+		 	\vec{0}		&  \vec{0}   & \vec{A}_{n}  \\
+	\end{bmatrix}
+	\hfill
+	\in
+	\hfill
+	\mathbb{R}^{(n*task\_dim)\times (n*task\_dim)}
+\end{equation}
+\noindent Lastly for the \textit{task jacobian} I stacked the geometric jacobian for the specific point in the robot point cloud.
+\begin{equation}
+	\vec{J}_{multi\_link} = 
+	\begin{bmatrix}
+		\vec{J}_{1}  \\ 
+		\vec{J}_{2}  \\
+				...	 \\
+		\vec{J}_{n}  \\
+	\end{bmatrix}
+	\hfill
+	\in
+	\hfill
+	\mathbb{R}^{(n*task\_dim)\times 12}
+\end{equation}
+\noindent This structure allows to have multiple \textit{obstacle avoidance} task at the same priority level. The \textit{proximity task} are sent from the sensing node for each link, after sorting the task in ascending order for the distance from the obstacle, the first $n$ task are taken and used to compute the control step. 
+The result for the multi-target test for $3$, $6$ and $9$ links are:
 \begin{figure}[H]
 	\centering
-	\hspace*{-2.8cm}
-	\includegraphics[scale=0.22]{sing_ob_multi_tg_normal_ref_comparison.jpg}
-	\caption{Comparison of the desired velocities for the \textit{obstacle avoidance} and \textit{reaching} task.}
-	\label{fig:sing_ob_multi_tg_normal_ref_comparison}
+	\hspace*{-2.0cm}
+	\includegraphics[scale=0.28]{obav_multilink_3_link.jpg}
+	\label{fig:obav_multilink_3_link}
 \end{figure}
-\noindent I plotted the \textit{2D} reference rate vector for the two tasks as a point all centered in $O = (0,0)$. The time interval for the first two attempts is set from about $15$sec to the end of the attempt, and for the third one from $41$sec. We can se how in those time stamp the desired velocities are telling the robot to move in opposite direction.
-%% DA LEVARE PROBABILMENTE
+
+\begin{figure}[H]
+	\centering
+	\hspace*{-2.0cm}
+	\includegraphics[scale=0.28]{obav_multilink_6_link.jpg}
+	\label{fig:obav_multilink_6_link}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\hspace*{-2.0cm}
+	\includegraphics[scale=0.28]{obav_multilink_9_link.jpg}
+	\label{fig:obav_multilink_9_link}
+\end{figure}
+
+\noindent The first notable result is the successful run performed in all the three tests as shown in the bottom graphs. Is interesting to note that only the first four tasks show some activation, but is clear that it is more connected to the specific environment, and not a clear limit in the number of possible concurrent active \textit{obstacle avoidance} tasks.\\
 
 
 \subsubsection{Multiple obstacles}
 % snake movement
+\noindent Moving into the multi obstacle tests, the first environment I experimented on features the \ref{fig:multiClinderImage}, with an \textit{in-line} positioning. The idea was to have the robot move around the two pillars in an \textit{S} motion as described in the following schema:
+\begin{figure}[H]
+	\centering
+	\hspace*{-2.8cm}
+	\includegraphics[scale=0.3]{ob_multi_tg_multi_schema.jpg}
+	\caption{Schema for multi target, multi obstacle test}
+	\label{fig:ob_multi_tg_multi_schema}
+\end{figure}
+\noindent I carried out the test with both types of \textit{obstacle avoidance} task implementation, with this environment the edge of the \textit{multi-link} case is evident. Both in terms of absence of discontinuities and chattering and also in terms of execution time.
+\begin{figure}[H]
+	\centering
+	\hspace*{-2.0cm}
+	\includegraphics[scale=0.28]{singlelink_snake_results.jpg}
+	\caption{Single link \textit{snake test} performance}
+	\label{fig:singlelink_snake_result}
+\end{figure}
+\noindent Noting that in this test the \textit{hysteresis} for the change of \textit{minimum distance} link is active, but since the discontinuities can be present on the same link, where the \textit{minimum distance point} changes with high frequency the problem can appear again.
+
+\begin{figure}[H]
+	\centering
+	\hspace*{-2.0cm}
+	\includegraphics[scale=0.27]{multilink_snake_results_noExtraTg.jpg}
+	\caption{Multi link \textit{snake test} performance, $9$ links}
+	\label{fig:multilink_snake_result_noExtraTg}
+\end{figure}
+
+\noindent To further test the multi-link capabilities, I added one last target bringing the end-effector in front of second pillar, with the same orientation of the other target.
+\begin{figure}[H]
+	\centering
+	\hspace*{-2.0cm}
+	\includegraphics[scale=0.27]{multilink_snake_results_ExtraTg.jpg}
+	\caption{Multi link \textit{snake test} performance, $9$ links, with extra final target}
+	\label{fig:multilink_snake_result_ExtraTg}
+\end{figure}
+
 
 \subsubsection{Chassis test}
 % test 1 2 
