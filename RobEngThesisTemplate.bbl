@@ -1,4 +1,4 @@
-\begin{thebibliography}{24}
+\begin{thebibliography}{26}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
 \bibitem[{Ata(2007)}]{ata2007optimal}
@@ -29,6 +29,18 @@
 {\sc Endo, G., Horigome, A. \& Takata, A.} (2019). Super dragon: A
   10-m-long-coupled tendon-driven articulated manipulator. {\em IEEE Robotics
   and Automation Letters\/}, {\bf 4}, 934--941.
+
+\bibitem[{Galin \& Meshcheryakov(2019)}]{industry_4p0_review}
+{\sc Galin, R. \& Meshcheryakov, R.} (2019). Automation and robotics in the
+  context of industry 4.0: the shift to collaborative robots. {\em IOP
+  Conference Series: Materials Science and Engineering\/}, {\bf 537}, 032073.
+
+\bibitem[{Giovinazzo {\em et~al.\/}(2024)Giovinazzo, Grella, Sartore, Adami,
+  Galletti \& Cannata}]{proxySkin_paper}
+{\sc Giovinazzo, F., Grella, F., Sartore, M., Adami, M., Galletti, R. \&
+  Cannata, G.} (2024). From cyskin to proxyskin: Design, implementation and
+  testing of a multi-modal robotic skin for human–robot interaction. {\em
+  Sensors\/}, {\bf 24}.
 
 \bibitem[{Huh {\em et~al.\/}(2008)Huh, Park, Hwang \& Hong}]{huh2008stereo}
 {\sc Huh, K., Park, J., Hwang, J. \& Hong, D.} (2008). A stereo vision-based

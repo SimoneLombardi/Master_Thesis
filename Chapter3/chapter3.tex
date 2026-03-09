@@ -10,30 +10,33 @@
 
 \section{Task Priority}
 Continuing the discussion from \ref{equat:TaskPrioritiClassic_generalSolution}, the classic task priority algorithm as explained in \cite{simetti2016novel} lacks the ability to smoothly activate and deactivate \textit{inequality} task when the robot is far from the activation region.
-The approach that I implemented is based on the definition of a new \textit{regularized pseudo-inversion operator} that integrates the \textit{activation function} as a weight matrix to modulate the intensity of the action taken for a specific task.
-The operator is defined as:
-\begin{equation}
-	\vec{X}^{\#,\vec{A},\vec{Q}} \triangleq (\vec{X}^T\vec{A}\vec{X} + \eta(\vec{I}-\vec{Q})^T(\vec{I}-\vec{Q}) + \vec{V}^T\vec{P}\vec{V})^{\#} \vec{X}^T\vec{A}\vec{A}
-	\label{equat:RegPseudoInverse_operator}
-\end{equation}
-where the matrix $\vec{V}$ is the right orthonormal matrix of the SVD decomposition for     $\vec{X}^T\vec{A}\vec{X}+\eta(\vec{I}-\vec{Q})^T(\vec{I}-\vec{Q})$.
-The compact expression of the algorithm becomes, for the \textit{k-th} priority level:
+The compact expression to compute the inverse kinematics at the \textit{k-th} priority level is similar to the classic approach:
 \begin{equation}
 	\begin{aligned}
 		\vec{W}_k &= \vec{J}_k\vec{Q}_{k-1}(\vec{J}_k\vec{Q}_{k-1})^{\#,\vec{A}_k,\vec{Q}_{k-1}} \\
-		\vec{Q}_k &= \vec{Q}_{k-1}(\vec{I}-(\vec{J}_k\vec{Q}_{k-1})^{\#,\vec{A}_k,\vec{I}}\vec{J}_k\vec{Q}_{k-1}) \\
-		\vec{\rho}_k &= \vec{\rho}_{k-1} + \vec{Q}_{k-1}(\vec{J}_k\vec{Q}_{k-1})^{\#,\vec{A}_k,\vec{I}}\vec{W}_k(\vec{\dot{x}}-\vec{J}_k\vec{\rho}_{k-1})
+		\vec{Q}_k &= \vec{Q}_{k-1}(\mathbb{I}-(\vec{J}_k\vec{Q}_{k-1})^{\#,\vec{A}_k,\mathbb{I}}\vec{J}_k\vec{Q}_{k-1}) \\
+		\vec{\rho}_k &= \vec{\rho}_{k-1} + \vec{Q}_{k-1}(\vec{J}_k\vec{Q}_{k-1})^{\#,\vec{A}_k,\mathbb{I}}\vec{W}_k(\vec{\dot{x}}-\vec{J}_k\vec{\rho}_{k-1})
 	\end{aligned}
 \end{equation}
-
-
+\noindent The difference stands in the use of a new \textit{regularized pseudo-inversion operator} that integrates the \textit{activation function} as a weight matrix to modulate the solution of the algorithm to a specific task.\\
+\noindent The operator is defined as:
+\begin{equation}
+	\vec{X}^{\#,\vec{A},\vec{Q}} \triangleq (\vec{X}^T\vec{A}\vec{X} + \eta(\mathbb{I}-\vec{Q})^T(\mathbb{I}-\vec{Q}) + \vec{V}^T\vec{P}\vec{V})^{\#} \vec{X}^T\vec{A}\vec{A}
+	\label{equat:RegPseudoInverse_operator}
+\end{equation}
+where:
+\begin{itemize}
+	\item $\vec{A}$ : activation matrix for $k_{th}$ priority level
+	\item $\vec{Q}$ : orthogonal projector for the null-space of task $k_{th}-1$
+	\item $\vec{V}$ : right orthonormal matrix of the SVD decomposition for     $\vec{X}^T\vec{A}\vec{X}+\eta(\mathbb{I}-\vec{Q})^T(\mathbb{I}-\vec{Q})$.
+\end{itemize}
 
 \subsection{Task Description}
-In this section I will describe the mathematical formulation of the task I implemented in my control loop. To simplify the notation all the matrices, if not stated otherwise, are projected on the $\langle\textit{kuka\_base}\rangle$ reference frame.
+In this section I will describe the mathematical formulation of the task I implemented in my control loop. To simplify the notation, all the matrices, if not stated otherwise are projected on an inertial reference frame $\langle\textit{world}\rangle$.
 
 
 \subsection{Obstacle Avoidance}
-For the \textit{Obstacle Avoidance} task I used the approach proposed in \cite{maciejewski1985obstacle}, after computing the point of the robot body at \textit{minimum sitance} from the obstacle, I used said point to apply a  desired velocity in the direction directly opposite to the distance vector.
+For the \textit{Obstacle Avoidance} task I used the approach proposed in \cite{maciejewski1985obstacle}, after computing the point of the robot body at \textit{minimum distance} from the obstacle, I used said point to apply a  desired velocity in the direction directly opposite to the distance vector.
 % single point
 \\ \noindent \textbf{Task reference}:\\
 \noindent The \textit{Reference rate} is considered as the \textit{desired shape} of the derivative of the variable I want to control.
@@ -44,9 +47,9 @@ To be more precise:
 	\item if $x = \bar{x}$ then $\dot{\bar{x}} = 0$
 \end{itemize}
 In the case of the \textit{obstacle avoidance} task, the variable I want to control is the \textit{minimum distance} of the robot body from the environment.
-\noindent The \textit{distance} vector and the \textit{point} are retrieved in a topic, and are already projected in the $\langle\textit{kuka\_base}\rangle$ reference frame.\\
+\noindent The \textit{distance} vector and the \textit{point} are retrieved in a topic, and are already projected in the $\langle\textit{world}\rangle$ reference frame.\\
 \begin{equation}
-	d = (P_o - P_r)\hspace{0.5cm};\hspace{0.5cm}\dot{\vec{\bar{r}}} = -d
+	d = (P_o - P_r)\hspace{0.5cm};\hspace{0.5cm}\dot{\vec{\bar{x}}} = -d
 \end{equation}
 \begin{itemize}
 	\item $P_o$ and $P_r$: point pair for \textit{Obstacle} and \textit{Robot}, that have the minimum distance from each other.
@@ -95,42 +98,42 @@ Here is an example of an activation profile for the \textit{obstacle avoidance} 
 \noindent \textbf{Task Jacobian}:\\
 For this task, different \textit{jacobian} matrices must be computed depending on the link on which the \textit{minimum distance point} is located. To handle this efficiently, the jacobians are constructed \textit{colum} by \textit{colum}, resulting in a more compact and readable implementation. I used the same method throughout my thesis.\\
 \noindent 
-In particular, the colum relative to the $i-th$ link is computed as:\\
+In particular, the colum relative to the $i_{th}$ link is computed as:\\
 \begin{equation}
-	\leftindex^{kb}{\vec{J}}_{i/kb} = 
+	\leftindex^{w}{\vec{J}}_{i/w} =
 	\begin{pmatrix}
-		\leftindex^{kb}{\vec{J}}_{i/kb}^{L} \\[4pt]
-		\leftindex^{kb}{\vec{J}}_{i/kb}^{A}
+		\leftindex^{w}{\vec{J}}_{i/w}^{L} \\[4pt]
+		\leftindex^{w}{\vec{J}}_{i/w}^{A}
 	\end{pmatrix} =
 	\begin{pmatrix}
-		\vec{R}^{kb}_i \cdot \textit{ax}_i \times (r^{kb}_n - r^{kb}_i) \\[8pt]
-		\vec{R}^{kb}_i \cdot \textit{ax}_i
+		\vec{R}^{w}_i \cdot {}^{i}\vec{ax}_{i} \times (r^{w}_n - r^{w}_i) \\[8pt]
+		\vec{R}^{w}_i \cdot {}^{i}\vec{ax}_{i}
 	\end{pmatrix}
 	\label{equat:AnalyticJacobianFormula}
 \end{equation}
-\\
-\noindent
-where $\textit{ax}_i$ is the axes of rotation for joint i expressed in the joint frame, which I retrieved from the \codetxt{darkgray}{urdf} description of the two robots. 
-\noindent
-Taken the complete jacobian of the $12$Dof structure I pre-multiplied for the rigid body jacobian, which is computed as:
+\noindent where:
+\begin{itemize}
+	\item ${}^{w}\vec{J}_{i/w}$ : Jacobian matrix for the $i_{th}$ frame, with respect to the $\langle\textit{world}\rangle$ frame, projected in the $\langle\textit{world}\rangle$ frame.
+	\item $\vec{R}^{w}_i$ : Rotation matrix, from the $i_{th}$ frame to $\langle\textit{world}\rangle$ the frame
+	\item ${}^{i}\vec{ax}_{i}$ : axis of rotation for joint $i_{th}$ expressed in the joint frame.
+	\item ${}^{w}\vec{r}^{i}_{n}=(r^{w}_n - r^{w}_i)$ : translation vector from $i_{th}$ frame to the \textit{end effector} frame, projected on $\langle\textit{world}\rangle$ frame.
+\end{itemize}
+\noindent The task jacobian of the \textit{obstacle avoidance} is computed up to the link containing the \textit{minimum distance point} or $mdp$. The following step computes the \textit{rigid body Jacobian} from the link $i_{th}$ to the $mdp$.
 \begin{equation}
-	\leftindex^{kb}{\vec{J}}_{mdp/kb} = 
+	\leftindex^{w}{\vec{J}}_{mdp/w} = 
 	\begin{pmatrix}
-		\leftindex^{kb}{\vec{J}}_{mdp/kb}^{L} \\[4pt]
-		\leftindex^{kb}{\vec{J}}_{mdp/kb}^{A}
+		\leftindex^{w}{\vec{J}}_{mdp/w}^{L} \\[4pt]
+		\leftindex^{w}{\vec{J}}_{mdp/w}^{A}
 	\end{pmatrix} =
 	\begin{pmatrix}
-		\vec{I}_{3\times 3} & [r_{mdp/i}\times]^T \\[4pt]
-		\vec{0}_{3\times 3} & \vec{I}_{3\times 3}
+		\mathbb{I}_{3\times 3} & [r^{mdp}_{i}\times]^T \\[4pt]
+		\vec{0}_{3\times 3} & \mathbb{I}_{3\times 3}
 	\end{pmatrix} \cdot
 	\begin{pmatrix}
-		\leftindex^{kb}{\vec{J}}_{i/kb}^{L} \\[4pt]
-		\leftindex^{kb}{\vec{J}}_{i/kb}^{A}
+		\leftindex^{w}{\vec{J}}_{i/w}^{L} \\[4pt]
+		\leftindex^{w}{\vec{J}}_{i/w}^{A}
 	\end{pmatrix} 
-\end{equation}\\
-\textit{mdp}:\textit{minimum distance point}, and \textit{i}: link that contains the \textit{mdp}
-
-% set based task
+\end{equation}
 
 \subsection{End Effector Target}
 This is the \textit{goal-driven task} in my simulation of the working environment.
@@ -200,14 +203,14 @@ The projection frames of this vector to define the goal position and orientation
 For the orientation of the goal, $\vec{\rho}$ is used to compose the rotation matrix that is than projected on the desired frame:
 \begin{align}
 	\vec{R}_{goal} &= \vec{R}_{z}(\psi) \cdot \vec{R}_{y}(\theta) \cdot \vec{R}_{x}(\phi) \\[4pt]
-	\langle\textit{kuka\_base}\rangle: \leftindex^{kb}{\vec{R}}_{goal} &= \vec{I} \cdot \vec{R}_{goal} \\
-	\langle\textit{end\_effector}\rangle: \leftindex^{ee}{\vec{R}}_{goal} &= \vec{R}_{ee}^{kb} \cdot \vec{R}_{goal}
+	\langle\textit{world}\rangle: \leftindex^{w}{\vec{R}}_{goal} &= \vec{I} \cdot \vec{R}_{goal} \\
+	\langle\textit{end\_effector}\rangle: \leftindex^{ee}{\vec{R}}_{goal} &= \vec{R}_{ee}^{w} \cdot \vec{R}_{goal}
 \end{align}
-In the first case the projection matrix is the identity since $\langle\textit{kuka\_base}\rangle \equiv \langle\textit{world}\rangle$.
+In the first case the projection matrix is the identity since $\langle\textit{world}\rangle \equiv \langle\textit{world}\rangle$.
 Same process is done for the translation vector:
 \begin{align}
-	\langle\textit{kuka\_base}\rangle: \leftindex^{kb}{\vec{r}}_{goal} &= \vec{0} + \vec{r}_{goal}\\
-	\langle\textit{end\_effector}\rangle: \leftindex^{ee}{\vec{r}}_{goal} &= \vec{r}_{ee}^{kb} + \vec{r}_{goal}
+	\langle\textit{world}\rangle: \leftindex^{w}{\vec{r}}_{goal} &= \vec{0} + \vec{r}_{goal}\\
+	\langle\textit{end\_effector}\rangle: \leftindex^{ee}{\vec{r}}_{goal} &= \vec{r}_{ee}^{w} + \vec{r}_{goal}
 \end{align}
 Than the rotation matrix and the translation vector are use to publish the $\langle\textit{goal}\rangle$ in rviz.
 
@@ -248,9 +251,9 @@ This task is used to keep the end effector away from the floor. I implemented th
 \\ \\
 \textbf{Task reference}:\\
 \noindent 
-The reference rate for this task is computed using the $z$ coordinate of the traslation from the $\langle\textit{kuka\_base}\rangle$ frame to $\langle\textit{end\_effector}\rangle$. 
+The reference rate for this task is computed using the $z$ coordinate of the traslation from the $\langle\textit{world}\rangle$ frame to $\langle\textit{end\_effector}\rangle$. 
 \begin{equation}
-	\textit{Reference rate: } \dot{\bar{x}}_z = \lambda \cdot (\vec{\bar{x}} + \delta - \vec{z}_{ee}^{kb})
+	\textit{Reference rate: } \dot{\bar{x}}_z = \lambda \cdot (\vec{\bar{x}} + \delta - \vec{z}_{ee}^{w})
 \end{equation}
 The complete vector has all zero exept on the $z$ coordinate.
 \begin{equation}

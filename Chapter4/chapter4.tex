@@ -18,7 +18,7 @@ The robotic system I worked with was composed of two articulated industrial robo
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[scale=0.2]{Real_system.jpg}
+	\includegraphics[scale=0.28]{Real_system.jpg}
 	\caption{photo of the real system, inside the workcell}
 	\label{fig:RealSystem}
 \end{figure}
@@ -45,7 +45,7 @@ The robotic system I worked with was composed of two articulated industrial robo
 \noindent As shown in the picture the \textit{time of flight sensor} ar contained in strips that wrap around the links body, this allows the robot to have $360°$ around each sensorized link. The pressure sensor instead are placed in the black section in between each \textit{ToF} strip. \\
 \noindent In the photo it is possible to see a single sensor board, each array of sensor has: forty-eight boards and each sleeve has two array of sensor.  
 
-\section{Cinematic simulation}
+\section{Kinematic simulation}
 As stated in \ref{chap:first} I used a cinematic simulation to test my work. The main component are described in the following image:
 \begin{figure}[H]
 	\centering
@@ -59,8 +59,7 @@ In the images most of the nodes related to visualization of the robot motion are
 	\item \textbf{Environment handling}: the nodes in yellow handle the publication of the environment pointcloud, and the computation of the minimum distances for the robot links.
 	\item \textbf{Control}: the nodes in red contains the control loop, and are responsible for publishing the forward kinematics. 
 \end{itemize}
-\noindent In the end all is visualized by Rviz.
-For the \textit{Ur10e} it is available a docker cinematic simulator, \textit{ursim polyscope} developed directly by by \textit{Universal robots}, and for the \textit{Kuka} a simulator was developed starting from the \textit{urdf} representation of the robot and the readly available \textit{ros2} pkgs such as \textit{robot\_state\_broadcaster}.\\
+\noindent For the \textit{Ur10e} it is available a docker kinematic simulator, \textit{ursim polyscope} developed directly by by \textit{Universal robots}, and for the \textit{Kuka} a simulator was developed starting from the \textit{urdf} representation of the robot and the readly available \textit{ros2} pkgs such as \textit{robot\_state\_broadcaster}.\\
 \noindent The \textit{control} nodes contains the logic of the action server I developed for this thesis.
 
 \section{Unified Robot Architecture: JointRobotTP Class}
@@ -134,7 +133,7 @@ The \textit{Initialize} method is called once to instantiate all the members of 
 	\item \textbf{Task update function}: the method stores the pointers to the update of the active \textit{tasks}.
 \end{itemize}
 \noindent
-This structure was chosen to have a more manageable code and to accomplish the second objective \ref{enum:StructuralObjective} I set for the architecture.
+This structure was chosen to have a more manageable code and to accomplish the second objective, as mentioned in \ref{enum:StructuralObjective}, set for the architecture.
 
 \subsection{Task state update}
 Just to explain the logic in my implementation, for each task defined for a particular objective in the control algorithm I developed three different methods used to cyclically update the information contained in the \textit{task data structure}. \\

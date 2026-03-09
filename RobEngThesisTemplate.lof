@@ -26,14 +26,18 @@
 \contentsline {figure}{\numberline {4.7}{\ignorespaces Action server flow chart\relax }}{38}{figure.caption.26}%
 \contentsline {figure}{\numberline {4.8}{\ignorespaces Reaching loop flow chart\relax }}{40}{figure.caption.27}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.6}{\ignorespaces task activation profile, with respect to \textit {min dist} value\relax }}{48}{figure.caption.36}%
-\contentsline {figure}{\numberline {5.8}{\ignorespaces task activation profile, with respect to \textit {min dist} value\relax }}{50}{figure.caption.38}%
-\contentsline {figure}{\numberline {5.9}{\ignorespaces Position error norm\relax }}{51}{figure.caption.39}%
-\contentsline {figure}{\numberline {5.10}{\ignorespaces Hysteresis effect on chattering\relax }}{52}{figure.caption.40}%
-\contentsline {figure}{\numberline {5.11}{\ignorespaces Schema for multi target test\relax }}{53}{figure.caption.41}%
-\contentsline {figure}{\numberline {5.12}{\ignorespaces Schema for multi target, multi obstacle test\relax }}{57}{figure.caption.46}%
-\contentsline {figure}{\numberline {5.13}{\ignorespaces Single link \textit {snake test} performance\relax }}{58}{figure.caption.47}%
-\contentsline {figure}{\numberline {5.14}{\ignorespaces Multi link \textit {snake test} performance, $9$ links\relax }}{59}{figure.caption.48}%
-\contentsline {figure}{\numberline {5.15}{\ignorespaces Multi link \textit {snake test} performance, $9$ links, with extra final target\relax }}{60}{figure.caption.49}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Car chassis point cloud\relax }}{43}{figure.caption.30}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Joint velocity command norm, for each robot\relax }}{45}{figure.caption.33}%
+\contentsline {figure}{\numberline {5.7}{\ignorespaces task activation profile, with respect to \textit {min dist} value\relax }}{48}{figure.caption.36}%
+\contentsline {figure}{\numberline {5.9}{\ignorespaces task activation profile, with respect to \textit {min dist} value\relax }}{50}{figure.caption.38}%
+\contentsline {figure}{\numberline {5.10}{\ignorespaces Position error norm\relax }}{51}{figure.caption.39}%
+\contentsline {figure}{\numberline {5.11}{\ignorespaces Hysteresis effect on chattering\relax }}{52}{figure.caption.40}%
+\contentsline {figure}{\numberline {5.12}{\ignorespaces Schema for multi target test\relax }}{53}{figure.caption.41}%
+\contentsline {figure}{\numberline {5.13}{\ignorespaces Schema for multi target, multi obstacle test\relax }}{57}{figure.caption.46}%
+\contentsline {figure}{\numberline {5.14}{\ignorespaces Single link \textit {snake test} performance\relax }}{58}{figure.caption.47}%
+\contentsline {figure}{\numberline {5.15}{\ignorespaces Multi link \textit {snake test} performance, $9$ links\relax }}{59}{figure.caption.48}%
+\contentsline {figure}{\numberline {5.16}{\ignorespaces Multi link \textit {snake test} performance, $9$ links, with extra final target\relax }}{60}{figure.caption.49}%
+\contentsline {figure}{\numberline {5.17}{\ignorespaces Multi-link test, with six concurrent links\relax }}{66}{figure.caption.55}%
+\contentsline {figure}{\numberline {5.18}{\ignorespaces Multi obstacle test for multi-link approach\relax }}{67}{figure.caption.56}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }

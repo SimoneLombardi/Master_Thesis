@@ -6,7 +6,7 @@
 \label{chap:second}
 \graphicspath{{Chapter2/Figures/PNG/}{Chapter2/Figures/JPG/}{Chapter2/Figures/JPEG/}{Chapter2/Figures/}}
 
-In this chapter, I illustrate the results of the \textit{state-of-the-art} research conducted for my thesis. The main topic of the review is \textit{hyper-redundant robotic systems}, and the chapter is subdivided into three parts.
+This chapter, illustrates the results of the \textit{state-of-the-art} research conducted for my thesis. The main topic of the review is \textit{hyper-redundant robotic systems}, and the chapter is subdivided into three parts.
 \noindent
 The first section provides a general overview of how these types of systems are used in industry and discusses the challenges they face with respect to control, modeling, and interaction with the environment.
 \noindent
@@ -15,7 +15,7 @@ The second and third sections focus on the specific robotic system I worked with
 In particular, I will describe how environmental perception is generally performed highlighting the drawbacks, and than explain the chosen approach implemented by the \textbf{Sestosenso project}. I then illustrate the obstacle-avoidance strategy in relation to the main goal of the system, which is to introduce a novel method that enables high-payload industrial robots to safely collaborate with human agents, effectively exploiting the redundancy of the system.
 
 \section{Hyper-redundant manipulators}
-Looking at the work of \cite{liu2022review_hypMan1} and \cite{pistone2024modelling_hypMan2} is clear that \textit{hyper-redundant manipulator} are currently used in dangerous and thigh spaces, or in the medical field for surgery and as endoscopes.
+Looking at the work of \cite{liu2022review_hypMan1} and \cite{pistone2024modelling_hypMan2} is clear that \textit{hyper-redundant manipulator} are currently used in dangerous and tight spaces, or in the medical field for surgery and as endoscopes.
 Given these operational requirements the most common \textit{mechanical design} follows the \textit{snake-like} formulation.
 A good example of these two application are the \textit{Super Dragon} a snake-like, tendon actuated robot used in the decommissioning of the Fukushima Daiichi Nuclear Power Plants.
 \begin{figure}[H]
@@ -33,7 +33,7 @@ And the \textit{CardioArm}, used for minimally invasive cardiac surgery.
 \end{figure} 
 
 \noindent
-From the two reviews is evident that the tendon-driven actuation is favorable for these types of application, it gives the ability to miniaturize the arm and make it as light as possible. While the motors and control equipment can remain outside of the operational space. Witch is an additional advantage in case of hazardous environments, keeping the driving apparatus outside of the danger zone reducing the number of faults.
+From the two reviews is evident that the tendon-driven actuation is favorable for these types of application, it gives the ability to miniaturize the arm and make it as light as possible. While the motors and control equipment can remain outside of the operational space. Which is an additional advantage in case of hazardous environments, keeping the driving apparatus outside of the danger zone reducing the number of faults.
 Other drive methods discussed in the paper are:
 \begin{itemize}
 	\item Gas drive
@@ -67,9 +67,9 @@ In recent years there has been a trend to use these dual-arm systems for HRC(Hum
 \end{figure} 
 As is stated in the survey of \cite{DUAL_ARM_SURVEY} the strengths of the dual arm architecture are:
 \begin{itemize}
-	\item \textit{Similarty to operator}: useful both in the case of HRC and to substitute the human worker with minimal effort.
+	\item \textit{Similarity to operator}: useful both in the case of HRC and to substitute the human worker with minimal effort.
 	\item \textit{Flexibility and stiffness}: Combining the stiffness of closed chain manipulation, with the flexibility of a serial link.
-	\item \textit{Manipulability}: High number of DoFs allows for complex motion tasks.
+	\item \textit{Increased dexterity}: High number of DoFs allows for complex motion tasks.
 	\item \textit{Cognitive motivation}: The similar charcteristics of the kinematic chain is belived to be helpful in HRC context.
 \end{itemize} 
 In most cases for these architectures the \textit{obstacle avoidance} is computed for the \textit{navigation} if the robot has a movable base.
@@ -136,7 +136,7 @@ The uses and capabilities of this configuration are presented in the work of \ci
 \end{figure}
 The robot is composed of a $6$ Dof \textit{Macro} manipulator and a $3$ Dof \textit{Micro}. The robot is equipped to perform polishing tasks on complex surfaces. \\
 \noindent
-The paper focus is to prove the effectivenss of a \textit{sampling based} motion assignment(MA) strategy with multi performance optimization. Since the robot has a total of $9$ degree of freedom there is space for optimization in the robot movement.
+The paper focus is to prove the effectivenss of a \textit{sampling based} motion assignment(MA) strategy with multi performance optimization. Since the robot has a total of $9$ degree of freedom allowing to optimize the robot movement.
 %The cost function to be minimized is expressed here:
 %\begin{equation}
 %	f_c(q) = \sum_{i=1}^{l}(w_i \cdot RPI_{c,i}(q))
@@ -169,7 +169,7 @@ Environment perception is one of the biggest difference when we move from the cl
 In this section I reported two of the main method for extracting ambient morphology information from various types of sensors, and explained their strength and weaknesses.
 
 \subsection{Image recognition based methods}
-As reported in \cite{VISIONBASED_OBREC}, we can divide vision based methods in two main categories:
+As reported in \cite{VISIONBASED_OBREC}, vision based methods can be categorized as follows:
 \begin{itemize}
 	\item Monocular vision: use a single camera mounted on top of the robot.
 	\item Stereo vision: use two synchronized cameras.
@@ -201,12 +201,12 @@ With the advent of AI in recent years the use and potential of \textit{image rec
 But they still have a series of weaknesses that have a large impact when it comes to develop viable systems for industrial application.
 In the work of \cite{s25206402} a control system using a 3d stereo camera and the YOLO AI algorithm for image recognition, those limitation are evident:
 \begin{itemize}
-	\item \textbf{Hardware and software}: The cost of the system parts is not paltry, form the camera to the AI software.
+	\item \textbf{Hardware and software}: The high hardware cost, and AI training requirements make this approach not suitable for industrial wide spread use.
 	\item \textbf{Integration and configuration}: The camera apparatus has an implementation that is task and environment specific, which means that every change requires a complete re-configuration of the system.
 	\item \textbf{Computational cost}: The image analysis is performed on a separated computer to manage the burden of the computation.
 	\item \textbf{Field of view}: The camera visualize only the work area, which is not adequate for a HRI situation.
 	\item \textbf{Environment interference}: The use of 2D and 3D image information, require to have a strict control on the occlusion and disturbances in the environment, from lighting to airborne dust. This level of control is not possible in a industrial context. 
-	\item \textbf{Privacy}: One problem not addressed by the paper is the privacy of people working around or with the robot, that is not mantained with the use of a camera.
+	\item \textbf{Privacy}: One problem not addressed by the paper is the privacy of people working around or with the robot, that cannot be guaranteed with the use of a camera.
 \end{itemize}
 
 \subsection{Point-cloud discretization based methods}
@@ -264,7 +264,7 @@ In the case of a manipulator arm we have to also include the $z$ axis, since we 
 Looking at the work of \cite{zhang2003obstacle} we can see how we can compute a safe trajectory for a \textit{SIR-1} robot manipulator using cubic polynomials for a path with intermediate points.
 In this paper is interesting the introduction of the concept:\textit{link} collision avoidance. By controlling the \textit{link} closest point to the obstacle and using the analytical formulation of the \textit{Inverse Kinematics} and the \textit{obstacle shape} it is possible to define \textit{joint variables} constraints to ensure a collision free navigation.\\
 \noindent
-In the work of: \cite{maciejewski1985obstacle} instead the proposed approach considers the closest point of the hole robot to the obstacle, than it apply a velocity vector to said point that is directly opposite to the distance vector $(P_{ob}-P_{rb})$.  
+In the work of: \cite{maciejewski1985obstacle} instead the proposed approach considers the closest point of the hole robot to the obstacle, than it apply a velocity vector to said point that is directly opposite to the distance vector $(P_{ob}-P_{rb})$. Where $P_{ob}$ is the \textit{obstacle point} and $P_{ob}$ is the \textit{robot point}, expressed in a common reference frame.
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.35]{obav_scheme.png}

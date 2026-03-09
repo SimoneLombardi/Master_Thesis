@@ -23,7 +23,7 @@ This approach opened up a completely new set of challenges, the first of which a
 The robotic agent needs a way to perceive the human in the workcell and must be able to react to unpredictable movements to avoid collisions.
 During my thesis, I worked with the robot used in the \textbf{SESTOSENSO project}, which is composed of two 6-DoF industrial articulated robots mounted in series, is equipped with a set of proximity and tactile sensors. 
 My work focused on implementing and testing a unified architecture for the two robots, exploring the capabilities of the 12-DoF kinematic chain, and proposing possible directions to improve the system’s functionalities. Moreover, this work also aimed to identify potential problems and weaknesses.
-I achieved these objectives through a series of simulated experiments, using a task-priority approach for system control, as I was interested in exploiting the high redundancy of the robot to perform multiple tasks simultaneously. I focused specifically on the task of \textit{obstacle avoidance}, implementing the safety system in a \textit{reactive control} framework. 
-\textit{.... Add something about results}
+I achieved these objectives through a series of simulated experiments, using a task-priority approach for system control, as I was interested in exploiting the high redundancy of the robot to perform multiple tasks simultaneously. I focused specifically on the task of \textit{obstacle avoidance}, implementing the safety system in a \textit{reactive control} framework.\\
+\noindent The implemented control algorithm allows the robot to navigate the environment, and exploit the system redundancy to avoid the obstacles. It also exposes limitation of the approach, such as discontinuities due to the high frequency shift of the minimum distance point and reaching of ill-conditioned configuration due to the shapes of the obstacles.
 
 \end{abstracts}

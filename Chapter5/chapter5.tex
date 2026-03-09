@@ -49,6 +49,8 @@ Lastly I used the \textit{chassis point cloud} to evaluate the motion in an envi
 	\begin{subfigure}{0.49\textwidth}
 		\includegraphics[width=\linewidth]{chassis_obstacle_side.png}
 	\end{subfigure}
+	\caption{Car chassis point cloud}
+	\label{fig:chassis_point_cloud}
 \end{figure}
 
 \subsection{Velocity gain tuning}
@@ -81,10 +83,11 @@ This tests were aimed to evaluate the effect of different \textit{velocity gain}
 	\centering
 	\hspace*{-2.3cm}
 	\includegraphics[scale=0.28]{robot_effects_graph.jpg}
+	\caption{Joint velocity command norm, for each robot}
 	\label{fig:robot_effects_graph}
 \end{figure}
-\noindent In these graph we have on the left the comparison between the profile of the \textit{position error norm} and the \textit{velocity command norm} for the Kuka arm, and on the right the \textit{orientation error norm} with the Ur10 \textit{velocity command norm}.//
-\noindent The last thing I noticed was the \textit{final configuration} difference in the five experiments, of which I report two examples from the first and last experiment.
+\noindent In these graph we have on the left the comparison between the profile of the \textit{position error norm} and the \textit{velocity command norm} for the Kuka arm, and on the right the \textit{orientation error norm} with the Ur10 \textit{velocity command norm}.\\
+\noindent The last thing I noticed was the difference in the \textit{final configuration} in the four experiments, of which I report two examples from the first and last experiment.
 \begin{figure}[H]
 	\centering
 	\begin{subfigure}{\textwidth}
@@ -265,6 +268,7 @@ This tests were aimed to evaluate the effect of different \textit{velocity gain}
 	\in
 	\hfill
 	\mathbb{R}^{1\times (n*task\_dim)}
+	\label{equat:multi_link_ref_rate}
 \end{equation}
 \noindent The dimension of each reference rate vector is dependent on the selected dimension for the \textit{obstacle avoidance} task, either $task\_dim = 2$ or $task\_dim = 3$.
 \noindent For the \textit{activation function} we have a square matrix of size $n*task\_dim$.
@@ -356,11 +360,75 @@ The result for the multi-target test for $3$, $6$ and $9$ links are:
 	\caption{Multi link \textit{snake test} performance, $9$ links, with extra final target}
 	\label{fig:multilink_snake_result_ExtraTg}
 \end{figure}
+\noindent As we can see from the graphs in some instances up to eight concurrent link were controlled to avoid the obstacles, confirming what I thought at the end of the previous section.
+%% TO BE ADDED --> failed experiment for single-link obav
 
 
 \subsubsection{Chassis test}
-% test 1 2 
+\noindent The last series of test I did was centered around the chassis point cloud \ref{fig:chassis_point_cloud}. Here is the schema:
+\begin{figure}[H]
+	\centering
+		\hspace*{-2.0cm}
+	\includegraphics[scale=0.27]{chassis_test1_schema.jpg}
+	\label{fig:chassis_test1_schema}
+\end{figure}
+\noindent The robot movent begins just outside of the driver side door, follwed by two linear movement in the positive direction of the $x$ axis of the $\langle\textit{world}\rangle$ frame, ending just outside of the passener side door. Than the \textit{end effector} is returned to the center of the chassis, and finally a lateral movent to the back of the car.\\
+\noindent In these tests the \textit{obstacle avoidance} task reference rate: $\dot{\bar{\vec{x}}} \in \mathbb{R}^{3\times1}$. I performed both test with the \textit{single link} and \textit{multi link} obstacle avoidance task, to compare the results.
+\begin{figure}[H]
+	\centering
+	\hspace*{-2.0cm}
+	\includegraphics[scale=0.27]{t1_multi_failed_result.jpg}
+	\label{fig:t1_multi_failed_result}
+\end{figure}
+\noindent Starting with the multi link case, the initial height of the target was too low, this created a situation were a link of the \textit{Ur10e} was obstructing the task. The situation is interesting because it highlight a weakness in the definition of the desired velocity for the link in question.
 
-% test 3 (uc1 type movement)
+\begin{figure}[H]
+	\centering
+	\hspace*{-0.4cm}
+	\includegraphics[scale=0.35]{t1_multi_failure_photo.png}
+	\label{fig:t1_multi_failure_photo}
+\end{figure}
 
+\noindent In the photo Is possible to see the \textit{distance vector} for the proximity tasks, that are currently active. Since the \textit{desired velocity} applied at the point of the robot, has opposite direction from the arrow in the photo is clear how in this instance two of the three active \textit{obstacle avoidance} task are working against the direction of the \textit{goal}.\\
+\noindent And considering that since the avoidance has superior \textit{priority} to the \textit{reaching}, the joint up to the \textit{upper arm joint} are actively pursuing the \textit{avoidance} task instead of the reaching one.
+
+\begin{figure}[H]
+	\centering
+	\hspace*{-2.0cm}
+	\includegraphics[scale=0.27]{t1_multi_ok_result.jpg}
+	\label{fig:t1_multi_ok_result}
+\end{figure}
+
+\noindent Repeating the test with a higher target allowed the robot to complete the task, since the \textit{shoulder} link of the \textit{Ur10e} was higher with respect to the obstacle. As usual I also did the test considering six and nine link in the \textit{avoidance} task.
+\begin{figure}[H]
+	\centering
+	\hspace*{-2.0cm}
+	\includegraphics[scale=0.27]{t1_multi_result_6lnk.jpg}
+	\label{fig:t1_multi_result_6lnk}
+\end{figure}
+\noindent Here we can see the test considering six different links in ascending order of distance, It shows the possible situation were the robot is wrapped around a thin object.
+\begin{figure}[H]
+	\centering
+	\hspace*{-0.4cm}
+	\includegraphics[scale=0.35]{t1_multi_failure_photo_6lnk.png}
+ 	\caption{Multi-link test, with six concurrent links}
+	\label{fig:t1_multi_failure_photo_6lnk}
+\end{figure}
+\noindent As we can see we have a similar situation of the three link case, but here we also have \textit{antagonistic avoidance velocity}, and from the graph we can see that the \textit{end effector} stabilizes at a certain distance from the target.\\
+\noindent The trial with nine links had a similar behavior, reducing the task $\delta $ value allowed the completion of the task. 
+\begin{figure}[H]
+	\centering
+	\hspace*{-2.0cm}
+	\includegraphics[scale=0.27]{t1_multi_result_9lnk_LowDelta.jpg}
+	\caption{Multi obstacle test for multi-link approach}
+	\label{fig:t1_multi_result_9lnk_LowDelta}
+\end{figure}
+\noindent Lastly the \textit{single link avoidance} test:
+\begin{figure}[H]
+	\centering
+	\hspace*{-2.0cm}
+	\includegraphics[scale=0.27]{t1_single_lnk_result.jpg}
+	\label{fig:t1_single_lnk_result}
+\end{figure}
+\noindent As we can see also in the second graph for the \textit{single link avoidance} the $\delta$ value was lowered to better compare the two tests. In both cases the goal was reached, is possible to se how a low width of the \textit{task transition} window creates high discontinuities in the activation function value. The \textit{multi link avoidance} has performed a little better in \textit{attenuating} the discontinuities in the robot movement, as we can see the plot of the end-effector \textit{cartesian error norm} is less irregular. 
 
