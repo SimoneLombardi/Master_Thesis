@@ -25,32 +25,32 @@
 \contentsline {figure}{\numberline {4.7}{\ignorespaces {\fontfamily {qcr}\selectfont \leavevmode {\color {olive}execute}}{\fontfamily {qcr}\selectfont \leavevmode {\color {darkgray}();}} method flow chart\relax }}{38}{figure.caption.25}%
 \contentsline {figure}{\numberline {4.8}{\ignorespaces Reaching loop flow chart\relax }}{40}{figure.caption.26}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Car chassis point cloud\relax }}{42}{figure.caption.29}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Car chassis point cloud, (m)\relax }}{42}{figure.caption.29}%
 \contentsline {figure}{\numberline {5.4}{\ignorespaces Position and Orientation error norm for the end effector\relax }}{43}{figure.caption.30}%
 \contentsline {figure}{\numberline {5.5}{\ignorespaces Joint velocity command norm, for each robot. Gain value: $0.05, 0.5$ in the first row, $0.05, 0.5$ in the second\relax }}{44}{figure.caption.32}%
 \contentsline {figure}{\numberline {5.6}{\ignorespaces Joint velocity command norm, for each robot. Gain value: $0.5, 0.1$ in the first row, $0.5, 0.05$ in the second\relax }}{45}{figure.caption.33}%
 \contentsline {figure}{\numberline {5.9}{\ignorespaces Obstacle avoidance task activation profile, with respect to \textit {min dist} value\relax }}{48}{figure.caption.36}%
 \contentsline {figure}{\numberline {5.10}{\ignorespaces Single obstacle test, initial configuration\relax }}{49}{figure.caption.37}%
-\contentsline {figure}{\numberline {5.11}{\ignorespaces Single obstacle test schema showing the different $\delta $ values\relax }}{50}{figure.caption.38}%
+\contentsline {figure}{\numberline {5.11}{\ignorespaces Single obstacle test schema showing the different $\delta $ values, (m)\relax }}{50}{figure.caption.38}%
 \contentsline {figure}{\numberline {5.12}{\ignorespaces task activation profile, with respect to \textit {min dist} value\relax }}{51}{figure.caption.39}%
 \contentsline {figure}{\numberline {5.13}{\ignorespaces Position error norm\relax }}{52}{figure.caption.40}%
 \contentsline {figure}{\numberline {5.14}{\ignorespaces Hysteresis effect on chattering\relax }}{53}{figure.caption.41}%
-\contentsline {figure}{\numberline {5.15}{\ignorespaces Schema for multi target test\relax }}{54}{figure.caption.42}%
-\contentsline {figure}{\numberline {5.16}{\ignorespaces Single link multi target test result, with single obstacle environment\relax }}{55}{figure.caption.43}%
-\contentsline {figure}{\numberline {5.17}{\ignorespaces Multi link multi target test result, with single obstacle environment\relax }}{57}{figure.caption.44}%
-\contentsline {figure}{\numberline {5.18}{\ignorespaces Six link avoidance task, result\relax }}{57}{figure.caption.45}%
-\contentsline {figure}{\numberline {5.19}{\ignorespaces Nine link avoidance task, result\relax }}{58}{figure.caption.46}%
-\contentsline {figure}{\numberline {5.20}{\ignorespaces Schema for multi target, multi obstacle test\relax }}{59}{figure.caption.47}%
-\contentsline {figure}{\numberline {5.21}{\ignorespaces Single link \textit {snake test} performance\relax }}{60}{figure.caption.48}%
-\contentsline {figure}{\numberline {5.22}{\ignorespaces Multi link \textit {snake test} performance, $9$ links\relax }}{61}{figure.caption.49}%
-\contentsline {figure}{\numberline {5.23}{\ignorespaces Multi link \textit {snake test} performance, $9$ links, with extra final target\relax }}{62}{figure.caption.50}%
-\contentsline {figure}{\numberline {5.24}{\ignorespaces Chassis environment test schema\relax }}{63}{figure.caption.51}%
-\contentsline {figure}{\numberline {5.25}{\ignorespaces Three link avoidance task with low target\relax }}{64}{figure.caption.52}%
-\contentsline {figure}{\numberline {5.26}{\ignorespaces Ill conditioned configuration for multi link avoidance test, three concurrent links\relax }}{65}{figure.caption.53}%
-\contentsline {figure}{\numberline {5.27}{\ignorespaces Three link avoidance task with increase target height\relax }}{66}{figure.caption.54}%
-\contentsline {figure}{\numberline {5.28}{\ignorespaces Six link avoidance task\relax }}{66}{figure.caption.55}%
-\contentsline {figure}{\numberline {5.29}{\ignorespaces Ill conditioned configuration for multi link avoidance test, six concurrent links\relax }}{67}{figure.caption.56}%
-\contentsline {figure}{\numberline {5.30}{\ignorespaces Multi link chassis test, with $\delta = 0.05$\relax }}{68}{figure.caption.57}%
-\contentsline {figure}{\numberline {5.31}{\ignorespaces Single link chassis test, with $\delta = 0.15$ and $\delta = 0.05$\relax }}{68}{figure.caption.58}%
+\contentsline {figure}{\numberline {5.15}{\ignorespaces Schema for multi target test, (m)\relax }}{54}{figure.caption.42}%
+\contentsline {figure}{\numberline {5.16}{\ignorespaces Single link, sequential target test result, with single obstacle environment\relax }}{55}{figure.caption.43}%
+\contentsline {figure}{\numberline {5.17}{\ignorespaces Three link avoidance, sequential target test result, with single obstacle environment.\relax }}{57}{figure.caption.44}%
+\contentsline {figure}{\numberline {5.18}{\ignorespaces Six link avoidance, sequential target test result, with single obstacle environment.\relax }}{58}{figure.caption.45}%
+\contentsline {figure}{\numberline {5.19}{\ignorespaces Nine link avoidance, sequential target test result, with single obstacle environment.\relax }}{59}{figure.caption.46}%
+\contentsline {figure}{\numberline {5.20}{\ignorespaces Schema for multi target, multi obstacle test, (m)\relax }}{60}{figure.caption.47}%
+\contentsline {figure}{\numberline {5.21}{\ignorespaces Single link avoidance, multi target test result, with multi obstacle environment.\relax }}{61}{figure.caption.48}%
+\contentsline {figure}{\numberline {5.22}{\ignorespaces Nine link avoidance, multi target test result, with multi obstacle environment.\relax }}{62}{figure.caption.49}%
+\contentsline {figure}{\numberline {5.23}{\ignorespaces Nine link avoidance, multi target test result, with multi obstacle environment and with extra final target\relax }}{63}{figure.caption.50}%
+\contentsline {figure}{\numberline {5.24}{\ignorespaces Chassis environment test schema, (m)\relax }}{64}{figure.caption.51}%
+\contentsline {figure}{\numberline {5.25}{\ignorespaces Nine link avoidance, with chassis environment.\relax }}{65}{figure.caption.52}%
+\contentsline {figure}{\numberline {5.26}{\ignorespaces Ill conditioned configuration for multi link avoidance test, three concurrent links\relax }}{66}{figure.caption.53}%
+\contentsline {figure}{\numberline {5.27}{\ignorespaces Three link avoidance task with increased target height\relax }}{67}{figure.caption.54}%
+\contentsline {figure}{\numberline {5.28}{\ignorespaces Six link avoidance task, with chassis environment.\relax }}{67}{figure.caption.55}%
+\contentsline {figure}{\numberline {5.29}{\ignorespaces Ill conditioned configuration for six link avoidance test.\relax }}{68}{figure.caption.56}%
+\contentsline {figure}{\numberline {5.30}{\ignorespaces Multi link chassis test, with $\delta = 0.05$\relax }}{69}{figure.caption.57}%
+\contentsline {figure}{\numberline {5.31}{\ignorespaces Single link chassis test, with $\delta = 0.15$ and $\delta = 0.05$\relax }}{69}{figure.caption.58}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }

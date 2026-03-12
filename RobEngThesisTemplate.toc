@@ -37,10 +37,10 @@
 \contentsline {subsection}{\numberline {5.0.1}Velocity gain tuning}{43}{subsection.5.0.1}%
 \contentsline {subsection}{\numberline {5.0.2}Obstacle avoidance test}{48}{subsection.5.0.2}%
 \contentsline {subsubsection}{\numberline {5.0.2.1}Single obstacle}{49}{subsubsection.5.0.2.1}%
-\contentsline {subsubsection}{\numberline {5.0.2.2}Multiple obstacles}{58}{subsubsection.5.0.2.2}%
-\contentsline {subsubsection}{\numberline {5.0.2.3}Chassis test}{62}{subsubsection.5.0.2.3}%
-\contentsline {chapter}{\numberline {6}Conclusions and future work}{70}{chapter.6}%
-\contentsline {chapter}{\numberline {A}Extra}{72}{appendix.A}%
-\contentsline {section}{\numberline {A.1}JointRobotTP class definition}{72}{section.A.1}%
-\contentsline {section}{\numberline {A.2}TPComputation class definition}{73}{section.A.2}%
-\contentsline {chapter}{References}{76}{appendix*.59}%
+\contentsline {subsubsection}{\numberline {5.0.2.2}Multiple obstacles}{59}{subsubsection.5.0.2.2}%
+\contentsline {subsubsection}{\numberline {5.0.2.3}Chassis test}{63}{subsubsection.5.0.2.3}%
+\contentsline {chapter}{\numberline {6}Conclusions and future work}{71}{chapter.6}%
+\contentsline {chapter}{\numberline {A}Extra}{73}{appendix.A}%
+\contentsline {section}{\numberline {A.1}JointRobotTP class definition}{73}{section.A.1}%
+\contentsline {section}{\numberline {A.2}TPComputation class definition}{74}{section.A.2}%
+\contentsline {chapter}{References}{77}{appendix*.59}%
