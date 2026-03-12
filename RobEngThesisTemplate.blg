@@ -14,44 +14,46 @@ A level-1 auxiliary file: Appendix1/appendix1.aux
 The style file: Classes/RoboticsBiblio.bst
 Database file #1: references.bib
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
-You've used 26 entries,
+Warning--empty journal in nakamura1986inverse
+You've used 27 entries,
             3018 wiz_defined-function locations,
-            824 strings with 10506 characters,
-and the built_in function-call counts, 17407 in all, are:
-= -- 1496
-> -- 836
-< -- 11
-+ -- 314
+            828 strings with 10626 characters,
+and the built_in function-call counts, 17562 in all, are:
+= -- 1511
+> -- 837
+< -- 12
++ -- 313
 - -- 270
-* -- 1465
-:= -- 2607
-add.period$ -- 78
-call.type$ -- 26
-change.case$ -- 228
-chr.to.int$ -- 26
-cite$ -- 26
-duplicate$ -- 1209
-empty$ -- 1211
-format.name$ -- 352
-if$ -- 3486
+* -- 1481
+:= -- 2650
+add.period$ -- 80
+call.type$ -- 27
+change.case$ -- 231
+chr.to.int$ -- 27
+cite$ -- 28
+duplicate$ -- 1224
+empty$ -- 1218
+format.name$ -- 357
+if$ -- 3501
 int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 241
-newline$ -- 82
-num.names$ -- 104
-pop$ -- 504
+missing$ -- 244
+newline$ -- 85
+num.names$ -- 108
+pop$ -- 514
 preamble$ -- 1
-purify$ -- 194
+purify$ -- 198
 quote$ -- 0
-skip$ -- 477
+skip$ -- 473
 stack$ -- 0
-substring$ -- 854
-swap$ -- 665
+substring$ -- 843
+swap$ -- 666
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 234
-warning$ -- 0
+type$ -- 243
+warning$ -- 1
 while$ -- 116
 width$ -- 0
-write$ -- 291
+write$ -- 300
+(There was 1 warning)

@@ -191,7 +191,7 @@
     \thispagestyle{empty}
   \begin{center}
     { \Huge {\bfseries {\@title}} \par}
-{\large \vspace*{25mm} {{\@crest} \par} \vspace*{25mm}}
+{\large \vspace*{10mm} {{\@crest} \par} \vspace*{10mm}}
     {{\Large \@author} \par}
 {\large \vspace*{1ex}
     {{\@collegeordept} \par}

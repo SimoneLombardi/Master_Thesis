@@ -3,41 +3,54 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {2.1}{\ignorespaces Super Dragon robot arm, from \cite {Super_Dragon}\relax }}{5}{figure.caption.3}%
 \contentsline {figure}{\numberline {2.2}{\ignorespaces CardioArm robot, from \cite {ota2009highly_cardioArm}\relax }}{5}{figure.caption.4}%
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Dual-arm industrial robot example, SDA10\relax }}{7}{figure.caption.5}%
-\contentsline {figure}{\numberline {2.4}{\ignorespaces ANAT robot arm\relax }}{8}{figure.caption.6}%
-\contentsline {figure}{\numberline {2.5}{\ignorespaces Macro-Micro robot\relax }}{10}{figure.caption.7}%
-\contentsline {figure}{\numberline {2.6}{\ignorespaces Macro-Micro surgical robot\relax }}{11}{figure.caption.8}%
-\contentsline {figure}{\numberline {2.7}{\ignorespaces Direct visual servoing scheme\relax }}{12}{figure.caption.9}%
-\contentsline {figure}{\numberline {2.8}{\ignorespaces Vision coordinate sistem\relax }}{13}{figure.caption.10}%
-\contentsline {figure}{\numberline {2.11}{\ignorespaces Obstacle avoidance schema\relax }}{17}{figure.caption.13}%
-\contentsline {figure}{\numberline {2.12}{\ignorespaces Sense Plan Act schema\relax }}{18}{figure.caption.14}%
-\contentsline {figure}{\numberline {2.13}{\ignorespaces Sense Act schema\relax }}{19}{figure.caption.15}%
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Dual-arm industrial robot example, SDA10, from \cite {DUAL_ARM_SURVEY}\relax }}{7}{figure.caption.5}%
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Photo and axis schema for the ANAT robot from \cite {highDof_planar_robot_OBAV}\relax }}{8}{figure.caption.6}%
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Macro-Micro robot confiuration from \cite {MacroMicro_sampling}\relax }}{10}{figure.caption.7}%
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Macro-Micro surgical robot from \cite {MacroMicro_surical}\relax }}{11}{figure.caption.8}%
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Direct visual servoing scheme from \cite {visual_servo_image}\relax }}{12}{figure.caption.9}%
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Vision coordinate sistem from \cite {huh2008stereo}\relax }}{13}{figure.caption.10}%
+\contentsline {figure}{\numberline {2.10}{\ignorespaces All images from \cite {zauner2025workspace}\relax }}{15}{figure.caption.12}%
+\contentsline {figure}{\numberline {2.11}{\ignorespaces Obstacle avoidance schema from \cite {maciejewski1985obstacle}\relax }}{17}{figure.caption.13}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Generic activation function\relax }}{22}{figure.caption.16}%
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Activation for Obstacle avoidance\relax }}{23}{figure.caption.17}%
-\contentsline {figure}{\numberline {3.3}{\ignorespaces joint limits activation function, generic values\relax }}{27}{figure.caption.18}%
-\contentsline {figure}{\numberline {3.4}{\ignorespaces With realistic values\relax }}{28}{figure.caption.19}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Generic decreasing and increasing activation function profile\relax }}{22}{figure.caption.14}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Activation function profile for Obstacle avoidance task, with task-relevant values\relax }}{23}{figure.caption.15}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Joint limits activation function profile, with generic values\relax }}{27}{figure.caption.16}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Minimum altitude activation function profile with task-relevant values\relax }}{28}{figure.caption.17}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces photo of the real system, inside the workcell\relax }}{30}{figure.caption.20}%
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Cinematic simulation diagram\relax }}{32}{figure.caption.22}%
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Simplified structure of the class JointRobotTP\relax }}{33}{figure.caption.23}%
-\contentsline {figure}{\numberline {4.5}{\ignorespaces activity diagram of the {\fontfamily {qcr}\selectfont \leavevmode {\color {olive}initialize}} method\relax }}{34}{figure.caption.24}%
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Joint reaching control loop\relax }}{37}{figure.caption.25}%
-\contentsline {figure}{\numberline {4.7}{\ignorespaces Action server flow chart\relax }}{38}{figure.caption.26}%
-\contentsline {figure}{\numberline {4.8}{\ignorespaces Reaching loop flow chart\relax }}{40}{figure.caption.27}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces photo of the real system, inside the workcell\relax }}{30}{figure.caption.18}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Cinematic simulation structure diagram\relax }}{32}{figure.caption.20}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Simplified structure of the class JointRobotTP\relax }}{33}{figure.caption.21}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces activity diagram of the {\fontfamily {qcr}\selectfont \leavevmode {\color {olive}initialize}} method, \ref {chap:appendixA}\relax }}{34}{figure.caption.23}%
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Joint reaching control loop\relax }}{37}{figure.caption.24}%
+\contentsline {figure}{\numberline {4.7}{\ignorespaces {\fontfamily {qcr}\selectfont \leavevmode {\color {olive}execute}}{\fontfamily {qcr}\selectfont \leavevmode {\color {darkgray}();}} method flow chart\relax }}{38}{figure.caption.25}%
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Reaching loop flow chart\relax }}{40}{figure.caption.26}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Car chassis point cloud\relax }}{43}{figure.caption.30}%
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Joint velocity command norm, for each robot\relax }}{45}{figure.caption.33}%
-\contentsline {figure}{\numberline {5.7}{\ignorespaces task activation profile, with respect to \textit {min dist} value\relax }}{48}{figure.caption.36}%
-\contentsline {figure}{\numberline {5.9}{\ignorespaces task activation profile, with respect to \textit {min dist} value\relax }}{50}{figure.caption.38}%
-\contentsline {figure}{\numberline {5.10}{\ignorespaces Position error norm\relax }}{51}{figure.caption.39}%
-\contentsline {figure}{\numberline {5.11}{\ignorespaces Hysteresis effect on chattering\relax }}{52}{figure.caption.40}%
-\contentsline {figure}{\numberline {5.12}{\ignorespaces Schema for multi target test\relax }}{53}{figure.caption.41}%
-\contentsline {figure}{\numberline {5.13}{\ignorespaces Schema for multi target, multi obstacle test\relax }}{57}{figure.caption.46}%
-\contentsline {figure}{\numberline {5.14}{\ignorespaces Single link \textit {snake test} performance\relax }}{58}{figure.caption.47}%
-\contentsline {figure}{\numberline {5.15}{\ignorespaces Multi link \textit {snake test} performance, $9$ links\relax }}{59}{figure.caption.48}%
-\contentsline {figure}{\numberline {5.16}{\ignorespaces Multi link \textit {snake test} performance, $9$ links, with extra final target\relax }}{60}{figure.caption.49}%
-\contentsline {figure}{\numberline {5.17}{\ignorespaces Multi-link test, with six concurrent links\relax }}{66}{figure.caption.55}%
-\contentsline {figure}{\numberline {5.18}{\ignorespaces Multi obstacle test for multi-link approach\relax }}{67}{figure.caption.56}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Car chassis point cloud\relax }}{42}{figure.caption.29}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Position and Orientation error norm for the end effector\relax }}{43}{figure.caption.30}%
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Joint velocity command norm, for each robot. Gain value: $0.05, 0.5$ in the first row, $0.05, 0.5$ in the second\relax }}{44}{figure.caption.32}%
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Joint velocity command norm, for each robot. Gain value: $0.5, 0.1$ in the first row, $0.5, 0.05$ in the second\relax }}{45}{figure.caption.33}%
+\contentsline {figure}{\numberline {5.9}{\ignorespaces Obstacle avoidance task activation profile, with respect to \textit {min dist} value\relax }}{48}{figure.caption.36}%
+\contentsline {figure}{\numberline {5.10}{\ignorespaces Single obstacle test, initial configuration\relax }}{49}{figure.caption.37}%
+\contentsline {figure}{\numberline {5.11}{\ignorespaces Single obstacle test schema showing the different $\delta $ values\relax }}{50}{figure.caption.38}%
+\contentsline {figure}{\numberline {5.12}{\ignorespaces task activation profile, with respect to \textit {min dist} value\relax }}{51}{figure.caption.39}%
+\contentsline {figure}{\numberline {5.13}{\ignorespaces Position error norm\relax }}{52}{figure.caption.40}%
+\contentsline {figure}{\numberline {5.14}{\ignorespaces Hysteresis effect on chattering\relax }}{53}{figure.caption.41}%
+\contentsline {figure}{\numberline {5.15}{\ignorespaces Schema for multi target test\relax }}{54}{figure.caption.42}%
+\contentsline {figure}{\numberline {5.16}{\ignorespaces Single link multi target test result, with single obstacle environment\relax }}{55}{figure.caption.43}%
+\contentsline {figure}{\numberline {5.17}{\ignorespaces Multi link multi target test result, with single obstacle environment\relax }}{57}{figure.caption.44}%
+\contentsline {figure}{\numberline {5.18}{\ignorespaces Six link avoidance task, result\relax }}{57}{figure.caption.45}%
+\contentsline {figure}{\numberline {5.19}{\ignorespaces Nine link avoidance task, result\relax }}{58}{figure.caption.46}%
+\contentsline {figure}{\numberline {5.20}{\ignorespaces Schema for multi target, multi obstacle test\relax }}{59}{figure.caption.47}%
+\contentsline {figure}{\numberline {5.21}{\ignorespaces Single link \textit {snake test} performance\relax }}{60}{figure.caption.48}%
+\contentsline {figure}{\numberline {5.22}{\ignorespaces Multi link \textit {snake test} performance, $9$ links\relax }}{61}{figure.caption.49}%
+\contentsline {figure}{\numberline {5.23}{\ignorespaces Multi link \textit {snake test} performance, $9$ links, with extra final target\relax }}{62}{figure.caption.50}%
+\contentsline {figure}{\numberline {5.24}{\ignorespaces Chassis environment test schema\relax }}{63}{figure.caption.51}%
+\contentsline {figure}{\numberline {5.25}{\ignorespaces Three link avoidance task with low target\relax }}{64}{figure.caption.52}%
+\contentsline {figure}{\numberline {5.26}{\ignorespaces Ill conditioned configuration for multi link avoidance test, three concurrent links\relax }}{65}{figure.caption.53}%
+\contentsline {figure}{\numberline {5.27}{\ignorespaces Three link avoidance task with increase target height\relax }}{66}{figure.caption.54}%
+\contentsline {figure}{\numberline {5.28}{\ignorespaces Six link avoidance task\relax }}{66}{figure.caption.55}%
+\contentsline {figure}{\numberline {5.29}{\ignorespaces Ill conditioned configuration for multi link avoidance test, six concurrent links\relax }}{67}{figure.caption.56}%
+\contentsline {figure}{\numberline {5.30}{\ignorespaces Multi link chassis test, with $\delta = 0.05$\relax }}{68}{figure.caption.57}%
+\contentsline {figure}{\numberline {5.31}{\ignorespaces Single link chassis test, with $\delta = 0.15$ and $\delta = 0.05$\relax }}{68}{figure.caption.58}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }

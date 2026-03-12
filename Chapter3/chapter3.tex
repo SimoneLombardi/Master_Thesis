@@ -5,11 +5,14 @@
 
 \chapter{Methodology}
 \label{chap:third}
-\graphicspath{{Chapter3/Figures/PNG/}{Chapter3/Figures/JPG/}{Chapter3/Figures/}}
-
+\graphicspath{{Chapter3/Figures/PNG/}{Chapter3/Figures/JPG/}{Chapter3/Figures/EPS/}{Chapter3/Figures/}}
+\section{Problem description}
+%The general task in all the performed test consists in controlling the end-effector \textit{position} and \textit{orientation} in a obstructed environment. The \textit{goal} has a known position and orientation, and the robot does not now a priori the position of the obstacles. The environment information are sent to the control algorithm as a set of points and vectors, representing the pair of point at minimum distance between the robot point cloud and the obstacle point cloud. These data is generated for each robot link. During movement it is supposed that contact with the robot constitutes a \textit{failure}, and also a time constraint is set for each task. The \textit{success} of each test is determined by the reaching of the target position with a cartesian error norm that is lower than $trsh = 0.03$. 
+The primary task consist in controlling the robot's end-effector \textit{position} and \textit{orientation} within an obstructed environment. While the goal pose is known, the robot has no a priori knowledge of the obstacles' location. To navigate, the control algorithm receives environmental data as a set of \textbf{closest point pairs} and corresponding vectors, computed between each of the robot’s link point clouds and the obstacle point cloud. The sensor array is composed of time of flight sensors, and is simulated with a series of nodes that will be described in Chap.\ref{chap:fourth}. Any physical contact between the robot and the obstacles is categorized as a \textit{failure}, and each task must be completed within a specific time constraint. A test is deemed successful if the robot reaches the target with a Cartesian error norm below the threshold $trsh = 0.03$. 
 
 \section{Task Priority}
-Continuing the discussion from \ref{equat:TaskPrioritiClassic_generalSolution}, the classic task priority algorithm as explained in \cite{simetti2016novel} lacks the ability to smoothly activate and deactivate \textit{inequality} task when the robot is far from the activation region.
+As outlined in the Problem Description, the controller must simultaneously manage at least two concurrent objectives: a primary pose-reaching task defining objective and a secondary obstacle avoidance safety one. To resolve potential conflicts between these goals, a prioritized control scheme is employed. This approach utilizes null-space projection for lower-priority tasks, ensuring that the primary task does not interfere with the safety task. By decoupling these tasks, the robot maintains its trajectory toward the goal while reactively adjusting its configuration to ensure safety.
+Continuing the discussion from \ref{equat:TaskPrioritiClassic_generalSolution}, the classic task priority algorithm described in \cite{slotine1991general} lacks the ability to smoothly activate and deactivate \textit{inequality} task when the robot is far from the boundary. This can lead to an \textit{over constraining} of the system. To avoid this, the implemented control algorithm is based on the work of \cite{simetti2016novel}, which incorporates in the IK equation an \textit{activation function} that is able to smoothly activate and deactivate inequality constraint tasks, such as the \textit{obstacle avoidance}.
 The compact expression to compute the inverse kinematics at the \textit{k-th} priority level is similar to the classic approach:
 \begin{equation}
 	\begin{aligned}
@@ -17,6 +20,7 @@ The compact expression to compute the inverse kinematics at the \textit{k-th} pr
 		\vec{Q}_k &= \vec{Q}_{k-1}(\mathbb{I}-(\vec{J}_k\vec{Q}_{k-1})^{\#,\vec{A}_k,\mathbb{I}}\vec{J}_k\vec{Q}_{k-1}) \\
 		\vec{\rho}_k &= \vec{\rho}_{k-1} + \vec{Q}_{k-1}(\vec{J}_k\vec{Q}_{k-1})^{\#,\vec{A}_k,\mathbb{I}}\vec{W}_k(\vec{\dot{x}}-\vec{J}_k\vec{\rho}_{k-1})
 	\end{aligned}
+	\label{equat:Modern_TP_algorithm}
 \end{equation}
 \noindent The difference stands in the use of a new \textit{regularized pseudo-inversion operator} that integrates the \textit{activation function} as a weight matrix to modulate the solution of the algorithm to a specific task.\\
 \noindent The operator is defined as:
@@ -29,24 +33,27 @@ where:
 	\item $\vec{A}$ : activation matrix for $k_{th}$ priority level
 	\item $\vec{Q}$ : orthogonal projector for the null-space of task $k_{th}-1$
 	\item $\vec{V}$ : right orthonormal matrix of the SVD decomposition for     $\vec{X}^T\vec{A}\vec{X}+\eta(\mathbb{I}-\vec{Q})^T(\mathbb{I}-\vec{Q})$.
+	\item $\vec{P}$ : SVO regularization martrix, applied in \cite{nakamura1986inverse} 
 \end{itemize}
+\noindent And this approach also account for possible ill-conditioned pseudo inversion, using the aforementioned regularization operator.  
+
 
 \subsection{Task Description}
-In this section I will describe the mathematical formulation of the task I implemented in my control loop. To simplify the notation, all the matrices, if not stated otherwise are projected on an inertial reference frame $\langle\textit{world}\rangle$.
+This section will describe the mathematical formulation of the task I implemented in my control loop. To simplify the notation, all the matrices, if not stated otherwise, are projected on an inertial reference frame $\langle\textit{world}\rangle$.
 
 
 \subsection{Obstacle Avoidance}
-For the \textit{Obstacle Avoidance} task I used the approach proposed in \cite{maciejewski1985obstacle}, after computing the point of the robot body at \textit{minimum distance} from the obstacle, I used said point to apply a  desired velocity in the direction directly opposite to the distance vector.
+For the \textit{Obstacle Avoidance} task the approach proposed in \cite{maciejewski1985obstacle} was used. After computing the point of the robot body at \textit{minimum distance} from the obstacle, at said point the desired velocity was applied. In the opposite direction of the distance vector.
 % single point
 \\ \noindent \textbf{Task reference}:\\
-\noindent The \textit{Reference rate} is considered as the \textit{desired shape} of the derivative of the variable I want to control.
+\noindent The \textit{Reference rate} is considered as the \textit{desired shape} of the derivative of the variable to control.
 To be more precise:
 \begin{itemize}
 	\item if $x > \bar{x}$ then $\dot{\bar{x}} < 0$
 	\item if $x < \bar{x}$ then $\dot{\bar{x}} > 0$
 	\item if $x = \bar{x}$ then $\dot{\bar{x}} = 0$
 \end{itemize}
-In the case of the \textit{obstacle avoidance} task, the variable I want to control is the \textit{minimum distance} of the robot body from the environment.
+In the case of the \textit{obstacle avoidance} task, the controlled variable is the \textit{distance} of the robot body from the obstacles in the environment.
 \noindent The \textit{distance} vector and the \textit{point} are retrieved in a topic, and are already projected in the $\langle\textit{world}\rangle$ reference frame.\\
 \begin{equation}
 	d = (P_o - P_r)\hspace{0.5cm};\hspace{0.5cm}\dot{\vec{\bar{x}}} = -d
@@ -55,11 +62,11 @@ In the case of the \textit{obstacle avoidance} task, the variable I want to cont
 	\item $P_o$ and $P_r$: point pair for \textit{Obstacle} and \textit{Robot}, that have the minimum distance from each other.
 	\item $d$: minimum distance vector.
 \end{itemize}
-Since in the original paper the \textit{planar} and \textit{spatial} case are treated separatley, in chap.\ref{chap:fifth} I will experiment with both the vector as is, and without the $z$ component. To understand how the proposed approach behaves in the two cases. \\
+Since in the original paper the \textit{planar} and \textit{spatial} case are treated separately, in chap.\ref{chap:fifth} experiments will be conducted with both the vector as is, and without the $z$ component. To understand how the proposed approach behaves in the two cases. \\
 
 \noindent \textbf{Activation function}: \\
-Since this is a \textit{inequality} task, we want to avoid over constraining the system. To do so I employed a smooth activation function, whose value change from $0$ to $1$ as the distance from the obstacle gets closer to the threshold.
-The the activation value is computed as follows:\\
+Since this is a \textit{inequality} task, we want to avoid over-constraining the system. To do so, a smooth activation function was employed, whose value changes from $0$ to $1$ as the distance from the obstacle gets closer to the threshold.
+The activation value, for a function that decreases as it gets further from a minimum value, is computed as follows:\\
 \begin{equation}
 	a = 
 	\begin{cases}
@@ -67,36 +74,48 @@ The the activation value is computed as follows:\\
 		\frac{1}{2}[(\cos(\pi\frac{x-x_{min}}{\delta})+1)] & x\in[x_{min},x_{min}+\delta] \\[5pt]
 		0 &  x > x_{min} + \delta
 	\end{cases}
+	\label{equat:activation_function_equation_decreasing}
 \end{equation}
-
+\noindent And for the opposite case, increasing going towards a maximum value:
+\begin{equation}
+	a = 
+	\begin{cases}
+		1 &  x < x_{min} \\[5pt]
+		\frac{1}{2}[(\cos(\pi\frac{x-x_{min}}{\delta+\pi})+1)] & x\in[x_{min},x_{min}+\delta] \\[5pt]
+		0 &  x > x_{min} + \delta
+	\end{cases}
+	\label{equat:activation_function_equation_increasing}
+\end{equation}
+\noindent Where:
 \begin{itemize}
-	\item $x$ : State variable I want to control.
-	\item $x_{min}$: Lowest possible value I want the variable $x$ to have.
+	\item $x$ : State variable to be controlled.
+	\item $x_{min}$: Lowest value for the controlled variable.
+	\item $x_{min}$: Highest value for the controlled variable.
 	\item $\delta$: Interval length in which my \textit{activation value} should go from $0$ to $1$ or vice versa. 
 \end{itemize}
+\noindent Here a visualization for the profile of \ref{equat:activation_function_equation_decreasing} and \ref{equat:activation_function_equation_increasing} respectively:
+\begin{figure}[H]
+	\centering
+	\hspace*{-1.3cm}
+	\includegraphics[scale=0.35]{ActFcn.eps}
+	\caption{Generic decreasing and increasing activation function profile}
+	\label{fig:DecreasingActFcn}
+\end{figure}
+\noindent
+For the \textit{obstacle avoidance} task, the activation function is a diagonal $3\times 3$ matrix, which has a different activation value for each component of the \textit{distance} vector. The dimension for the planar case is $2\times 2$ considering only the $x$ and $y$ axis.
+\noindent
+Here is an example of an activation profile for the \textit{obstacle avoidance} task, the \textit{saturation} distance si set to $5$cm, corresponding to the $x_{min}$ value, while the transition region has length $\delta = 50$cm, in Chap. \ref{chap:fifth} some test will be performed with different $\delta$.\\ 
 
 \begin{figure}[H]
 	\centering
 	\hspace*{-2.5cm}
-	\includegraphics[scale=0.28]{ActFcn.jpg}
-	\caption{Generic activation function}
-	\label{fig:DecreasingActFcn}
-\end{figure}
-\noindent
-For the \textit{obstacle avoidance} task the activation function is a diagonal $3\times 3$ matrix, that has a different activation value for each component of the \textit{distance} vector.
-\noindent
-Here is an example of an activation profile for the \textit{obstacle avoidance} task, the \textit{saturation} distance si set to $10$cm, while the transition region has lenght $\delta = 50$cm.\\ 
-
-\begin{figure}[H]
-	\centering
-	\hspace*{-1.8cm}
-	\includegraphics[scale=0.28]{DecreasingActFcn_realValues_good.jpg}
-	\caption{Activation for Obstacle avoidance}
+	\includegraphics[scale=0.38]{DecreasingActFcn_realValues_good.eps}
+	\caption{Activation function profile for Obstacle avoidance task, with task-relevant values}
 	\label{fig:DecreasingActFcn_realValues_obav}
 \end{figure}
-\noindent It is clear that as the \textit{distance} goes to $0$ the activation values increases, saturating at $1$ for \textit{distances} lower than $10$cm.\\
+\noindent It is clear that as the \textit{distance} from the obstacle goes to $0$ the activation values increases, saturating at $1$ for \textit{distances} lower than $5$cm.\\
 \noindent \textbf{Task Jacobian}:\\
-For this task, different \textit{jacobian} matrices must be computed depending on the link on which the \textit{minimum distance point} is located. To handle this efficiently, the jacobians are constructed \textit{colum} by \textit{colum}, resulting in a more compact and readable implementation. I used the same method throughout my thesis.\\
+For this task, different \textit{Jacobian} matrices must be computed depending on the link on which the \textit{minimum distance point} is located. To handle this efficiently, the Jacobians are constructed \textit{colum} by \textit{colum}, resulting in a more compact and readable implementation. The same method was used throughout the thesis.\\
 \noindent 
 In particular, the colum relative to the $i_{th}$ link is computed as:\\
 \begin{equation}
@@ -136,23 +155,22 @@ In particular, the colum relative to the $i_{th}$ link is computed as:\\
 \end{equation}
 
 \subsection{End Effector Target}
-This is the \textit{goal-driven task} in my simulation of the working environment.
-\\ \\
+In this section the \textit{pose reaching} task for the end-effector is defined.\\
 \noindent \textbf{Task reference}:\\
-In this case the task reference is the \textit{cartesian error} between the \textit{tool} frame and the \textit{end-effector} frame.
-Computed in the simulation using the \textit{transformation buffer}, starting from names of the \textit{end effector} and \textit{tool} frame the translation error:
+In this case, the task reference is the \textit{cartesian error} between the \textit{tool} frame and the \textit{end-effector} frame.
+Computed in the simulation using the \textit{transformation buffer}, starting from names of the \textit{end effector} and \textit{tool} frame the linear error:
 \begin{equation}
-	err_{goal/tool}^{L} = \leftindex^{kb}{(P_g - P_t)}
+	err_{goal/tool}^{L} = \leftindex^{w}{(P_g - P_t)}
 \end{equation}
-all projected in the end effector frame. For the angular error I use the quaternion expression of the two rotation matrices:
+all projected in the end effector frame. For the angular error, the quaternion expression of the two rotation matrices was used:
 \begin{equation}
-	\vec{R}_{goal}^{kb} = \rho_{goal} \hspace{0,25cm};\hspace{0,25cm} \vec{R}_{tool}^{kb} = \rho_{tool}
+	\vec{R}_{goal}^{w} = \rho_{goal} \hspace{0,25cm};\hspace{0,25cm} \vec{R}_{tool}^{w} = \rho_{tool}
 \end{equation}
-I than compute the error using the quaternions that gives:
+I then compute the error using the quaternions that gives:
 \begin{equation}
 	\rho_{err} = \rho_{goal}^{-1} \cdot \rho_{tool}
 \end{equation}
-lastly this I took the vector part of this quaternion to multiply to the rotation $\vec{R}_{tool}^{kb}$:
+lastly this I took the vector part of this quaternion to multiply by the rotation $\vec{R}_{tool}^{w}$:
 \begin{equation}
 	\rho_{err} = 
 	\begin{pmatrix}
@@ -168,21 +186,21 @@ lastly this I took the vector part of this quaternion to multiply to the rotatio
 	\hspace{0,25cm};\hspace{0,25cm}
 	\vec{v}_e = \vec{u}\sin\left(\frac{\theta}{2}\right)
 \end{equation}
-and $\vec{v}_e$ is proportional to the angle error, for small angle. The vector I used as \textit{angular part} of the cartesian error is:	
+and $\vec{v}_e$ is proportional to the angle error, for small angles. The vector I used as \textit{angular part} of the cartesian error is: 
 \begin{equation}
-	err_{goal/tool}^{A} = - \vec{R}_{tool}^{kb} \vec{v}_e
+	err_{goal/tool}^{A} = - \vec{R}_{tool}^{w} \vec{v}_e
 \end{equation}
 
 \noindent \textbf{Activation function}: \\
-Since this in an \textit{equality task} it has to be always active. And given the dimension of its \textit{reference rate}: $\dot{\bar{x}} \in \mathbb{R}^{6\times 1}$ the activation function is a identity matrix.
+Since this is an \textit{equality task}, it has to be always active. And given the dimension of its \textit{reference rate}: $\dot{\bar{x}} \in \mathbb{R}^{6\times 1}$, the activation function is an identity matrix.
 \begin{equation}
-	\vec{A} = \vec{I} \in \mathbb{R}^{6\times 6}
+	\vec{A} = \mathbb{I} \in \mathbb{R}^{6\times 6}
 \end{equation}
 \noindent \textbf{Task Jacobian}:\\
-The task jacobian is the \textit{complete geometric jacobian} for the \textit{end effector}, computed as shown in \ref{equat:AnalyticJacobianFormula}.
+The task jacobian is the \textit{complete geometric jacobian} for the \textit{end effector}, computed column by column as shown in \ref{equat:AnalyticJacobianFormula}.
 
 \subsubsection{Goal broadcasting}
-As the \textit{end effector} target for the \textit{reaching} task I perform a series of transformation from the initial message that is sent trough the \textit{Action server} as two vectors:
+As the \textit{end effector} target for the \textit{reaching} task, a series of transformations was performed from the initial message that is sent through the \textit{Action server} as two vectors:
 \begin{align}
 	\vec{r} = \begin{pmatrix}
 		x \\
@@ -197,25 +215,25 @@ As the \textit{end effector} target for the \textit{reaching} task I perform a s
 	\end{pmatrix}
 \end{align}
 
-The first represent the desired translation, and the desired rotation as \textit{roll, pitch, yaw} angles.
-The projection frames of this vector to define the goal position and orientation could be either the \textit{end effector} frame, or, the \textit{kuka base} frame. This was done for experimental purposes, for easly sequencing different goals, or to repeat reaching tasks to a specific position in the environment.
+\noindent The first represents the desired translation, and the desired rotation as \textit{roll, pitch, yaw} angles.
+The projection frames of this vector to define the goal position and orientation could be either the \textit{end effector} frame, or the \textit{world} frame. This was done for experimental purposes, for easily sequencing different goals, or to repeat reaching tasks to a specific position in the environment.
 
-For the orientation of the goal, $\vec{\rho}$ is used to compose the rotation matrix that is than projected on the desired frame:
+\noindent For the orientation of the goal, $\vec{\rho}$ is used to compose the rotation matrix that is then projected on the desired frame:
 \begin{align}
 	\vec{R}_{goal} &= \vec{R}_{z}(\psi) \cdot \vec{R}_{y}(\theta) \cdot \vec{R}_{x}(\phi) \\[4pt]
-	\langle\textit{world}\rangle: \leftindex^{w}{\vec{R}}_{goal} &= \vec{I} \cdot \vec{R}_{goal} \\
-	\langle\textit{end\_effector}\rangle: \leftindex^{ee}{\vec{R}}_{goal} &= \vec{R}_{ee}^{w} \cdot \vec{R}_{goal}
+	\langle\textit{world}\rangle: \leftindex^{w}{\vec{R}}^{w}_{goal} &= \mathbb{I} \cdot \vec{R}_{goal} \\
+	\langle\textit{end\_effector}\rangle: \leftindex^{w}{\vec{R}}^{ee}_{goal} &= \vec{R}_{ee}^{w} \cdot \vec{R}_{goal}
 \end{align}
-In the first case the projection matrix is the identity since $\langle\textit{world}\rangle \equiv \langle\textit{world}\rangle$.
-Same process is done for the translation vector:
+In the first case, the projection matrix is the identity since there is no intermediate frame.
+The same process is done for the translation vector:
 \begin{align}
-	\langle\textit{world}\rangle: \leftindex^{w}{\vec{r}}_{goal} &= \vec{0} + \vec{r}_{goal}\\
-	\langle\textit{end\_effector}\rangle: \leftindex^{ee}{\vec{r}}_{goal} &= \vec{r}_{ee}^{w} + \vec{r}_{goal}
+	\langle\textit{world}\rangle: \leftindex^{w}{\vec{r}}^{w}_{goal} &= \vec{0} + \vec{r}_{goal}\\
+	\langle\textit{end\_effector}\rangle: \leftindex^{w}{\vec{r}}^{ee}_{goal} &= \vec{r}_{ee}^{w} + \vec{r}_{goal}
 \end{align}
-Than the rotation matrix and the translation vector are use to publish the $\langle\textit{goal}\rangle$ in rviz.
+Then the rotation matrix and the translation vector are use to publish the $\langle\textit{goal}\rangle$ in RViz.
 
 \subsection{Joint limits}
-This task is used to mantain the joint variables inside the \textit{mechanical limits} of the two robots, the values of those limits were retrived by the respective data sheets.\\
+This task is used to maintain the joint variables inside the \textit{mechanical limits} of the two robots, the values of those limits were retrieved by the respective data sheets.\\
 \textbf{Task reference}:\\
 \noindent Since the joint limit task has a range of acceptable value I want to maintain each variable inside this range.
 The reference rate is computed as:\\
@@ -233,50 +251,49 @@ Where:
 \end{itemize}
 
 \noindent \textbf{Activation function}:\\
-To compute the activation function, I summed the resulting value of a decreasing and increasing \textit{bell shaped function}, using respectively the lower and upper joint limits as the extreme.\\
+The activation function value is the result of the sum of a decreasing and increasing \textit{bell-shaped function}, using the lower and upper joint limits as the extremes.\\
 \noindent The resulting function has the following general shape:
 \begin{figure}[H]
 	\centering
-	\hspace*{-1.8cm}
-	\includegraphics[scale=0.28]{jl_activation_good.jpg}
-	\caption{joint limits activation function, generic values}
+	\hspace*{-3.0cm}
+	\includegraphics[scale=0.4]{jl_activation_good.eps}
+	\caption{Joint limits activation function profile, with generic values}
 	\label{fig:jl_act_fnc}
 \end{figure}
-\noindent In the real task the value range for the $\dot{\bar{x}}$ is given from the \textit{joint limits values} of each joint, and the $0$ is given by the \textit{average value} of the range.\\
+\noindent In the real task, the value for the $x$ is the $q$ of each joint, while the values of the activation function range are computed from the joint motion range. Where $x_{min}$ and $x_{max}$ are the range limits and $x_{avg}$ is the average value of the two.\\
 \noindent \textbf{Task reference}:\\
-Lastly the task jacobian is an \textit{identity} $\mathbb{R}^{12\times 12}$ matrix, since I can independently control each joint variable.
+Lastly, the task jacobian is an \textit{identity} $\mathbb{R}^{12\times 12}$ matrix, since each joint can be independently controlled.
 
 \subsection{End Effector minimum altitude}
-This task is used to keep the end effector away from the floor. I implemented this task to check the correctness of the \textit{task priority} algorithm, to have a more predictable task with which I could better asses the expected behavior of the system.\\
-\\ \\
+This task is used to keep the end effector away from the floor. This task was implemented to check the correctness of the \textit{task priority} algorithm, to have a more predictable task with which I could better assess the expected behavior of the system.\\
+\\
 \textbf{Task reference}:\\
 \noindent 
-The reference rate for this task is computed using the $z$ coordinate of the traslation from the $\langle\textit{world}\rangle$ frame to $\langle\textit{end\_effector}\rangle$. 
+The reference rate for this task is computed using the $z$ coordinate of the translation from the $\langle\textit{world}\rangle$ frame to $\langle\textit{end\_effector}\rangle$. 
 \begin{equation}
-	\textit{Reference rate: } \dot{\bar{x}}_z = \lambda \cdot (\vec{\bar{x}} + \delta - \vec{z}_{ee}^{w})
+	\textit{Reference rate: } \dot{\bar{x}}_z = \lambda \cdot (\vec{\bar{x}}_{min} + \delta - \vec{z}_{ee}^{w})
 \end{equation}
 The complete vector has all zero exept on the $z$ coordinate.
 \begin{equation}
 	\textit{Reference rate: } \vec{\dot{\bar{x}}} = [0, 0, \dot{\bar{x}}_z, 0, 0, 0]^T
 \end{equation}
-\\
-In the case of the \textit{Minimual altitude task} the variable I want to control is the $z$ of the \textit{end effector} of the robot, and to impose a minimum altitude $z_{min}$. Finally the $\delta$ keeps count of the activation region, meaning that the task will be smoothly activated starting from $z_{min} + \delta$ to $z_{min}$.
+\noindent In the case of the \textit{Minimual altitude task} the variable I want to control is the $z$ of the \textit{end effector} of the robot, and to impose a minimum altitude $z_{min}$. Finally, the $\delta$ keeps count of the activation region, meaning that the task will be smoothly activated starting from $z_{min} + \delta$ to $z_{min}$.
 \\ \\
 \noindent \textbf{Activation function}: \\
 
 \begin{figure}[H]
 	\centering
-	\hspace*{-2.35cm}
-	\includegraphics[scale=0.3]{DecreasingActFcn_realValues_good_minalt.jpg}
-	\caption{With realistic values}
+	\hspace*{-3.0cm}
+	\includegraphics[scale=0.4]{DecreasingActFcn_realValues_good_minalt.eps}
+	\caption{Minimum altitude activation function profile with task-relevant values}
 	\label{fig:DecreasingActFcn_rv}
 \end{figure}
-In this case I used a $(6 \times 6)$ zero matrix as my activation function, than I inserted the value in the third position of the major diagonal, ending up with:
+\noindent In this case, a $(6 \times 6)$ zero matrix was used as activation function, than the activation value was inserted in the third position of the major diagonal, ending up with:
 \begin{equation}
 	\vec{A}_{min alt} = \textit{diag} (0, 0, a_z, 0, 0, 0)
 \end{equation}
 using $z_min = 0,30$\textit{m} as my lower limit and $\delta = 0,1$\textit{m}, and the function is tuned to yield $y \in [0,1]$.
 \\ \\
 \noindent \textbf{Task Jacobian}:\\
-The task jacobian is equal to the third row of the \textit{geometric jacobian} of the robot, to compute it I used the same method described in \ref*{equat:AnalyticJacobianFormula} with no rigid body trasformation.
+The task jacobian is equal to the third row of the \textit{geometric jacobian} of the robot, to compute it the same method described in \ref*{equat:AnalyticJacobianFormula} was used, but with no rigid body trasformation.
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.2.4)  9 MAR 2026 15:10
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.2.4)  12 MAR 2026 19:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -615,8 +615,26 @@ Package caption Info: hyperref package is loaded.
 \c@subfigure=\count317
 \c@subtable=\count318
 )
-LaTeX Font Info:    Trying to load font information for OT1+qbk on input line 8
-8.
+(/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf.sty
+Package: epstopdf 2020-01-24 v2.11 Conversion with epstopdf on the fly (HO)
+
+(/usr/share/texlive/texmf-dist/tex/latex/grfext/grfext.sty
+Package: grfext 2019/12/03 v1.3 Manage graphics extensions (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.jpg,.pdf,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 504.
+
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+)))
+LaTeX Font Info:    Trying to load font information for OT1+qbk on input line 9
+0.
 
 (/usr/share/texmf/tex/latex/tex-gyre/ot1qbk.fd
 File: ot1qbk.fd 2009/09/25 v1.2 font definition file for OT1/qbk
@@ -627,24 +645,24 @@ File: ot1qbk.fd 2009/09/25 v1.2 font definition file for OT1/qbk
 (./Conclusions/conclusions.aux) (./Appendix1/appendix1.aux))
 \openout1 = `RobEngThesisTemplate.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 88.
-LaTeX Font Info:    ... okay on input line 88.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 88.
-LaTeX Font Info:    ... okay on input line 88.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 88.
-LaTeX Font Info:    ... okay on input line 88.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 88.
-LaTeX Font Info:    ... okay on input line 88.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 88.
-LaTeX Font Info:    ... okay on input line 88.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 88.
-LaTeX Font Info:    ... okay on input line 88.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 88.
-LaTeX Font Info:    ... okay on input line 88.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 88.
-LaTeX Font Info:    ... okay on input line 88.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 88.
-LaTeX Font Info:    ... okay on input line 88.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 90.
+LaTeX Font Info:    ... okay on input line 90.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 90.
+LaTeX Font Info:    ... okay on input line 90.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 90.
+LaTeX Font Info:    ... okay on input line 90.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 90.
+LaTeX Font Info:    ... okay on input line 90.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 90.
+LaTeX Font Info:    ... okay on input line 90.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 90.
+LaTeX Font Info:    ... okay on input line 90.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 90.
+LaTeX Font Info:    ... okay on input line 90.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 90.
+LaTeX Font Info:    ... okay on input line 90.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 90.
+LaTeX Font Info:    ... okay on input line 90.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -659,23 +677,15 @@ LaTeX Font Info:    ... okay on input line 88.
 \MPnumerator=\count323
 \makeMPintoPDFobject=\count324
 \everyMPtoPDFconversion=\toks31
-) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
-Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
-Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
-85.
-
-(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
-File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
-e
-))
+)
 (/usr/share/texlive/texmf-dist/tex/latex/translations/translations-basic-dictio
 nary-english.trsl
 File: translations-basic-dictionary-english.trsl (english translation file `tra
 nslations-basic-dictionary')
 )
 Package translations Info: loading dictionary `translations-basic-dictionary' f
-or `english'. on input line 88.
-Package hyperref Info: Link coloring ON on input line 88.
+or `english'. on input line 90.
+Package hyperref Info: Link coloring ON on input line 90.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
@@ -688,15 +698,15 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count325
 )
-LaTeX Info: Redefining \ref on input line 88.
-LaTeX Info: Redefining \pageref on input line 88.
-LaTeX Info: Redefining \nameref on input line 88.
+LaTeX Info: Redefining \ref on input line 90.
+LaTeX Info: Redefining \pageref on input line 90.
+LaTeX Info: Redefining \nameref on input line 90.
 
 (./RobEngThesisTemplate.out) (./RobEngThesisTemplate.out)
 \@outlinefile=\write4
 \openout4 = `RobEngThesisTemplate.out'.
 
-Package backref Info: ** backref set up for natbib ** on input line 88.
+Package backref Info: ** backref set up for natbib ** on input line 90.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
 Package epstopdf Info: Source file: <Figures//logo_unige.eps>
@@ -707,7 +717,7 @@ Package epstopdf Info: Source file: <Figures//logo_unige.eps>
 (epstopdf)                    size: 12471 bytes
 (epstopdf)             Command: <repstopdf --outfile=Figures//logo_unige-eps-co
 nverted-to.pdf Figures//logo_unige.eps>
-(epstopdf)             \includegraphics on input line 97.
+(epstopdf)             \includegraphics on input line 99.
 Package epstopdf Info: Output file is already uptodate.
 
 
@@ -718,14 +728,14 @@ pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
 File: Figures//logo_unige-eps-converted-to.pdf Graphic file (type pdf)
 <use Figures//logo_unige-eps-converted-to.pdf>
 Package pdftex.def Info: Figures//logo_unige-eps-converted-to.pdf  used on inpu
-t line 97.
+t line 99.
 (pdftex.def)             Requested size: 142.26378pt x 121.41493pt.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 97.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 99.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 97.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 99.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
@@ -738,12 +748,12 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./Figures//logo_unige-eps-
-converted-to.pdf>] [2]
+converted-to.pdf>]
 Underfull \hbox (badness 10000) has occurred while \output is active
 []
  []
 
-[3]
+[2]
 \openout2 = `Originality/originality.aux'.
 
  (./Originality/originality.tex
@@ -770,18 +780,6 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 \openout2 = `Abstract/abstract.aux'.
 
  (./Abstract/abstract.tex
-Overfull \hbox (6.68794pt too wide) in paragraph at lines 21--28
-[]\OT1/qbk/m/n/12 The use of robotic sys-tem for in-dus-trial ap-pli-ca-tion ha
-s steadily
- []
-
-
-Overfull \hbox (28.82799pt too wide) in paragraph at lines 21--28
-\OT1/qbk/m/n/12 shift of the min-i-mum dis-tance point and reach-ing of ill-con
-ditioned
- []
-
-
 Underfull \hbox (badness 10000) has occurred while \output is active
 []
  []
@@ -801,9 +799,19 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 \openout5 = `RobEngThesisTemplate.toc'.
 
  [5] (./RobEngThesisTemplate.lof
-LaTeX Font Info:    Trying to load font information for OT1+qcr on input line 2
-4.
+Overfull \hbox (0.15065pt too wide) in paragraph at lines 15--15
+ [][] []\OT1/qbk/m/n/12 Generic de-creas-ing and in-creas-ing ac-ti-va-tion fun
+c-tion pro- 
+ []
 
+
+Overfull \hbox (4.70349pt too wide) in paragraph at lines 16--16
+ [][] []\OT1/qbk/m/n/12 Activation func-tion pro-file for Ob-sta-cle avoid-ance
+ task, with 
+ []
+
+LaTeX Font Info:    Trying to load font information for OT1+qcr on input line 2
+3.
 (/usr/share/texmf/tex/latex/tex-gyre/ot1qcr.fd
 File: ot1qcr.fd 2009/09/25 v1.2 font definition file for OT1/qcr
 ) [6
@@ -832,9 +840,9 @@ l.23
 
 
 ]
-Overfull \hbox (2.04654pt too wide) in paragraph at lines 24--25
-\OT1/qbk/m/n/12 that dif-fer-en-ti-ate it from con-ven-tional human-robot col-l
-ab-o-ra-tion frame-
+Overfull \hbox (8.91054pt too wide) in paragraph at lines 24--25
+\OT1/qbk/m/n/12 dif-fer-en-ti-ate it from con-ven-tional human-robot col-lab-o-
+ra-tion frame-works: 
  []
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has 
@@ -842,17 +850,12 @@ been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.38 
-      [2])pdfTeX warning (ext4): destination with the same identifier (name{pag
-e.3}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.116 \include{Chapter1/chapter1}
-                                  [3]
+      [2]) [3]
 \openout2 = `Chapter2/chapter2.aux'.
 
  (./Chapter2/chapter2.tex
 Chapter 2.
-<Chapter2/Figures//SuperDragon.png, id=399, 425.59pt x 311.1625pt>
+<Chapter2/Figures//SuperDragon.png, id=451, 425.59pt x 311.1625pt>
 File: Chapter2/Figures//SuperDragon.png Graphic file (type png)
 <use Chapter2/Figures//SuperDragon.png>
 Package pdftex.def Info: Chapter2/Figures//SuperDragon.png  used on input line 
@@ -864,7 +867,7 @@ Package pdftex.def Info: Chapter2/Figures//SuperDragon.png  used on input line
 
 
 ]
-<Chapter2/Figures//cardio_arm.jpg, id=410, 220.825pt x 313.17pt>
+<Chapter2/Figures//cardio_arm.jpg, id=463, 220.825pt x 313.17pt>
 File: Chapter2/Figures//cardio_arm.jpg Graphic file (type jpg)
 <use Chapter2/Figures//cardio_arm.jpg>
 Package pdftex.def Info: Chapter2/Figures//cardio_arm.jpg  used on input line 3
@@ -872,7 +875,7 @@ Package pdftex.def Info: Chapter2/Figures//cardio_arm.jpg  used on input line 3
 (pdftex.def)             Requested size: 176.66022pt x 250.53633pt.
  [5 <./Chapter2/Figures//SuperDragon.png> <./Chapter2/Figures//cardio_arm.jpg>]
  [6]
-<Chapter2/Figures//SDA10_500_dualArmManipulator.jpg, id=423, 120.45pt x 120.45p
+<Chapter2/Figures//SDA10_500_dualArmManipulator.jpg, id=476, 120.45pt x 120.45p
 t>
 File: Chapter2/Figures//SDA10_500_dualArmManipulator.jpg Graphic file (type jpg
 )
@@ -881,7 +884,7 @@ Package pdftex.def Info: Chapter2/Figures//SDA10_500_dualArmManipulator.jpg  us
 ed on input line 64.
 (pdftex.def)             Requested size: 180.67453pt x 180.67453pt.
  [7 <./Chapter2/Figures//SDA10_500_dualArmManipulator.jpg>]
-<Chapter2/Figures//ANAT-robot-arm.jpeg, id=439, 853.1875pt x 383.4325pt>
+<Chapter2/Figures//ANAT-robot-arm.jpeg, id=496, 853.1875pt x 383.4325pt>
 File: Chapter2/Figures//ANAT-robot-arm.jpeg Graphic file (type jpg)
 <use Chapter2/Figures//ANAT-robot-arm.jpeg>
 Package pdftex.def Info: Chapter2/Figures//ANAT-robot-arm.jpeg  used on input l
@@ -903,14 +906,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 128--129
 
  []
 
-<Chapter2/Figures//macro_micro_example.png, id=462, 618.31pt x 608.2725pt>
+<Chapter2/Figures//macro_micro_example.png, id=516, 618.31pt x 608.2725pt>
 File: Chapter2/Figures//macro_micro_example.png Graphic file (type png)
 <use Chapter2/Figures//macro_micro_example.png>
 Package pdftex.def Info: Chapter2/Figures//macro_micro_example.png  used on inp
 ut line 133.
 (pdftex.def)             Requested size: 278.23692pt x 273.7201pt.
 [9]
-<Chapter2/Figures//MacroMicro_surgical.png, id=473, 561.09625pt x 578.16pt>
+<Chapter2/Figures//MacroMicro_surgical.png, id=536, 561.09625pt x 578.16pt>
 File: Chapter2/Figures//MacroMicro_surgical.png Graphic file (type png)
 <use Chapter2/Figures//MacroMicro_surgical.png>
 Package pdftex.def Info: Chapter2/Figures//MacroMicro_surgical.png  used on inp
@@ -918,7 +921,7 @@ ut line 152.
 (pdftex.def)             Requested size: 252.49098pt x 260.16959pt.
  [10 <./Chapter2/Figures//macro_micro_example.png>] [11 <./Chapter2/Figures//Ma
 croMicro_surgical.png>]
-<Chapter2/Figures//Direct-visual-servoing-scheme.jpeg, id=487, 69.81282pt x 31.
+<Chapter2/Figures//Direct-visual-servoing-scheme.jpeg, id=554, 69.81282pt x 31.
 0761pt>
 File: Chapter2/Figures//Direct-visual-servoing-scheme.jpeg Graphic file (type j
 pg)
@@ -926,38 +929,38 @@ pg)
 Package pdftex.def Info: Chapter2/Figures//Direct-visual-servoing-scheme.jpeg  
 used on input line 181.
 (pdftex.def)             Requested size: 349.06319pt x 155.38002pt.
-<Chapter2/Figures//stereoVision_schema.png, id=492, 865.2325pt x 331.2375pt>
+<Chapter2/Figures//stereoVision_schema.png, id=563, 865.2325pt x 331.2375pt>
 File: Chapter2/Figures//stereoVision_schema.png Graphic file (type png)
 <use Chapter2/Figures//stereoVision_schema.png>
 Package pdftex.def Info: Chapter2/Figures//stereoVision_schema.png  used on inp
-ut line 194.
+ut line 193.
 (pdftex.def)             Requested size: 346.08687pt x 132.49265pt.
  [12 <./Chapter2/Figures//Direct-visual-servoing-scheme.jpeg>]
-Overfull \hbox (5.5541pt too wide) in paragraph at lines 205--206
-\OT1/qbk/m/n/12 im-ple-men-ta-tion that is task and en-vi-ron-ment spe-cific, w
-hich means
+Overfull \hbox (7.79808pt too wide) in paragraph at lines 205--206
+\OT1/qbk/m/n/12 im-ple-men-ta-tion that is task and environment-specific, which
+ means
  []
 
 [13 <./Chapter2/Figures//stereoVision_schema.png>]
-<Chapter2/Figures//workspace_sensor.png, id=511, 454.69875pt x 382.42876pt>
+<Chapter2/Figures//workspace_sensor.png, id=584, 454.69875pt x 382.42876pt>
 File: Chapter2/Figures//workspace_sensor.png Graphic file (type png)
 <use Chapter2/Figures//workspace_sensor.png>
 Package pdftex.def Info: Chapter2/Figures//workspace_sensor.png  used on input 
 line 227.
 (pdftex.def)             Requested size: 202.15909pt x 170.03145pt.
-<Chapter2/Figures//sensorKinectV2.png, id=512, 454.69875pt x 382.42876pt>
+<Chapter2/Figures//sensorKinectV2.png, id=585, 454.69875pt x 382.42876pt>
 File: Chapter2/Figures//sensorKinectV2.png Graphic file (type png)
 <use Chapter2/Figures//sensorKinectV2.png>
 Package pdftex.def Info: Chapter2/Figures//sensorKinectV2.png  used on input li
 ne 233.
 (pdftex.def)             Requested size: 202.15909pt x 170.03145pt.
-<Chapter2/Figures//sensorOmronLidar.png, id=513, 447.6725pt x 275.0275pt>
+<Chapter2/Figures//sensorOmronLidar.png, id=586, 447.6725pt x 275.0275pt>
 File: Chapter2/Figures//sensorOmronLidar.png Graphic file (type png)
 <use Chapter2/Figures//sensorOmronLidar.png>
 Package pdftex.def Info: Chapter2/Figures//sensorOmronLidar.png  used on input 
 line 241.
 (pdftex.def)             Requested size: 202.15909pt x 124.19766pt.
-<Chapter2/Figures//sensotIntelRealSense.png, id=514, 475.7775pt x 284.06125pt>
+<Chapter2/Figures//sensotIntelRealSense.png, id=587, 475.7775pt x 284.06125pt>
 File: Chapter2/Figures//sensotIntelRealSense.png Graphic file (type png)
 <use Chapter2/Figures//sensotIntelRealSense.png>
 Package pdftex.def Info: Chapter2/Figures//sensotIntelRealSense.png  used on in
@@ -966,179 +969,214 @@ put line 247.
  [14] [15 <./Chapter2/Figures//workspace_sensor.png> <./Chapter2/Figures//senso
 rKinectV2.png> <./Chapter2/Figures//sensorOmronLidar.png> <./Chapter2/Figures//
 sensotIntelRealSense.png>]
-<Chapter2/Figures//obav_scheme.png, id=538, 686.565pt x 630.355pt>
+<Chapter2/Figures//obav_scheme.png, id=612, 686.565pt x 630.355pt>
 File: Chapter2/Figures//obav_scheme.png Graphic file (type png)
 <use Chapter2/Figures//obav_scheme.png>
 Package pdftex.def Info: Chapter2/Figures//obav_scheme.png  used on input line 
-270.
+269.
 (pdftex.def)             Requested size: 240.30135pt x 220.62755pt.
 
-[16] [17 <./Chapter2/Figures//obav_scheme.png>]
-<Chapter2/Figures//sense_plan_act.png, id=561, 448.67625pt x 155.58125pt>
-File: Chapter2/Figures//sense_plan_act.png Graphic file (type png)
-<use Chapter2/Figures//sense_plan_act.png>
-Package pdftex.def Info: Chapter2/Figures//sense_plan_act.png  used on input li
-ne 302.
-(pdftex.def)             Requested size: 358.94148pt x 124.46515pt.
-<Chapter2/Figures//sense_act.png, id=564, 302.12875pt x 151.56625pt>
-File: Chapter2/Figures//sense_act.png Graphic file (type png)
-<use Chapter2/Figures//sense_act.png>
-Package pdftex.def Info: Chapter2/Figures//sense_act.png  used on input line 31
-3.
-(pdftex.def)             Requested size: 241.70332pt x 121.25316pt.
- [18 <./Chapter2/Figures//sense_plan_act.png>]) [19 <./Chapter2/Figures//sense_
-act.png>]
+[16] [17 <./Chapter2/Figures//obav_scheme.png>]) [18]
 \openout2 = `Chapter3/chapter3.aux'.
 
-
-(./Chapter3/chapter3.tex
+ (./Chapter3/chapter3.tex
 Chapter 3.
-
-Overfull \hbox (6.35522pt too wide) in paragraph at lines 31--32
-[]$\OML/cmm/b/it/12 V$ \OT1/qbk/m/n/12 : right or-thonor-mal ma-trix of the SVD
- de-com-po-si-tion for $\OML/cmm/b/it/12 X[]AX \OT1/cmr/m/n/12 +
- []
-
-[20
+[19
 
 
 
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 49--51
+Overfull \hbox (6.35522pt too wide) in paragraph at lines 35--36
+[]$\OML/cmm/b/it/12 V$ \OT1/qbk/m/n/12 : right or-thonor-mal ma-trix of the SVD
+ de-com-po-si-tion for $\OML/cmm/b/it/12 X[]AX \OT1/cmr/m/n/12 +
+ []
+
+[20]
+Underfull \hbox (badness 10000) in paragraph at lines 56--58
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 58--59
+Underfull \hbox (badness 10000) in paragraph at lines 65--66
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 60--63
+Underfull \hbox (badness 10000) in paragraph at lines 67--70
 
  []
 
 [21]
-<Chapter3/Figures//ActFcn.jpg, id=603, 1783.66376pt x 954.56625pt>
-File: Chapter3/Figures//ActFcn.jpg Graphic file (type jpg)
-<use Chapter3/Figures//ActFcn.jpg>
-Package pdftex.def Info: Chapter3/Figures//ActFcn.jpg  used on input line 81.
-(pdftex.def)             Requested size: 499.42245pt x 267.27673pt.
+Package epstopdf Info: Source file: <Chapter3/Figures//ActFcn.eps>
+(epstopdf)                    date: 2026-03-11 14:17:46
+(epstopdf)                    size: 69482 bytes
+(epstopdf)             Output file: <Chapter3/Figures//ActFcn-eps-converted-to.
+pdf>
+(epstopdf)                    date: 2026-03-11 14:18:48
+(epstopdf)                    size: 31337 bytes
+(epstopdf)             Command: <repstopdf --outfile=Chapter3/Figures//ActFcn-e
+ps-converted-to.pdf Chapter3/Figures//ActFcn.eps>
+(epstopdf)             \includegraphics on input line 100.
+Package epstopdf Info: Output file is already uptodate.
+<Chapter3/Figures//ActFcn-eps-converted-to.pdf, id=682, 1393.205pt x 723.70375p
+t>
+File: Chapter3/Figures//ActFcn-eps-converted-to.pdf Graphic file (type pdf)
+<use Chapter3/Figures//ActFcn-eps-converted-to.pdf>
+Package pdftex.def Info: Chapter3/Figures//ActFcn-eps-converted-to.pdf  used on
+ input line 100.
+(pdftex.def)             Requested size: 487.62906pt x 253.30011pt.
 
-Overfull \hbox (18.28162pt too wide) in paragraph at lines 80--82
+Overfull \hbox (40.63144pt too wide) in paragraph at lines 99--101
  []|  [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 85--89
+Underfull \hbox (badness 10000) in paragraph at lines 104--108
 
  []
 
-<Chapter3/Figures//DecreasingActFcn_realValues_good.jpg, id=604, 1699.34875pt x
- 1012.78375pt>
-File: Chapter3/Figures//DecreasingActFcn_realValues_good.jpg Graphic file (type
- jpg)
-<use Chapter3/Figures//DecreasingActFcn_realValues_good.jpg>
-Package pdftex.def Info: Chapter3/Figures//DecreasingActFcn_realValues_good.jpg
-  used on input line 93.
-(pdftex.def)             Requested size: 475.8144pt x 283.57751pt.
+[22 <./Chapter3/Figures//ActFcn-eps-converted-to.pdf>]
+Package epstopdf Info: Source file: <Chapter3/Figures//DecreasingActFcn_realVal
+ues_good.eps>
+(epstopdf)                    date: 2026-03-11 14:47:04
+(epstopdf)                    size: 78480 bytes
+(epstopdf)             Output file: <Chapter3/Figures//DecreasingActFcn_realVal
+ues_good-eps-converted-to.pdf>
+(epstopdf)                    date: 2026-03-11 14:47:06
+(epstopdf)                    size: 38793 bytes
+(epstopdf)             Command: <repstopdf --outfile=Chapter3/Figures//Decreasi
+ngActFcn_realValues_good-eps-converted-to.pdf Chapter3/Figures//DecreasingActFc
+n_realValues_good.eps>
+(epstopdf)             \includegraphics on input line 112.
+Package epstopdf Info: Output file is already uptodate.
+<Chapter3/Figures//DecreasingActFcn_realValues_good-eps-converted-to.pdf, id=69
+1, 1393.205pt x 723.70375pt>
+File: Chapter3/Figures//DecreasingActFcn_realValues_good-eps-converted-to.pdf G
+raphic file (type pdf)
+<use Chapter3/Figures//DecreasingActFcn_realValues_good-eps-converted-to.pdf>
+Package pdftex.def Info: Chapter3/Figures//DecreasingActFcn_realValues_good-eps
+-converted-to.pdf  used on input line 112.
+(pdftex.def)             Requested size: 529.42342pt x 275.01028pt.
 
-Overfull \hbox (14.59041pt too wide) in paragraph at lines 92--94
+Overfull \hbox (48.28258pt too wide) in paragraph at lines 111--113
  []|  [] 
  []
 
-[22 <./Chapter3/Figures//ActFcn.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 97--102
+
+Underfull \hbox (badness 10000) in paragraph at lines 116--121
 
  []
 
-[23 <./Chapter3/Figures//DecreasingActFcn_realValues_good.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 139--144
-
- []
-
-[24]
-Underfull \hbox (badness 10000) in paragraph at lines 218--222
+[23 <./Chapter3/Figures//DecreasingActFcn_realValues_good-eps-converted-to.pdf>
+] [24]
+Underfull \hbox (badness 10000) in paragraph at lines 236--240
 
  []
 
 [25]
-<Chapter3/Figures//jl_activation_good.jpg, id=638, 1623.06375pt x 986.68625pt>
-File: Chapter3/Figures//jl_activation_good.jpg Graphic file (type jpg)
-<use Chapter3/Figures//jl_activation_good.jpg>
-Package pdftex.def Info: Chapter3/Figures//jl_activation_good.jpg  used on inpu
-t line 241.
-(pdftex.def)             Requested size: 454.45476pt x 276.27026pt.
- [26]
-Underfull \hbox (badness 10000) in paragraph at lines 250--255
+Package epstopdf Info: Source file: <Chapter3/Figures//jl_activation_good.eps>
+(epstopdf)                    date: 2026-03-11 14:59:00
+(epstopdf)                    size: 104684 bytes
+(epstopdf)             Output file: <Chapter3/Figures//jl_activation_good-eps-c
+onverted-to.pdf>
+(epstopdf)                    date: 2026-03-11 14:59:10
+(epstopdf)                    size: 48352 bytes
+(epstopdf)             Command: <repstopdf --outfile=Chapter3/Figures//jl_activ
+ation_good-eps-converted-to.pdf Chapter3/Figures//jl_activation_good.eps>
+(epstopdf)             \includegraphics on input line 259.
+Package epstopdf Info: Output file is already uptodate.
+<Chapter3/Figures//jl_activation_good-eps-converted-to.pdf, id=720, 1393.205pt 
+x 723.70375pt>
+File: Chapter3/Figures//jl_activation_good-eps-converted-to.pdf Graphic file (t
+ype pdf)
+<use Chapter3/Figures//jl_activation_good-eps-converted-to.pdf>
+Package pdftex.def Info: Chapter3/Figures//jl_activation_good-eps-converted-to.
+pdf  used on input line 259.
+(pdftex.def)             Requested size: 557.27214pt x 289.47636pt.
+
+Overfull \hbox (61.90492pt too wide) in paragraph at lines 258--260
+ []|  [] 
+ []
+
+[26]
+Underfull \hbox (badness 10000) in paragraph at lines 268--273
+
+ []
+
+[27 <./Chapter3/Figures//jl_activation_good-eps-converted-to.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 279--283
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 250--255
+Underfull \hbox (badness 10000) in paragraph at lines 279--283
 
  []
 
-[27 <./Chapter3/Figures//jl_activation_good.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 261--266
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 261--266
-
- []
-
-<Chapter3/Figures//DecreasingActFcn_realValues_good_minalt.jpg, id=650, 1641.13
-126pt x 986.68625pt>
-File: Chapter3/Figures//DecreasingActFcn_realValues_good_minalt.jpg Graphic fil
-e (type jpg)
-<use Chapter3/Figures//DecreasingActFcn_realValues_good_minalt.jpg>
+Package epstopdf Info: Source file: <Chapter3/Figures//DecreasingActFcn_realVal
+ues_good_minalt.eps>
+(epstopdf)                    date: 2026-03-11 11:20:26
+(epstopdf)                    size: 92743 bytes
+(epstopdf)             Output file: <Chapter3/Figures//DecreasingActFcn_realVal
+ues_good_minalt-eps-converted-to.pdf>
+(epstopdf)                    date: 2026-03-11 14:11:20
+(epstopdf)                    size: 30028 bytes
+(epstopdf)             Command: <repstopdf --outfile=Chapter3/Figures//Decreasi
+ngActFcn_realValues_good_minalt-eps-converted-to.pdf Chapter3/Figures//Decreasi
+ngActFcn_realValues_good_minalt.eps>
+(epstopdf)             \includegraphics on input line 287.
+Package epstopdf Info: Output file is already uptodate.
+<Chapter3/Figures//DecreasingActFcn_realValues_good_minalt-eps-converted-to.pdf
+, id=731, 1393.205pt x 723.70375pt>
+File: Chapter3/Figures//DecreasingActFcn_realValues_good_minalt-eps-converted-t
+o.pdf Graphic file (type pdf)
+<use Chapter3/Figures//DecreasingActFcn_realValues_good_minalt-eps-converted-to
+.pdf>
 Package pdftex.def Info: Chapter3/Figures//DecreasingActFcn_realValues_good_min
-alt.jpg  used on input line 270.
-(pdftex.def)             Requested size: 492.34319pt x 296.00815pt.
+alt-eps-converted-to.pdf  used on input line 287.
+(pdftex.def)             Requested size: 557.27214pt x 289.47636pt.
 
-Overfull \hbox (15.4701pt too wide) in paragraph at lines 269--271
+Overfull \hbox (61.90492pt too wide) in paragraph at lines 286--288
  []|  [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 277--282
+Underfull \hbox (badness 10000) in paragraph at lines 294--299
 
  []
 
-[28 <./Chapter3/Figures//DecreasingActFcn_realValues_good_minalt.jpg>])
-[29]
+[28 <./Chapter3/Figures//DecreasingActFcn_realValues_good_minalt-eps-converted-
+to.pdf>]) [29]
 \openout2 = `Chapter4/chapter4.aux'.
 
  (./Chapter4/chapter4.tex
 Chapter 4.
-<Chapter4/Figures//Real_system.jpg, id=661, 1284.8pt x 1052.93375pt>
+<Chapter4/Figures//Real_system.jpg, id=745, 1284.8pt x 1052.93375pt>
 File: Chapter4/Figures//Real_system.jpg Graphic file (type jpg)
 <use Chapter4/Figures//Real_system.jpg>
 Package pdftex.def Info: Chapter4/Figures//Real_system.jpg  used on input line 
-21.
+17.
 (pdftex.def)             Requested size: 359.74155pt x 294.81944pt.
-<Chapter4/Figures//sensor_sleeve.png, id=662, 1541.76pt x 1027.84pt>
+<Chapter4/Figures//sensor_sleeve.png, id=746, 1541.76pt x 1027.84pt>
 File: Chapter4/Figures//sensor_sleeve.png Graphic file (type png)
 <use Chapter4/Figures//sensor_sleeve.png>
 Package pdftex.def Info: Chapter4/Figures//sensor_sleeve.png  used on input lin
-e 30.
+e 26.
 (pdftex.def)             Requested size: 268.1647pt x 178.77684pt.
-<Chapter4/Figures//tof.png, id=663, 283.0575pt x 256.96pt>
+<Chapter4/Figures//tof.png, id=751, 283.0575pt x 256.96pt>
 File: Chapter4/Figures//tof.png Graphic file (type png)
 <use Chapter4/Figures//tof.png>
-Package pdftex.def Info: Chapter4/Figures//tof.png  used on input line 36.
+Package pdftex.def Info: Chapter4/Figures//tof.png  used on input line 32.
 (pdftex.def)             Requested size: 123.77074pt x 112.35698pt.
-<Chapter4/Figures//pressure_sensor.png, id=664, 304.13625pt x 307.1475pt>
+<Chapter4/Figures//pressure_sensor.png, id=752, 304.13625pt x 307.1475pt>
 File: Chapter4/Figures//pressure_sensor.png Graphic file (type png)
 <use Chapter4/Figures//pressure_sensor.png>
 Package pdftex.def Info: Chapter4/Figures//pressure_sensor.png  used on input l
-ine 39.
+ine 35.
 (pdftex.def)             Requested size: 123.77074pt x 124.99394pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 40--40
+Underfull \hbox (badness 10000) in paragraph at lines 36--36
 []\OT1/qbk/m/n/10.95 (c) |Pres-sure sen-sor
  []
 
@@ -1148,554 +1186,933 @@ Underfull \hbox (badness 10000) in paragraph at lines 40--40
 
 
  <./Chapter4/Figures//Real_system.jpg>]
-
-LaTeX Warning: Command \textdegree invalid in math mode on input line 45.
-
-
-LaTeX Warning: Command \textdegree invalid in math mode on input line 45.
-
-Missing character: There is no ° in font cmr12!
-<Chapter4/Figures//simulation_node_diagram.png, id=670, 1285.80376pt x 433.62pt
+<Chapter4/Figures//simulation_node_diagram.png, id=758, 1285.80376pt x 433.62pt
 >
 File: Chapter4/Figures//simulation_node_diagram.png Graphic file (type png)
 <use Chapter4/Figures//simulation_node_diagram.png>
 Package pdftex.def Info: Chapter4/Figures//simulation_node_diagram.png  used on
- input line 52.
+ input line 48.
 (pdftex.def)             Requested size: 385.74411pt x 130.087pt.
-[31 <./Chapter4/Figures//sensor_sleeve.png> <./Chapter4/Figures//tof.png> <./Ch
-apter4/Figures//pressure_sensor.png>]
-Overfull \hbox (9.53316pt too wide) in paragraph at lines 62--64
-\OT1/qbk/m/n/12 For the \OT1/qbk/m/it/12 Ur10e \OT1/qbk/m/n/12 it is avail-able
- a docker kine-matic sim-u-la-tor, \OT1/qbk/m/it/12 ur-sim polyscope
- []
-
-
-Overfull \hbox (8.38422pt too wide) in paragraph at lines 65--65
+ [31 <./Chapter4/Figures//sensor_sleeve.png> <./Chapter4/Figures//tof.png> <./C
+hapter4/Figures//pressure_sensor.png>]
+Overfull \hbox (8.38422pt too wide) in paragraph at lines 60--60
 []\OT1/qbk/b/n/17.28 Unified Robot Ar-chi-tec-ture: Join-tRobotTP
  []
 
-<Chapter4/Figures//simplified_class_structure.png, id=679, 693.59125pt x 422.57
+<Chapter4/Figures//simplified_class_structure.png, id=770, 693.59125pt x 422.57
 875pt>
 File: Chapter4/Figures//simplified_class_structure.png Graphic file (type png)
 <use Chapter4/Figures//simplified_class_structure.png>
 Package pdftex.def Info: Chapter4/Figures//simplified_class_structure.png  used
- on input line 71.
+ on input line 66.
 (pdftex.def)             Requested size: 346.79477pt x 211.28885pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 66--74
+Underfull \hbox (badness 10000) in paragraph at lines 61--69
 
  []
 
 [32 <./Chapter4/Figures//simulation_node_diagram.png>]
-Overfull \hbox (1.85463pt too wide) in paragraph at lines 81--84
-\OT1/qbk/m/n/12 The trans-for-ma-tion buffer con-tain the kine-matic chain of t
-he two robots,
+Overfull \hbox (8.09462pt too wide) in paragraph at lines 76--79
+\OT1/qbk/m/n/12 The trans-for-ma-tion buffer con-tains the kine-matic chain of 
+the two robots,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 81--84
+Underfull \hbox (badness 10000) in paragraph at lines 76--79
 
  []
 
-[33 <./Chapter4/Figures//simplified_class_structure.png>]
-Overfull \hbox (1.77327pt too wide) in paragraph at lines 99--116
-[]\OT1/qbk/m/n/12 The uni-fied robot class im-ple-men-ta-tion main \OT1/qbk/m/i
-t/12 meth-ods \OT1/qbk/m/n/12 and \OT1/qbk/m/it/12 data struc-
- []
-
-<Chapter4/Figures//initialize_diagram.png, id=693, 302.12875pt x 554.07pt>
+<Chapter4/Figures//initialize_diagram.png, id=777, 302.12875pt x 554.07pt>
 File: Chapter4/Figures//initialize_diagram.png Graphic file (type png)
 <use Chapter4/Figures//initialize_diagram.png>
 Package pdftex.def Info: Chapter4/Figures//initialize_diagram.png  used on inpu
-t line 123.
+t line 99.
 (pdftex.def)             Requested size: 151.064pt x 277.03432pt.
+[33 <./Chapter4/Figures//simplified_class_structure.png>] [34 <./Chapter4/Figur
+es//initialize_diagram.png>]
 
-Overfull \hbox (14.57324pt too wide) in paragraph at lines 127--130
-\OT1/qbk/m/n/12 In the first step, the the robots nodes \OT1/qbk/m/it/12 kuka[]
-robot[]node \OT1/qbk/m/n/12 and \OT1/qbk/m/it/12 ur10[]robot[]node
- []
+LaTeX Warning: Reference `enum:StructuralObjective' on page 35 undefined on inp
+ut line 116.
 
-[34 <./Chapter4/Figures//initialize_diagram.png>] [35]
-Overfull \hbox (3.3211pt too wide) in paragraph at lines 164--164
+[35]
+Overfull \hbox (3.3211pt too wide) in paragraph at lines 140--140
 []\OT1/qbk/b/n/17.28 Unified Robot Ar-chi-tec-ture: Ac-tion server 
  []
 
-<Chapter4/Figures//JointControlLoopDiagram.png, id=707, 783.92876pt x 793.96625
+<Chapter4/Figures//JointControlLoopDiagram.png, id=802, 783.92876pt x 793.96625
 pt>
 File: Chapter4/Figures//JointControlLoopDiagram.png Graphic file (type png)
 <use Chapter4/Figures//JointControlLoopDiagram.png>
 Package pdftex.def Info: Chapter4/Figures//JointControlLoopDiagram.png  used on
- input line 171.
+ input line 147.
 (pdftex.def)             Requested size: 313.56595pt x 317.58087pt.
 [36]
-<Chapter4/Figures//Action_server_flowChart.png, id=712, 382.42876pt x 653.44125
+<Chapter4/Figures//Action_server_flowChart.png, id=808, 382.42876pt x 653.44125
 pt>
 File: Chapter4/Figures//Action_server_flowChart.png Graphic file (type png)
 <use Chapter4/Figures//Action_server_flowChart.png>
 Package pdftex.def Info: Chapter4/Figures//Action_server_flowChart.png  used on
- input line 182.
+ input line 158.
 (pdftex.def)             Requested size: 191.2139pt x 326.71982pt.
- [37 <./Chapter4/Figures//JointControlLoopDiagram.png>]
-Overfull \hbox (34.3387pt too wide) in paragraph at lines 189--189
-[]\OT1/qbk/b/n/17.28 Unified Robot Ar-chi-tec-ture: Con-trol alorithm 
- []
-
-[38 <./Chapter4/Figures//Action_server_flowChart.png>]
-<Chapter4/Figures//Reaching_loop_flowChart.png, id=724, 563.10374pt x 1064.9787
+ [37 <./Chapter4/Figures//JointControlLoopDiagram.png>] [38 <./Chapter4/Figures
+//Action_server_flowChart.png>]
+<Chapter4/Figures//Reaching_loop_flowChart.png, id=822, 563.10374pt x 1064.9787
 4pt>
 File: Chapter4/Figures//Reaching_loop_flowChart.png Graphic file (type png)
 <use Chapter4/Figures//Reaching_loop_flowChart.png>
 Package pdftex.def Info: Chapter4/Figures//Reaching_loop_flowChart.png  used on
- input line 207.
+ input line 181.
 (pdftex.def)             Requested size: 225.2375pt x 425.98395pt.
- [39] [40 <./Chapter4/Figures//Reaching_loop_flowChart.png>]) [41]
+ [39]) [40 <./Chapter4/Figures//Reaching_loop_flowChart.png>]
 \openout2 = `Chapter5/chapter5.aux'.
 
  (./Chapter5/chapter5.tex
 Chapter 5.
-<Chapter5/Figures//single_obstacle_isom.png, id=739, 1445.4pt x 743.77875pt>
-File: Chapter5/Figures//single_obstacle_isom.png Graphic file (type png)
-<use Chapter5/Figures//single_obstacle_isom.png>
-Package pdftex.def Info: Chapter5/Figures//single_obstacle_isom.png  used on in
-put line 14.
-(pdftex.def)             Requested size: 202.15909pt x 104.02617pt.
-<Chapter5/Figures//single_obstacle_top.png, id=740, 1445.4pt x 743.77875pt>
-File: Chapter5/Figures//single_obstacle_top.png Graphic file (type png)
-<use Chapter5/Figures//single_obstacle_top.png>
-Package pdftex.def Info: Chapter5/Figures//single_obstacle_top.png  used on inp
-ut line 20.
-(pdftex.def)             Requested size: 202.15909pt x 104.02617pt.
-<Chapter5/Figures//multi_obstacle_isom.png, id=741, 1445.4pt x 743.77875pt>
-File: Chapter5/Figures//multi_obstacle_isom.png Graphic file (type png)
-<use Chapter5/Figures//multi_obstacle_isom.png>
-Package pdftex.def Info: Chapter5/Figures//multi_obstacle_isom.png  used on inp
-ut line 28.
-(pdftex.def)             Requested size: 202.15909pt x 104.02617pt.
-<Chapter5/Figures//multi_obstacle_top.png, id=742, 1445.4pt x 743.77875pt>
-File: Chapter5/Figures//multi_obstacle_top.png Graphic file (type png)
-<use Chapter5/Figures//multi_obstacle_top.png>
-Package pdftex.def Info: Chapter5/Figures//multi_obstacle_top.png  used on inpu
-t line 34.
-(pdftex.def)             Requested size: 202.15909pt x 104.02617pt.
-<Chapter5/Figures//chassis_obstacle_isom.png, id=743, 1445.4pt x 743.77875pt>
-File: Chapter5/Figures//chassis_obstacle_isom.png Graphic file (type png)
-<use Chapter5/Figures//chassis_obstacle_isom.png>
-Package pdftex.def Info: Chapter5/Figures//chassis_obstacle_isom.png  used on i
-nput line 43.
-(pdftex.def)             Requested size: 412.56496pt x 212.29692pt.
-<Chapter5/Figures//chassis_obstacle_top.png, id=744, 1445.4pt x 743.77875pt>
-File: Chapter5/Figures//chassis_obstacle_top.png Graphic file (type png)
-<use Chapter5/Figures//chassis_obstacle_top.png>
-Package pdftex.def Info: Chapter5/Figures//chassis_obstacle_top.png  used on in
-put line 46.
-(pdftex.def)             Requested size: 202.15909pt x 104.02617pt.
-<Chapter5/Figures//chassis_obstacle_side.png, id=745, 1445.4pt x 743.77875pt>
-File: Chapter5/Figures//chassis_obstacle_side.png Graphic file (type png)
-<use Chapter5/Figures//chassis_obstacle_side.png>
-Package pdftex.def Info: Chapter5/Figures//chassis_obstacle_side.png  used on i
-nput line 50.
-(pdftex.def)             Requested size: 202.15909pt x 104.02617pt.
-[42
+Package epstopdf Info: Source file: <Chapter5/Figures//single_obstacle_isom.eps
+>
+(epstopdf)                    date: 2026-03-11 15:38:57
+(epstopdf)                    size: 60632 bytes
+(epstopdf)             Output file: <Chapter5/Figures//single_obstacle_isom-eps
+-converted-to.pdf>
+(epstopdf)                    date: 2026-03-11 15:42:19
+(epstopdf)                    size: 64531 bytes
+(epstopdf)             Command: <repstopdf --outfile=Chapter5/Figures//single_o
+bstacle_isom-eps-converted-to.pdf Chapter5/Figures//single_obstacle_isom.eps>
+(epstopdf)             \includegraphics on input line 14.
+Package epstopdf Info: Output file is already uptodate.
+<Chapter5/Figures//single_obstacle_isom-eps-converted-to.pdf, id=833, 1393.205p
+t x 723.70375pt>
+File: Chapter5/Figures//single_obstacle_isom-eps-converted-to.pdf Graphic file 
+(type pdf)
+<use Chapter5/Figures//single_obstacle_isom-eps-converted-to.pdf>
+Package pdftex.def Info: Chapter5/Figures//single_obstacle_isom-eps-converted-t
+o.pdf  used on input line 14.
+(pdftex.def)             Requested size: 202.15909pt x 105.00613pt.
+Package epstopdf Info: Source file: <Chapter5/Figures//single_obstacle_top.eps>
+
+(epstopdf)                    date: 2026-03-11 15:39:37
+(epstopdf)                    size: 81115 bytes
+(epstopdf)             Output file: <Chapter5/Figures//single_obstacle_top-eps-
+converted-to.pdf>
+(epstopdf)                    date: 2026-03-11 15:42:20
+(epstopdf)                    size: 20221 bytes
+(epstopdf)             Command: <repstopdf --outfile=Chapter5/Figures//single_o
+bstacle_top-eps-converted-to.pdf Chapter5/Figures//single_obstacle_top.eps>
+(epstopdf)             \includegraphics on input line 20.
+Package epstopdf Info: Output file is already uptodate.
+<Chapter5/Figures//single_obstacle_top-eps-converted-to.pdf, id=834, 1393.205pt
+ x 723.70375pt>
+File: Chapter5/Figures//single_obstacle_top-eps-converted-to.pdf Graphic file (
+type pdf)
+<use Chapter5/Figures//single_obstacle_top-eps-converted-to.pdf>
+Package pdftex.def Info: Chapter5/Figures//single_obstacle_top-eps-converted-to
+.pdf  used on input line 20.
+(pdftex.def)             Requested size: 202.15909pt x 105.00613pt.
+Package epstopdf Info: Source file: <Chapter5/Figures//multi_obstacle_isom.eps>
+
+(epstopdf)                    date: 2026-03-11 15:38:28
+(epstopdf)                    size: 82480 bytes
+(epstopdf)             Output file: <Chapter5/Figures//multi_obstacle_isom-eps-
+converted-to.pdf>
+(epstopdf)                    date: 2026-03-11 15:42:20
+(epstopdf)                    size: 79282 bytes
+(epstopdf)             Command: <repstopdf --outfile=Chapter5/Figures//multi_ob
+stacle_isom-eps-converted-to.pdf Chapter5/Figures//multi_obstacle_isom.eps>
+(epstopdf)             \includegraphics on input line 28.
+Package epstopdf Info: Output file is already uptodate.
+<Chapter5/Figures//multi_obstacle_isom-eps-converted-to.pdf, id=835, 1393.205pt
+ x 723.70375pt>
+File: Chapter5/Figures//multi_obstacle_isom-eps-converted-to.pdf Graphic file (
+type pdf)
+<use Chapter5/Figures//multi_obstacle_isom-eps-converted-to.pdf>
+Package pdftex.def Info: Chapter5/Figures//multi_obstacle_isom-eps-converted-to
+.pdf  used on input line 28.
+(pdftex.def)             Requested size: 202.15909pt x 105.00613pt.
+Package epstopdf Info: Source file: <Chapter5/Figures//multi_obstacle_top.eps>
+(epstopdf)                    date: 2026-03-11 15:37:50
+(epstopdf)                    size: 125029 bytes
+(epstopdf)             Output file: <Chapter5/Figures//multi_obstacle_top-eps-c
+onverted-to.pdf>
+(epstopdf)                    date: 2026-03-11 15:42:21
+(epstopdf)                    size: 30621 bytes
+(epstopdf)             Command: <repstopdf --outfile=Chapter5/Figures//multi_ob
+stacle_top-eps-converted-to.pdf Chapter5/Figures//multi_obstacle_top.eps>
+(epstopdf)             \includegraphics on input line 34.
+Package epstopdf Info: Output file is already uptodate.
+<Chapter5/Figures//multi_obstacle_top-eps-converted-to.pdf, id=836, 1393.205pt 
+x 723.70375pt>
+File: Chapter5/Figures//multi_obstacle_top-eps-converted-to.pdf Graphic file (t
+ype pdf)
+<use Chapter5/Figures//multi_obstacle_top-eps-converted-to.pdf>
+Package pdftex.def Info: Chapter5/Figures//multi_obstacle_top-eps-converted-to.
+pdf  used on input line 34.
+(pdftex.def)             Requested size: 202.15909pt x 105.00613pt.
+[41
 
 
 
 
- <./Chapter5/Figures//single_obstacle_isom.png (PNG copy)> <./Chapter5/Figures/
-/single_obstacle_top.png (PNG copy)> <./Chapter5/Figures//multi_obstacle_isom.p
-ng (PNG copy)> <./Chapter5/Figures//multi_obstacle_top.png (PNG copy)>]
+ <./Chapter5/Figures//single_obstacle_isom-eps-converted-to.pdf> <./Chapter5/Fi
+gures//single_obstacle_top-eps-converted-to.pdf>]
+Package epstopdf Info: Source file: <Chapter5/Figures//chassis_obstacle_isom.ep
+s>
+(epstopdf)                    date: 2026-03-11 15:40:55
+(epstopdf)                    size: 119732 bytes
+(epstopdf)             Output file: <Chapter5/Figures//chassis_obstacle_isom-ep
+s-converted-to.pdf>
+(epstopdf)                    date: 2026-03-11 15:42:21
+(epstopdf)                    size: 113678 bytes
+(epstopdf)             Command: <repstopdf --outfile=Chapter5/Figures//chassis_
+obstacle_isom-eps-converted-to.pdf Chapter5/Figures//chassis_obstacle_isom.eps>
+
+(epstopdf)             \includegraphics on input line 43.
+Package epstopdf Info: Output file is already uptodate.
+<Chapter5/Figures//chassis_obstacle_isom-eps-converted-to.pdf, id=848, 1393.205
+pt x 723.70375pt>
+File: Chapter5/Figures//chassis_obstacle_isom-eps-converted-to.pdf Graphic file
+ (type pdf)
+<use Chapter5/Figures//chassis_obstacle_isom-eps-converted-to.pdf>
+Package pdftex.def Info: Chapter5/Figures//chassis_obstacle_isom-eps-converted-
+to.pdf  used on input line 43.
+(pdftex.def)             Requested size: 412.56496pt x 214.30792pt.
+Package epstopdf Info: Source file: <Chapter5/Figures//chassis_obstacle_top.eps
+>
+(epstopdf)                    date: 2026-03-11 15:40:30
+(epstopdf)                    size: 267361 bytes
+(epstopdf)             Output file: <Chapter5/Figures//chassis_obstacle_top-eps
+-converted-to.pdf>
+(epstopdf)                    date: 2026-03-11 15:42:22
+(epstopdf)                    size: 335596 bytes
+(epstopdf)             Command: <repstopdf --outfile=Chapter5/Figures//chassis_
+obstacle_top-eps-converted-to.pdf Chapter5/Figures//chassis_obstacle_top.eps>
+(epstopdf)             \includegraphics on input line 46.
+Package epstopdf Info: Output file is already uptodate.
+<Chapter5/Figures//chassis_obstacle_top-eps-converted-to.pdf, id=849, 1393.205p
+t x 723.70375pt>
+File: Chapter5/Figures//chassis_obstacle_top-eps-converted-to.pdf Graphic file 
+(type pdf)
+<use Chapter5/Figures//chassis_obstacle_top-eps-converted-to.pdf>
+Package pdftex.def Info: Chapter5/Figures//chassis_obstacle_top-eps-converted-t
+o.pdf  used on input line 46.
+(pdftex.def)             Requested size: 202.15909pt x 105.00613pt.
+Package epstopdf Info: Source file: <Chapter5/Figures//chassis_obstacle_side.ep
+s>
+(epstopdf)                    date: 2026-03-11 15:40:07
+(epstopdf)                    size: 267102 bytes
+(epstopdf)             Output file: <Chapter5/Figures//chassis_obstacle_side-ep
+s-converted-to.pdf>
+(epstopdf)                    date: 2026-03-11 15:42:23
+(epstopdf)                    size: 334378 bytes
+(epstopdf)             Command: <repstopdf --outfile=Chapter5/Figures//chassis_
+obstacle_side-eps-converted-to.pdf Chapter5/Figures//chassis_obstacle_side.eps>
+
+(epstopdf)             \includegraphics on input line 50.
+Package epstopdf Info: Output file is already uptodate.
+<Chapter5/Figures//chassis_obstacle_side-eps-converted-to.pdf, id=850, 1393.205
+pt x 723.70375pt>
+File: Chapter5/Figures//chassis_obstacle_side-eps-converted-to.pdf Graphic file
+ (type pdf)
+<use Chapter5/Figures//chassis_obstacle_side-eps-converted-to.pdf>
+Package pdftex.def Info: Chapter5/Figures//chassis_obstacle_side-eps-converted-
+to.pdf  used on input line 50.
+(pdftex.def)             Requested size: 202.15909pt x 105.00613pt.
+
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
 (hyperref)                than one, level fixed on input line 56.
 
-<Chapter5/Figures//gain_tuning_exp.jpg, id=753, 1927.2pt x 991.705pt>
-File: Chapter5/Figures//gain_tuning_exp.jpg Graphic file (type jpg)
-<use Chapter5/Figures//gain_tuning_exp.jpg>
-Package pdftex.def Info: Chapter5/Figures//gain_tuning_exp.jpg  used on input l
-ine 63.
-(pdftex.def)             Requested size: 539.61234pt x 277.6755pt.
+[42 <./Chapter5/Figures//multi_obstacle_isom-eps-converted-to.pdf> <./Chapter5/
+Figures//multi_obstacle_top-eps-converted-to.pdf> <./Chapter5/Figures//chassis_
+obstacle_isom-eps-converted-to.pdf> <./Chapter5/Figures//chassis_obstacle_top-e
+ps-converted-to.pdf> <./Chapter5/Figures//chassis_obstacle_side-eps-converted-t
+o.pdf>]
+Package epstopdf Info: Source file: <Chapter5/Figures//gain_tuning_exp.eps>
+(epstopdf)                    date: 2026-03-11 17:21:40
+(epstopdf)                    size: 380653 bytes
+(epstopdf)             Output file: <Chapter5/Figures//gain_tuning_exp-eps-conv
+erted-to.pdf>
+(epstopdf)                    date: 2026-03-11 17:25:22
+(epstopdf)                    size: 136001 bytes
+(epstopdf)             Command: <repstopdf --outfile=Chapter5/Figures//gain_tun
+ing_exp-eps-converted-to.pdf Chapter5/Figures//gain_tuning_exp.eps>
+(epstopdf)             \includegraphics on input line 62.
+Package epstopdf Info: Output file is already uptodate.
+<Chapter5/Figures//gain_tuning_exp-eps-converted-to.pdf, id=869, 1393.205pt x 7
+23.70375pt>
+File: Chapter5/Figures//gain_tuning_exp-eps-converted-to.pdf Graphic file (type
+ pdf)
+<use Chapter5/Figures//gain_tuning_exp-eps-converted-to.pdf>
+Package pdftex.def Info: Chapter5/Figures//gain_tuning_exp-eps-converted-to.pdf
+  used on input line 62.
+(pdftex.def)             Requested size: 529.42342pt x 275.01028pt.
 
-Overfull \hbox (64.16196pt too wide) in paragraph at lines 62--65
+Overfull \hbox (62.50896pt too wide) in paragraph at lines 61--63
  []|  [] 
  []
 
-[43 <./Chapter5/Figures//chassis_obstacle_isom.png (PNG copy)> <./Chapter5/Figu
-res//chassis_obstacle_top.png (PNG copy)> <./Chapter5/Figures//chassis_obstacle
-_side.png (PNG copy)>]
+
 Underfull \hbox (badness 10000) in paragraph at lines 66--80
 
  []
 
-<Chapter5/Figures//robot_effects_graph.jpg, id=758, 1927.2pt x 991.705pt>
-File: Chapter5/Figures//robot_effects_graph.jpg Graphic file (type jpg)
-<use Chapter5/Figures//robot_effects_graph.jpg>
-Package pdftex.def Info: Chapter5/Figures//robot_effects_graph.jpg  used on inp
-ut line 85.
-(pdftex.def)             Requested size: 539.61234pt x 277.6755pt.
+Package epstopdf Info: Source file: <Chapter5/Figures//robot_effects_graph_2.ep
+s>
+(epstopdf)                    date: 2026-03-12 19:26:10
+(epstopdf)                    size: 253611 bytes
+(epstopdf)             Output file: <Chapter5/Figures//robot_effects_graph_2-ep
+s-converted-to.pdf>
+(epstopdf)                    date: 2026-03-12 19:27:43
+(epstopdf)                    size: 126651 bytes
+(epstopdf)             Command: <repstopdf --outfile=Chapter5/Figures//robot_ef
+fects_graph_2-eps-converted-to.pdf Chapter5/Figures//robot_effects_graph_2.eps>
 
-Overfull \hbox (64.16196pt too wide) in paragraph at lines 84--86
+(epstopdf)             \includegraphics on input line 85.
+Package epstopdf Info: Output file is already uptodate.
+<Chapter5/Figures//robot_effects_graph_2-eps-converted-to.pdf, id=870, 1393.205
+pt x 723.70375pt>
+File: Chapter5/Figures//robot_effects_graph_2-eps-converted-to.pdf Graphic file
+ (type pdf)
+<use Chapter5/Figures//robot_effects_graph_2-eps-converted-to.pdf>
+Package pdftex.def Info: Chapter5/Figures//robot_effects_graph_2-eps-converted-
+to.pdf  used on input line 85.
+(pdftex.def)             Requested size: 557.27214pt x 289.47636pt.
+
+Overfull \hbox (81.82176pt too wide) in paragraph at lines 84--86
  []|  [] 
  []
 
-[44 <./Chapter5/Figures//gain_tuning_exp.jpg>]
-<Chapter5/Figures//init_pose_jl.png, id=765, 813.0375pt x 661.47125pt>
+[43 <./Chapter5/Figures//gain_tuning_exp-eps-converted-to.pdf>]
+Package epstopdf Info: Source file: <Chapter5/Figures//robot_effects_graph.eps>
+
+(epstopdf)                    date: 2026-03-11 17:36:13
+(epstopdf)                    size: 545477 bytes
+(epstopdf)             Output file: <Chapter5/Figures//robot_effects_graph-eps-
+converted-to.pdf>
+(epstopdf)                    date: 2026-03-11 17:36:18
+(epstopdf)                    size: 183589 bytes
+(epstopdf)             Command: <repstopdf --outfile=Chapter5/Figures//robot_ef
+fects_graph-eps-converted-to.pdf Chapter5/Figures//robot_effects_graph.eps>
+(epstopdf)             \includegraphics on input line 93.
+Package epstopdf Info: Output file is already uptodate.
+<Chapter5/Figures//robot_effects_graph-eps-converted-to.pdf, id=877, 1393.205pt
+ x 723.70375pt>
+File: Chapter5/Figures//robot_effects_graph-eps-converted-to.pdf Graphic file (
+type pdf)
+<use Chapter5/Figures//robot_effects_graph-eps-converted-to.pdf>
+Package pdftex.def Info: Chapter5/Figures//robot_effects_graph-eps-converted-to
+.pdf  used on input line 93.
+(pdftex.def)             Requested size: 557.27214pt x 289.47636pt.
+
+Overfull \hbox (81.82176pt too wide) in paragraph at lines 92--94
+ []|  [] 
+ []
+
+[44 <./Chapter5/Figures//robot_effects_graph_2-eps-converted-to.pdf>]
+<Chapter5/Figures//init_pose_jl.png, id=883, 813.0375pt x 661.47125pt>
 File: Chapter5/Figures//init_pose_jl.png Graphic file (type png)
 <use Chapter5/Figures//init_pose_jl.png>
 Package pdftex.def Info: Chapter5/Figures//init_pose_jl.png  used on input line
- 94.
+ 102.
 (pdftex.def)             Requested size: 412.56496pt x 335.6502pt.
-<Chapter5/Figures//final_pose_001_05.png, id=766, 814.04124pt x 554.07pt>
+<Chapter5/Figures//final_pose_001_05.png, id=884, 814.04124pt x 554.07pt>
 File: Chapter5/Figures//final_pose_001_05.png Graphic file (type png)
 <use Chapter5/Figures//final_pose_001_05.png>
 Package pdftex.def Info: Chapter5/Figures//final_pose_001_05.png  used on input
- line 98.
+ line 106.
 (pdftex.def)             Requested size: 202.15909pt x 137.59563pt.
-<Chapter5/Figures//final_pose_05_005.png, id=767, 822.07124pt x 469.755pt>
+<Chapter5/Figures//final_pose_05_005.png, id=885, 814.04124pt x 554.07pt>
 File: Chapter5/Figures//final_pose_05_005.png Graphic file (type png)
 <use Chapter5/Figures//final_pose_05_005.png>
 Package pdftex.def Info: Chapter5/Figures//final_pose_05_005.png  used on input
- line 103.
-(pdftex.def)             Requested size: 202.15909pt x 115.51747pt.
- [45 <./Chapter5/Figures//robot_effects_graph.jpg>]
-<Chapter5/Figures//jvcompar_001_05.jpg, id=773, 1927.2pt x 991.705pt>
-File: Chapter5/Figures//jvcompar_001_05.jpg Graphic file (type jpg)
-<use Chapter5/Figures//jvcompar_001_05.jpg>
-Package pdftex.def Info: Chapter5/Figures//jvcompar_001_05.jpg  used on input l
-ine 111.
-(pdftex.def)             Requested size: 412.56496pt x 212.28935pt.
-<Chapter5/Figures//jvcompar_05_005.jpg, id=774, 1927.2pt x 991.705pt>
-File: Chapter5/Figures//jvcompar_05_005.jpg Graphic file (type jpg)
-<use Chapter5/Figures//jvcompar_05_005.jpg>
-Package pdftex.def Info: Chapter5/Figures//jvcompar_05_005.jpg  used on input l
-ine 116.
-(pdftex.def)             Requested size: 412.56496pt x 212.28935pt.
+ line 111.
+(pdftex.def)             Requested size: 202.15909pt x 137.59563pt.
+ [45 <./Chapter5/Figures//robot_effects_graph-eps-converted-to.pdf>]
+Package epstopdf Info: Source file: <Chapter5/Figures//jv_compare_001_05.eps>
+(epstopdf)                    date: 2026-03-11 17:23:15
+(epstopdf)                    size: 271397 bytes
+(epstopdf)             Output file: <Chapter5/Figures//jv_compare_001_05-eps-co
+nverted-to.pdf>
+(epstopdf)                    date: 2026-03-11 17:25:24
+(epstopdf)                    size: 97710 bytes
+(epstopdf)             Command: <repstopdf --outfile=Chapter5/Figures//jv_compa
+re_001_05-eps-converted-to.pdf Chapter5/Figures//jv_compare_001_05.eps>
+(epstopdf)             \includegraphics on input line 119.
+Package epstopdf Info: Output file is already uptodate.
+<Chapter5/Figures//jv_compare_001_05-eps-converted-to.pdf, id=891, 1393.205pt x
+ 723.70375pt>
+File: Chapter5/Figures//jv_compare_001_05-eps-converted-to.pdf Graphic file (ty
+pe pdf)
+<use Chapter5/Figures//jv_compare_001_05-eps-converted-to.pdf>
+Package pdftex.def Info: Chapter5/Figures//jv_compare_001_05-eps-converted-to.p
+df  used on input line 119.
+(pdftex.def)             Requested size: 412.56496pt x 214.30792pt.
+Package epstopdf Info: Source file: <Chapter5/Figures//jv_compare_05_005.eps>
+(epstopdf)                    date: 2026-03-11 17:24:17
+(epstopdf)                    size: 933718 bytes
+(epstopdf)             Output file: <Chapter5/Figures//jv_compare_05_005-eps-co
+nverted-to.pdf>
+(epstopdf)                    date: 2026-03-11 17:25:26
+(epstopdf)                    size: 202804 bytes
+(epstopdf)             Command: <repstopdf --outfile=Chapter5/Figures//jv_compa
+re_05_005-eps-converted-to.pdf Chapter5/Figures//jv_compare_05_005.eps>
+(epstopdf)             \includegraphics on input line 124.
+Package epstopdf Info: Output file is already uptodate.
+<Chapter5/Figures//jv_compare_05_005-eps-converted-to.pdf, id=892, 1393.205pt x
+ 723.70375pt>
+File: Chapter5/Figures//jv_compare_05_005-eps-converted-to.pdf Graphic file (ty
+pe pdf)
+<use Chapter5/Figures//jv_compare_05_005-eps-converted-to.pdf>
+Package pdftex.def Info: Chapter5/Figures//jv_compare_05_005-eps-converted-to.p
+df  used on input line 124.
+(pdftex.def)             Requested size: 412.56496pt x 214.30792pt.
  [46 <./Chapter5/Figures//init_pose_jl.png> <./Chapter5/Figures//final_pose_001
-_05.png> <./Chapter5/Figures//final_pose_05_005.png>]
-[47 <./Chapter5/Figures//jvcompar_001_05.jpg> <./Chapter5/Figures//jvcompar_05_
-005.jpg>]
-<Chapter5/Figures//obav_norm_noReach_test.jpg, id=790, 2569.6pt x 1353.055pt>
-File: Chapter5/Figures//obav_norm_noReach_test.jpg Graphic file (type jpg)
-<use Chapter5/Figures//obav_norm_noReach_test.jpg>
-Package pdftex.def Info: Chapter5/Figures//obav_norm_noReach_test.jpg  used on 
-input line 133.
-(pdftex.def)             Requested size: 565.31375pt x 297.67302pt.
+_05.png> <./Chapter5/Figures//final_pose_05_005.png>] [47 <./Chapter5/Figures//
+jv_compare_001_05-eps-converted-to.pdf> <./Chapter5/Figures//jv_compare_05_005-
+eps-converted-to.pdf>]
+Package epstopdf Info: Source file: <Chapter5/Figures//obav_norm_noReach_test.e
+ps>
+(epstopdf)                    date: 2026-03-11 17:53:34
+(epstopdf)                    size: 903098 bytes
+(epstopdf)             Output file: <Chapter5/Figures//obav_norm_noReach_test-e
+ps-converted-to.pdf>
+(epstopdf)                    date: 2026-03-11 18:49:02
+(epstopdf)                    size: 272341 bytes
+(epstopdf)             Command: <repstopdf --outfile=Chapter5/Figures//obav_nor
+m_noReach_test-eps-converted-to.pdf Chapter5/Figures//obav_norm_noReach_test.ep
+s>
+(epstopdf)             \includegraphics on input line 141.
+Package epstopdf Info: Output file is already uptodate.
+<Chapter5/Figures//obav_norm_noReach_test-eps-converted-to.pdf, id=914, 1393.20
+5pt x 723.70375pt>
+File: Chapter5/Figures//obav_norm_noReach_test-eps-converted-to.pdf Graphic fil
+e (type pdf)
+<use Chapter5/Figures//obav_norm_noReach_test-eps-converted-to.pdf>
+Package pdftex.def Info: Chapter5/Figures//obav_norm_noReach_test-eps-converted
+-to.pdf  used on input line 141.
+(pdftex.def)             Requested size: 557.27214pt x 289.47636pt.
 
-Overfull \hbox (84.17291pt too wide) in paragraph at lines 132--134
+Overfull \hbox (73.28586pt too wide) in paragraph at lines 140--142
  []|  [] 
  []
 
-[48 <./Chapter5/Figures//obav_norm_noReach_test.jpg>]
-Overfull \hbox (0.37392pt too wide) in paragraph at lines 156--158
-\OMS/cmsy/m/n/12 h[]i$ \OT1/qbk/m/n/12 frame. And the \OT1/qbk/m/it/12 goal \OT
-1/qbk/m/n/12 of all the test con-ducted in this tranche
- []
-
-<Chapter5/Figures//sing_obst_sing_tg_taskImage.png, id=796, 1040.88875pt x 831.
+[48 <./Chapter5/Figures//obav_norm_noReach_test-eps-converted-to.pdf>]
+<Chapter5/Figures//sing_obst_sing_tg_taskImage.png, id=921, 1040.88875pt x 831.
 105pt>
 File: Chapter5/Figures//sing_obst_sing_tg_taskImage.png Graphic file (type png)
 
 <use Chapter5/Figures//sing_obst_sing_tg_taskImage.png>
 Package pdftex.def Info: Chapter5/Figures//sing_obst_sing_tg_taskImage.png  use
-d on input line 171.
-(pdftex.def)             Requested size: 202.15909pt x 161.41171pt.
-<Chapter5/Figures//ob_sing_tg_sing_schema.jpg, id=797, 1856.9375pt x 964.60374p
+d on input line 176.
+(pdftex.def)             Requested size: 312.26903pt x 249.33342pt.
+<Chapter5/Figures//ob_sing_tg_sing_schema.jpg, id=922, 1856.9375pt x 964.60374p
 t>
 File: Chapter5/Figures//ob_sing_tg_sing_schema.jpg Graphic file (type jpg)
 <use Chapter5/Figures//ob_sing_tg_sing_schema.jpg>
 Package pdftex.def Info: Chapter5/Figures//ob_sing_tg_sing_schema.jpg  used on 
-input line 175.
-(pdftex.def)             Requested size: 202.15909pt x 105.00284pt.
-<Chapter5/Figures//activation_min_dist_plot.jpg, id=798, 2569.6pt x 1353.055pt>
+input line 184.
+(pdftex.def)             Requested size: 557.08556pt x 289.38336pt.
 
-File: Chapter5/Figures//activation_min_dist_plot.jpg Graphic file (type jpg)
-<use Chapter5/Figures//activation_min_dist_plot.jpg>
-Package pdftex.def Info: Chapter5/Figures//activation_min_dist_plot.jpg  used o
-n input line 184.
-(pdftex.def)             Requested size: 565.31375pt x 297.67302pt.
-
-Overfull \hbox (75.637pt too wide) in paragraph at lines 183--185
+Overfull \hbox (67.4088pt too wide) in paragraph at lines 183--185
  []|  [] 
  []
 
-[49 <./Chapter5/Figures//sing_obst_sing_tg_taskImage.png> <./Chapter5/Figures//
-ob_sing_tg_sing_schema.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 189--190
+[49 <./Chapter5/Figures//sing_obst_sing_tg_taskImage.png>]
+Package epstopdf Info: Source file: <Chapter5/Figures//activation_min_dist_plot
+.eps>
+(epstopdf)                    date: 2026-03-11 18:18:05
+(epstopdf)                    size: 361245 bytes
+(epstopdf)             Output file: <Chapter5/Figures//activation_min_dist_plot
+-eps-converted-to.pdf>
+(epstopdf)                    date: 2026-03-11 18:49:03
+(epstopdf)                    size: 160462 bytes
+(epstopdf)             Command: <repstopdf --outfile=Chapter5/Figures//activati
+on_min_dist_plot-eps-converted-to.pdf Chapter5/Figures//activation_min_dist_plo
+t.eps>
+(epstopdf)             \includegraphics on input line 193.
+Package epstopdf Info: Output file is already uptodate.
+<Chapter5/Figures//activation_min_dist_plot-eps-converted-to.pdf, id=930, 1393.
+205pt x 723.70375pt>
+File: Chapter5/Figures//activation_min_dist_plot-eps-converted-to.pdf Graphic f
+ile (type pdf)
+<use Chapter5/Figures//activation_min_dist_plot-eps-converted-to.pdf>
+Package pdftex.def Info: Chapter5/Figures//activation_min_dist_plot-eps-convert
+ed-to.pdf  used on input line 193.
+(pdftex.def)             Requested size: 557.27214pt x 289.47636pt.
 
- []
-
-<Chapter5/Figures//activation_min_dist_position_plot.jpg, id=807, 1927.2pt x 99
-1.705pt>
-File: Chapter5/Figures//activation_min_dist_position_plot.jpg Graphic file (typ
-e jpg)
-<use Chapter5/Figures//activation_min_dist_position_plot.jpg>
-Package pdftex.def Info: Chapter5/Figures//activation_min_dist_position_plot.jp
-g  used on input line 194.
-(pdftex.def)             Requested size: 578.16447pt x 297.5138pt.
-
-Overfull \hbox (88.48772pt too wide) in paragraph at lines 193--195
+Overfull \hbox (73.28586pt too wide) in paragraph at lines 192--194
  []|  [] 
  []
 
-[50 <./Chapter5/Figures//activation_min_dist_plot.jpg>]
-<Chapter5/Figures//activation_min_dist_position_plot_hyst.jpg, id=812, 1927.2pt
- x 991.705pt>
-File: Chapter5/Figures//activation_min_dist_position_plot_hyst.jpg Graphic file
- (type jpg)
-<use Chapter5/Figures//activation_min_dist_position_plot_hyst.jpg>
+[50 <./Chapter5/Figures//ob_sing_tg_sing_schema.jpg>]
+Package epstopdf Info: Source file: <Chapter5/Figures//activation_min_dist_posi
+tion_plot.eps>
+(epstopdf)                    date: 2026-03-11 18:16:59
+(epstopdf)                    size: 257542 bytes
+(epstopdf)             Output file: <Chapter5/Figures//activation_min_dist_posi
+tion_plot-eps-converted-to.pdf>
+(epstopdf)                    date: 2026-03-11 18:49:04
+(epstopdf)                    size: 100334 bytes
+(epstopdf)             Command: <repstopdf --outfile=Chapter5/Figures//activati
+on_min_dist_position_plot-eps-converted-to.pdf Chapter5/Figures//activation_min
+_dist_position_plot.eps>
+(epstopdf)             \includegraphics on input line 203.
+Package epstopdf Info: Output file is already uptodate.
+<Chapter5/Figures//activation_min_dist_position_plot-eps-converted-to.pdf, id=9
+35, 1393.205pt x 723.70375pt>
+File: Chapter5/Figures//activation_min_dist_position_plot-eps-converted-to.pdf 
+Graphic file (type pdf)
+<use Chapter5/Figures//activation_min_dist_position_plot-eps-converted-to.pdf>
+Package pdftex.def Info: Chapter5/Figures//activation_min_dist_position_plot-ep
+s-converted-to.pdf  used on input line 203.
+(pdftex.def)             Requested size: 557.27214pt x 289.47636pt.
+
+Overfull \hbox (67.59538pt too wide) in paragraph at lines 202--204
+ []|  [] 
+ []
+
+[51 <./Chapter5/Figures//activation_min_dist_plot-eps-converted-to.pdf>]
+Package epstopdf Info: Source file: <Chapter5/Figures//activation_min_dist_posi
+tion_plot_hyst.eps>
+(epstopdf)                    date: 2026-03-11 18:19:34
+(epstopdf)                    size: 258665 bytes
+(epstopdf)             Output file: <Chapter5/Figures//activation_min_dist_posi
+tion_plot_hyst-eps-converted-to.pdf>
+(epstopdf)                    date: 2026-03-11 18:49:05
+(epstopdf)                    size: 89285 bytes
+(epstopdf)             Command: <repstopdf --outfile=Chapter5/Figures//activati
+on_min_dist_position_plot_hyst-eps-converted-to.pdf Chapter5/Figures//activatio
+n_min_dist_position_plot_hyst.eps>
+(epstopdf)             \includegraphics on input line 214.
+Package epstopdf Info: Output file is already uptodate.
+<Chapter5/Figures//activation_min_dist_position_plot_hyst-eps-converted-to.pdf,
+ id=941, 1393.205pt x 723.70375pt>
+File: Chapter5/Figures//activation_min_dist_position_plot_hyst-eps-converted-to
+.pdf Graphic file (type pdf)
+<use Chapter5/Figures//activation_min_dist_position_plot_hyst-eps-converted-to.
+pdf>
 Package pdftex.def Info: Chapter5/Figures//activation_min_dist_position_plot_hy
-st.jpg  used on input line 205.
-(pdftex.def)             Requested size: 578.16447pt x 297.5138pt.
+st-eps-converted-to.pdf  used on input line 214.
+(pdftex.def)             Requested size: 557.27214pt x 289.47636pt.
 
-Overfull \hbox (88.48772pt too wide) in paragraph at lines 204--206
+Overfull \hbox (67.59538pt too wide) in paragraph at lines 213--215
  []|  [] 
  []
 
-[51 <./Chapter5/Figures//activation_min_dist_position_plot.jpg>]
-<Chapter5/Figures//ob_sing_tg_multi_schema.jpg, id=818, 1856.9375pt x 964.60374
+[52 <./Chapter5/Figures//activation_min_dist_position_plot-eps-converted-to.pdf
+>]
+<Chapter5/Figures//ob_sing_tg_multi_schema.jpg, id=948, 1856.9375pt x 964.60374
 pt>
 File: Chapter5/Figures//ob_sing_tg_multi_schema.jpg Graphic file (type jpg)
 <use Chapter5/Figures//ob_sing_tg_multi_schema.jpg>
 Package pdftex.def Info: Chapter5/Figures//ob_sing_tg_multi_schema.jpg  used on
- input line 216.
+ input line 224.
 (pdftex.def)             Requested size: 557.08556pt x 289.38336pt.
 
-Overfull \hbox (67.4088pt too wide) in paragraph at lines 215--217
+Overfull \hbox (67.4088pt too wide) in paragraph at lines 223--225
  []|  [] 
  []
 
-[52 <./Chapter5/Figures//activation_min_dist_position_plot_hyst.jpg>]
-<Chapter5/Figures//sing_ob_multi_tg_normal_result.jpg, id=823, 1856.9375pt x 96
-4.60374pt>
-File: Chapter5/Figures//sing_ob_multi_tg_normal_result.jpg Graphic file (type j
-pg)
-<use Chapter5/Figures//sing_ob_multi_tg_normal_result.jpg>
-Package pdftex.def Info: Chapter5/Figures//sing_ob_multi_tg_normal_result.jpg  
-used on input line 241.
-(pdftex.def)             Requested size: 519.93896pt x 270.0872pt.
+[53 <./Chapter5/Figures//activation_min_dist_position_plot_hyst-eps-converted-t
+o.pdf>]
+Package epstopdf Info: Source file: <Chapter5/Figures//sing_ob_multi_tg_normal_
+result.eps>
+(epstopdf)                    date: 2026-03-12 08:50:05
+(epstopdf)                    size: 740143 bytes
+(epstopdf)             Output file: <Chapter5/Figures//sing_ob_multi_tg_normal_
+result-eps-converted-to.pdf>
+(epstopdf)                    date: 2026-03-12 09:23:24
+(epstopdf)                    size: 230429 bytes
+(epstopdf)             Command: <repstopdf --outfile=Chapter5/Figures//sing_ob_
+multi_tg_normal_result-eps-converted-to.pdf Chapter5/Figures//sing_ob_multi_tg_
+normal_result.eps>
+(epstopdf)             \includegraphics on input line 249.
+Package epstopdf Info: Output file is already uptodate.
+<Chapter5/Figures//sing_ob_multi_tg_normal_result-eps-converted-to.pdf, id=954,
+ 1393.205pt x 723.70375pt>
+File: Chapter5/Figures//sing_ob_multi_tg_normal_result-eps-converted-to.pdf Gra
+phic file (type pdf)
+<use Chapter5/Figures//sing_ob_multi_tg_normal_result-eps-converted-to.pdf>
+Package pdftex.def Info: Chapter5/Figures//sing_ob_multi_tg_normal_result-eps-c
+onverted-to.pdf  used on input line 249.
+(pdftex.def)             Requested size: 529.42342pt x 275.01028pt.
 
-Overfull \hbox (53.0245pt too wide) in paragraph at lines 240--243
+Overfull \hbox (56.8185pt too wide) in paragraph at lines 248--250
  []|  [] 
  []
 
-[53 <./Chapter5/Figures//ob_sing_tg_multi_schema.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 244--247
+[54 <./Chapter5/Figures//ob_sing_tg_multi_schema.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 253--256
 
  []
 
-[54 <./Chapter5/Figures//sing_ob_multi_tg_normal_result.jpg>]
-<Chapter5/Figures//obav_multilink_3_link.jpg, id=837, 1856.9375pt x 964.60374pt
->
-File: Chapter5/Figures//obav_multilink_3_link.jpg Graphic file (type jpg)
-<use Chapter5/Figures//obav_multilink_3_link.jpg>
-Package pdftex.def Info: Chapter5/Figures//obav_multilink_3_link.jpg  used on i
-nput line 306.
-(pdftex.def)             Requested size: 519.93896pt x 270.0872pt.
+[55 <./Chapter5/Figures//sing_ob_multi_tg_normal_result-eps-converted-to.pdf>]
+Package epstopdf Info: Source file: <Chapter5/Figures//obav_multilink_3_link.ep
+s>
+(epstopdf)                    date: 2026-03-12 08:50:47
+(epstopdf)                    size: 714541 bytes
+(epstopdf)             Output file: <Chapter5/Figures//obav_multilink_3_link-ep
+s-converted-to.pdf>
+(epstopdf)                    date: 2026-03-12 09:23:26
+(epstopdf)                    size: 228200 bytes
+(epstopdf)             Command: <repstopdf --outfile=Chapter5/Figures//obav_mul
+tilink_3_link-eps-converted-to.pdf Chapter5/Figures//obav_multilink_3_link.eps>
 
-Overfull \hbox (53.0245pt too wide) in paragraph at lines 305--308
+(epstopdf)             \includegraphics on input line 314.
+Package epstopdf Info: Output file is already uptodate.
+<Chapter5/Figures//obav_multilink_3_link-eps-converted-to.pdf, id=967, 1393.205
+pt x 723.70375pt>
+File: Chapter5/Figures//obav_multilink_3_link-eps-converted-to.pdf Graphic file
+ (type pdf)
+<use Chapter5/Figures//obav_multilink_3_link-eps-converted-to.pdf>
+Package pdftex.def Info: Chapter5/Figures//obav_multilink_3_link-eps-converted-
+to.pdf  used on input line 314.
+(pdftex.def)             Requested size: 487.62906pt x 253.30011pt.
+
+Overfull \hbox (34.94098pt too wide) in paragraph at lines 313--315
  []|  [] 
  []
 
-<Chapter5/Figures//obav_multilink_6_link.jpg, id=838, 1856.9375pt x 964.60374pt
->
-File: Chapter5/Figures//obav_multilink_6_link.jpg Graphic file (type jpg)
-<use Chapter5/Figures//obav_multilink_6_link.jpg>
-Package pdftex.def Info: Chapter5/Figures//obav_multilink_6_link.jpg  used on i
-nput line 313.
-(pdftex.def)             Requested size: 519.93896pt x 270.0872pt.
+[56]
+Package epstopdf Info: Source file: <Chapter5/Figures//obav_multilink_6_link.ep
+s>
+(epstopdf)                    date: 2026-03-12 08:52:02
+(epstopdf)                    size: 986130 bytes
+(epstopdf)             Output file: <Chapter5/Figures//obav_multilink_6_link-ep
+s-converted-to.pdf>
+(epstopdf)                    date: 2026-03-12 09:23:28
+(epstopdf)                    size: 266259 bytes
+(epstopdf)             Command: <repstopdf --outfile=Chapter5/Figures//obav_mul
+tilink_6_link-eps-converted-to.pdf Chapter5/Figures//obav_multilink_6_link.eps>
 
-Overfull \hbox (53.0245pt too wide) in paragraph at lines 312--315
+(epstopdf)             \includegraphics on input line 322.
+Package epstopdf Info: Output file is already uptodate.
+<Chapter5/Figures//obav_multilink_6_link-eps-converted-to.pdf, id=975, 1393.205
+pt x 723.70375pt>
+File: Chapter5/Figures//obav_multilink_6_link-eps-converted-to.pdf Graphic file
+ (type pdf)
+<use Chapter5/Figures//obav_multilink_6_link-eps-converted-to.pdf>
+Package pdftex.def Info: Chapter5/Figures//obav_multilink_6_link-eps-converted-
+to.pdf  used on input line 322.
+(pdftex.def)             Requested size: 487.62906pt x 253.30011pt.
+
+Overfull \hbox (34.94098pt too wide) in paragraph at lines 321--323
  []|  [] 
  []
 
-[55 <./Chapter5/Figures//obav_multilink_3_link.jpg>]
-<Chapter5/Figures//obav_multilink_9_link.jpg, id=846, 1856.9375pt x 964.60374pt
->
-File: Chapter5/Figures//obav_multilink_9_link.jpg Graphic file (type jpg)
-<use Chapter5/Figures//obav_multilink_9_link.jpg>
-Package pdftex.def Info: Chapter5/Figures//obav_multilink_9_link.jpg  used on i
-nput line 320.
-(pdftex.def)             Requested size: 519.93896pt x 270.0872pt.
+Package epstopdf Info: Source file: <Chapter5/Figures//obav_multilink_9_link.ep
+s>
+(epstopdf)                    date: 2026-03-12 08:52:52
+(epstopdf)                    size: 1381474 bytes
+(epstopdf)             Output file: <Chapter5/Figures//obav_multilink_9_link-ep
+s-converted-to.pdf>
+(epstopdf)                    date: 2026-03-12 09:23:32
+(epstopdf)                    size: 311630 bytes
+(epstopdf)             Command: <repstopdf --outfile=Chapter5/Figures//obav_mul
+tilink_9_link-eps-converted-to.pdf Chapter5/Figures//obav_multilink_9_link.eps>
 
-Overfull \hbox (53.0245pt too wide) in paragraph at lines 319--322
+(epstopdf)             \includegraphics on input line 330.
+Package epstopdf Info: Output file is already uptodate.
+<Chapter5/Figures//obav_multilink_9_link-eps-converted-to.pdf, id=976, 1393.205
+pt x 723.70375pt>
+File: Chapter5/Figures//obav_multilink_9_link-eps-converted-to.pdf Graphic file
+ (type pdf)
+<use Chapter5/Figures//obav_multilink_9_link-eps-converted-to.pdf>
+Package pdftex.def Info: Chapter5/Figures//obav_multilink_9_link-eps-converted-
+to.pdf  used on input line 330.
+(pdftex.def)             Requested size: 487.62906pt x 253.30011pt.
+
+Overfull \hbox (34.94098pt too wide) in paragraph at lines 329--331
  []|  [] 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 324--325
+[57 <./Chapter5/Figures//obav_multilink_3_link-eps-converted-to.pdf> <./Chapter
+5/Figures//obav_multilink_6_link-eps-converted-to.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 335--336
 
  []
 
-[56 <./Chapter5/Figures//obav_multilink_6_link.jpg> <./Chapter5/Figures//obav_m
-ultilink_9_link.jpg>]
-<Chapter5/Figures//ob_multi_tg_multi_schema.jpg, id=854, 1856.9375pt x 964.6037
+<Chapter5/Figures//ob_multi_tg_multi_schema.jpg, id=984, 1856.9375pt x 964.6037
 4pt>
 File: Chapter5/Figures//ob_multi_tg_multi_schema.jpg Graphic file (type jpg)
 <use Chapter5/Figures//ob_multi_tg_multi_schema.jpg>
 Package pdftex.def Info: Chapter5/Figures//ob_multi_tg_multi_schema.jpg  used o
-n input line 333.
+n input line 343.
 (pdftex.def)             Requested size: 557.08556pt x 289.38336pt.
 
-Overfull \hbox (67.4088pt too wide) in paragraph at lines 332--334
+Overfull \hbox (67.4088pt too wide) in paragraph at lines 342--344
  []|  [] 
  []
 
-<Chapter5/Figures//singlelink_snake_results.jpg, id=855, 1856.9375pt x 964.6037
-4pt>
-File: Chapter5/Figures//singlelink_snake_results.jpg Graphic file (type jpg)
-<use Chapter5/Figures//singlelink_snake_results.jpg>
-Package pdftex.def Info: Chapter5/Figures//singlelink_snake_results.jpg  used o
-n input line 341.
-(pdftex.def)             Requested size: 519.93896pt x 270.0872pt.
+[58 <./Chapter5/Figures//obav_multilink_9_link-eps-converted-to.pdf>]
+Package epstopdf Info: Source file: <Chapter5/Figures//singlelink_snake_results
+.eps>
+(epstopdf)                    date: 2026-03-12 08:53:53
+(epstopdf)                    size: 1217167 bytes
+(epstopdf)             Output file: <Chapter5/Figures//singlelink_snake_results
+-eps-converted-to.pdf>
+(epstopdf)                    date: 2026-03-12 09:23:35
+(epstopdf)                    size: 224197 bytes
+(epstopdf)             Command: <repstopdf --outfile=Chapter5/Figures//singleli
+nk_snake_results-eps-converted-to.pdf Chapter5/Figures//singlelink_snake_result
+s.eps>
+(epstopdf)             \includegraphics on input line 351.
+Package epstopdf Info: Output file is already uptodate.
+<Chapter5/Figures//singlelink_snake_results-eps-converted-to.pdf, id=991, 1393.
+205pt x 723.70375pt>
+File: Chapter5/Figures//singlelink_snake_results-eps-converted-to.pdf Graphic f
+ile (type pdf)
+<use Chapter5/Figures//singlelink_snake_results-eps-converted-to.pdf>
+Package pdftex.def Info: Chapter5/Figures//singlelink_snake_results-eps-convert
+ed-to.pdf  used on input line 351.
+(pdftex.def)             Requested size: 487.62906pt x 253.30011pt.
 
-Overfull \hbox (53.0245pt too wide) in paragraph at lines 340--342
+Overfull \hbox (34.94098pt too wide) in paragraph at lines 350--352
  []|  [] 
  []
 
-[57 <./Chapter5/Figures//ob_multi_tg_multi_schema.jpg>]
-<Chapter5/Figures//multilink_snake_results_noExtraTg.jpg, id=861, 1856.9375pt x
- 964.60374pt>
-File: Chapter5/Figures//multilink_snake_results_noExtraTg.jpg Graphic file (typ
-e jpg)
-<use Chapter5/Figures//multilink_snake_results_noExtraTg.jpg>
-Package pdftex.def Info: Chapter5/Figures//multilink_snake_results_noExtraTg.jp
-g  used on input line 350.
-(pdftex.def)             Requested size: 501.37984pt x 260.44649pt.
+[59 <./Chapter5/Figures//ob_multi_tg_multi_schema.jpg>]
+Package epstopdf Info: Source file: <Chapter5/Figures//multilink_snake_results_
+noExtraTg.eps>
+(epstopdf)                    date: 2026-03-12 08:55:54
+(epstopdf)                    size: 981684 bytes
+(epstopdf)             Output file: <Chapter5/Figures//multilink_snake_results_
+noExtraTg-eps-converted-to.pdf>
+(epstopdf)                    date: 2026-03-12 09:23:38
+(epstopdf)                    size: 244788 bytes
+(epstopdf)             Command: <repstopdf --outfile=Chapter5/Figures//multilin
+k_snake_results_noExtraTg-eps-converted-to.pdf Chapter5/Figures//multilink_snak
+e_results_noExtraTg.eps>
+(epstopdf)             \includegraphics on input line 360.
+Package epstopdf Info: Output file is already uptodate.
+<Chapter5/Figures//multilink_snake_results_noExtraTg-eps-converted-to.pdf, id=9
+96, 1393.205pt x 723.70375pt>
+File: Chapter5/Figures//multilink_snake_results_noExtraTg-eps-converted-to.pdf 
+Graphic file (type pdf)
+<use Chapter5/Figures//multilink_snake_results_noExtraTg-eps-converted-to.pdf>
+Package pdftex.def Info: Chapter5/Figures//multilink_snake_results_noExtraTg-ep
+s-converted-to.pdf  used on input line 360.
+(pdftex.def)             Requested size: 487.62906pt x 253.30011pt.
 
-Overfull \hbox (34.46538pt too wide) in paragraph at lines 349--351
+Overfull \hbox (34.94098pt too wide) in paragraph at lines 359--361
  []|  [] 
  []
 
-[58 <./Chapter5/Figures//singlelink_snake_results.jpg>]
-<Chapter5/Figures//multilink_snake_results_ExtraTg.jpg, id=866, 1856.9375pt x 9
-64.60374pt>
-File: Chapter5/Figures//multilink_snake_results_ExtraTg.jpg Graphic file (type 
-jpg)
-<use Chapter5/Figures//multilink_snake_results_ExtraTg.jpg>
-Package pdftex.def Info: Chapter5/Figures//multilink_snake_results_ExtraTg.jpg 
- used on input line 359.
-(pdftex.def)             Requested size: 501.37984pt x 260.44649pt.
+[60 <./Chapter5/Figures//singlelink_snake_results-eps-converted-to.pdf>]
+Package epstopdf Info: Source file: <Chapter5/Figures//multilink_snake_results_
+ExtraTg.eps>
+(epstopdf)                    date: 2026-03-12 08:56:35
+(epstopdf)                    size: 1288233 bytes
+(epstopdf)             Output file: <Chapter5/Figures//multilink_snake_results_
+ExtraTg-eps-converted-to.pdf>
+(epstopdf)                    date: 2026-03-12 09:23:41
+(epstopdf)                    size: 327112 bytes
+(epstopdf)             Command: <repstopdf --outfile=Chapter5/Figures//multilin
+k_snake_results_ExtraTg-eps-converted-to.pdf Chapter5/Figures//multilink_snake_
+results_ExtraTg.eps>
+(epstopdf)             \includegraphics on input line 369.
+Package epstopdf Info: Output file is already uptodate.
+<Chapter5/Figures//multilink_snake_results_ExtraTg-eps-converted-to.pdf, id=100
+2, 1393.205pt x 723.70375pt>
+File: Chapter5/Figures//multilink_snake_results_ExtraTg-eps-converted-to.pdf Gr
+aphic file (type pdf)
+<use Chapter5/Figures//multilink_snake_results_ExtraTg-eps-converted-to.pdf>
+Package pdftex.def Info: Chapter5/Figures//multilink_snake_results_ExtraTg-eps-
+converted-to.pdf  used on input line 369.
+(pdftex.def)             Requested size: 487.62906pt x 253.30011pt.
 
-Overfull \hbox (34.46538pt too wide) in paragraph at lines 358--360
+Overfull \hbox (34.94098pt too wide) in paragraph at lines 368--370
  []|  [] 
  []
 
-[59 <./Chapter5/Figures//multilink_snake_results_noExtraTg.jpg>]
-<Chapter5/Figures//chassis_test1_schema.jpg, id=872, 1927.2pt x 991.705pt>
+[61 <./Chapter5/Figures//multilink_snake_results_noExtraTg-eps-converted-to.pdf
+>]
+<Chapter5/Figures//chassis_test1_schema.jpg, id=1009, 1927.2pt x 991.705pt>
 File: Chapter5/Figures//chassis_test1_schema.jpg Graphic file (type jpg)
 <use Chapter5/Figures//chassis_test1_schema.jpg>
 Package pdftex.def Info: Chapter5/Figures//chassis_test1_schema.jpg  used on in
-put line 372.
+put line 382.
 (pdftex.def)             Requested size: 520.35097pt x 267.76393pt.
 
-Overfull \hbox (53.43651pt too wide) in paragraph at lines 371--374
+Overfull \hbox (53.43651pt too wide) in paragraph at lines 381--383
  []|  [] 
  []
 
-[60 <./Chapter5/Figures//multilink_snake_results_ExtraTg.jpg>]
-<Chapter5/Figures//t1_multi_failed_result.jpg, id=877, 1927.2pt x 991.705pt>
-File: Chapter5/Figures//t1_multi_failed_result.jpg Graphic file (type jpg)
-<use Chapter5/Figures//t1_multi_failed_result.jpg>
-Package pdftex.def Info: Chapter5/Figures//t1_multi_failed_result.jpg  used on 
-input line 380.
-(pdftex.def)             Requested size: 520.35097pt x 267.76393pt.
+[62 <./Chapter5/Figures//multilink_snake_results_ExtraTg-eps-converted-to.pdf>]
+Package epstopdf Info: Source file: <Chapter5/Figures//t1_multi_failed_result.e
+ps>
+(epstopdf)                    date: 2026-03-12 08:58:04
+(epstopdf)                    size: 927991 bytes
+(epstopdf)             Output file: <Chapter5/Figures//t1_multi_failed_result-e
+ps-converted-to.pdf>
+(epstopdf)                    date: 2026-03-12 09:23:43
+(epstopdf)                    size: 269777 bytes
+(epstopdf)             Command: <repstopdf --outfile=Chapter5/Figures//t1_multi
+_failed_result-eps-converted-to.pdf Chapter5/Figures//t1_multi_failed_result.ep
+s>
+(epstopdf)             \includegraphics on input line 391.
+Package epstopdf Info: Output file is already uptodate.
+<Chapter5/Figures//t1_multi_failed_result-eps-converted-to.pdf, id=1015, 1393.2
+05pt x 723.70375pt>
+File: Chapter5/Figures//t1_multi_failed_result-eps-converted-to.pdf Graphic fil
+e (type pdf)
+<use Chapter5/Figures//t1_multi_failed_result-eps-converted-to.pdf>
+Package pdftex.def Info: Chapter5/Figures//t1_multi_failed_result-eps-converted
+-to.pdf  used on input line 391.
+(pdftex.def)             Requested size: 487.62906pt x 253.30011pt.
 
-Overfull \hbox (53.43651pt too wide) in paragraph at lines 379--382
+Overfull \hbox (34.94098pt too wide) in paragraph at lines 390--392
  []|  [] 
  []
 
-[61 <./Chapter5/Figures//chassis_test1_schema.jpg>]
-<Chapter5/Figures//t1_multi_failure_photo.png, id=883, 1215.54124pt x 654.445pt
->
+[63 <./Chapter5/Figures//chassis_test1_schema.jpg>]
+<Chapter5/Figures//t1_multi_failure_photo.png, id=1020, 1215.54124pt x 654.445p
+t>
 File: Chapter5/Figures//t1_multi_failure_photo.png Graphic file (type png)
 <use Chapter5/Figures//t1_multi_failure_photo.png>
 Package pdftex.def Info: Chapter5/Figures//t1_multi_failure_photo.png  used on 
-input line 388.
+input line 400.
 (pdftex.def)             Requested size: 425.44582pt x 229.05917pt.
 
-Overfull \hbox (4.05594pt too wide) in paragraph at lines 387--390
+Overfull \hbox (4.05594pt too wide) in paragraph at lines 399--401
  []|  [] 
  []
 
-[62 <./Chapter5/Figures//t1_multi_failed_result.jpg>]
-<Chapter5/Figures//t1_multi_ok_result.jpg, id=890, 1927.2pt x 991.705pt>
-File: Chapter5/Figures//t1_multi_ok_result.jpg Graphic file (type jpg)
-<use Chapter5/Figures//t1_multi_ok_result.jpg>
-Package pdftex.def Info: Chapter5/Figures//t1_multi_ok_result.jpg  used on inpu
-t line 398.
-(pdftex.def)             Requested size: 520.35097pt x 267.76393pt.
+[64 <./Chapter5/Figures//t1_multi_failed_result-eps-converted-to.pdf>]
+Package epstopdf Info: Source file: <Chapter5/Figures//t1_multi_ok_result.eps>
+(epstopdf)                    date: 2026-03-12 08:58:30
+(epstopdf)                    size: 460435 bytes
+(epstopdf)             Output file: <Chapter5/Figures//t1_multi_ok_result-eps-c
+onverted-to.pdf>
+(epstopdf)                    date: 2026-03-12 09:23:45
+(epstopdf)                    size: 167395 bytes
+(epstopdf)             Command: <repstopdf --outfile=Chapter5/Figures//t1_multi
+_ok_result-eps-converted-to.pdf Chapter5/Figures//t1_multi_ok_result.eps>
+(epstopdf)             \includegraphics on input line 411.
+Package epstopdf Info: Output file is already uptodate.
+<Chapter5/Figures//t1_multi_ok_result-eps-converted-to.pdf, id=1028, 1393.205pt
+ x 723.70375pt>
+File: Chapter5/Figures//t1_multi_ok_result-eps-converted-to.pdf Graphic file (t
+ype pdf)
+<use Chapter5/Figures//t1_multi_ok_result-eps-converted-to.pdf>
+Package pdftex.def Info: Chapter5/Figures//t1_multi_ok_result-eps-converted-to.
+pdf  used on input line 411.
+(pdftex.def)             Requested size: 445.83472pt x 231.58992pt.
 
-Overfull \hbox (53.43651pt too wide) in paragraph at lines 397--400
+Overfull \hbox (13.06348pt too wide) in paragraph at lines 410--412
  []|  [] 
  []
 
-[63 <./Chapter5/Figures//t1_multi_failure_photo.png>]
-<Chapter5/Figures//t1_multi_result_6lnk.jpg, id=898, 1927.2pt x 991.705pt>
-File: Chapter5/Figures//t1_multi_result_6lnk.jpg Graphic file (type jpg)
-<use Chapter5/Figures//t1_multi_result_6lnk.jpg>
-Package pdftex.def Info: Chapter5/Figures//t1_multi_result_6lnk.jpg  used on in
-put line 406.
-(pdftex.def)             Requested size: 520.35097pt x 267.76393pt.
+[65 <./Chapter5/Figures//t1_multi_failure_photo.png>]
+Package epstopdf Info: Source file: <Chapter5/Figures//t1_multi_result_6lnk.eps
+>
+(epstopdf)                    date: 2026-03-12 09:20:24
+(epstopdf)                    size: 1727137 bytes
+(epstopdf)             Output file: <Chapter5/Figures//t1_multi_result_6lnk-eps
+-converted-to.pdf>
+(epstopdf)                    date: 2026-03-12 09:23:49
+(epstopdf)                    size: 435895 bytes
+(epstopdf)             Command: <repstopdf --outfile=Chapter5/Figures//t1_multi
+_result_6lnk-eps-converted-to.pdf Chapter5/Figures//t1_multi_result_6lnk.eps>
+(epstopdf)             \includegraphics on input line 420.
+Package epstopdf Info: Output file is already uptodate.
+<Chapter5/Figures//t1_multi_result_6lnk-eps-converted-to.pdf, id=1034, 1393.205
+pt x 723.70375pt>
+File: Chapter5/Figures//t1_multi_result_6lnk-eps-converted-to.pdf Graphic file 
+(type pdf)
+<use Chapter5/Figures//t1_multi_result_6lnk-eps-converted-to.pdf>
+Package pdftex.def Info: Chapter5/Figures//t1_multi_result_6lnk-eps-converted-t
+o.pdf  used on input line 420.
+(pdftex.def)             Requested size: 445.83472pt x 231.58992pt.
 
-Overfull \hbox (53.43651pt too wide) in paragraph at lines 405--408
+Overfull \hbox (13.06348pt too wide) in paragraph at lines 419--421
  []|  [] 
  []
 
-[64 <./Chapter5/Figures//t1_multi_ok_result.jpg>]
-<Chapter5/Figures//t1_multi_failure_photo_6lnk.png, id=904, 1215.54124pt x 653.
-44125pt>
+<Chapter5/Figures//t1_multi_failure_photo_6lnk.png, id=1035, 1215.54124pt x 653
+.44125pt>
 File: Chapter5/Figures//t1_multi_failure_photo_6lnk.png Graphic file (type png)
 
 <use Chapter5/Figures//t1_multi_failure_photo_6lnk.png>
 Package pdftex.def Info: Chapter5/Figures//t1_multi_failure_photo_6lnk.png  use
-d on input line 413.
+d on input line 428.
 (pdftex.def)             Requested size: 425.44582pt x 228.70786pt.
 
-Overfull \hbox (4.05594pt too wide) in paragraph at lines 412--414
+Overfull \hbox (4.05594pt too wide) in paragraph at lines 427--429
  []|  [] 
  []
 
-[65 <./Chapter5/Figures//t1_multi_result_6lnk.jpg>]
-<Chapter5/Figures//t1_multi_result_9lnk_LowDelta.jpg, id=910, 1927.2pt x 991.70
-5pt>
-File: Chapter5/Figures//t1_multi_result_9lnk_LowDelta.jpg Graphic file (type jp
-g)
-<use Chapter5/Figures//t1_multi_result_9lnk_LowDelta.jpg>
-Package pdftex.def Info: Chapter5/Figures//t1_multi_result_9lnk_LowDelta.jpg  u
-sed on input line 422.
-(pdftex.def)             Requested size: 520.35097pt x 267.76393pt.
+[66 <./Chapter5/Figures//t1_multi_ok_result-eps-converted-to.pdf> <./Chapter5/F
+igures//t1_multi_result_6lnk-eps-converted-to.pdf>]
+Package epstopdf Info: Source file: <Chapter5/Figures//t1_multi_result_9lnk_Low
+Delta.eps>
+(epstopdf)                    date: 2026-03-12 09:10:35
+(epstopdf)                    size: 803183 bytes
+(epstopdf)             Output file: <Chapter5/Figures//t1_multi_result_9lnk_Low
+Delta-eps-converted-to.pdf>
+(epstopdf)                    date: 2026-03-12 09:23:51
+(epstopdf)                    size: 215156 bytes
+(epstopdf)             Command: <repstopdf --outfile=Chapter5/Figures//t1_multi
+_result_9lnk_LowDelta-eps-converted-to.pdf Chapter5/Figures//t1_multi_result_9l
+nk_LowDelta.eps>
+(epstopdf)             \includegraphics on input line 437.
+Package epstopdf Info: Output file is already uptodate.
+<Chapter5/Figures//t1_multi_result_9lnk_LowDelta-eps-converted-to.pdf, id=1042,
+ 1393.205pt x 723.70375pt>
+File: Chapter5/Figures//t1_multi_result_9lnk_LowDelta-eps-converted-to.pdf Grap
+hic file (type pdf)
+<use Chapter5/Figures//t1_multi_result_9lnk_LowDelta-eps-converted-to.pdf>
+Package pdftex.def Info: Chapter5/Figures//t1_multi_result_9lnk_LowDelta-eps-co
+nverted-to.pdf  used on input line 437.
+(pdftex.def)             Requested size: 445.83472pt x 231.58992pt.
 
-Overfull \hbox (53.43651pt too wide) in paragraph at lines 421--423
+Overfull \hbox (15.90892pt too wide) in paragraph at lines 436--438
  []|  [] 
  []
 
-[66 <./Chapter5/Figures//t1_multi_failure_photo_6lnk.png>]
-<Chapter5/Figures//t1_single_lnk_result.jpg, id=916, 1927.2pt x 991.705pt>
-File: Chapter5/Figures//t1_single_lnk_result.jpg Graphic file (type jpg)
-<use Chapter5/Figures//t1_single_lnk_result.jpg>
-Package pdftex.def Info: Chapter5/Figures//t1_single_lnk_result.jpg  used on in
-put line 430.
-(pdftex.def)             Requested size: 520.35097pt x 267.76393pt.
+[67 <./Chapter5/Figures//t1_multi_failure_photo_6lnk.png>]
+Package epstopdf Info: Source file: <Chapter5/Figures//t1_single_lnk_result.eps
+>
+(epstopdf)                    date: 2026-03-12 08:59:46
+(epstopdf)                    size: 460680 bytes
+(epstopdf)             Output file: <Chapter5/Figures//t1_single_lnk_result-eps
+-converted-to.pdf>
+(epstopdf)                    date: 2026-03-12 09:23:53
+(epstopdf)                    size: 226611 bytes
+(epstopdf)             Command: <repstopdf --outfile=Chapter5/Figures//t1_singl
+e_lnk_result-eps-converted-to.pdf Chapter5/Figures//t1_single_lnk_result.eps>
+(epstopdf)             \includegraphics on input line 445.
+Package epstopdf Info: Output file is already uptodate.
+<Chapter5/Figures//t1_single_lnk_result-eps-converted-to.pdf, id=1048, 1393.205
+pt x 723.70375pt>
+File: Chapter5/Figures//t1_single_lnk_result-eps-converted-to.pdf Graphic file 
+(type pdf)
+<use Chapter5/Figures//t1_single_lnk_result-eps-converted-to.pdf>
+Package pdftex.def Info: Chapter5/Figures//t1_single_lnk_result-eps-converted-t
+o.pdf  used on input line 445.
+(pdftex.def)             Requested size: 445.83472pt x 231.58992pt.
 
-Overfull \hbox (53.43651pt too wide) in paragraph at lines 429--432
+Overfull \hbox (15.90892pt too wide) in paragraph at lines 444--446
  []|  [] 
  []
 
-[67 <./Chapter5/Figures//t1_multi_result_9lnk_LowDelta.jpg>]) [68 <./Chapter5/F
-igures//t1_single_lnk_result.jpg>]
+[68 <./Chapter5/Figures//t1_multi_result_9lnk_LowDelta-eps-converted-to.pdf> <.
+/Chapter5/Figures//t1_single_lnk_result-eps-converted-to.pdf>]) [69]
 \openout2 = `Conclusions/conclusions.aux'.
 
- (./Conclusions/conclusions.tex
+
+(./Conclusions/conclusions.tex
 Chapter 6.
 
 Underfull \hbox (badness 10000) in paragraph at lines 19--22
 
  []
 
-[69
+[70
 
 
 
 
-]) [70]
+]) [71]
 \openout2 = `Appendix1/appendix1.aux'.
 
  (./Appendix1/appendix1.tex
@@ -1715,41 +2132,47 @@ Overfull \hbox (21.59766pt too wide) in paragraph at lines 29--29
 []|[]| 
  []
 
-) [71
+) [72
 
 
 
 
-] [72] (./RobEngThesisTemplate.bbl (./RobEngThesisTemplate.brf)
+] [73] (./RobEngThesisTemplate.bbl (./RobEngThesisTemplate.brf)
 \tf@brf=\write7
 \openout7 = `RobEngThesisTemplate.brf'.
 
- [73
+ [74
 
 
 \FN@pp@footnotehinttrue 
 
 
-] [74]) [75] (./RobEngThesisTemplate.aux (./Originality/originality.aux)
+] [75]) [76] (./RobEngThesisTemplate.aux (./Originality/originality.aux)
 (./Acknowledgement/acknowledgement.aux) (./Abstract/abstract.aux)
 (./Chapter1/chapter1.aux) (./Chapter2/chapter2.aux) (./Chapter3/chapter3.aux)
 (./Chapter4/chapter4.aux) (./Chapter5/chapter5.aux)
 (./Conclusions/conclusions.aux) (./Appendix1/appendix1.aux))
+
+LaTeX Warning: There were undefined references.
+
 Package rerunfilecheck Info: File `RobEngThesisTemplate.out' has not changed.
-(rerunfilecheck)             Checksum: 1623AF9E0A193D9AA1452CA6761B5EA7;8910.
+(rerunfilecheck)             Checksum: BB687B1AB08BC4082756D5BAE904A735;8975.
 Package rerunfilecheck Info: File `RobEngThesisTemplate.brf' has not changed.
-(rerunfilecheck)             Checksum: 43854723D8DB111952347773A2833775;1862.
+(rerunfilecheck)             Checksum: 0F2FFF5BD1D6A724B7CD8F1FE592CFD5;2908.
  ) 
 Here is how much of TeX's memory you used:
- 20897 strings out of 480171
- 410359 string characters out of 5894490
- 704343 words of memory out of 5000000
- 38122 multiletter control sequences out of 15000+600000
+ 20973 strings out of 480171
+ 415502 string characters out of 5894490
+ 706106 words of memory out of 5000000
+ 38185 multiletter control sequences out of 15000+600000
  535420 words of font info for 102 fonts, out of 8000000 for 9000
  62 hyphenation exceptions out of 8191
- 125i,15n,131p,1465b,917s stack positions out of 5000i,500n,10000p,200000b,80000s
-pdfTeX warning (dest): name{francesco.giovinazzo@edu.unige.it} has been refer
-enced but does not exist, replaced by a fixed one
+ 125i,15n,131p,1465b,919s stack positions out of 5000i,500n,10000p,200000b,80000s
+pdfTeX warning (dest): name{simone.borelli@edu.unige.it} has been referenced 
+but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{francesco.giovinazzo@edu.unige.it} has been referen
+ced but does not exist, replaced by a fixed one
 
 pdfTeX warning (dest): name{francesco.grella@edu.unige.it} has been referenced 
 but does not exist, replaced by a fixed one
@@ -1788,10 +2211,10 @@ e1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf/fonts/type1/public/tex-
 gyre/qbkb.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/qbkr.pfb></usr/shar
 e/texmf/fonts/type1/public/tex-gyre/qbkri.pfb></usr/share/texmf/fonts/type1/pub
 lic/tex-gyre/qcrr.pfb>
-Output written on RobEngThesisTemplate.pdf (85 pages, 12234295 bytes).
+Output written on RobEngThesisTemplate.pdf (85 pages, 11881845 bytes).
 PDF statistics:
- 1148 PDF objects out of 1200 (max. 8388607)
- 911 compressed objects within 10 object streams
- 252 named destinations out of 1000 (max. 500000)
- 696 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1298 PDF objects out of 1440 (max. 8388607)
+ 1032 compressed objects within 11 object streams
+ 260 named destinations out of 1000 (max. 500000)
+ 691 words of extra memory for PDF output out of 10000 (max. 10000000)
 

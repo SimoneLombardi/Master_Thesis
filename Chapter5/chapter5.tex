@@ -5,65 +5,65 @@
 
 \chapter{Simulation environment and experiments}
 \label{chap:fifth}
-\graphicspath{{Chapter5/Figures/PNG/}{Chapter5/Figures/JPG/}{Chapter5/Figures/JPEG/}{Chapter5/Figures/}}
+\graphicspath{{Chapter5/Figures/PNG/}{Chapter5/Figures/JPG/}{Chapter5/Figures/JPEG/}{Chapter5/Figures/EPS/}{Chapter5/Figures/}}
 
-The simulation environment uses \textit{rviz} for visualizing the movement of the robot. The obstacle used is in the form of a cylinder.
+The simulation environment uses \textit{RViz} for visualizing the movement of the robot. The obstacle used is in the form of a cylinder.
 \begin{figure}[H]
 	\centering
 	\begin{subfigure}{0.49\textwidth}
-		\includegraphics[width=\linewidth]{single_obstacle_isom.png}
+		\includegraphics[width=\linewidth]{single_obstacle_isom.eps}
 		\caption{Cylinder obstacle rendering}
 		\label{fig:cylinderImage}
 	\end{subfigure}
 	\hfill
 	\begin{subfigure}{0.49\textwidth}
-		\includegraphics[width=\linewidth]{single_obstacle_top.png}
+		\includegraphics[width=\linewidth]{single_obstacle_top.eps}
 		\caption{Cylinder obstacle top view}
 	\end{subfigure}
 \end{figure}
-The obstacles are used singularly or in a gate configuration, but the generated \textit{minimum distance} task is always one. Since in the real scenario the sensor output is a single \textit{point cloud} for the whole environment, this approach more closely resembles the real world application.
+\noindent The obstacles are used singularly or in a gate configuration, but the generated \textit{minimum distance} task is always one, for instance in the case of the multi-cylinder obstacle for each link there is only one proximity-task. Since in the real scenario the sensor output is a single \textit{point cloud} for the whole environment, this approach more closely resembles the real-world application.
 \begin{figure}[H]
 	\centering
 	\begin{subfigure}{0.49\textwidth}
-		\includegraphics[width=\linewidth]{multi_obstacle_isom.png}
+		\includegraphics[width=\linewidth]{multi_obstacle_isom.eps}
 		\caption{Multi cylinder obstacle rendering}
 		\label{fig:multiClinderImage}
 	\end{subfigure}
 	\hfill
 	\begin{subfigure}{0.49\textwidth}
-		\includegraphics[width=\linewidth]{multi_obstacle_top.png}
+		\includegraphics[width=\linewidth]{multi_obstacle_top.eps}
 		\caption{Multi cylinder obstacle top view}
 	\end{subfigure}
 \end{figure}
 \noindent The relative position and orientation of the obstacles will be discussed in relation to each experiment.
-Lastly I used the \textit{chassis point cloud} to evaluate the motion in an environment similar to the one of \textit{Sesto senso}.
+Lastly, I used the \textit{chassis point cloud} to evaluate the motion in an environment similar to that of \textit{Sesto senso}.
 \begin{figure}[H]
 	\centering
 	\begin{subfigure}{\textwidth}
-		\includegraphics[width=\linewidth]{chassis_obstacle_isom.png}
+		\includegraphics[width=\linewidth]{chassis_obstacle_isom.eps}
 	\end{subfigure}
 	\begin{subfigure}{0.49\textwidth}
-		\includegraphics[width=\linewidth]{chassis_obstacle_top.png}
+		\includegraphics[width=\linewidth]{chassis_obstacle_top.eps}
 	\end{subfigure}
 	\hfill
 	\begin{subfigure}{0.49\textwidth}
-		\includegraphics[width=\linewidth]{chassis_obstacle_side.png}
+		\includegraphics[width=\linewidth]{chassis_obstacle_side.eps}
 	\end{subfigure}
 	\caption{Car chassis point cloud}
 	\label{fig:chassis_point_cloud}
 \end{figure}
 
 \subsection{Velocity gain tuning}
-This tests were aimed to evaluate the effect of different \textit{velocity gain} for the \textit{Kuka} and \textit{Ur10e}. The test was performed with only the \textit{End effector target} task active, the following graphs show the \textit{norm} of the \textit{cartesian error} in time during the experiments, separated in position and orientation.\\
-\noindent The experiment was a simple \textit{reachin objective}, starting from a common initial position and a fixed target.
+These tests were aimed to evaluate the effect of different \textit{velocity gain} for the \textit{Kuka} and \textit{Ur10e}. The test was performed with only the \textit{End effector target} task active; the following graphs show the \textit{norm} of the \textit{cartesian error} in time during the experiments, separated in position(top) and orientation(bottom). The experiment was a simple \textit{reaching objective}, starting from a common initial position and a fixed target.
 
 \begin{figure}[H]
 	\centering
-	\hspace*{-2.3cm}
-	\includegraphics[scale=0.28]{gain_tuning_exp.jpg}
+	\hspace*{-2.0cm}
+	\includegraphics[scale=0.38]{gain_tuning_exp.eps}
+	\caption{Position and Orientation error norm for the end effector}
 	\label{fig:gain_tuning_exp_graph}
 \end{figure}
-\noindent As expected greater \textit{gain} values correspond to a faster exeution. where the best performer in terms of execution time is the pair: $gain = 0,5$ for the \textit{Kuka} and $gain = 0,5$ \textit{Ur10e}.\\
+\noindent As expected, greater \textit{gain} values correspond to a faster execution. where the best performer in terms of execution time is the pair: $gain = 0,5$ for the \textit{Kuka} and $gain = 0,5$ \textit{Ur10e}.\\
 \begin{table}[H]
 	\centering
 	\begin{tabular}{|c|c|}
@@ -71,22 +71,30 @@ This tests were aimed to evaluate the effect of different \textit{velocity gain}
 		\textit{Gain Pair: Kuka, Ur10e}	& \textit{Execution time (Sec)} \\
 		\hline
 		$0.01, 0.5$	& $17.36$\\
-		$0.05, 0.5$	& $16.7$\\
-		$0.5, 0.5$	& $15.46$\\
+		$0.05, 0.5$	& $15.38$\\
+		$0.5, 0.5$	& $5.1$\\
 		$0.5, 0.1$	& $31.4$\\
 		$0.5, 0.05$	& $77.34$\\
 		\hline
 	\end{tabular}
 \end{table}
-\noindent Looking at the graph is clear how a greater gain value on the \textit{Kuka} results in a bigger initial velocity that can and possible overshoot of the target. In addition I noticed that comparing the norm of the \textit{position} and \textit{orientation} error emerges that the \textit{Kuka} is more responsible for the position of the end-effector than its orientation and vice-versa.
+\noindent Looking at the graph is clear how a greater gain value on the \textit{Kuka} results in a bigger initial velocity that can possibly overshoot the target. In addition, I noticed that comparing the norm of the \textit{position} and \textit{orientation} error emerges that the \textit{Kuka} is more responsible for the position of the end-effector than its orientation and vice-versa.
 \begin{figure}[H]
 	\centering
 	\hspace*{-2.3cm}
-	\includegraphics[scale=0.28]{robot_effects_graph.jpg}
-	\caption{Joint velocity command norm, for each robot}
+	\includegraphics[scale=0.4]{robot_effects_graph_2.eps}
+	\caption{Joint velocity command norm, for each robot. Gain value: $0.05, 0.5$ in the first row, $0.05, 0.5$ in the second}
+	\label{fig:robot_effects_graph_2}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\hspace*{-2.3cm}
+	\includegraphics[scale=0.4]{robot_effects_graph.eps}
+	\caption{Joint velocity command norm, for each robot. Gain value: $0.5, 0.1$ in the first row, $0.5, 0.05$ in the second}
 	\label{fig:robot_effects_graph}
 \end{figure}
-\noindent In these graph we have on the left the comparison between the profile of the \textit{position error norm} and the \textit{velocity command norm} for the Kuka arm, and on the right the \textit{orientation error norm} with the Ur10 \textit{velocity command norm}.\\
+\noindent In this graphs, we can see the correlation between the profile of the \textit{position error norm} and the \textit{velocity command norm} for the Kuka, and on the right the \textit{orientation error norm} with the UR10e \textit{velocity command norm}. 
 \noindent The last thing I noticed was the difference in the \textit{final configuration} in the four experiments, of which I report two examples from the first and last experiment.
 \begin{figure}[H]
 	\centering
@@ -108,43 +116,41 @@ This tests were aimed to evaluate the effect of different \textit{velocity gain}
 \begin{figure}[H]
 	\centering
 	\begin{subfigure}{\textwidth}
-		\includegraphics[width=\linewidth]{jvcompar_001_05.jpg}
+		\includegraphics[width=\linewidth]{jv_compare_001_05.eps}
 		\caption{joint variable profile, pair: $0.01, 0.5$}
 	\end{subfigure}
 	\hfill
 	\begin{subfigure}{\textwidth}
-		\includegraphics[width=\linewidth]{jvcompar_05_005.jpg}
+		\includegraphics[width=\linewidth]{jv_compare_05_005.eps}
 		\caption{joint variable profile, pair: $0.5, 0.05$}
 	\end{subfigure}
 \end{figure}
-\noindent It is clear that in the second case the \textit{Ur10e} is almost static, which is not desirable, since we want to exploit the kinematic chain in its entirety. For this reason for the other tests the chosen gain pair was: $0.05, 0.5$, keeping in mind to maintain a gain ratio, $\frac{UR10e_{gain}}{KUKA_{gain}} >> 1$.
+\noindent It is clear that in the second case the \textit{Ur10e} is almost static, which is not desirable, since we want to exploit the kinematic chain in its entirety. For this reason, for the other tests the chosen gain pair was: $0.05, 0.5$, keeping in mind to maintain a gain ratio, $\frac{UR10e_{gain}}{KUKA_{gain}} >> 1$. Comparing \ref{fig:robot_effects_graph} and \ref{fig:robot_effects_graph_2} we can also state that the gain ratio does not seem to affect the correlation between the two arms and the \textit{cartesian error norm}.
 
 % -> position error in time
 % -> DIFFERENCE in solution after changing the gain value
 \subsection{Obstacle avoidance test}
-% -> correct avoidance of the obstacle 
+% -> correct avoidance of the obstacle
 % -> link distance from ob in time
-\noindent To test the correctness of the \textit{obstacle avoidance} task I removed the \textit{reaching} task and moved the obstacle using the interactive marker in Rviz, to see the reaction of the robot. Here are the result, showing the \textit{minimum distance link} and the relative \textit{activation function}.
+\noindent To test the correctness of the \textit{obstacle avoidance} task, I removed the \textit{reaching} task and moved the obstacle using the interactive marker in RViz, to see the reaction of the robot. Here are the results, showing the \textit{minimum distance link} and the relative \textit{activation function}.
 
 %% FIGURE
 \begin{figure}[H]
 	\centering
-	\hspace*{-2.5cm}
-	\includegraphics[scale=0.22]{obav_norm_noReach_test.jpg}
-	\caption{task activation profile, with respect to \textit{min dist} value}
+	\hspace*{-2.6cm}
+	\includegraphics[scale=0.4]{obav_norm_noReach_test.eps}
+	\caption{Obstacle avoidance task activation profile, with respect to \textit{min dist} value}
 	\label{fig:activation_min_dist_plot_noReach}
 \end{figure}
 
-\noindent The \textit{Min Dist} is the norm of the minimum distance vector between the robot point cloud and the obstacle point cloud. It is clear from the graph the when the \textit{Min Dist} drops below the \textit{task transition} line, the obstacle avoidance task is activated and consequently the distance increases.\\
-\noindent Since there is no other task besides the \textit{obstacle avoidance} after the task is deactivated the robot stops abruptly hence the \textit{jagged} nature of the plot. In the bottom plot each link \textit{minimum distance} is displayed, aside for the \textit{kuka base} and \textit{kuka link one}, since the first is a static link and the second has very limited motion capabilities and is considered to be outside the normal work environment, to remove some computational burden the proximity task for these two links are not computed. This approach is maintained in all the following tests.
-
-
+\noindent The \textit{Min Dist} is the norm of the minimum distance vector between the robot point cloud and the obstacle point cloud. It is clear from the graph that when \textit{Min Dist} drops below the \textit{task transition} line, the \textit{obstacle avoidance} task is activated, and consequently the distance increases.\
+\noindent Since there is no other task besides \textit{obstacle avoidance} after the task is deactivated, the robot stops abruptly, hence the \textit{jagged} nature of the plot. In the bottom plot, each link's \textit{Min Dist} value is displayed to show the correct behavior of the implementation. The \textit{Min Dist} value for the \textit{kuka base} and \textit{kuka link one} is not taken into account since the first is a static link and the second has very limited avoidance capabilities and is considered to be outside the normal work environment, to reduce some computational burden, the proximity task for these two links is not computed. This approach is maintained in all the following tests.
 
 \subsubsection{Single obstacle}
 % activation delta effects
 % -> point cloud flickering --> implemented solution
-\noindent The first test I did with both the \textit{reaching} and \textit{obstacle avoidance} task, was to set a viable $\delta$ value for the \textit{obstacle avoidance}. The $\delta$ value is relative to the activation function of the task, \ref{fig:DecreasingActFcn_realValues_obav}, and is the \textit{lenght} of the transition region of the task.
-\noindent In this experiment the obstace was positioned at:
+\noindent The first test with both the \textit{reaching} and \textit{obstacle avoidance} task, was to find a viable $\delta$ value for the \textit{obstacle avoidance}. The $\delta$ value is relative to the activation function of the task, \ref{fig:DecreasingActFcn_realValues_obav}, and is the \textit{length} of the transition region.
+\noindent In this experiment, the obstacle was positioned at:
 \begin{equation}
 	\vec{r} = \begin{bmatrix}
 		3.0 & 0.0 & 0.05 
@@ -154,7 +160,7 @@ This tests were aimed to evaluate the effect of different \textit{velocity gain}
 		0.0 & 0.0 & 0.0
 	\end{bmatrix}
 \end{equation}
-\noindent The traslation vector $r$, and \textit{RPY} vector $\rho$ are both with respect to the $\langle\textit{kuka\_base}\rangle$ frame. And the \textit{goal} of all the test conducted in this tranche was:
+\noindent The traslation vector $r$, and \textit{RPY} vector $\rho$ are both with respect to the \textit{kuka base} that coincides with $\langle\textit{world}\rangle$ frame. And the \textit{goal} of all the tests conducted in this tranche was:
 \begin{equation}
 	\vec{r} = \begin{bmatrix}
 		3.0 & 0.3 & 1.0 
@@ -164,52 +170,54 @@ This tests were aimed to evaluate the effect of different \textit{velocity gain}
 		0.0 & 0.0 & 0.0
 	\end{bmatrix}
 \end{equation}
-\noindent with respect to $\langle\textit{kuka\_base}\rangle$.
+\noindent with respect to $\langle\textit{world}\rangle$, which is considered the common inertial reference frame.
 \begin{figure}[H]
 	\centering
-	\begin{subfigure}{0.49\textwidth}
-		\includegraphics[width=\linewidth]{sing_obst_sing_tg_taskImage.png}
-	\end{subfigure}
-	\hfill
-	\begin{subfigure}{0.49\textwidth}
-		\includegraphics[width=\linewidth]{ob_sing_tg_sing_schema.jpg}
-	\end{subfigure}
-	\label{fig:sing_obst_sing_targ_fig}
+	\includegraphics[scale=0.3]{sing_obst_sing_tg_taskImage.png}
+	\caption{Single obstacle test, initial configuration}
+	\label{fig:sing_obst_sing_targ_fig_photo}
+\end{figure}
+\noindent And following is the relative test schema, highlighting the different $\delta$ value used in each run.
+\begin{figure}[H]
+	\centering
+	\hspace*{-2.8cm}
+	\includegraphics[scale=0.3]{ob_sing_tg_sing_schema.jpg}
+	\caption{Single obstacle test schema showing the different $\delta$ values}
+	\label{fig:sing_obst_sing_targ_fig_schema}
 \end{figure}
 
 %% FIGURE
 \begin{figure}[H]
 	\centering
-	\hspace*{-2.8cm}
-	\includegraphics[scale=0.22]{activation_min_dist_plot.jpg}
+	\hspace*{-2.6cm}
+	\includegraphics[scale=0.4]{activation_min_dist_plot.eps}
 	\caption{task activation profile, with respect to \textit{min dist} value}
 	\label{fig:activation_min_dist_plot}
 \end{figure}
 
-\noindent During this tranche of test, it was clear that in some cases the robot could remain stuck in some local minima, where the \textit{obstacle avoidance} desired velocity has some "chattering" due to the way the minimum distance link is chosen.\\
+\noindent During this tranche of test, it was clear that in some cases the robot could remain stuck in some local minima, where the \textit{obstacle avoidance} desired velocity has some “chattering” due to the way the minimum distance link is chosen. The expected behavior is shown in the bottom left graph, as the end-effector enters the transition region it comes to a stop when the action of the \textit{reaching} task is balanced by the \textit{avoidance}.   
 
 \begin{figure}[H]
 	\centering
 	\hspace*{-2.8cm}
-	\includegraphics[scale=0.3]{activation_min_dist_position_plot.jpg}
+	\includegraphics[scale=0.4]{activation_min_dist_position_plot.eps}
 	\caption{Position error norm}
 	\label{fig:activation_min_dist_position_plot}
 \end{figure}
 
-\noindent Adding the \textit{position error norm} in the plot with $\delta = 0.5$ is clear how the chattering is blocking the end effector in place, with high speed jerky movements.\\
-\noindent To resolve this I implemented an \textit{hysteresis}, after a link is selected as the minimum distance link, to change the link again the distance has to be lower of the original link distance and the difference has to be greater of a certain threshold. 
-\noindent The result is evident I the following graph:
+\noindent Adding the \textit{position error norm} in the plot with $\delta = 0.5$ is clear how the chattering is making the end effector move, with high-speed jerky movements. This behavior is created when the \textit{desired velocity} of the \textit{avoidance} task "swings" as the \textit{minimum distance point} changes at high frequency. 
+\noindent An \textit{hysteresis} was implemented to address the problem; after a link is selected as the minimum distance link, to change the link again, the distance has to be lower than the original link distance, and the difference has to be greater than a certain threshold.
+\noindent The result is evident in the following graph:
 \begin{figure}[H]
 	\centering
 	\hspace*{-2.8cm}
-	\includegraphics[scale=0.3]{activation_min_dist_position_plot_hyst.jpg}
+	\includegraphics[scale=0.4]{activation_min_dist_position_plot_hyst.eps}
 	\caption{Hysteresis effect on chattering}
 	\label{fig:activation_min_dist_position_plot_hyst}
 \end{figure}
 
-\noindent After finding an adequate $\delta$ value, I went on to test the robot in a sequential target scenario, I wanted the robot to wrap around the cylindrical obstacle. The experiment was done with the \textit{obstacle avoidance} task in planar mode, meanig that the \textit{desired velocity} used to avoid the obstacle lived in the \textit{xy} plane. The \textit{obstacle} and \textit{initial configuration} are the same of the previous test.
+\noindent After finding an adequate $\delta$ value, I went on to test the robot in a sequential target scenario. I wanted the robot to wrap around the cylindrical obstacle. The experiment was done with the \textit{obstacle avoidance} task in planar mode, meaning that the \textit{desired velocity} used to avoid the obstacle lived in the \textit{xy} plane. The \textit{obstacle} and \textit{initial configuration} are the same of the previous test.
 \noindent Here is a schema of the experiment:
-% tg behind 2D 3d
 \begin{figure}[H]
 	\centering
 	\hspace*{-2.8cm}
@@ -234,16 +242,17 @@ This tests were aimed to evaluate the effect of different \textit{velocity gain}
 	\end{bmatrix}
 \end{equation}
 \noindent the second target has a translation of $|0.4|$ in the \textit{x} and \textit{y} direction.\\
-\noindent Since there have been some inconsistencies during testing I decided to repeat the test three times. Here are the results:
+\noindent Since there have been some inconsistencies during testing, I decided to repeat the test three times. Here are the results:
 \begin{figure}[H]
 	\centering
-	\hspace*{-2.0cm}
-	\includegraphics[scale=0.28]{sing_ob_multi_tg_normal_result.jpg}
+	\hspace*{-2.2cm}
+	\includegraphics[scale=0.38]{sing_ob_multi_tg_normal_result.eps}
+	\caption{Single link multi target test result, with single obstacle environment}
 	\label{fig:ob_sing_tg_multi_results}
 \end{figure}
-\noindent The graphs show on the left side for each attempt the value of the \textit{activation function} for the obstacle avoidance, and on the right side the value of the norm of the \textit{cartesian error} for the end effector. The \textit{obstacle avoidance} is performed in 2 dimension for this test, meaning the robot attempts to avoid the obstacle with movement in the $xy$ plane.\\
-\noindent In the first two attempts is clear how on the second target the robot find itself in a \textit{local minima} and is not able to exit. The line \textit{reaching trsh} shows the value of the cartesian error norm that is considered to have a successful test, the value $trsh = 0.03$.\\
-\noindent For the third attempt I decided to increase the $x$ translation of the second target from $0.4$ to $0.6$, and the robot is able to clear the steps but the problem is present again in the third step. \\
+\noindent The graphs show on the left side for each attempt the value of the \textit{activation function} for the obstacle avoidance, and on the right side the value of the norm of the \textit{cartesian error} for the end effector. The \textit{obstacle avoidance} is performed in 2 dimensions for this test, meaning the robot attempts to avoid the obstacle with movement in the $xy$ plane.\\
+\noindent In the first two attempts is clear how on the second target the robot finds itself in a \textit{local minima} and is not able to exit. The line \textit{reaching trsh} shows the value of the Cartesian error norm that is considered to have a successful test, the value $trsh = 0.03$.\\
+\noindent For the third attempt, I decided to increase the $x$ translation of the second target from $0.4$ to $0.6$, and the robot is able to clear the steps but the problem is present again in the third step. \\
 
 %% DA LEVARE PROBABILMENTE
 %\noindent Plotting the \textit{desired velocities} for the obstacle avoidance and for the reaching task in the time interval where the robot is stuck in the local minima we can see a possible reason why the robot stopped moving:
@@ -257,8 +266,8 @@ This tests were aimed to evaluate the effect of different \textit{velocity gain}
 %\noindent I plotted the \textit{2D} reference rate vector for the two tasks as a point all centered in $O = (0,0)$. The time interval for the first two attempts is set from about $15$sec to the end of the attempt, and for the third one from $41$sec. We can se how in those time stamp the desired velocities are telling the robot to move in opposite direction.
 %% DA LEVARE PROBABILMENTE
 
-\noindent To resolve this problem I decided to add in the obstacle avoidance task, multiple links. Referencing the definition of the \textit{obstacle avoidance} task in  \ref{chap:third} the multi-link version is defined by staking the tasks in a single matrix.\\
-\noindent The reference rate is a column vector composed of $n$ part, where $n$ is the number of links considered in the task.
+\noindent To resolve this problem, I decided to add in the obstacle avoidance task, multiple links. Referencing the definition of the \textit{obstacle avoidance} task in  \ref{chap:third}, the multi-link version is defined by stacking the tasks in a single matrix.\\
+\noindent The reference rate is a column vector composed of $n$ parts, where $n$ is the number of links considered in the task.
 \begin{equation}
 	\vec{\dot{\bar{x}}}_{multi\_link} = 
 	\begin{bmatrix}
@@ -270,8 +279,7 @@ This tests were aimed to evaluate the effect of different \textit{velocity gain}
 	\mathbb{R}^{1\times (n*task\_dim)}
 	\label{equat:multi_link_ref_rate}
 \end{equation}
-\noindent The dimension of each reference rate vector is dependent on the selected dimension for the \textit{obstacle avoidance} task, either $task\_dim = 2$ or $task\_dim = 3$.
-\noindent For the \textit{activation function} we have a square matrix of size $n*task\_dim$.
+\noindent The dimension of each reference rate vector is dependent on the selected dimension for the \textit{obstacle avoidance} task, either $task_dim = 2$ or $task_dim = 3$. For the \textit{activation function} we have a square matrix of size $ntask_dim$.
 \begin{equation}
 	\vec{A}_{multi\_link} = 
 	\begin{bmatrix}
@@ -298,35 +306,37 @@ This tests were aimed to evaluate the effect of different \textit{velocity gain}
 	\hfill
 	\mathbb{R}^{(n*task\_dim)\times 12}
 \end{equation}
-\noindent This structure allows to have multiple \textit{obstacle avoidance} task at the same priority level. The \textit{proximity task} are sent from the sensing node for each link, after sorting the task in ascending order for the distance from the obstacle, the first $n$ task are taken and used to compute the control step. 
+\noindent This structure allows for multiple \textit{obstacle avoidance} tasks at the same priority level. The \textit{proximity task} is sent from the sensing node for each link. After sorting the tasks in ascending order for the distance from the obstacle, the first $n$ tasks are taken and used to compute the control step.
 The result for the multi-target test for $3$, $6$ and $9$ links are:
 \begin{figure}[H]
 	\centering
-	\hspace*{-2.0cm}
-	\includegraphics[scale=0.28]{obav_multilink_3_link.jpg}
+	\hspace*{-1.5cm}
+	\includegraphics[scale=0.35]{obav_multilink_3_link.eps}
+	\caption{Multi link multi target test result, with single obstacle environment}
 	\label{fig:obav_multilink_3_link}
 \end{figure}
 
 \begin{figure}[H]
 	\centering
-	\hspace*{-2.0cm}
-	\includegraphics[scale=0.28]{obav_multilink_6_link.jpg}
+	\hspace*{-1.5cm}
+	\includegraphics[scale=0.35]{obav_multilink_6_link.eps}
+	\caption{Six link avoidance task, result}
 	\label{fig:obav_multilink_6_link}
 \end{figure}
 
 \begin{figure}[H]
 	\centering
-	\hspace*{-2.0cm}
-	\includegraphics[scale=0.28]{obav_multilink_9_link.jpg}
+	\hspace*{-1.5cm}
+	\includegraphics[scale=0.35]{obav_multilink_9_link.eps}
+	\caption{Nine link avoidance task, result}
 	\label{fig:obav_multilink_9_link}
 \end{figure}
 
-\noindent The first notable result is the successful run performed in all the three tests as shown in the bottom graphs. Is interesting to note that only the first four tasks show some activation, but is clear that it is more connected to the specific environment, and not a clear limit in the number of possible concurrent active \textit{obstacle avoidance} tasks.\\
-
+\noindent The first notable result is the successful run performed in all three tests, as shown in the bottom graphs. Is interesting to note that only the first four tasks show some activation, but is clear that it is more connected to the specific environment, and there is no clear limit in the number of possible concurrent active \textit{obstacle avoidance} tasks.\\
 
 \subsubsection{Multiple obstacles}
 % snake movement
-\noindent Moving into the multi obstacle tests, the first environment I experimented on features the \ref{fig:multiClinderImage}, with an \textit{in-line} positioning. The idea was to have the robot move around the two pillars in an \textit{S} motion as described in the following schema:
+\noindent Moving into the multi-obstacle tests, the first environment I experimented on features the \ref{fig:multiClinderImage}, with an \textit{in-line} positioning. The idea was to have the robot move around the two pillars in an \textit{S} motion as described in the following schema:
 \begin{figure}[H]
 	\centering
 	\hspace*{-2.8cm}
@@ -334,20 +344,20 @@ The result for the multi-target test for $3$, $6$ and $9$ links are:
 	\caption{Schema for multi target, multi obstacle test}
 	\label{fig:ob_multi_tg_multi_schema}
 \end{figure}
-\noindent I carried out the test with both types of \textit{obstacle avoidance} task implementation, with this environment the edge of the \textit{multi-link} case is evident. Both in terms of absence of discontinuities and chattering and also in terms of execution time.
+\noindent I carried out the test with both types of \textit{obstacle avoidance} task implementation, with this environment, the edge of the \textit{multi-link} case is evident. Both in terms of the absence of discontinuities and chattering, and also in terms of execution time.
 \begin{figure}[H]
 	\centering
-	\hspace*{-2.0cm}
-	\includegraphics[scale=0.28]{singlelink_snake_results.jpg}
+	\hspace*{-1.5cm}
+	\includegraphics[scale=0.35]{singlelink_snake_results.eps}
 	\caption{Single link \textit{snake test} performance}
 	\label{fig:singlelink_snake_result}
 \end{figure}
-\noindent Noting that in this test the \textit{hysteresis} for the change of \textit{minimum distance} link is active, but since the discontinuities can be present on the same link, where the \textit{minimum distance point} changes with high frequency the problem can appear again.
+\noindent Noting that in this test the \textit{hysteresis} for the change of \textit{minimum distance} link is active, but since the discontinuities can be present on the same link, where the \textit{minimum distance point} changes with high frequency, the problem can appear again.
 
 \begin{figure}[H]
 	\centering
-	\hspace*{-2.0cm}
-	\includegraphics[scale=0.27]{multilink_snake_results_noExtraTg.jpg}
+	\hspace*{-1.5cm}
+	\includegraphics[scale=0.35]{multilink_snake_results_noExtraTg.eps}
 	\caption{Multi link \textit{snake test} performance, $9$ links}
 	\label{fig:multilink_snake_result_noExtraTg}
 \end{figure}
@@ -355,80 +365,86 @@ The result for the multi-target test for $3$, $6$ and $9$ links are:
 \noindent To further test the multi-link capabilities, I added one last target bringing the end-effector in front of second pillar, with the same orientation of the other target.
 \begin{figure}[H]
 	\centering
-	\hspace*{-2.0cm}
-	\includegraphics[scale=0.27]{multilink_snake_results_ExtraTg.jpg}
+	\hspace*{-1.5cm}
+	\includegraphics[scale=0.35]{multilink_snake_results_ExtraTg.eps}
 	\caption{Multi link \textit{snake test} performance, $9$ links, with extra final target}
 	\label{fig:multilink_snake_result_ExtraTg}
 \end{figure}
-\noindent As we can see from the graphs in some instances up to eight concurrent link were controlled to avoid the obstacles, confirming what I thought at the end of the previous section.
+\noindent As we can see from the graphs, in some instances up to eight concurrent links were controlled to avoid the obstacles, confirming what I thought at the end of the previous section.
 %% TO BE ADDED --> failed experiment for single-link obav
 
 
 \subsubsection{Chassis test}
-\noindent The last series of test I did was centered around the chassis point cloud \ref{fig:chassis_point_cloud}. Here is the schema:
+\noindent The last series of tests I did was centered around the chassis point cloud \ref{fig:chassis_point_cloud}. Here is the schema:
 \begin{figure}[H]
 	\centering
 		\hspace*{-2.0cm}
 	\includegraphics[scale=0.27]{chassis_test1_schema.jpg}
+	\caption{Chassis environment test schema}
 	\label{fig:chassis_test1_schema}
 \end{figure}
-\noindent The robot movent begins just outside of the driver side door, follwed by two linear movement in the positive direction of the $x$ axis of the $\langle\textit{world}\rangle$ frame, ending just outside of the passener side door. Than the \textit{end effector} is returned to the center of the chassis, and finally a lateral movent to the back of the car.\\
-\noindent In these tests the \textit{obstacle avoidance} task reference rate: $\dot{\bar{\vec{x}}} \in \mathbb{R}^{3\times1}$. I performed both test with the \textit{single link} and \textit{multi link} obstacle avoidance task, to compare the results.
+\noindent The robot movement begins just outside of the driver's side door, followed by two linear movements in the positive direction of the $x$ axis of the $\langle\textit{world}\rangle$ frame, ending just outside of the passenger's side door. Then the \textit{end effector} is returned to the center of the chassis, and finally, a lateral movement to the back of the car.\
+\noindent In these tests the \textit{obstacle avoidance} task reference rate: $\dot{\bar{\vec{x}}} \in \mathbb{R}^{3\times1}$. I performed both tests with the \textit{single link} and \textit{multi link} obstacle avoidance task, to compare the results.
 \begin{figure}[H]
 	\centering
-	\hspace*{-2.0cm}
-	\includegraphics[scale=0.27]{t1_multi_failed_result.jpg}
+	\hspace*{-1.5cm}
+	\includegraphics[scale=0.35]{t1_multi_failed_result.eps}
+	\caption{Three link avoidance task with low target}
 	\label{fig:t1_multi_failed_result}
 \end{figure}
-\noindent Starting with the multi link case, the initial height of the target was too low, this created a situation were a link of the \textit{Ur10e} was obstructing the task. The situation is interesting because it highlight a weakness in the definition of the desired velocity for the link in question.
+\noindent Starting with the multi-link case, the initial height of the target was too low, which created a situation where a link of the \textit{Ur10e} was obstructing the task. The situation is interesting because it highlights a weakness in the definition of the desired velocity for the link in question.
 
 \begin{figure}[H]
 	\centering
 	\hspace*{-0.4cm}
 	\includegraphics[scale=0.35]{t1_multi_failure_photo.png}
+	\caption{Ill conditioned configuration for multi link avoidance test, three concurrent links}
 	\label{fig:t1_multi_failure_photo}
 \end{figure}
 
-\noindent In the photo Is possible to see the \textit{distance vector} for the proximity tasks, that are currently active. Since the \textit{desired velocity} applied at the point of the robot, has opposite direction from the arrow in the photo is clear how in this instance two of the three active \textit{obstacle avoidance} task are working against the direction of the \textit{goal}.\\
-\noindent And considering that since the avoidance has superior \textit{priority} to the \textit{reaching}, the joint up to the \textit{upper arm joint} are actively pursuing the \textit{avoidance} task instead of the reaching one.
+\noindent In the photo Is possible to see the \textit{distance vector} for the proximity tasks that are currently active. Since the \textit{desired velocity} applied at the point of the robot has the opposite direction from the arrow in the photo is clear how, in this instance, two of the three active \textit{obstacle avoidance} tasks are working against the direction of the \textit{goal}.\\
+\noindent And considering that since the avoidance has superior \textit{priority} to the \textit{reaching}, the joints up to the \textit{upper arm joint} are actively pursuing the \textit{avoidance} task instead of the reaching one.
 
 \begin{figure}[H]
 	\centering
-	\hspace*{-2.0cm}
-	\includegraphics[scale=0.27]{t1_multi_ok_result.jpg}
+	\hspace*{-0.8cm}
+	\includegraphics[scale=0.32]{t1_multi_ok_result.eps}
+	\caption{Three link avoidance task with increase target height}
 	\label{fig:t1_multi_ok_result}
 \end{figure}
 
-\noindent Repeating the test with a higher target allowed the robot to complete the task, since the \textit{shoulder} link of the \textit{Ur10e} was higher with respect to the obstacle. As usual I also did the test considering six and nine link in the \textit{avoidance} task.
+\noindent Repeating the test with a higher target allowed the robot to complete the task, since the \textit{shoulder} link of the \textit{Ur10e} was higher with respect to the obstacle. As usual, I also did the test considering six and nine links in the \textit{avoidance} task.
 \begin{figure}[H]
 	\centering
-	\hspace*{-2.0cm}
-	\includegraphics[scale=0.27]{t1_multi_result_6lnk.jpg}
+	\hspace*{-0.8cm}
+	\includegraphics[scale=0.32]{t1_multi_result_6lnk.eps}
+	\caption{Six link avoidance task}
 	\label{fig:t1_multi_result_6lnk}
 \end{figure}
-\noindent Here we can see the test considering six different links in ascending order of distance, It shows the possible situation were the robot is wrapped around a thin object.
+\noindent Here we can see the test considering six different links in ascending order of distance. It shows the possible situation where the robot is wrapped around a thin object.
 \begin{figure}[H]
 	\centering
 	\hspace*{-0.4cm}
 	\includegraphics[scale=0.35]{t1_multi_failure_photo_6lnk.png}
- 	\caption{Multi-link test, with six concurrent links}
+ 	\caption{Ill conditioned configuration for multi link avoidance test, six concurrent links}
 	\label{fig:t1_multi_failure_photo_6lnk}
 \end{figure}
-\noindent As we can see we have a similar situation of the three link case, but here we also have \textit{antagonistic avoidance velocity}, and from the graph we can see that the \textit{end effector} stabilizes at a certain distance from the target.\\
-\noindent The trial with nine links had a similar behavior, reducing the task $\delta $ value allowed the completion of the task. 
+\noindent As we can see, we have a similar situation to the three-link case, but here we also have \textit{antagonistic avoidance velocity}, and from the graph, we can see that the \textit{end effector} stabilizes at a certain distance from the target.\\
+\noindent The trial with nine links had a similar behavior, reducing the task $\delta $ value allowed the completion of the task.
 \begin{figure}[H]
 	\centering
-	\hspace*{-2.0cm}
-	\includegraphics[scale=0.27]{t1_multi_result_9lnk_LowDelta.jpg}
-	\caption{Multi obstacle test for multi-link approach}
+	\hspace*{-0.7cm}
+	\includegraphics[scale=0.32]{t1_multi_result_9lnk_LowDelta.eps}
+	\caption{Multi link chassis test, with $\delta = 0.05$}
 	\label{fig:t1_multi_result_9lnk_LowDelta}
 \end{figure}
 \noindent Lastly the \textit{single link avoidance} test:
 \begin{figure}[H]
 	\centering
-	\hspace*{-2.0cm}
-	\includegraphics[scale=0.27]{t1_single_lnk_result.jpg}
+	\hspace*{-0.7cm}
+	\includegraphics[scale=0.32]{t1_single_lnk_result.eps}
+	\caption{Single link chassis test, with $\delta = 0.15$ and $\delta = 0.05$}
 	\label{fig:t1_single_lnk_result}
 \end{figure}
-\noindent As we can see also in the second graph for the \textit{single link avoidance} the $\delta$ value was lowered to better compare the two tests. In both cases the goal was reached, is possible to se how a low width of the \textit{task transition} window creates high discontinuities in the activation function value. The \textit{multi link avoidance} has performed a little better in \textit{attenuating} the discontinuities in the robot movement, as we can see the plot of the end-effector \textit{cartesian error norm} is less irregular. 
+\noindent As we can see also in the second graph for the \textit{single link avoidance} the $\delta$ value was lowered to better compare the two tests. In both cases, the goal was reached; it is possible to see how a low width of the \textit{task transition} window creates high discontinuities in the activation function value. The \textit{multi link avoidance} has performed a little better in \textit{attenuating} the discontinuities in the robot movement, as we can see the plot of the end-effector \textit{cartesian error norm} is less irregular.
 
